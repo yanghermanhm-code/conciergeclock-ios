@@ -145,7 +145,7 @@ extension View {
 enum ConciergeStyle {
     /// Buttons, toggles, links: ≥ 4.5:1 against the background in both appearances.
     static let tint = Color(light: 0x0B7470, dark: 0x3FCFC6)
-    /// Decorative brass (rings, badges, the cloche).
+    /// Decorative brass (rings, badges, the clock).
     static let brass = Color(light: 0xA9822A, dark: 0xD9B65E)
     /// Brass → teal, like the app icon's ring.
     static let ringGradient = LinearGradient(

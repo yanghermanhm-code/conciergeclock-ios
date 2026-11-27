@@ -9,7 +9,7 @@ Coordinates are in a 1024 × 1024 design space. Tones: "g" brass/gold, "t" teal,
 
 The figure: a butler seen from the front, head slightly turned, bow tie at the collar,
 tailcoat lapels meeting at a button, his right arm raised and bent so the hand carries a
-silver tray at shoulder height with a domed cloche (food cover) on it.
+tray at shoulder height with an alarm clock standing on it (two bells, hands at ten past ten).
 """
 
 # (x, y, tone, radius)
@@ -29,10 +29,12 @@ NODES = [
     (290, 572, "s", 17), (394, 606, "s", 15),
     # Tray 23–25: left rim, centre, right rim
     (584, 448, "g", 17), (690, 448, "g", 17), (796, 448, "g", 17),
-    # Cloche dome 26–32 (left foot … right foot), 33 handle
-    (612, 448, "g", 13), (622, 409, "g", 15), (651, 380, "g", 15), (690, 370, "g", 15),
-    (729, 380, "g", 15), (758, 409, "g", 15), (768, 448, "g", 13),
-    (690, 336, "g", 19),
+    # Clock face 26–33 (rim, clockwise from 12 o'clock), 34 centre, 35–36 hand tips (10:10)
+    (690, 290, "g", 10), (740, 311, "g", 10), (760, 360, "g", 10), (740, 409, "g", 10),
+    (690, 430, "g", 10), (640, 409, "g", 10), (620, 360, "g", 10), (640, 311, "g", 10),
+    (690, 360, "t", 16), (654, 340, "t", 9), (740, 330, "t", 9),
+    # Alarm bells 37–38, feet standing on the tray 39–40
+    (640, 272, "g", 17), (740, 272, "g", 17), (650, 448, "g", 12), (730, 448, "g", 12),
 ]
 
 # (from, to, tone)
@@ -56,11 +58,15 @@ EDGES = [
     (13, 19, "s"), (19, 20, "t"), (20, 24, "t"),
     # Folded arm
     (12, 21, "s"), (21, 22, "s"),
-    # Tray
-    (23, 26, "g"), (26, 24, "g"), (24, 32, "g"), (32, 25, "g"),
-    # Cloche dome, its mesh spokes, and the handle
-    (26, 27, "g"), (27, 28, "g"), (28, 29, "g"), (29, 30, "g"), (30, 31, "g"), (31, 32, "g"),
-    (24, 28, "g"), (24, 29, "g"), (24, 30, "g"), (29, 33, "g"),
+    # Tray, with the clock's feet on it
+    (23, 39, "g"), (39, 24, "g"), (24, 40, "g"), (40, 25, "g"),
+    # Clock rim
+    (26, 27, "g"), (27, 28, "g"), (28, 29, "g"), (29, 30, "g"),
+    (30, 31, "g"), (31, 32, "g"), (32, 33, "g"), (33, 26, "g"),
+    # Hands at ten past ten
+    (34, 35, "t"), (34, 36, "t"),
+    # Alarm bells and feet
+    (37, 33, "g"), (37, 26, "g"), (38, 27, "g"), (38, 26, "g"), (31, 39, "g"), (29, 40, "g"),
 ]
 
 LINE_WIDTH = 9

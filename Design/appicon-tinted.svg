@@ -35,20 +35,26 @@
 <line x1="690" y1="476" x2="690" y2="448" stroke="#FFFFFF" stroke-width="11" stroke-linecap="round"/>
 <line x1="322" y1="478" x2="290" y2="572" stroke="#B8B8B8" stroke-width="11" stroke-linecap="round"/>
 <line x1="290" y1="572" x2="394" y2="606" stroke="#B8B8B8" stroke-width="11" stroke-linecap="round"/>
-<line x1="584" y1="448" x2="612" y2="448" stroke="#FFFFFF" stroke-width="11" stroke-linecap="round"/>
-<line x1="612" y1="448" x2="690" y2="448" stroke="#FFFFFF" stroke-width="11" stroke-linecap="round"/>
-<line x1="690" y1="448" x2="768" y2="448" stroke="#FFFFFF" stroke-width="11" stroke-linecap="round"/>
-<line x1="768" y1="448" x2="796" y2="448" stroke="#FFFFFF" stroke-width="11" stroke-linecap="round"/>
-<line x1="612" y1="448" x2="622" y2="409" stroke="#FFFFFF" stroke-width="11" stroke-linecap="round"/>
-<line x1="622" y1="409" x2="651" y2="380" stroke="#FFFFFF" stroke-width="11" stroke-linecap="round"/>
-<line x1="651" y1="380" x2="690" y2="370" stroke="#FFFFFF" stroke-width="11" stroke-linecap="round"/>
-<line x1="690" y1="370" x2="729" y2="380" stroke="#FFFFFF" stroke-width="11" stroke-linecap="round"/>
-<line x1="729" y1="380" x2="758" y2="409" stroke="#FFFFFF" stroke-width="11" stroke-linecap="round"/>
-<line x1="758" y1="409" x2="768" y2="448" stroke="#FFFFFF" stroke-width="11" stroke-linecap="round"/>
-<line x1="690" y1="448" x2="651" y2="380" stroke="#FFFFFF" stroke-width="11" stroke-linecap="round"/>
-<line x1="690" y1="448" x2="690" y2="370" stroke="#FFFFFF" stroke-width="11" stroke-linecap="round"/>
-<line x1="690" y1="448" x2="729" y2="380" stroke="#FFFFFF" stroke-width="11" stroke-linecap="round"/>
-<line x1="690" y1="370" x2="690" y2="336" stroke="#FFFFFF" stroke-width="11" stroke-linecap="round"/>
+<line x1="584" y1="448" x2="650" y2="448" stroke="#FFFFFF" stroke-width="11" stroke-linecap="round"/>
+<line x1="650" y1="448" x2="690" y2="448" stroke="#FFFFFF" stroke-width="11" stroke-linecap="round"/>
+<line x1="690" y1="448" x2="730" y2="448" stroke="#FFFFFF" stroke-width="11" stroke-linecap="round"/>
+<line x1="730" y1="448" x2="796" y2="448" stroke="#FFFFFF" stroke-width="11" stroke-linecap="round"/>
+<line x1="690" y1="290" x2="740" y2="311" stroke="#FFFFFF" stroke-width="11" stroke-linecap="round"/>
+<line x1="740" y1="311" x2="760" y2="360" stroke="#FFFFFF" stroke-width="11" stroke-linecap="round"/>
+<line x1="760" y1="360" x2="740" y2="409" stroke="#FFFFFF" stroke-width="11" stroke-linecap="round"/>
+<line x1="740" y1="409" x2="690" y2="430" stroke="#FFFFFF" stroke-width="11" stroke-linecap="round"/>
+<line x1="690" y1="430" x2="640" y2="409" stroke="#FFFFFF" stroke-width="11" stroke-linecap="round"/>
+<line x1="640" y1="409" x2="620" y2="360" stroke="#FFFFFF" stroke-width="11" stroke-linecap="round"/>
+<line x1="620" y1="360" x2="640" y2="311" stroke="#FFFFFF" stroke-width="11" stroke-linecap="round"/>
+<line x1="640" y1="311" x2="690" y2="290" stroke="#FFFFFF" stroke-width="11" stroke-linecap="round"/>
+<line x1="690" y1="360" x2="654" y2="340" stroke="#FFFFFF" stroke-width="11" stroke-linecap="round"/>
+<line x1="690" y1="360" x2="740" y2="330" stroke="#FFFFFF" stroke-width="11" stroke-linecap="round"/>
+<line x1="640" y1="272" x2="640" y2="311" stroke="#FFFFFF" stroke-width="11" stroke-linecap="round"/>
+<line x1="640" y1="272" x2="690" y2="290" stroke="#FFFFFF" stroke-width="11" stroke-linecap="round"/>
+<line x1="740" y1="272" x2="740" y2="311" stroke="#FFFFFF" stroke-width="11" stroke-linecap="round"/>
+<line x1="740" y1="272" x2="690" y2="290" stroke="#FFFFFF" stroke-width="11" stroke-linecap="round"/>
+<line x1="640" y1="409" x2="650" y2="448" stroke="#FFFFFF" stroke-width="11" stroke-linecap="round"/>
+<line x1="740" y1="409" x2="730" y2="448" stroke="#FFFFFF" stroke-width="11" stroke-linecap="round"/>
 <circle cx="430" cy="252" r="17" fill="#FFFFFF"/>
 <circle cx="376" cy="282" r="17" fill="#FFFFFF"/>
 <circle cx="484" cy="282" r="17" fill="#FFFFFF"/>
@@ -75,11 +81,18 @@
 <circle cx="584" cy="448" r="17" fill="#FFFFFF"/>
 <circle cx="690" cy="448" r="17" fill="#FFFFFF"/>
 <circle cx="796" cy="448" r="17" fill="#FFFFFF"/>
-<circle cx="612" cy="448" r="13" fill="#FFFFFF"/>
-<circle cx="622" cy="409" r="15" fill="#FFFFFF"/>
-<circle cx="651" cy="380" r="15" fill="#FFFFFF"/>
-<circle cx="690" cy="370" r="15" fill="#FFFFFF"/>
-<circle cx="729" cy="380" r="15" fill="#FFFFFF"/>
-<circle cx="758" cy="409" r="15" fill="#FFFFFF"/>
-<circle cx="768" cy="448" r="13" fill="#FFFFFF"/>
-<circle cx="690" cy="336" r="19" fill="#FFFFFF"/></g><circle cx="191.6" cy="327.0" r="50" fill="#FFFFFF" stroke="#000000" stroke-width="10"/><path d="M 161.4 341.4 A 30.2 29.0 0 0 1 221.7 341.4 Z" fill="#000000"/><circle cx="191.6" cy="307.8" r="5.8" fill="#000000"/><line x1="191.6" y1="310.1" x2="191.6" y2="314.8" stroke="#000000" stroke-width="4.6" stroke-linecap="round"/><line x1="153.3" y1="348.4" x2="229.9" y2="348.4" stroke="#000000" stroke-width="7.5" stroke-linecap="round"/></svg>
+<circle cx="690" cy="290" r="10" fill="#FFFFFF"/>
+<circle cx="740" cy="311" r="10" fill="#FFFFFF"/>
+<circle cx="760" cy="360" r="10" fill="#FFFFFF"/>
+<circle cx="740" cy="409" r="10" fill="#FFFFFF"/>
+<circle cx="690" cy="430" r="10" fill="#FFFFFF"/>
+<circle cx="640" cy="409" r="10" fill="#FFFFFF"/>
+<circle cx="620" cy="360" r="10" fill="#FFFFFF"/>
+<circle cx="640" cy="311" r="10" fill="#FFFFFF"/>
+<circle cx="690" cy="360" r="16" fill="#FFFFFF"/>
+<circle cx="654" cy="340" r="9" fill="#FFFFFF"/>
+<circle cx="740" cy="330" r="9" fill="#FFFFFF"/>
+<circle cx="640" cy="272" r="17" fill="#FFFFFF"/>
+<circle cx="740" cy="272" r="17" fill="#FFFFFF"/>
+<circle cx="650" cy="448" r="12" fill="#FFFFFF"/>
+<circle cx="730" cy="448" r="12" fill="#FFFFFF"/></g><circle cx="191.6" cy="327.0" r="50" fill="#FFFFFF" stroke="#000000" stroke-width="10"/><path d="M 161.4 341.4 A 30.2 29.0 0 0 1 221.7 341.4 Z" fill="#000000"/><circle cx="191.6" cy="307.8" r="5.8" fill="#000000"/><line x1="191.6" y1="310.1" x2="191.6" y2="314.8" stroke="#000000" stroke-width="4.6" stroke-linecap="round"/><line x1="153.3" y1="348.4" x2="229.9" y2="348.4" stroke="#000000" stroke-width="7.5" stroke-linecap="round"/></svg>

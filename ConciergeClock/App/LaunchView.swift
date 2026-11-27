@@ -2,7 +2,7 @@ import GGSBrand
 import SwiftUI
 
 /// The launch animation: the butler's nodes pop in, the mesh edges connect him, his tray and
-/// cloche, then the name fades in (about 1.6 s). Tap anywhere to skip. With Reduce Motion on,
+/// alarm clock, then the name fades in (about 1.6 s). Tap anywhere to skip. With Reduce Motion on,
 /// the finished mark is shown briefly instead. Same timing as PrepPilot's.
 struct LaunchView: View {
     let onFinished: () -> Void

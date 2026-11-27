@@ -6,7 +6,7 @@
 import SwiftUI
 
 public extension Brand {
-    /// Concierge Clock's brass/gold (decoration only: marks, rings, the cloche).
+    /// Concierge Clock's brass/gold (decoration only: marks, rings, the clock).
     static let brass = Color(hex: 0xC9A44C)
     static let brassOnDark = Color(hex: 0xD9B65E)
     /// Concierge Clock's teal (decoration only).
@@ -15,7 +15,7 @@ public extension Brand {
 }
 
 /// Concierge Clock's signature mark: the Greater Good node-and-edge mesh shaped into a butler
-/// carrying a tray with a domed cloche. Drawn natively so it is sharp at any size and needs no
+/// carrying a tray with an alarm clock on it. Drawn natively so it is sharp at any size and needs no
 /// image assets. Geometry matches Design/conciergeclock-mark.svg.
 public struct ButlerNetworkMark: View {
     private let style: ShieldNetworkMark.Style
@@ -159,14 +159,21 @@ enum ButlerGeometry {
         Node(x: 584, y: 448, tone: .brass),
         Node(x: 690, y: 448, tone: .brass),
         Node(x: 796, y: 448, tone: .brass),
-        Node(x: 612, y: 448, tone: .brass, radius: 13),
-        Node(x: 622, y: 409, tone: .brass, radius: 15),
-        Node(x: 651, y: 380, tone: .brass, radius: 15),
-        Node(x: 690, y: 370, tone: .brass, radius: 15),
-        Node(x: 729, y: 380, tone: .brass, radius: 15),
-        Node(x: 758, y: 409, tone: .brass, radius: 15),
-        Node(x: 768, y: 448, tone: .brass, radius: 13),
-        Node(x: 690, y: 336, tone: .brass, radius: 19),
+        Node(x: 690, y: 290, tone: .brass, radius: 10),
+        Node(x: 740, y: 311, tone: .brass, radius: 10),
+        Node(x: 760, y: 360, tone: .brass, radius: 10),
+        Node(x: 740, y: 409, tone: .brass, radius: 10),
+        Node(x: 690, y: 430, tone: .brass, radius: 10),
+        Node(x: 640, y: 409, tone: .brass, radius: 10),
+        Node(x: 620, y: 360, tone: .brass, radius: 10),
+        Node(x: 640, y: 311, tone: .brass, radius: 10),
+        Node(x: 690, y: 360, tone: .teal, radius: 16),
+        Node(x: 654, y: 340, tone: .teal, radius: 9),
+        Node(x: 740, y: 330, tone: .teal, radius: 9),
+        Node(x: 640, y: 272, tone: .brass),
+        Node(x: 740, y: 272, tone: .brass),
+        Node(x: 650, y: 448, tone: .brass, radius: 12),
+        Node(x: 730, y: 448, tone: .brass, radius: 12),
     ]
 
     static let edges: [Edge] = [
@@ -207,20 +214,26 @@ enum ButlerGeometry {
         Edge(from: 20, to: 24, tone: .teal),
         Edge(from: 12, to: 21, tone: .slate),
         Edge(from: 21, to: 22, tone: .slate),
-        Edge(from: 23, to: 26, tone: .brass),
-        Edge(from: 26, to: 24, tone: .brass),
-        Edge(from: 24, to: 32, tone: .brass),
-        Edge(from: 32, to: 25, tone: .brass),
+        Edge(from: 23, to: 39, tone: .brass),
+        Edge(from: 39, to: 24, tone: .brass),
+        Edge(from: 24, to: 40, tone: .brass),
+        Edge(from: 40, to: 25, tone: .brass),
         Edge(from: 26, to: 27, tone: .brass),
         Edge(from: 27, to: 28, tone: .brass),
         Edge(from: 28, to: 29, tone: .brass),
         Edge(from: 29, to: 30, tone: .brass),
         Edge(from: 30, to: 31, tone: .brass),
         Edge(from: 31, to: 32, tone: .brass),
-        Edge(from: 24, to: 28, tone: .brass),
-        Edge(from: 24, to: 29, tone: .brass),
-        Edge(from: 24, to: 30, tone: .brass),
-        Edge(from: 29, to: 33, tone: .brass),
+        Edge(from: 32, to: 33, tone: .brass),
+        Edge(from: 33, to: 26, tone: .brass),
+        Edge(from: 34, to: 35, tone: .teal),
+        Edge(from: 34, to: 36, tone: .teal),
+        Edge(from: 37, to: 33, tone: .brass),
+        Edge(from: 37, to: 26, tone: .brass),
+        Edge(from: 38, to: 27, tone: .brass),
+        Edge(from: 38, to: 26, tone: .brass),
+        Edge(from: 31, to: 39, tone: .brass),
+        Edge(from: 29, to: 40, tone: .brass),
     ]
 }
 
