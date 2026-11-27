@@ -1,9 +1,11 @@
 common.settings | Réglages
 common.done | OK
 common.cancel | Annuler
+common.save | Enregistrer
 common.delete | Supprimer
 common.ok | OK
 common.add | Ajouter
+common.edit | Modifier
 settings.appearance | Apparence
 settings.theme | Thème
 theme.system | Système
@@ -177,14 +179,7 @@ export.file.wakeLog | Journal de réveil
 export.file.alarms | Alarmes
 alarms.count | Alarmes : %d
 alarms.empty.title | Aucune alarme
-alarms.empty.message | Vos alarmes apparaîtront ici.
-alarms.soon.title | Dans la prochaine mise à jour
-alarms.soon.message | Les alarmes arrivent en phase 1b, construites sur le système d’alarme d’iOS : elles sonnent même en mode silencieux et pendant un Focus.
-alarms.soon.ring | De vraies alarmes sur l’écran verrouillé et dans la Dynamic Island
-alarms.soon.repeat | Jours de répétition, libellés et alarmes ponctuelles
-alarms.soon.snooze | Répétition à la voix ou par bouton, 5 minutes par défaut
-alarms.soon.skip | Sauter la prochaine alarme, ou les jours de congé de votre calendrier
-alarms.soon.widget | Widgets de la prochaine alarme
+alarms.empty.message | Ajoutez votre première alarme. Elle sonne même app fermée, en mode silencieux et pendant un Focus.
 concierge.greeting.morning | Bonjour.
 concierge.greeting.afternoon | Bon après-midi.
 concierge.greeting.evening | Bonsoir.
@@ -314,3 +309,72 @@ accent.britishMale | Britannique, homme
 accent.britishFemale | Britannique, femme
 accent.indianMale | Indien, homme
 accent.indianFemale | Indienne, femme
+alarm.defaultTitle | Alarme
+alarm.stop | Arrêter
+alarm.snooze | Répéter
+alarm.snoozing | %@ — en répétition
+alarms.add | Ajouter une alarme
+alarms.footer | C’est iOS qui fait sonner ces alarmes : elles fonctionnent même Concierge Clock fermé, en mode silencieux et pendant un Focus. Balayez une alarme pour sauter sa prochaine sonnerie.
+alarms.nextRing | Prochaine : %@
+alarms.skipped | Prochaine sonnerie sautée
+alarms.skipNext | Sauter la prochaine
+alarms.unskip | Ne pas sauter
+alarms.permission.allow | Autoriser les alarmes
+alarms.permission.footer | iOS demande une seule fois si Concierge Clock peut faire sonner des alarmes.
+alarms.permission.denied | Les alarmes sont désactivées pour Concierge Clock : rien ne sonnera. Activez-les dans l’app Réglages.
+alarms.permission.openSettings | Ouvrir Réglages
+editor.newTitle | Nouvelle alarme
+editor.editTitle | Modifier l’alarme
+editor.time | Heure
+editor.label | Libellé (ex. Travail, Sport)
+editor.repeat | Répéter
+editor.repeatOnce | Sonne une fois, la prochaine fois que cette heure arrive.
+editor.default | Par défaut (%@)
+editor.skipDaysOff | Sauter les jours de congé
+editor.skipDaysOffNeedsCalendar | Autorisez l’accès au calendrier dans Réglages › Calendriers et rappels pour trouver les jours de congé.
+editor.snoozeFooter | La répétition depuis l’écran verrouillé sonne de nouveau après ce nombre de minutes. Les jours de congé sont les jours fériés et les événements d’une journée contenant vos mots de congé.
+editor.butler | Votre concierge pour cette alarme
+editor.butlerFooter | Par défaut suit Réglages › Votre concierge. Les points parlés arrivent en phase 2.
+editor.delete | Supprimer l’alarme
+editor.deleteConfirm | Supprimer cette alarme ? Ses matins restent dans votre journal de réveil.
+calendars.title | Calendriers et rappels
+calendars.calendars | Calendriers
+calendars.reminders | Rappels
+calendars.allow | Autoriser
+calendars.allowed | Autorisé
+calendars.openSettings | Réglages
+calendars.todayCount | Événements restants aujourd’hui
+calendars.privacy | Lus sur cet iPhone depuis chaque compte des réglages de l’iPhone — iCloud, Google, Outlook, Exchange / Microsoft 365, Yahoo, etc. Concierge Clock ne s’y connecte jamais, n’envoie rien et ne modifie jamais vos événements.
+calendars.addAccount | Ajouter Google, Outlook ou un autre compte
+calendars.addAccountFooter | Les comptes s’ajoutent dans les réglages de l’iPhone, puis apparaissent ici d’eux-mêmes. Désactivez les calendriers à exclure des points du matin et des jours de congé.
+calendars.accountCount | Comptes : %d
+calendars.notConnected | Non connecté
+calendars.connectPrompt | Connectez vos calendriers : iPhone, Google, Outlook et plus.
+calendars.connectedSummary | Comptes : %1$d · événements restants aujourd’hui : %2$d
+calendars.kind.other | Autre compte
+calendars.kind.iphone | Sur mon iPhone
+calendars.kind.subscribed | Abonnements
+calendars.kind.birthdays | Anniversaires
+calendars.guide.intro | Concierge Clock lit les calendriers et rappels que votre iPhone synchronise déjà. Pour Google ou Outlook, ajoutez le compte à l’iPhone une fois ; Concierge Clock le lit ensuite, hors ligne.
+calendars.guide.stepsTitle | Étapes
+calendars.guide.step1 | Ouvrez l’app Réglages de l’iPhone.
+calendars.guide.step2 | Touchez Apps, puis Calendrier, puis Comptes de calendrier.
+calendars.guide.step3 | Touchez Ajouter un compte et choisissez Google, Microsoft Exchange, Outlook.com ou Yahoo.
+calendars.guide.step4 | Connectez-vous sur l’écran du fournisseur, puis activez Calendriers (et Rappels s’il est proposé).
+calendars.guide.step5 | Revenez ici : le compte apparaît dans la liste. Désactivez les calendriers inutiles.
+calendars.guide.which | Quel compte choisir
+calendars.guide.google | Calendriers Gmail et Google Workspace.
+calendars.guide.outlook | Comptes Microsoft personnels : choisissez Outlook.com.
+calendars.guide.exchange | Comptes Microsoft 365 professionnels ou scolaires : choisissez Microsoft Exchange.
+calendars.guide.icloud | Déjà sur votre iPhone si vous utilisez iCloud.
+calendars.guide.outlookApp | Les calendriers gardés uniquement dans l’app Outlook ne sont pas partagés avec les autres apps. Ajoutez le compte dans les réglages de l’iPhone comme ci-dessus.
+calendars.guide.googleTasks | Google Tasks ne se synchronise pas avec les Rappels de l’iPhone et ne peut donc pas apparaître dans les points du matin. Les tâches Exchange, si.
+widget.name | Prochaine alarme
+widget.description | Votre prochaine alarme Concierge Clock.
+widget.next | Prochaine alarme
+widget.none | Aucune alarme
+widget.today | Aujourd’hui
+widget.tomorrow | Demain
+infoplist.alarmKit | Concierge Clock programme vos alarmes pour qu’elles sonnent même app fermée, en mode silencieux ou pendant un Focus.
+infoplist.calendars | Concierge Clock lit vos calendriers sur cet iPhone pour vous parler de votre journée et sauter les alarmes les jours de congé. Rien n’est envoyé ni modifié.
+infoplist.reminders | Concierge Clock lit vos rappels sur cet iPhone pour vous dire ce qui est dû, et n’en marque un comme terminé que si vous le demandez. Rien n’est envoyé.

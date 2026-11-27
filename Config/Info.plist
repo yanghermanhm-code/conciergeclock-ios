@@ -6,11 +6,21 @@
   It lives outside the synchronised ConciergeClock/ folder so it is not copied as a resource.
   Translations of the permission texts: ConciergeClock/<lang>.lproj/InfoPlist.strings.
 
-  Phase 1a asks for no permissions. Calendars, Reminders, Microphone, Speech Recognition,
-  AlarmKit and Apple Health texts are added with the phases that use them.
+  Microphone, Speech Recognition and Apple Health texts are added with the phases that use them.
 -->
 <plist version="1.0">
 <dict>
+	<!-- AlarmKit (Phase 1b): real alarms that ring through silent mode and Focus. -->
+	<key>NSAlarmKitUsageDescription</key>
+	<string>Concierge Clock schedules your alarms so they ring even when the app is closed, in silent mode or during Focus.</string>
+	<!-- Read on the iPhone: every calendar account in iOS Settings (iCloud, Google, Outlook, Exchange…). -->
+	<key>NSCalendarsFullAccessUsageDescription</key>
+	<string>Concierge Clock reads your calendars on this iPhone to tell you about your day and to skip alarms on days off. Nothing is uploaded or changed.</string>
+	<key>NSRemindersFullAccessUsageDescription</key>
+	<string>Concierge Clock reads your reminders on this iPhone to tell you what is due, and marks one done only when you ask. Nothing is uploaded.</string>
+	<!-- The alarm's Lock Screen and Dynamic Island view (AlarmKit Live Activity). -->
+	<key>NSSupportsLiveActivities</key>
+	<true/>
 	<!-- Full backups (.conciergeclock, JSON): created here and opened from Files, AirDrop and Mail. -->
 	<key>UTExportedTypeDeclarations</key>
 	<array>

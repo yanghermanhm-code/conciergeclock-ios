@@ -7,7 +7,7 @@ struct ConciergeClockApp: App {
     @State private var launch: LaunchState
 
     init() {
-        _launch = State(initialValue: LaunchState.make())
+        _launch = State(initialValue: LaunchState.shared)
     }
 
     var body: some Scene {
@@ -57,6 +57,10 @@ private struct AppRoot: View {
 enum LaunchState {
     case ready(AppModel)
     case failed(String)
+
+    /// Created once per process: by the app's scene, or first by an alarm button (Stop /
+    /// Snooze) when iOS launches the app in the background to run it.
+    @MainActor static let shared = LaunchState.make()
 
     @MainActor
     static func make() -> LaunchState {

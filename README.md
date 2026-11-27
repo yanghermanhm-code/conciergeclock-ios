@@ -6,7 +6,8 @@ you the time and what your day holds from your own calendar and reminders, liste
 10 minutes" or "I'm awake", and tracks how well you wake up. Pay once, own it — no accounts, no
 subscriptions, no tracking.
 
-> Status: **Phase 1a – Foundation** in review on branch `phase-1a-foundation`.
+> Status: **Phase 1a** merged into `main`. **Phase 1b – Alarms, calendars & widgets** in review on
+> branch `phase-1b-alarms`.
 > See [docs/ROADMAP.md](docs/ROADMAP.md).
 
 ## Requirements
@@ -25,15 +26,32 @@ subscriptions, no tracking.
    prebuilt runtime of Google's [LiteRT-LM](https://github.com/google-ai-edge/LiteRT-LM)
    (v0.20.0, a 95 MB download; its Swift wrapper is vendored in `Packages/LiteRTLM`). If Xcode
    shows "Missing package product", choose File › Packages › Reset Package Caches.
-3. Select the **ConciergeClock** target → **Signing & Capabilities** → choose your Team.
-   If Xcode says the bundle ID is taken, change `com.greatergoodsoftware.conciergeclock` to
-   something unique for now, such as `com.yourname.conciergeclock`.
-4. **Free (Personal Team) account?** Remove **App Groups** under Signing & Capabilities (and
-   **Increased Memory Limit** if Xcode refuses it). Everything in Phase 1a still works; the
-   offline AI model is then stored for Concierge Clock only and Settings › Offline AI says why.
-5. Pick an iPhone simulator (or your iPhone) and press **⌘R**.
+3. Select the **ConciergeClock** target → **Signing & Capabilities** → choose your Team. Do the
+   same for the **ConciergeClockWidgets** target. With a paid Apple Developer account, keep both
+   App Groups (`group.com.greatergoodsoftware.conciergeclock` for the widgets and
+   `group.com.greatergoodsoftware.models` for the offline AI shared with your other apps); Xcode
+   registers them. If Xcode says a bundle ID is taken, change `com.greatergoodsoftware.conciergeclock`
+   (and the widget's `.widgets` ID) to something unique.
+4. **Alarms need a real iPhone** for a true test (AlarmKit rings on the Lock Screen and Dynamic
+   Island; the Simulator shows them but cannot be relied on for sound and timing).
+5. Pick your iPhone (or a simulator) and press **⌘R**.
 
-### What to look at in Phase 1a
+### What to try in Phase 1b
+
+- **Alarms tab:** add an alarm two minutes ahead, lock the iPhone, switch on silent mode: it rings
+  on the Lock Screen with **Stop** and **Snooze** (your snooze length, 5 minutes by default) and
+  shows a countdown in the Dynamic Island while snoozing. After Stop, Trends shows "Mornings
+  logged: 1".
+- Swipe an alarm for **Skip Next**; switch alarms on and off; edit repeat days, snooze and the
+  butler's voice per alarm.
+- **Settings › Calendars & Reminders** (or the Calendars card on the Concierge tab): allow access
+  and see every account on the iPhone — iCloud, Google, Outlook / Exchange, Yahoo, On My iPhone,
+  subscribed — with each calendar's switch. "Add Google, Outlook or another account" explains the
+  one-time setup in iOS Settings.
+- Add an all-day event called "Vacation" tomorrow: alarms with **Skip days off** skip that day.
+- Long-press the Home Screen or Lock Screen › add the **Next Alarm** widget.
+
+### What to look at from Phase 1a
 
 - The launch animation (the butler's mesh connecting) and the new icon (Home Screen; Settings ›
   Appearance › App icon switches to the light variant).

@@ -1,9 +1,11 @@
 common.settings | Pengaturan
 common.done | Selesai
 common.cancel | Batal
+common.save | Simpan
 common.delete | Hapus
 common.ok | OK
 common.add | Tambah
+common.edit | Edit
 settings.appearance | Tampilan
 settings.theme | Tema
 theme.system | Sistem
@@ -177,14 +179,7 @@ export.file.wakeLog | Catatan bangun
 export.file.alarms | Alarm
 alarms.count | Alarm: %d
 alarms.empty.title | Belum ada alarm
-alarms.empty.message | Alarm Anda akan muncul di sini.
-alarms.soon.title | Hadir di pembaruan berikutnya
-alarms.soon.message | Alarm hadir di fase 1b, dibangun di atas sistem alarm iOS sendiri, sehingga tetap berbunyi dalam mode senyap dan saat Fokus.
-alarms.soon.ring | Alarm sungguhan di Layar Terkunci dan Dynamic Island
-alarms.soon.repeat | Hari pengulangan, label, dan alarm sekali
-alarms.soon.snooze | Tunda lewat suara atau tombol, 5 menit secara bawaan
-alarms.soon.skip | Lewati alarm berikutnya, atau hari libur di kalender Anda
-alarms.soon.widget | Widget alarm berikutnya
+alarms.empty.message | Tambahkan alarm pertama Anda. Alarm tetap berbunyi saat aplikasi ditutup, dalam mode senyap, dan saat Fokus.
 concierge.greeting.morning | Selamat pagi.
 concierge.greeting.afternoon | Selamat siang.
 concierge.greeting.evening | Selamat malam.
@@ -314,3 +309,72 @@ accent.britishMale | Inggris, pria
 accent.britishFemale | Inggris, wanita
 accent.indianMale | India, pria
 accent.indianFemale | India, wanita
+alarm.defaultTitle | Alarm
+alarm.stop | Hentikan
+alarm.snooze | Tunda
+alarm.snoozing | %@ — ditunda
+alarms.add | Tambah Alarm
+alarms.footer | iOS sendiri yang membunyikan alarm ini, jadi alarm tetap berfungsi saat Concierge Clock ditutup, dalam mode senyap, dan saat Fokus. Geser alarm untuk melewati bunyi berikutnya.
+alarms.nextRing | Berikutnya: %@
+alarms.skipped | Bunyi berikutnya dilewati
+alarms.skipNext | Lewati Berikutnya
+alarms.unskip | Jangan Lewati
+alarms.permission.allow | Izinkan Alarm
+alarms.permission.footer | iOS bertanya sekali apakah Concierge Clock boleh membunyikan alarm.
+alarms.permission.denied | Alarm dimatikan untuk Concierge Clock, jadi tidak ada yang berbunyi. Nyalakan di aplikasi Pengaturan.
+alarms.permission.openSettings | Buka Pengaturan
+editor.newTitle | Alarm Baru
+editor.editTitle | Edit Alarm
+editor.time | Waktu
+editor.label | Label (mis. Kerja, Gym)
+editor.repeat | Ulangi
+editor.repeatOnce | Berbunyi sekali, saat waktu ini tiba berikutnya.
+editor.default | Bawaan (%@)
+editor.skipDaysOff | Lewati hari libur
+editor.skipDaysOffNeedsCalendar | Izinkan akses kalender di Pengaturan › Kalender & Pengingat agar hari libur bisa ditemukan.
+editor.snoozeFooter | Tunda dari Layar Terkunci berbunyi lagi setelah sekian menit ini. Hari libur adalah libur nasional dan acara sepanjang hari yang memuat kata hari libur Anda.
+editor.butler | Concierge Anda untuk alarm ini
+editor.butlerFooter | Bawaan mengikuti Pengaturan › Concierge Anda. Ringkasan lisan hadir di fase 2.
+editor.delete | Hapus Alarm
+editor.deleteConfirm | Hapus alarm ini? Pagi-paginya tetap ada di catatan bangun Anda.
+calendars.title | Kalender & Pengingat
+calendars.calendars | Kalender
+calendars.reminders | Pengingat
+calendars.allow | Izinkan
+calendars.allowed | Diizinkan
+calendars.openSettings | Pengaturan
+calendars.todayCount | Acara tersisa hari ini
+calendars.privacy | Dibaca di iPhone ini dari setiap akun di pengaturan iPhone — iCloud, Google, Outlook, Exchange / Microsoft 365, Yahoo, dan lainnya. Concierge Clock tidak pernah masuk ke akun itu, tidak pernah mengunggah apa pun, dan tidak pernah mengubah acara Anda.
+calendars.addAccount | Tambah Google, Outlook, atau akun lain
+calendars.addAccountFooter | Akun ditambahkan di pengaturan iPhone, lalu muncul di sini dengan sendirinya. Matikan kalender yang tidak Anda inginkan di ringkasan dan pemeriksaan hari libur.
+calendars.accountCount | Akun: %d
+calendars.notConnected | Belum terhubung
+calendars.connectPrompt | Hubungkan kalender Anda: iPhone, Google, Outlook, dan lainnya.
+calendars.connectedSummary | Akun: %1$d · acara tersisa hari ini: %2$d
+calendars.kind.other | Akun lain
+calendars.kind.iphone | Di iPhone Saya
+calendars.kind.subscribed | Langganan
+calendars.kind.birthdays | Ulang Tahun
+calendars.guide.intro | Concierge Clock membaca kalender dan pengingat yang sudah disinkronkan iPhone Anda. Untuk Google atau Outlook, tambahkan akunnya ke iPhone sekali; lalu Concierge Clock membacanya, secara offline.
+calendars.guide.stepsTitle | Langkah
+calendars.guide.step1 | Buka aplikasi Pengaturan di iPhone.
+calendars.guide.step2 | Ketuk Aplikasi, lalu Kalender, lalu Akun Kalender.
+calendars.guide.step3 | Ketuk Tambah Akun dan pilih Google, Microsoft Exchange, Outlook.com, atau Yahoo.
+calendars.guide.step4 | Masuk di layar penyedia, lalu nyalakan Kalender (dan Pengingat jika ada).
+calendars.guide.step5 | Kembali ke sini: akun muncul di daftar. Matikan kalender yang tidak Anda perlukan.
+calendars.guide.which | Akun mana yang dipilih
+calendars.guide.google | Kalender Gmail dan Google Workspace.
+calendars.guide.outlook | Akun Microsoft pribadi: pilih Outlook.com.
+calendars.guide.exchange | Akun Microsoft 365 kantor atau sekolah: pilih Microsoft Exchange.
+calendars.guide.icloud | Sudah ada di iPhone Anda jika memakai iCloud.
+calendars.guide.outlookApp | Kalender yang hanya disimpan di dalam aplikasi Outlook tidak dibagikan ke aplikasi lain. Tambahkan akunnya di pengaturan iPhone seperti di atas.
+calendars.guide.googleTasks | Google Tasks tidak disinkronkan ke Pengingat iPhone, jadi tidak bisa muncul di ringkasan. Tugas Exchange bisa.
+widget.name | Alarm Berikutnya
+widget.description | Alarm Concierge Clock Anda berikutnya.
+widget.next | Alarm berikutnya
+widget.none | Tidak ada alarm
+widget.today | Hari ini
+widget.tomorrow | Besok
+infoplist.alarmKit | Concierge Clock menjadwalkan alarm Anda agar tetap berbunyi saat aplikasi ditutup, dalam mode senyap, atau saat Fokus.
+infoplist.calendars | Concierge Clock membaca kalender Anda di iPhone ini untuk menceritakan hari Anda dan melewati alarm di hari libur. Tidak ada yang diunggah atau diubah.
+infoplist.reminders | Concierge Clock membaca pengingat Anda di iPhone ini untuk memberi tahu apa yang jatuh tempo, dan hanya menandai selesai jika Anda minta. Tidak ada yang diunggah.

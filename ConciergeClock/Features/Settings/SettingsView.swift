@@ -43,6 +43,18 @@ struct SettingsView: View {
                     } label: {
                         Label(l10n["morning.title"], systemImage: "sunrise")
                     }
+                    NavigationLink {
+                        CalendarAccountsView()
+                    } label: {
+                        LabeledContent {
+                            Text(model.calendars.eventAccess == .granted
+                                 ? l10n("calendars.accountCount", model.calendars.calendarAccounts.count)
+                                 : l10n["calendars.notConnected"])
+                        } label: {
+                            Label(l10n["calendars.title"], systemImage: "calendar")
+                        }
+                    }
+                    .accessibilityIdentifier("settings.calendars")
                 } header: {
                     Text(l10n["settings.concierge"])
                 }

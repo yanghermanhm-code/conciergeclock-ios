@@ -1,4 +1,4 @@
-# Data schema (schemaVersion 1)
+# Data schema (database schemaVersion 2, backup schemaVersion 1)
 
 This document is the **contract** for the on-device database, the JSON backup format and a future
 Android app. Field names are identical in Swift, SQLite and JSON.
@@ -62,6 +62,14 @@ General rules (the same as FocusFound and PrepPilot):
 
 Variance (minutes) = `dismissedAt − scheduledAt` (negative = early), derived, not stored.
 
+### alarmOccurrence (since database version 2; this iPhone only, not in backups)
+One ring handed to AlarmKit. `id` (the AlarmKit alarm UUID, uppercase string — derived from the alarm id
+and ring time, see `AlarmPlanner.occurrenceID`), `schemaVersion`, `alarmID`, `scheduledAt`, `snoozeCount`
+(reported Snooze taps), `snoozeMinutes` (the length it was scheduled with), `status` (`scheduled` \|
+`finished` \| `missed` \| `cancelled`), `createdAt`, `updatedAt`. When stopped, its `wakeEvent` is written
+with the same `id`; snoozes = max(reported, floor((stoppedAt − scheduledAt) / snoozeMinutes)). Outcomes
+older than 60 days are deleted (the wake log keeps the history).
+
 ### recommendation (Wake Optimization Advisor)
 `id`, `schemaVersion`, `kind` (`raiseVolume` \| `addRampUp` \| `clearerWakeSound` \| `softenVolume` \|
 `keepSettings` \| `tryAmbientSound` \| `stopAmbientSound` \| `earlierBedtime`), `status` (`offered` \|
@@ -92,6 +100,7 @@ true · `snoozeLimit` null · `awakeCheckEnabled` true · `awakeCheckDelayMinute
 `bedtimePreviewEnabled` true · `sunriseEnabled` true · `sunriseMinutes` 15 ·
 `suggestAlarmFromCalendar` true · `getReadyMinutes` 90 · `dayOffKeywords` [Vacation, Holiday, Day
 off, PTO, Out of office, OOO] · `healthSleepEnabled` false · `wakeScoreRules` (above) ·
+`excludedCalendarIDs` [] · `excludedReminderListIDs` [] (EventKit identifiers, device-specific) ·
 `useOfflineAI` true · `localModel` automatic · `modelDownloadWiFiOnly` true · `lastBackupAt` ·
 `autoBackupEnabled` false · `lastAutoBackupAt`.
 
@@ -101,7 +110,7 @@ off, PTO, Out of office, OOO] · `healthSleepEnabled` false · `wakeScoreRules` 
 {
   "format": "conciergeclock-backup",
   "schemaVersion": 1,
-  "databaseSchemaVersion": 1,
+  "databaseSchemaVersion": 2,
   "createdAt": "2026-11-27T07:12:00.000Z",
   "appVersion": "1.0 (1)",
   "settings": { … },

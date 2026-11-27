@@ -82,6 +82,14 @@ struct RootView: View {
         .onChange(of: model.settings.settings.wakeScoreRules) { _, _ in
             model.rescoreWakeLog()
         }
+        // Snooze length, days off, calendars left out, language of the alarm buttons…
+        .onChange(of: model.settings.settings) { _, _ in
+            model.scheduler.setNeedsReconcile()
+        }
+        // An account added or a calendar changed: days off may have changed.
+        .onChange(of: model.calendars.calendarAccounts) { _, _ in
+            model.scheduler.setNeedsReconcile()
+        }
     }
 }
 

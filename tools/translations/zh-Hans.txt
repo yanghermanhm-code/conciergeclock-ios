@@ -1,9 +1,11 @@
 common.settings | 设置
 common.done | 完成
 common.cancel | 取消
+common.save | 保存
 common.delete | 删除
 common.ok | 好
 common.add | 添加
+common.edit | 编辑
 settings.appearance | 外观
 settings.theme | 主题
 theme.system | 跟随系统
@@ -177,14 +179,7 @@ export.file.wakeLog | 起床记录
 export.file.alarms | 闹钟
 alarms.count | 闹钟：%d 个
 alarms.empty.title | 还没有闹钟
-alarms.empty.message | 你的闹钟会显示在这里。
-alarms.soon.title | 下次更新推出
-alarms.soon.message | 闹钟将在第 1b 阶段推出，基于 iOS 自带的闹钟系统，因此在静音模式和专注模式下也会响。
-alarms.soon.ring | 锁定屏幕和灵动岛上的真正闹钟
-alarms.soon.repeat | 重复日期、标签和一次性闹钟
-alarms.soon.snooze | 用语音或按钮稍后提醒，默认 5 分钟
-alarms.soon.skip | 跳过下一次闹钟，或跳过日历中的休息日
-alarms.soon.widget | 下一个闹钟小组件
+alarms.empty.message | 添加你的第一个闹钟。即使应用已关闭、处于静音模式或专注模式，它也会响。
 concierge.greeting.morning | 早上好。
 concierge.greeting.afternoon | 下午好。
 concierge.greeting.evening | 晚上好。
@@ -314,3 +309,72 @@ accent.britishMale | 英式口音，男声
 accent.britishFemale | 英式口音，女声
 accent.indianMale | 印度口音，男声
 accent.indianFemale | 印度口音，女声
+alarm.defaultTitle | 闹钟
+alarm.stop | 停止
+alarm.snooze | 稍后提醒
+alarm.snoozing | %@ — 稍后提醒中
+alarms.add | 添加闹钟
+alarms.footer | 这些闹钟由 iOS 本身负责响铃，因此即使 Concierge Clock 已关闭、处于静音模式或专注模式也能工作。在闹钟上轻扫可跳过下一次响铃。
+alarms.nextRing | 下次：%@
+alarms.skipped | 已跳过下一次响铃
+alarms.skipNext | 跳过下一次
+alarms.unskip | 不跳过
+alarms.permission.allow | 允许闹钟
+alarms.permission.footer | iOS 只会询问一次是否允许 Concierge Clock 响铃。
+alarms.permission.denied | Concierge Clock 的闹钟已被关闭，所以不会响铃。请在“设置”应用中打开。
+alarms.permission.openSettings | 打开“设置”
+editor.newTitle | 新闹钟
+editor.editTitle | 编辑闹钟
+editor.time | 时间
+editor.label | 标签（如：上班、健身）
+editor.repeat | 重复
+editor.repeatOnce | 响一次，在下一次到达这个时间时。
+editor.default | 默认（%@）
+editor.skipDaysOff | 休息日不响
+editor.skipDaysOffNeedsCalendar | 请在 设置 › 日历与提醒事项 中允许访问日历，以便识别休息日。
+editor.snoozeFooter | 在锁定屏幕上稍后提醒，会在这么多分钟后再次响铃。休息日指公共假日以及标题含有你的休息日词语的全天日程。
+editor.butler | 这个闹钟的管家
+editor.butlerFooter | “默认”跟随 设置 › 你的管家。语音简报将在第 2 阶段推出。
+editor.delete | 删除闹钟
+editor.deleteConfirm | 删除这个闹钟？它的早晨记录会保留在起床记录中。
+calendars.title | 日历与提醒事项
+calendars.calendars | 日历
+calendars.reminders | 提醒事项
+calendars.allow | 允许
+calendars.allowed | 已允许
+calendars.openSettings | 设置
+calendars.todayCount | 今天剩余日程
+calendars.privacy | 在这台 iPhone 上读取 iPhone 设置中的每个账户——iCloud、Google、Outlook、Exchange / Microsoft 365、Yahoo 等。Concierge Clock 从不登录这些账户，从不上传任何内容，也从不修改你的日程。
+calendars.addAccount | 添加 Google、Outlook 或其他账户
+calendars.addAccountFooter | 账户在 iPhone 自己的设置中添加，之后会自动出现在这里。可关闭不想用于简报和休息日判断的日历。
+calendars.accountCount | 账户：%d 个
+calendars.notConnected | 未连接
+calendars.connectPrompt | 连接你的日历：iPhone、Google、Outlook 等。
+calendars.connectedSummary | 账户：%1$d 个 · 今天剩余日程：%2$d 个
+calendars.kind.other | 其他账户
+calendars.kind.iphone | 我的 iPhone 上
+calendars.kind.subscribed | 已订阅
+calendars.kind.birthdays | 生日
+calendars.guide.intro | Concierge Clock 读取你的 iPhone 已同步的日历和提醒事项。要添加 Google 或 Outlook，只需在 iPhone 上添加一次账户，之后 Concierge Clock 就能离线读取。
+calendars.guide.stepsTitle | 步骤
+calendars.guide.step1 | 打开 iPhone 的“设置”应用。
+calendars.guide.step2 | 轻点“App”，然后“日历”，再轻点“日历账户”。
+calendars.guide.step3 | 轻点“添加账户”，选择 Google、Microsoft Exchange、Outlook.com 或 Yahoo。
+calendars.guide.step4 | 在服务商自己的页面登录，然后打开“日历”（如有“提醒事项”也一并打开）。
+calendars.guide.step5 | 回到这里：账户会出现在列表中。关闭不需要的日历。
+calendars.guide.which | 选择哪种账户
+calendars.guide.google | Gmail 和 Google Workspace 日历。
+calendars.guide.outlook | 个人 Microsoft 账户：选择 Outlook.com。
+calendars.guide.exchange | 工作或学校的 Microsoft 365 账户：选择 Microsoft Exchange。
+calendars.guide.icloud | 如果你使用 iCloud，它已在 iPhone 上。
+calendars.guide.outlookApp | 只保存在 Outlook 应用内的日历不会共享给其他应用。请按上面的步骤在 iPhone 设置中添加该账户。
+calendars.guide.googleTasks | Google Tasks 不会同步到 iPhone 的“提醒事项”，因此无法出现在简报中。Exchange 任务可以。
+widget.name | 下一个闹钟
+widget.description | 你的下一个 Concierge Clock 闹钟。
+widget.next | 下一个闹钟
+widget.none | 未设闹钟
+widget.today | 今天
+widget.tomorrow | 明天
+infoplist.alarmKit | Concierge Clock 会安排你的闹钟，即使应用已关闭、处于静音模式或专注模式也会响铃。
+infoplist.calendars | Concierge Clock 在这台 iPhone 上读取你的日历，为你介绍一天的安排，并在休息日跳过闹钟。不会上传或修改任何内容。
+infoplist.reminders | Concierge Clock 在这台 iPhone 上读取你的提醒事项，告诉你哪些到期，并且只在你要求时将其标记为完成。不会上传任何内容。

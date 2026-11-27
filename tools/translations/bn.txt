@@ -1,9 +1,11 @@
 common.settings | সেটিংস
 common.done | সম্পন্ন
 common.cancel | বাতিল
+common.save | সংরক্ষণ
 common.delete | মুছুন
 common.ok | ঠিক আছে
 common.add | যোগ করুন
+common.edit | সম্পাদনা
 settings.appearance | চেহারা
 settings.theme | থিম
 theme.system | সিস্টেম
@@ -177,14 +179,7 @@ export.file.wakeLog | জাগার লগ
 export.file.alarms | অ্যালার্ম
 alarms.count | অ্যালার্ম: %d
 alarms.empty.title | এখনো কোনো অ্যালার্ম নেই
-alarms.empty.message | আপনার অ্যালার্ম এখানে দেখা যাবে।
-alarms.soon.title | পরের আপডেটে আসছে
-alarms.soon.message | অ্যালার্ম আসবে ফেজ 1b-তে, iOS-এর নিজস্ব অ্যালার্ম সিস্টেমের উপর তৈরি, তাই সাইলেন্ট মোডে ও ফোকাসের সময়ও বাজবে।
-alarms.soon.ring | লক স্ক্রিন ও Dynamic Island-এ আসল অ্যালার্ম
-alarms.soon.repeat | পুনরাবৃত্তির দিন, লেবেল ও একবারের অ্যালার্ম
-alarms.soon.snooze | কণ্ঠ বা বোতামে স্নুজ, ডিফল্ট ৫ মিনিট
-alarms.soon.skip | পরের অ্যালার্ম বা ক্যালেন্ডারের ছুটির দিন বাদ দিন
-alarms.soon.widget | পরের অ্যালার্মের উইজেট
+alarms.empty.message | আপনার প্রথম অ্যালার্ম যোগ করুন। অ্যাপ বন্ধ থাকলেও, সাইলেন্ট মোডে ও ফোকাসের সময়ও এটি বাজে।
 concierge.greeting.morning | সুপ্রভাত।
 concierge.greeting.afternoon | শুভ অপরাহ্ন।
 concierge.greeting.evening | শুভ সন্ধ্যা।
@@ -314,3 +309,72 @@ accent.britishMale | ব্রিটিশ, পুরুষ
 accent.britishFemale | ব্রিটিশ, নারী
 accent.indianMale | ভারতীয়, পুরুষ
 accent.indianFemale | ভারতীয়, নারী
+alarm.defaultTitle | অ্যালার্ম
+alarm.stop | বন্ধ
+alarm.snooze | স্নুজ
+alarm.snoozing | %@ — স্নুজে
+alarms.add | অ্যালার্ম যোগ করুন
+alarms.footer | এই অ্যালার্মগুলো iOS নিজেই বাজায়, তাই Concierge Clock বন্ধ থাকলেও, সাইলেন্ট মোডে ও ফোকাসের সময়ও কাজ করে। পরের বাজনা বাদ দিতে অ্যালার্মে সোয়াইপ করুন।
+alarms.nextRing | পরের: %@
+alarms.skipped | পরের বাজনা বাদ দেওয়া হয়েছে
+alarms.skipNext | পরেরটি বাদ দিন
+alarms.unskip | বাদ দেবেন না
+alarms.permission.allow | অ্যালার্ম অনুমতি দিন
+alarms.permission.footer | Concierge Clock অ্যালার্ম বাজাতে পারবে কি না, iOS শুধু একবার জিজ্ঞেস করে।
+alarms.permission.denied | Concierge Clock-এর জন্য অ্যালার্ম বন্ধ, তাই কিছুই বাজবে না। সেটিংস অ্যাপে এগুলো চালু করুন।
+alarms.permission.openSettings | সেটিংস খুলুন
+editor.newTitle | নতুন অ্যালার্ম
+editor.editTitle | অ্যালার্ম সম্পাদনা
+editor.time | সময়
+editor.label | লেবেল (যেমন কাজ, জিম)
+editor.repeat | পুনরাবৃত্তি
+editor.repeatOnce | একবার বাজবে, পরের বার এই সময় এলে।
+editor.default | ডিফল্ট (%@)
+editor.skipDaysOff | ছুটির দিন বাদ দিন
+editor.skipDaysOffNeedsCalendar | ছুটির দিন খুঁজে পেতে সেটিংস › ক্যালেন্ডার ও রিমাইন্ডার-এ ক্যালেন্ডারের অনুমতি দিন।
+editor.snoozeFooter | লক স্ক্রিন থেকে স্নুজ করলে এত মিনিট পরে আবার বাজবে। ছুটির দিন মানে সরকারি ছুটি এবং আপনার ছুটির শব্দযুক্ত সারাদিনের ইভেন্ট।
+editor.butler | এই অ্যালার্মের জন্য আপনার কনসিয়ার্জ
+editor.butlerFooter | ডিফল্ট সেটিংস › আপনার কনসিয়ার্জ অনুসরণ করে। কণ্ঠে ব্রিফিং আসবে ফেজ 2-এ।
+editor.delete | অ্যালার্ম মুছুন
+editor.deleteConfirm | এই অ্যালার্ম মুছবেন? এর সকালগুলো জাগার লগে থেকে যাবে।
+calendars.title | ক্যালেন্ডার ও রিমাইন্ডার
+calendars.calendars | ক্যালেন্ডার
+calendars.reminders | রিমাইন্ডার
+calendars.allow | অনুমতি দিন
+calendars.allowed | অনুমতি আছে
+calendars.openSettings | সেটিংস
+calendars.todayCount | আজ বাকি ইভেন্ট
+calendars.privacy | iPhone-এর সেটিংসের প্রতিটি অ্যাকাউন্ট থেকে এই iPhone-এই পড়া হয় — iCloud, Google, Outlook, Exchange / Microsoft 365, Yahoo এবং আরও। Concierge Clock কখনো এগুলোতে সাইন ইন করে না, কিছু আপলোড করে না এবং আপনার ইভেন্ট কখনো বদলায় না।
+calendars.addAccount | Google, Outlook বা অন্য অ্যাকাউন্ট যোগ করুন
+calendars.addAccountFooter | অ্যাকাউন্ট iPhone-এর নিজস্ব সেটিংসে যোগ হয়, তারপর এখানে নিজে থেকেই দেখা যায়। ব্রিফিং ও ছুটির যাচাইয়ে যে ক্যালেন্ডার চান না, তা বন্ধ করুন।
+calendars.accountCount | অ্যাকাউন্ট: %d
+calendars.notConnected | সংযুক্ত নয়
+calendars.connectPrompt | আপনার ক্যালেন্ডার যুক্ত করুন: iPhone, Google, Outlook এবং আরও।
+calendars.connectedSummary | অ্যাকাউন্ট: %1$d · আজ বাকি ইভেন্ট: %2$d
+calendars.kind.other | অন্য অ্যাকাউন্ট
+calendars.kind.iphone | আমার iPhone-এ
+calendars.kind.subscribed | সাবস্ক্রাইব করা
+calendars.kind.birthdays | জন্মদিন
+calendars.guide.intro | আপনার iPhone আগে থেকেই যে ক্যালেন্ডার ও রিমাইন্ডার সিঙ্ক করে, Concierge Clock সেগুলোই পড়ে। Google বা Outlook যোগ করতে অ্যাকাউন্টটি একবার iPhone-এ যোগ করুন; তারপর Concierge Clock অফলাইনে সেটি পড়ে।
+calendars.guide.stepsTitle | ধাপ
+calendars.guide.step1 | iPhone-এর সেটিংস অ্যাপ খুলুন।
+calendars.guide.step2 | অ্যাপ, তারপর ক্যালেন্ডার, তারপর ক্যালেন্ডার অ্যাকাউন্টে ট্যাপ করুন।
+calendars.guide.step3 | অ্যাকাউন্ট যোগ করুন-এ ট্যাপ করে Google, Microsoft Exchange, Outlook.com বা Yahoo বেছে নিন।
+calendars.guide.step4 | প্রদানকারীর নিজস্ব স্ক্রিনে সাইন ইন করুন, তারপর ক্যালেন্ডার (আর রিমাইন্ডার, যদি থাকে) চালু করুন।
+calendars.guide.step5 | এখানে ফিরে আসুন: অ্যাকাউন্টটি তালিকায় দেখা যাবে। যে ক্যালেন্ডার লাগবে না, তা বন্ধ করুন।
+calendars.guide.which | কোন অ্যাকাউন্ট বেছে নেবেন
+calendars.guide.google | Gmail ও Google Workspace ক্যালেন্ডার।
+calendars.guide.outlook | ব্যক্তিগত Microsoft অ্যাকাউন্ট: Outlook.com বেছে নিন।
+calendars.guide.exchange | অফিস বা স্কুলের Microsoft 365 অ্যাকাউন্ট: Microsoft Exchange বেছে নিন।
+calendars.guide.icloud | আপনি iCloud ব্যবহার করলে এটি আগে থেকেই iPhone-এ আছে।
+calendars.guide.outlookApp | শুধু Outlook অ্যাপের ভেতরে রাখা ক্যালেন্ডার অন্য অ্যাপের সাথে শেয়ার হয় না। উপরের মতো iPhone-এর সেটিংসে অ্যাকাউন্টটি যোগ করুন।
+calendars.guide.googleTasks | Google Tasks iPhone-এর রিমাইন্ডারে সিঙ্ক হয় না, তাই ব্রিফিংয়ে আসতে পারে না। Exchange-এর কাজ আসতে পারে।
+widget.name | পরের অ্যালার্ম
+widget.description | আপনার পরের Concierge Clock অ্যালার্ম।
+widget.next | পরের অ্যালার্ম
+widget.none | কোনো অ্যালার্ম নেই
+widget.today | আজ
+widget.tomorrow | আগামীকাল
+infoplist.alarmKit | Concierge Clock আপনার অ্যালার্ম নির্ধারণ করে, যাতে অ্যাপ বন্ধ থাকলেও, সাইলেন্ট মোডে বা ফোকাসের সময়ও বাজে।
+infoplist.calendars | আপনার দিনের কথা জানাতে ও ছুটির দিনে অ্যালার্ম বাদ দিতে Concierge Clock এই iPhone-এ আপনার ক্যালেন্ডার পড়ে। কিছুই আপলোড বা পরিবর্তন হয় না।
+infoplist.reminders | কী বাকি আছে জানাতে Concierge Clock এই iPhone-এ আপনার রিমাইন্ডার পড়ে, আর আপনি বললে তবেই একটিকে সম্পন্ন চিহ্নিত করে। কিছুই আপলোড হয় না।

@@ -13,19 +13,57 @@
 		FA0000000000000000000B07 /* GGSModelCore in Frameworks */ = {isa = PBXBuildFile; productRef = FA0000000000000000000C07 /* GGSModelCore */; };
 		FA0000000000000000000B08 /* GGSModelKit in Frameworks */ = {isa = PBXBuildFile; productRef = FA0000000000000000000C08 /* GGSModelKit */; };
 		FA0000000000000000000B09 /* GGSModelUI in Frameworks */ = {isa = PBXBuildFile; productRef = FA0000000000000000000C09 /* GGSModelUI */; };
+		FA0000000000000000000B11 /* ConciergeCore in Frameworks */ = {isa = PBXBuildFile; productRef = FA0000000000000000000C11 /* ConciergeCore */; };
+		FA0000000000000000000B12 /* GGSBrand in Frameworks */ = {isa = PBXBuildFile; productRef = FA0000000000000000000C12 /* GGSBrand */; };
+		FA0000000000000000000B31 /* ConciergeClockWidgets.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = FA0000000000000000000F11 /* ConciergeClockWidgets.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FA0000000000000000009011 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FA0000000000000000004001 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FA0000000000000000007011;
+			remoteInfo = ConciergeClockWidgets;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		FA0000000000000000008001 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				FA0000000000000000000B31 /* ConciergeClockWidgets.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		FA0000000000000000000F01 /* ConciergeClock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ConciergeClock.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA0000000000000000000F02 /* ConciergeKit */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = ConciergeKit; path = Packages/ConciergeKit; sourceTree = "<group>"; };
 		FA0000000000000000000F03 /* GGSBrand */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = GGSBrand; path = Packages/GGSBrand; sourceTree = "<group>"; };
 		FA0000000000000000000F04 /* GGSModelKit */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = GGSModelKit; path = Packages/GGSModelKit; sourceTree = "<group>"; };
+		FA0000000000000000000F11 /* ConciergeClockWidgets.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ConciergeClockWidgets.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		FA0000000000000000000E01 /* ConciergeClock */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = ConciergeClock;
+			sourceTree = "<group>";
+		};
+		FA0000000000000000000E11 /* ConciergeClockWidgets */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = ConciergeClockWidgets;
+			sourceTree = "<group>";
+		};
+		FA0000000000000000000E21 /* Shared */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Shared;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -44,6 +82,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		FA0000000000000000000D11 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA0000000000000000000B11 /* ConciergeCore in Frameworks */,
+				FA0000000000000000000B12 /* GGSBrand in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -51,6 +98,8 @@
 			isa = PBXGroup;
 			children = (
 				FA0000000000000000000E01 /* ConciergeClock */,
+				FA0000000000000000000E11 /* ConciergeClockWidgets */,
+				FA0000000000000000000E21 /* Shared */,
 				FA0000000000000000000F02 /* ConciergeKit */,
 				FA0000000000000000000F03 /* GGSBrand */,
 				FA0000000000000000000F04 /* GGSModelKit */,
@@ -62,6 +111,7 @@
 			isa = PBXGroup;
 			children = (
 				FA0000000000000000000F01 /* ConciergeClock.app */,
+				FA0000000000000000000F11 /* ConciergeClockWidgets.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -76,13 +126,16 @@
 				FA0000000000000000002001 /* Sources */,
 				FA0000000000000000000D01 /* Frameworks */,
 				FA0000000000000000003001 /* Resources */,
+				FA0000000000000000008001 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				FA0000000000000000009111 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				FA0000000000000000000E01 /* ConciergeClock */,
+				FA0000000000000000000E21 /* Shared */,
 			);
 			name = ConciergeClock;
 			packageProductDependencies = (
@@ -97,6 +150,31 @@
 			productReference = FA0000000000000000000F01 /* ConciergeClock.app */;
 			productType = "com.apple.product-type.application";
 		};
+		FA0000000000000000007011 /* ConciergeClockWidgets */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FA0000000000000000001012 /* Build configuration list for PBXNativeTarget "ConciergeClockWidgets" */;
+			buildPhases = (
+				FA0000000000000000002011 /* Sources */,
+				FA0000000000000000000D11 /* Frameworks */,
+				FA0000000000000000003011 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				FA0000000000000000000E11 /* ConciergeClockWidgets */,
+				FA0000000000000000000E21 /* Shared */,
+			);
+			name = ConciergeClockWidgets;
+			packageProductDependencies = (
+				FA0000000000000000000C11 /* ConciergeCore */,
+				FA0000000000000000000C12 /* GGSBrand */,
+			);
+			productName = ConciergeClockWidgets;
+			productReference = FA0000000000000000000F11 /* ConciergeClockWidgets.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -108,6 +186,9 @@
 				LastUpgradeCheck = 2600;
 				TargetAttributes = {
 					FA0000000000000000000701 = {
+						CreatedOnToolsVersion = 26.0;
+					};
+					FA0000000000000000007011 = {
 						CreatedOnToolsVersion = 26.0;
 					};
 				};
@@ -142,12 +223,20 @@
 			projectRoot = "";
 			targets = (
 				FA0000000000000000000701 /* ConciergeClock */,
+				FA0000000000000000007011 /* ConciergeClockWidgets */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		FA0000000000000000003001 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FA0000000000000000003011 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -164,7 +253,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		FA0000000000000000002011 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FA0000000000000000009111 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FA0000000000000000007011 /* ConciergeClockWidgets */;
+			targetProxy = FA0000000000000000009011 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		FA0000000000000000005001 /* Debug */ = {
@@ -308,6 +412,66 @@
 			};
 			name = Release;
 		};
+		FA0000000000000000006011 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = Config/ConciergeClockWidgets.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Config/ConciergeClockWidgets-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Concierge Clock";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "© Greater Good Software";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.greatergoodsoftware.conciergeclock.widgets;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG WIDGET_EXTENSION $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_STRICT_CONCURRENCY = complete;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		FA0000000000000000006012 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = Config/ConciergeClockWidgets.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Config/ConciergeClockWidgets-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Concierge Clock";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "© Greater Good Software";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.greatergoodsoftware.conciergeclock.widgets;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "WIDGET_EXTENSION $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_STRICT_CONCURRENCY = complete;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -325,6 +489,15 @@
 			buildConfigurations = (
 				FA0000000000000000006001 /* Debug */,
 				FA0000000000000000006002 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FA0000000000000000001012 /* Build configuration list for PBXNativeTarget "ConciergeClockWidgets" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FA0000000000000000006011 /* Debug */,
+				FA0000000000000000006012 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -376,6 +549,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = FA0000000000000000007003 /* XCLocalSwiftPackageReference "Packages/GGSModelKit" */;
 			productName = GGSModelUI;
+		};
+		FA0000000000000000000C11 /* ConciergeCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FA0000000000000000007001 /* XCLocalSwiftPackageReference "Packages/ConciergeKit" */;
+			productName = ConciergeCore;
+		};
+		FA0000000000000000000C12 /* GGSBrand */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FA0000000000000000007002 /* XCLocalSwiftPackageReference "Packages/GGSBrand" */;
+			productName = GGSBrand;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

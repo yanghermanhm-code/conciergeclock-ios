@@ -17,3 +17,7 @@ extension WakeEvent: FetchableRecord, PersistableRecord {
 extension Recommendation: FetchableRecord, PersistableRecord {
     public static let databaseTableName = "recommendation"
 }
+
+extension AlarmOccurrence: FetchableRecord, PersistableRecord {
+    public static let databaseTableName = "alarmOccurrence"
+}

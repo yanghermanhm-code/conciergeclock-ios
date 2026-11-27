@@ -1,9 +1,11 @@
 common.settings | הגדרות
 common.done | סיום
 common.cancel | ביטול
+common.save | שמירה
 common.delete | מחיקה
 common.ok | אישור
 common.add | הוספה
+common.edit | עריכה
 settings.appearance | מראה
 settings.theme | ערכת נושא
 theme.system | מערכת
@@ -177,14 +179,7 @@ export.file.wakeLog | יומן השכמה
 export.file.alarms | שעונים מעוררים
 alarms.count | שעונים מעוררים: %d
 alarms.empty.title | עדיין אין שעונים מעוררים
-alarms.empty.message | השעונים המעוררים שלך יופיעו כאן.
-alarms.soon.title | בעדכון הבא
-alarms.soon.message | השעונים המעוררים מגיעים בשלב 1b, על גבי מערכת השעון המעורר של iOS עצמה, כך שהם מצלצלים גם במצב שקט ובזמן ריכוז.
-alarms.soon.ring | שעונים מעוררים אמיתיים במסך הנעילה וב‑Dynamic Island
-alarms.soon.repeat | ימי חזרה, תוויות ושעונים חד‑פעמיים
-alarms.soon.snooze | נודניק בקול או בכפתור, 5 דקות כברירת מחדל
-alarms.soon.skip | דילוג על השעון הבא, או על ימי חופש ביומן
-alarms.soon.widget | וידג׳טים של השעון הבא
+alarms.empty.message | הוסף/י את השעון המעורר הראשון. הוא מצלצל גם כשהיישום סגור, במצב שקט ובזמן ריכוז.
 concierge.greeting.morning | בוקר טוב.
 concierge.greeting.afternoon | צהריים טובים.
 concierge.greeting.evening | ערב טוב.
@@ -314,3 +309,72 @@ accent.britishMale | בריטי, גבר
 accent.britishFemale | בריטית, אישה
 accent.indianMale | הודי, גבר
 accent.indianFemale | הודית, אישה
+alarm.defaultTitle | שעון מעורר
+alarm.stop | עצירה
+alarm.snooze | נודניק
+alarm.snoozing | %@ — בנודניק
+alarms.add | הוספת שעון מעורר
+alarms.footer | iOS עצמו מצלצל בשעונים האלה, ולכן הם פועלים גם כש‑Concierge Clock סגור, במצב שקט ובזמן ריכוז. החלק/י שעון כדי לדלג על הצלצול הבא.
+alarms.nextRing | הבא: %@
+alarms.skipped | הצלצול הבא ידולג
+alarms.skipNext | דילוג על הבא
+alarms.unskip | לא לדלג
+alarms.permission.allow | אישור שעונים מעוררים
+alarms.permission.footer | iOS שואל פעם אחת אם Concierge Clock רשאי לצלצל.
+alarms.permission.denied | השעונים המעוררים כבויים עבור Concierge Clock, כך ששום דבר לא יצלצל. הפעל/י אותם ביישום ״הגדרות״.
+alarms.permission.openSettings | פתיחת ״הגדרות״
+editor.newTitle | שעון מעורר חדש
+editor.editTitle | עריכת שעון מעורר
+editor.time | שעה
+editor.label | תווית (למשל עבודה, כושר)
+editor.repeat | חזרה
+editor.repeatOnce | מצלצל פעם אחת, בפעם הבאה שהשעה הזו מגיעה.
+editor.default | ברירת מחדל (%@)
+editor.skipDaysOff | לדלג על ימי חופש
+editor.skipDaysOffNeedsCalendar | אשר/י גישה ליומן בהגדרות › יומנים ותזכורות כדי שאפשר יהיה למצוא ימי חופש.
+editor.snoozeFooter | נודניק ממסך הנעילה מצלצל שוב אחרי מספר הדקות הזה. ימי חופש הם חגים ואירועים של יום שלם שמכילים את מילות החופש שלך.
+editor.butler | הקונסיירז׳ לשעון הזה
+editor.butlerFooter | ברירת המחדל לפי הגדרות › הקונסיירז׳ שלך. תדריכים מדוברים מגיעים בשלב 2.
+editor.delete | מחיקת השעון
+editor.deleteConfirm | למחוק את השעון המעורר? הבקרים שלו נשארים ביומן ההשכמה.
+calendars.title | יומנים ותזכורות
+calendars.calendars | יומנים
+calendars.reminders | תזכורות
+calendars.allow | אישור
+calendars.allowed | מאושר
+calendars.openSettings | הגדרות
+calendars.todayCount | אירועים שנותרו היום
+calendars.privacy | נקראים ב‑iPhone הזה מכל חשבון בהגדרות ה‑iPhone — iCloud,‏ Google,‏ Outlook,‏ Exchange / Microsoft 365,‏ Yahoo ועוד. Concierge Clock לעולם לא מתחבר אליהם, לא מעלה דבר ולא משנה את האירועים שלך.
+calendars.addAccount | הוספת Google,‏ Outlook או חשבון אחר
+calendars.addAccountFooter | חשבונות מוסיפים בהגדרות של ה‑iPhone, ואז הם מופיעים כאן מעצמם. כבה/י כל יומן שלא תרצה/י בתדריכים ובבדיקת ימי החופש.
+calendars.accountCount | חשבונות: %d
+calendars.notConnected | לא מחובר
+calendars.connectPrompt | חבר/י את היומנים שלך: iPhone,‏ Google,‏ Outlook ועוד.
+calendars.connectedSummary | חשבונות: %1$d · אירועים שנותרו היום: %2$d
+calendars.kind.other | חשבון אחר
+calendars.kind.iphone | ב‑iPhone שלי
+calendars.kind.subscribed | מנויים
+calendars.kind.birthdays | ימי הולדת
+calendars.guide.intro | Concierge Clock קורא את היומנים והתזכורות שה‑iPhone שלך כבר מסנכרן. כדי להוסיף Google או Outlook, הוסף/י את החשבון ל‑iPhone פעם אחת; אחר כך Concierge Clock קורא אותו, בלי חיבור לרשת.
+calendars.guide.stepsTitle | שלבים
+calendars.guide.step1 | פתח/י את יישום ״הגדרות״ ב‑iPhone.
+calendars.guide.step2 | הקש/י על ״יישומים״, אחר כך ״לוח שנה״, ואז ״חשבונות לוח שנה״.
+calendars.guide.step3 | הקש/י על ״הוסף חשבון״ ובחר/י Google,‏ Microsoft Exchange,‏ Outlook.com או Yahoo.
+calendars.guide.step4 | התחבר/י במסך של הספק עצמו, ואז הפעל/י ״לוחות שנה״ (וגם ״תזכורות״ אם מוצע).
+calendars.guide.step5 | חזור/חזרי לכאן: החשבון יופיע ברשימה. כבה/י יומנים שאינך צריך/ה.
+calendars.guide.which | איזה חשבון לבחור
+calendars.guide.google | יומני Gmail ו‑Google Workspace.
+calendars.guide.outlook | חשבונות Microsoft אישיים: בחר/י Outlook.com.
+calendars.guide.exchange | חשבונות Microsoft 365 של עבודה או לימודים: בחר/י Microsoft Exchange.
+calendars.guide.icloud | כבר נמצא ב‑iPhone אם את/ה משתמש/ת ב‑iCloud.
+calendars.guide.outlookApp | יומנים שנשמרים רק בתוך יישום Outlook אינם משותפים עם יישומים אחרים. הוסף/י את החשבון בהגדרות ה‑iPhone כמתואר למעלה.
+calendars.guide.googleTasks | ‏Google Tasks לא מסתנכרן עם תזכורות ה‑iPhone, ולכן אינו יכול להופיע בתדריכים. משימות Exchange כן.
+widget.name | השעון המעורר הבא
+widget.description | השעון המעורר הבא שלך ב‑Concierge Clock.
+widget.next | השעון המעורר הבא
+widget.none | אין שעון מעורר
+widget.today | היום
+widget.tomorrow | מחר
+infoplist.alarmKit | ‏Concierge Clock מתזמן את השעונים המעוררים כדי שיצלצלו גם כשהיישום סגור, במצב שקט או בזמן ריכוז.
+infoplist.calendars | ‏Concierge Clock קורא את היומנים שלך ב‑iPhone הזה כדי לספר לך על היום ולדלג על שעונים בימי חופש. שום דבר לא מועלה או משתנה.
+infoplist.reminders | ‏Concierge Clock קורא את התזכורות שלך ב‑iPhone הזה כדי לומר מה הגיע מועדו, ומסמן תזכורת כבוצעה רק כשתבקש/י. שום דבר לא מועלה.

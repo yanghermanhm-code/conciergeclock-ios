@@ -1,9 +1,11 @@
 common.settings | Ajustes
 common.done | OK
 common.cancel | Cancelar
+common.save | Salvar
 common.delete | Apagar
 common.ok | OK
 common.add | Adicionar
+common.edit | Editar
 settings.appearance | Aparência
 settings.theme | Tema
 theme.system | Sistema
@@ -177,14 +179,7 @@ export.file.wakeLog | Registro de despertares
 export.file.alarms | Alarmes
 alarms.count | Alarmes: %d
 alarms.empty.title | Nenhum alarme ainda
-alarms.empty.message | Seus alarmes aparecerão aqui.
-alarms.soon.title | Na próxima atualização
-alarms.soon.message | Os alarmes chegam na fase 1b, usando o próprio sistema de alarmes do iOS, então tocam mesmo no modo silencioso e durante um Foco.
-alarms.soon.ring | Alarmes de verdade na tela bloqueada e na Dynamic Island
-alarms.soon.repeat | Dias de repetição, rótulos e alarmes únicos
-alarms.soon.snooze | Soneca por voz ou botão, 5 minutos por padrão
-alarms.soon.skip | Pular o próximo alarme ou as folgas da sua agenda
-alarms.soon.widget | Widgets do próximo alarme
+alarms.empty.message | Adicione seu primeiro alarme. Ele toca mesmo com o app fechado, no modo silencioso e durante um Foco.
 concierge.greeting.morning | Bom dia.
 concierge.greeting.afternoon | Boa tarde.
 concierge.greeting.evening | Boa noite.
@@ -314,3 +309,72 @@ accent.britishMale | Britânico, masculino
 accent.britishFemale | Britânica, feminino
 accent.indianMale | Indiano, masculino
 accent.indianFemale | Indiana, feminino
+alarm.defaultTitle | Alarme
+alarm.stop | Parar
+alarm.snooze | Soneca
+alarm.snoozing | %@ — em soneca
+alarms.add | Adicionar alarme
+alarms.footer | Quem toca estes alarmes é o próprio iOS, então eles funcionam com o Concierge Clock fechado, no modo silencioso e durante um Foco. Deslize um alarme para pular o próximo toque.
+alarms.nextRing | Próximo: %@
+alarms.skipped | Próximo toque pulado
+alarms.skipNext | Pular o próximo
+alarms.unskip | Não pular
+alarms.permission.allow | Permitir alarmes
+alarms.permission.footer | O iOS pergunta uma única vez se o Concierge Clock pode tocar alarmes.
+alarms.permission.denied | Os alarmes estão desativados para o Concierge Clock, então nada vai tocar. Ative-os no app Ajustes.
+alarms.permission.openSettings | Abrir Ajustes
+editor.newTitle | Novo alarme
+editor.editTitle | Editar alarme
+editor.time | Hora
+editor.label | Rótulo (ex.: Trabalho, Academia)
+editor.repeat | Repetir
+editor.repeatOnce | Toca uma vez, na próxima vez que este horário chegar.
+editor.default | Padrão (%@)
+editor.skipDaysOff | Pular folgas
+editor.skipDaysOffNeedsCalendar | Permita o acesso à agenda em Ajustes › Agendas e lembretes para encontrar as folgas.
+editor.snoozeFooter | A soneca na tela bloqueada toca de novo após estes minutos. Folgas são feriados e eventos de dia inteiro com suas palavras de folga.
+editor.butler | Seu concierge para este alarme
+editor.butlerFooter | Padrão segue Ajustes › Seu concierge. Os resumos falados chegam na fase 2.
+editor.delete | Apagar alarme
+editor.deleteConfirm | Apagar este alarme? As manhãs dele continuam no seu registro de despertares.
+calendars.title | Agendas e lembretes
+calendars.calendars | Agendas
+calendars.reminders | Lembretes
+calendars.allow | Permitir
+calendars.allowed | Permitido
+calendars.openSettings | Ajustes
+calendars.todayCount | Eventos restantes hoje
+calendars.privacy | Lidos neste iPhone a partir de cada conta dos ajustes do iPhone — iCloud, Google, Outlook, Exchange / Microsoft 365, Yahoo e outras. O Concierge Clock nunca entra nessas contas, nunca envia nada e nunca altera seus eventos.
+calendars.addAccount | Adicionar Google, Outlook ou outra conta
+calendars.addAccountFooter | As contas são adicionadas nos ajustes do iPhone e depois aparecem aqui sozinhas. Desligue as agendas que não quiser nos resumos nem nas folgas.
+calendars.accountCount | Contas: %d
+calendars.notConnected | Não conectado
+calendars.connectPrompt | Conecte suas agendas: iPhone, Google, Outlook e mais.
+calendars.connectedSummary | Contas: %1$d · eventos restantes hoje: %2$d
+calendars.kind.other | Outra conta
+calendars.kind.iphone | No meu iPhone
+calendars.kind.subscribed | Assinadas
+calendars.kind.birthdays | Aniversários
+calendars.guide.intro | O Concierge Clock lê as agendas e lembretes que seu iPhone já sincroniza. Para Google ou Outlook, adicione a conta ao iPhone uma vez; depois o Concierge Clock a lê, offline.
+calendars.guide.stepsTitle | Passos
+calendars.guide.step1 | Abra o app Ajustes do iPhone.
+calendars.guide.step2 | Toque em Apps, depois em Calendário e depois em Contas de Calendário.
+calendars.guide.step3 | Toque em Adicionar Conta e escolha Google, Microsoft Exchange, Outlook.com ou Yahoo.
+calendars.guide.step4 | Entre na tela do próprio provedor e ative Agendas (e Lembretes, se aparecer).
+calendars.guide.step5 | Volte aqui: a conta aparece na lista. Desligue as agendas de que não precisa.
+calendars.guide.which | Qual conta escolher
+calendars.guide.google | Agendas do Gmail e do Google Workspace.
+calendars.guide.outlook | Contas pessoais da Microsoft: escolha Outlook.com.
+calendars.guide.exchange | Contas Microsoft 365 do trabalho ou da escola: escolha Microsoft Exchange.
+calendars.guide.icloud | Já está no seu iPhone se você usa o iCloud.
+calendars.guide.outlookApp | Agendas guardadas só dentro do app Outlook não são compartilhadas com outros apps. Adicione a conta nos ajustes do iPhone como acima.
+calendars.guide.googleTasks | O Google Tasks não sincroniza com os Lembretes do iPhone, então não aparece nos resumos. Tarefas do Exchange aparecem.
+widget.name | Próximo alarme
+widget.description | Seu próximo alarme do Concierge Clock.
+widget.next | Próximo alarme
+widget.none | Nenhum alarme
+widget.today | Hoje
+widget.tomorrow | Amanhã
+infoplist.alarmKit | O Concierge Clock agenda seus alarmes para que toquem mesmo com o app fechado, no modo silencioso ou durante um Foco.
+infoplist.calendars | O Concierge Clock lê suas agendas neste iPhone para falar do seu dia e pular alarmes nas folgas. Nada é enviado nem alterado.
+infoplist.reminders | O Concierge Clock lê seus lembretes neste iPhone para dizer o que vence, e só marca um como feito quando você pede. Nada é enviado.

@@ -17,6 +17,7 @@ struct ConciergeView: View {
             VStack(spacing: 16) {
                 greeting(persona)
                 nextAlarmCard
+                calendarsCard
                 offlineAICard
                 ComingSoonCard(
                     systemImage: "text.bubble",
@@ -137,6 +138,44 @@ struct ConciergeView: View {
         }
         .cardStyle()
         .accessibilityElement(children: .combine)
+    }
+
+    /// Which calendars the concierge reads, with a way to connect more (Google, Outlook…).
+    private var calendarsCard: some View {
+        let calendars = model.calendars
+        return NavigationLink {
+            CalendarAccountsView()
+        } label: {
+            HStack(spacing: 14) {
+                Image(systemName: "calendar")
+                    .font(.title2)
+                    .foregroundStyle(ConciergeStyle.brass)
+                    .frame(width: 32)
+                    .accessibilityHidden(true)
+                VStack(alignment: .leading, spacing: 2) {
+                    Text(l10n["calendars.title"])
+                        .font(.caption.weight(.semibold))
+                        .foregroundStyle(Theme.textSecondary)
+                    if calendars.eventAccess == .granted {
+                        Text(l10n("calendars.connectedSummary", calendars.calendarAccounts.count,
+                                  calendars.eventCountToday(excluding: Set(model.settings.settings.excludedCalendarIDs)) ?? 0))
+                            .font(.subheadline)
+                            .foregroundStyle(Theme.textPrimary)
+                    } else {
+                        Text(l10n["calendars.connectPrompt"])
+                            .font(.subheadline)
+                            .foregroundStyle(Theme.textPrimary)
+                    }
+                }
+                Spacer()
+                Image(systemName: "chevron.forward")
+                    .font(.footnote.weight(.semibold))
+                    .foregroundStyle(Theme.textSecondary)
+            }
+            .cardStyle()
+        }
+        .buttonStyle(.plain)
+        .accessibilityIdentifier("concierge.calendars")
     }
 
     private var offlineAICard: some View {

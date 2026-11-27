@@ -19,6 +19,10 @@ final class AppModel {
     let alarms: AlarmStore
     let wakeLog: WakeLogStore
     let backups: BackupService
+    /// The iPhone's calendars and reminders (every account in iOS Settings).
+    let calendars: CalendarService
+    /// AlarmKit: real alarms, snooze, the wake log written by each ring, widgets.
+    let scheduler: AlarmScheduler
     /// The offline AI model (Gemma): download, choice and engine. Shared with Greater Good
     /// Software's other apps.
     let models: ModelService
@@ -41,6 +45,9 @@ final class AppModel {
         self.wakeLog = WakeLogStore(database: database)
         self.backups = BackupService(database: database)
         self.models = ModelService(settings: settings)
+        let calendars = CalendarService()
+        self.calendars = calendars
+        self.scheduler = AlarmScheduler(database: database, settings: settings, calendars: calendars)
     }
 
     /// The app's real database (Application Support, never purged by iOS).
@@ -57,11 +64,14 @@ final class AppModel {
     /// Starts observing the database. Safe to call more than once.
     func start() {
         guard alarmsTask == nil else { return }
+        scheduler.startObservingSystemAlarms()
         let alarmStore = alarms
         alarmsTask = Task { [weak self] in
             do {
                 for try await list in alarmStore.observeAlarms() {
                     self?.alarmList = list
+                    // Every change to an alarm re-plans what AlarmKit rings.
+                    self?.scheduler.setNeedsReconcile()
                 }
             } catch {
                 self?.alertMessage = error.localizedDescription
@@ -84,17 +94,70 @@ final class AppModel {
         settings.settings.persona()
     }
 
-    /// The next alarm to ring and when, or nil.
+    /// The next alarm to ring and when (days off and skips included), or nil.
     func nextAlarm(after now: Date = Date()) -> (alarm: Alarm, date: Date)? {
-        alarmList
+        if let ring = scheduler.upcoming.first(where: { $0.fireDate > now }),
+           let alarm = alarmList.first(where: { $0.id == ring.alarmID }) {
+            return (alarm, ring.fireDate)
+        }
+        return alarmList
             .compactMap { alarm in alarm.nextFireDate(after: now).map { (alarm: alarm, date: $0) } }
             .min { $0.date < $1.date }
+    }
+
+    // MARK: Alarms
+
+    /// Saves an alarm. The first time, asks for permission to schedule alarms.
+    func save(_ alarm: Alarm) {
+        do {
+            try alarms.save(alarm)
+        } catch {
+            alertMessage = error.localizedDescription
+            return
+        }
+        Haptics.success(enabled: settings.settings.hapticsEnabled)
+        if scheduler.authorization == .notDetermined {
+            Task { await scheduler.requestAuthorization() }
+        }
+    }
+
+    func delete(_ alarm: Alarm) {
+        do {
+            try alarms.delete(id: alarm.id)
+        } catch {
+            alertMessage = error.localizedDescription
+        }
+    }
+
+    func setEnabled(_ enabled: Bool, for alarm: Alarm) {
+        var changed = alarm
+        changed.isEnabled = enabled
+        if enabled { changed.skipDay = nil }
+        save(changed)
+    }
+
+    /// Skips only the next ring (or undoes the skip).
+    func toggleSkipNext(_ alarm: Alarm) {
+        var changed = alarm
+        if changed.skipDay != nil {
+            changed.skipDay = nil
+        } else if let next = nextRing(of: alarm) {
+            changed.skipDay = DayKey(next)
+        }
+        save(changed)
+    }
+
+    /// The next ring of one alarm, with days off applied.
+    func nextRing(of alarm: Alarm, after now: Date = Date()) -> Date? {
+        scheduler.upcoming.first { $0.alarmID == alarm.id && $0.fireDate > now }?.fireDate ?? alarm.nextFireDate(after: now)
     }
 
     // MARK: Lifecycle
 
     func didBecomeActive() {
         models.refresh()
+        calendars.refresh()
+        scheduler.setNeedsReconcile()
         backups.autoBackupIfDue(settings: settings)
     }
 
@@ -105,6 +168,7 @@ final class AppModel {
     /// After a backup was restored: reload settings and go back to the first tab.
     func didRestoreBackup() {
         settings.reload()
+        scheduler.setNeedsReconcile()
         selectedTab = .concierge
         Haptics.success(enabled: settings.settings.hapticsEnabled)
     }

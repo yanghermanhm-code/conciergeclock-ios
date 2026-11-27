@@ -22,6 +22,7 @@ SPEC = re.compile(r"%(?:(\d+)\$)?([@dfs])")
 CODE_KEY = re.compile(r'(?:l10n|self|strings)(?:\[|\()"([A-Za-z0-9_.]+)"')
 # App extensions get their own Localizable.strings with the keys under their prefix.
 EXTENSIONS = {
+    ROOT / "ConciergeClockWidgets": "widget.",
     # The offline AI setup guide shared by all Greater Good Software apps (GGSModelKit).
     ROOT / "Packages" / "GGSModelKit" / "Sources" / "GGSModelUI" / "Resources": "guide.",
 }
@@ -48,9 +49,12 @@ def placeholders(value):
     return sorted((int(pos) if pos else i + 1, kind) for i, (pos, kind) in enumerate(found))
 
 # Info.plist permission texts (see Config/Info.plist) and the translation key for each.
-# Phase 1a asks for no permissions; Calendars, Reminders, Microphone, Speech Recognition and
-# Health texts are added with the phases that use them.
-INFO_PLIST_KEYS = []
+# Microphone, Speech Recognition and Health texts are added with the phases that use them.
+INFO_PLIST_KEYS = [
+    ("NSAlarmKitUsageDescription", "infoplist.alarmKit"),
+    ("NSCalendarsFullAccessUsageDescription", "infoplist.calendars"),
+    ("NSRemindersFullAccessUsageDescription", "infoplist.reminders"),
+]
 
 def escape(value):
     return value.replace('"', '\\"')
@@ -59,7 +63,7 @@ reference = load(SRC / "en.txt")
 errors = []
 
 used = set()
-for folder in [OUT, *EXTENSIONS]:
+for folder in [OUT, ROOT / "Shared", *EXTENSIONS]:
     for swift in folder.rglob("*.swift"):
         used.update(CODE_KEY.findall(swift.read_text(encoding="utf-8")))
 # A key ending in "." is a prefix joined at runtime (e.g. "tool." + name).

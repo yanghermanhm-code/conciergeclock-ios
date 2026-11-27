@@ -2,70 +2,173 @@ import ConciergeCore
 import GGSBrand
 import SwiftUI
 
-/// Alarms tab. Phase 1a shows what is coming; Phase 1b adds the alarm list, the editor and
-/// real AlarmKit alarms that ring through silent mode and Focus.
+/// Alarms tab: every alarm with its next ring, on/off switches, skip next, add and edit.
+/// The alarms themselves are rung by iOS (AlarmKit), so they work with the app closed, in
+/// silent mode and during Focus.
 struct AlarmsView: View {
     @Environment(AppModel.self) private var model
     @Environment(\.l10n) private var l10n
+    @State private var editing: Alarm?
 
     var body: some View {
-        ScrollView {
-            VStack(spacing: 16) {
-                if model.alarmList.isEmpty {
+        List {
+            permissionSection
+            if model.alarmList.isEmpty {
+                Section {
                     ContentUnavailableView {
                         Label(l10n["alarms.empty.title"], systemImage: "alarm")
                     } description: {
                         Text(l10n["alarms.empty.message"])
-                    }
-                    .padding(.top, 12)
-                } else {
-                    Text(l10n("alarms.count", model.alarmList.count))
-                        .font(.subheadline)
-                        .foregroundStyle(Theme.textSecondary)
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                    ForEach(model.alarmList) { alarm in
-                        AlarmSummaryRow(alarm: alarm)
+                    } actions: {
+                        Button(l10n["alarms.add"]) { editing = newAlarm() }
+                            .buttonStyle(.borderedProminent)
                     }
                 }
-                ComingSoonCard(
-                    systemImage: "alarm.waves.left.and.right",
-                    title: l10n["alarms.soon.title"],
-                    message: l10n["alarms.soon.message"],
-                    items: [
-                        l10n["alarms.soon.ring"],
-                        l10n["alarms.soon.repeat"],
-                        l10n["alarms.soon.snooze"],
-                        l10n["alarms.soon.skip"],
-                        l10n["alarms.soon.widget"],
-                    ]
-                )
+                .listRowBackground(Color.clear)
+            } else {
+                Section {
+                    ForEach(model.alarmList) { alarm in
+                        AlarmRow(alarm: alarm) { editing = alarm }
+                            .swipeActions(edge: .trailing) {
+                                Button(role: .destructive) {
+                                    model.delete(alarm)
+                                } label: {
+                                    Label(l10n["common.delete"], systemImage: "trash")
+                                }
+                                Button {
+                                    model.toggleSkipNext(alarm)
+                                } label: {
+                                    Label(alarm.skipDay == nil ? l10n["alarms.skipNext"] : l10n["alarms.unskip"], systemImage: "forward.end")
+                                }
+                                .tint(.orange)
+                            }
+                            .contextMenu {
+                                Button {
+                                    model.toggleSkipNext(alarm)
+                                } label: {
+                                    Label(alarm.skipDay == nil ? l10n["alarms.skipNext"] : l10n["alarms.unskip"], systemImage: "forward.end")
+                                }
+                                Button(role: .destructive) {
+                                    model.delete(alarm)
+                                } label: {
+                                    Label(l10n["common.delete"], systemImage: "trash")
+                                }
+                            }
+                    }
+                } footer: {
+                    Text(l10n["alarms.footer"])
+                }
             }
-            .padding(.horizontal, 20)
-            .padding(.vertical, 12)
         }
+        .scrollContentBackground(.hidden)
         .background(Theme.background)
+        .safeAreaInset(edge: .bottom) {
+            if !model.alarmList.isEmpty {
+                Button {
+                    editing = newAlarm()
+                } label: {
+                    Label(l10n["alarms.add"], systemImage: "plus")
+                        .frame(maxWidth: .infinity)
+                }
+                .buttonStyle(.borderedProminent)
+                .controlSize(.large)
+                .padding(.horizontal, 20)
+                .padding(.bottom, 8)
+                .accessibilityIdentifier("alarms.add")
+            }
+        }
+        .sheet(item: $editing) { alarm in
+            AlarmEditorView(alarm: alarm, isNew: !model.alarmList.contains { $0.id == alarm.id })
+        }
+    }
+
+    @ViewBuilder
+    private var permissionSection: some View {
+        switch model.scheduler.authorization {
+        case .denied:
+            Section {
+                Label(l10n["alarms.permission.denied"], systemImage: "exclamationmark.triangle.fill")
+                    .foregroundStyle(.orange)
+                Button(l10n["alarms.permission.openSettings"]) {
+                    if let url = URL(string: UIApplication.openSettingsURLString) {
+                        UIApplication.shared.open(url)
+                    }
+                }
+            }
+        case .notDetermined where !model.alarmList.isEmpty:
+            Section {
+                Button(l10n["alarms.permission.allow"]) {
+                    Task { await model.scheduler.requestAuthorization() }
+                }
+            } footer: {
+                Text(l10n["alarms.permission.footer"])
+            }
+        default:
+            if let error = model.scheduler.lastError {
+                Section {
+                    Label(error, systemImage: "exclamationmark.triangle")
+                        .foregroundStyle(.orange)
+                        .font(.footnote)
+                }
+            }
+        }
+    }
+
+    /// A new alarm at the next round half hour, on weekdays.
+    private func newAlarm() -> Alarm {
+        let parts = Calendar.current.dateComponents([.hour, .minute], from: Date().addingTimeInterval(30 * 60))
+        let minute = (parts.minute ?? 0) < 30 ? 30 : 0
+        let hour = minute == 0 ? ((parts.hour ?? 7) + 1) % 24 : (parts.hour ?? 7)
+        return Alarm(hour: hour, minute: minute, repeatDays: Weekdays.workWeek)
     }
 }
 
-/// One alarm: time, label and repeat days (read-only until the editor arrives in Phase 1b).
-private struct AlarmSummaryRow: View {
+/// One alarm: time, label, repeat days, next ring, and its switch.
+private struct AlarmRow: View {
     let alarm: Alarm
+    let onEdit: () -> Void
+    @Environment(AppModel.self) private var model
     @Environment(\.l10n) private var l10n
 
     var body: some View {
         let time = Calendar.current.date(bySettingHour: alarm.hour, minute: alarm.minute, second: 0, of: Date()) ?? Date()
-        HStack {
-            VStack(alignment: .leading, spacing: 4) {
-                Text(l10n.time(time))
-                    .font(.system(.largeTitle, design: .rounded, weight: .semibold).monospacedDigit())
-                    .foregroundStyle(alarm.isEnabled ? Theme.textPrimary : Theme.textSecondary)
-                Text([alarm.label.nonBlank, l10n.repeatText(alarm.repeatDays)].compactMap { $0 }.joined(separator: " · "))
-                    .font(.subheadline)
-                    .foregroundStyle(Theme.textSecondary)
+        HStack(alignment: .center, spacing: 12) {
+            Button(action: onEdit) {
+                VStack(alignment: .leading, spacing: 4) {
+                    Text(l10n.time(time))
+                        .font(.system(.largeTitle, design: .rounded, weight: .semibold).monospacedDigit())
+                        .foregroundStyle(alarm.isEnabled ? Theme.textPrimary : Theme.textSecondary)
+                    Text([alarm.label.nonBlank, l10n.repeatText(alarm.repeatDays)].compactMap { $0 }.joined(separator: " · "))
+                        .font(.subheadline)
+                        .foregroundStyle(Theme.textSecondary)
+                    if alarm.isEnabled {
+                        nextRingLine
+                    }
+                }
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .contentShape(Rectangle())
             }
-            Spacer()
+            .buttonStyle(.plain)
+            Toggle(isOn: Binding(get: { alarm.isEnabled }, set: { model.setEnabled($0, for: alarm) })) {
+                Text(l10n.time(time))
+            }
+            .labelsHidden()
         }
-        .cardStyle()
+        .padding(.vertical, 4)
         .accessibilityElement(children: .combine)
+        .accessibilityAction(named: l10n["common.edit"], onEdit)
+    }
+
+    @ViewBuilder
+    private var nextRingLine: some View {
+        if alarm.skipDay != nil {
+            Label(l10n["alarms.skipped"], systemImage: "forward.end")
+                .font(.caption)
+                .foregroundStyle(.orange)
+        } else if let next = model.nextRing(of: alarm) {
+            Label(l10n("alarms.nextRing", l10n.dateTime(next)), systemImage: "bell")
+                .font(.caption)
+                .foregroundStyle(ConciergeStyle.tint)
+        }
     }
 }

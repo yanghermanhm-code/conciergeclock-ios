@@ -114,3 +114,85 @@ public struct RecommendationStore: Sendable {
         try database.writer.write { db in try recommendation.save(db) }
     }
 }
+
+/// Rings handed to AlarmKit (this iPhone only) and their outcome.
+public struct OccurrenceStore: Sendable {
+    public let database: AppDatabase
+
+    public init(database: AppDatabase) {
+        self.database = database
+    }
+
+    public func occurrence(id: RecordID) throws -> AlarmOccurrence? {
+        try database.writer.read { db in try AlarmOccurrence.fetchOne(db, key: id) }
+    }
+
+    /// Rings still waiting for an outcome, earliest first.
+    public func scheduled() throws -> [AlarmOccurrence] {
+        try database.writer.read { db in
+            try AlarmOccurrence
+                .filter(Column("status") == OccurrenceStatus.scheduled.rawValue)
+                .order(Column("scheduledAt"))
+                .fetchAll(db)
+        }
+    }
+
+    /// Records a ring as scheduled (no change if it is already known).
+    public func insertIfNew(_ occurrence: AlarmOccurrence) throws {
+        try database.writer.write { db in
+            if try AlarmOccurrence.fetchOne(db, key: occurrence.id) == nil {
+                try occurrence.insert(db)
+            }
+        }
+    }
+
+    public func setStatus(_ status: OccurrenceStatus, id: RecordID, at now: Date = Date()) throws {
+        try database.writer.write { db in
+            guard var occurrence = try AlarmOccurrence.fetchOne(db, key: id) else { return }
+            occurrence.status = status
+            occurrence.updatedAt = now
+            try occurrence.update(db)
+        }
+    }
+
+    /// Counts one Snooze tap.
+    public func addSnooze(id: RecordID, at now: Date = Date()) throws {
+        try database.writer.write { db in
+            guard var occurrence = try AlarmOccurrence.fetchOne(db, key: id), occurrence.status == .scheduled else { return }
+            occurrence.snoozeCount += 1
+            occurrence.updatedAt = now
+            try occurrence.update(db)
+        }
+    }
+
+    /// Writes the wake log entry for a ring and marks it finished (or missed), in one
+    /// transaction. Does nothing if the ring already has an outcome, so a Stop reported twice
+    /// is logged once.
+    @discardableResult
+    public func finish(
+        id: RecordID, stoppedAt: Date?, method: DismissMethod, rules: WakeScoreRules, now: Date = Date()
+    ) throws -> WakeEvent? {
+        try database.writer.write { db in
+            guard var occurrence = try AlarmOccurrence.fetchOne(db, key: id), occurrence.status == .scheduled else { return nil }
+            let alarm = try Alarm.fetchOne(db, key: occurrence.alarmID)
+            let event = occurrence.wakeEvent(alarm: alarm, stoppedAt: stoppedAt, method: method, rules: rules, now: now)
+            if try WakeEvent.fetchOne(db, key: event.id) == nil {
+                try event.insert(db)
+            }
+            occurrence.status = stoppedAt == nil ? .missed : .finished
+            occurrence.updatedAt = now
+            try occurrence.update(db)
+            return event
+        }
+    }
+
+    /// Deletes outcomes older than 60 days (the wake log keeps the history).
+    public func pruneFinished(before date: Date) throws {
+        _ = try database.writer.write { db in
+            try AlarmOccurrence
+                .filter(Column("status") != OccurrenceStatus.scheduled.rawValue)
+                .filter(Column("scheduledAt") < date)
+                .deleteAll(db)
+        }
+    }
+}

@@ -90,6 +90,13 @@ public struct AppSettings: Codable, Hashable, Sendable {
     public var healthSleepEnabled: Bool = false
     public var wakeScoreRules: WakeScoreRules = .default
 
+    // Calendars & Reminders (read on the iPhone from every account in iOS Settings: iCloud,
+    // Google, Outlook / Exchange / Microsoft 365, Yahoo, subscribed calendars)
+    /// Calendars left out of briefings and day-off checks (EventKit identifiers, this iPhone).
+    public var excludedCalendarIDs: [String] = []
+    /// Reminder lists left out of briefings.
+    public var excludedReminderListIDs: [String] = []
+
     // Offline AI (Gemma) — same options as PrepPilot and FocusFound
     public var useOfflineAI: Bool = true
     public var localModel: LocalModelChoice = .automatic
@@ -134,6 +141,7 @@ public struct AppSettings: Codable, Hashable, Sendable {
         case defaultSnoozeMinutes, snoozeEscalation, snoozeLimit
         case awakeCheckEnabled, awakeCheckDelayMinutes, bedtimePreviewEnabled, sunriseEnabled, sunriseMinutes
         case suggestAlarmFromCalendar, getReadyMinutes, dayOffKeywords, healthSleepEnabled, wakeScoreRules
+        case excludedCalendarIDs, excludedReminderListIDs
         case useOfflineAI, localModel, modelDownloadWiFiOnly
         case lastBackupAt, autoBackupEnabled, lastAutoBackupAt
     }
@@ -168,6 +176,8 @@ public struct AppSettings: Codable, Hashable, Sendable {
         dayOffKeywords = c.value(.dayOffKeywords, default: d.dayOffKeywords)
         healthSleepEnabled = c.value(.healthSleepEnabled, default: d.healthSleepEnabled)
         wakeScoreRules = c.value(.wakeScoreRules, default: d.wakeScoreRules).clamped
+        excludedCalendarIDs = c.value(.excludedCalendarIDs, default: d.excludedCalendarIDs)
+        excludedReminderListIDs = c.value(.excludedReminderListIDs, default: d.excludedReminderListIDs)
         useOfflineAI = c.value(.useOfflineAI, default: d.useOfflineAI)
         localModel = c.value(.localModel, default: d.localModel)
         modelDownloadWiFiOnly = c.value(.modelDownloadWiFiOnly, default: d.modelDownloadWiFiOnly)

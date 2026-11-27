@@ -12,7 +12,7 @@ final class DatabaseTests: XCTestCase {
     func testMigrationsCreateEveryTableAndRecordVersion() throws {
         let db = try AppDatabase.inMemory()
         try db.writer.read { db in
-            for table in ["keyValue", "alarm", "wakeEvent", "recommendation"] {
+            for table in ["keyValue", "alarm", "wakeEvent", "recommendation", "alarmOccurrence"] {
                 XCTAssertTrue(try db.tableExists(table), table)
             }
         }
@@ -148,5 +148,37 @@ final class DatabaseTests: XCTestCase {
         let payload = BackupPayload(createdAt: t0, appVersion: "1.0", settings: AppSettings(), alarms: [], wakeEvents: [event], recommendations: [])
         try BackupStore(database: db).replaceAll(with: payload)
         XCTAssertNil(try WakeLogStore(database: db).events().first?.alarmID)
+    }
+
+    // MARK: Occurrences (Phase 1b)
+
+    func testStopWritesTheWakeLogOnceWithInferredSnoozes() throws {
+        let db = try AppDatabase.inMemory()
+        try AlarmStore(database: db).save(Alarm(id: "A1", label: "Work", snoozeMinutes: 5, createdAt: t0), at: t0)
+        let store = OccurrenceStore(database: db)
+        try store.insertIfNew(AlarmOccurrence(id: "R1", alarmID: "A1", scheduledAt: t0, snoozeMinutes: 5, createdAt: t0))
+        try store.insertIfNew(AlarmOccurrence(id: "R1", alarmID: "A1", scheduledAt: t0, snoozeMinutes: 5, snoozeCount: 9, createdAt: t0))
+        try store.addSnooze(id: "R1")
+        // Stopped 11 minutes after the ring: two 5-minute snoozes, although one tap was reported.
+        let event = try XCTUnwrap(try store.finish(id: "R1", stoppedAt: t0.addingTimeInterval(11 * 60), method: .system, rules: .default))
+        XCTAssertEqual(event.snoozeCount, 2)
+        XCTAssertEqual(event.snoozedMinutes, 10)
+        XCTAssertEqual(event.alarmLabel, "Work")
+        XCTAssertEqual(event.score, 44) // 100 − (11 − 2) × 4 − 2 × 10
+        XCTAssertNil(try store.finish(id: "R1", stoppedAt: t0, method: .system, rules: .default))
+        XCTAssertEqual(try WakeLogStore(database: db).count(), 1)
+        XCTAssertEqual(try store.occurrence(id: "R1")?.status, .finished)
+        XCTAssertTrue(try store.scheduled().isEmpty)
+    }
+
+    func testMissedRingScoresZero() throws {
+        let db = try AppDatabase.inMemory()
+        let store = OccurrenceStore(database: db)
+        try store.insertIfNew(AlarmOccurrence(id: "R2", alarmID: "GONE", scheduledAt: t0, snoozeMinutes: 5, createdAt: t0))
+        let event = try XCTUnwrap(try store.finish(id: "R2", stoppedAt: nil, method: .system, rules: .default))
+        XCTAssertEqual(event.dismissMethod, .missed)
+        XCTAssertEqual(event.score, 0)
+        XCTAssertNil(event.alarmID)
+        XCTAssertEqual(try store.occurrence(id: "R2")?.status, .missed)
     }
 }

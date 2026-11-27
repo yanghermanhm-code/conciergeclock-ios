@@ -87,6 +87,25 @@ enum Migrations {
             )
         }
 
+        // Phase 1b: rings handed to AlarmKit, and what happened to each.
+        migrator.registerMigration("v2-occurrences") { db in
+            try db.create(table: "alarmOccurrence") { t in
+                t.primaryKey("id", .text)
+                t.column("schemaVersion", .integer).notNull()
+                t.column("alarmID", .text).notNull().indexed()
+                t.column("scheduledAt", .datetime).notNull()
+                t.column("snoozeCount", .integer).notNull()
+                t.column("snoozeMinutes", .integer).notNull()
+                t.column("status", .text).notNull().indexed()
+                t.column("createdAt", .datetime).notNull()
+                t.column("updatedAt", .datetime).notNull()
+            }
+            try db.execute(
+                sql: "INSERT OR REPLACE INTO keyValue (key, value) VALUES (?, ?)",
+                arguments: [AppDatabase.Key.schemaVersion, try JSONEncoder().encode(2)]
+            )
+        }
+
         return migrator
     }
 }
