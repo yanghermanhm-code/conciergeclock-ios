@@ -35,7 +35,11 @@ public struct BackupStore: Sendable {
             try db.execute(sql: "DELETE FROM wakeEvent")
             try db.execute(sql: "DELETE FROM recommendation")
             try db.execute(sql: "DELETE FROM alarm")
-            for alarm in payload.alarms { try alarm.insert(db) }
+            for var alarm in payload.alarms {
+                // A hand-edited file may hold days outside 1...7; keep only real weekdays.
+                alarm.repeatDays = alarm.repeatDays.filter { (1...7).contains($0) }
+                try alarm.insert(db)
+            }
             for var event in payload.wakeEvents {
                 if let id = event.alarmID, !alarmIDs.contains(id) { event.alarmID = nil }
                 try event.insert(db)

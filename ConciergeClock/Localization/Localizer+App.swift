@@ -84,6 +84,7 @@ extension Localizer {
         var calendar = Calendar(identifier: .gregorian)
         calendar.locale = locale
         let symbols = calendar.shortWeekdaySymbols
-        return Weekdays.all.filter { days.contains($0) }.map { symbols[$0 - 1] }.joined(separator: " ")
+        // Guarded: a hand-edited backup could hold a day outside 1...7.
+        return Weekdays.all.filter { days.contains($0) && symbols.indices.contains($0 - 1) }.map { symbols[$0 - 1] }.joined(separator: " ")
     }
 }
