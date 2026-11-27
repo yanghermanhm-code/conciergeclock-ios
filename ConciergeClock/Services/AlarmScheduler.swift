@@ -2,6 +2,7 @@ import AlarmKit
 import ConciergeCore
 import ConciergeData
 import Foundation
+import GGSBrand
 import Observation
 import SwiftUI
 import WidgetKit
@@ -116,17 +117,29 @@ final class AlarmScheduler {
         let snoozeMinutes = settings.snoozeMinutes(for: alarm)
         let l10n = Localizer(language: AppLanguage.resolve(code: settings.languageCode))
         let title = alarm.label.nonBlank ?? l10n["alarm.defaultTitle"]
-        let alert = AlarmPresentation.Alert(
-            title: LocalizedStringResource(stringLiteral: title),
-            stopButton: AlarmButton(text: LocalizedStringResource(stringLiteral: l10n["alarm.stop"]), textColor: .white, systemImageName: "stop.fill"),
-            secondaryButton: AlarmButton(text: LocalizedStringResource(stringLiteral: l10n["alarm.snooze"]), textColor: .white, systemImageName: "zzz"),
-            secondaryButtonBehavior: .countdown
-        )
+        let snoozeButton = AlarmButton(text: LocalizedStringResource(stringLiteral: l10n["alarm.snooze"]), textColor: .white, systemImageName: "zzz")
+        let alert: AlarmPresentation.Alert
+        if #available(iOS 26.1, *) {
+            // From iOS 26.1 the system draws the Stop button itself.
+            alert = AlarmPresentation.Alert(
+                title: LocalizedStringResource(stringLiteral: title),
+                secondaryButton: snoozeButton,
+                secondaryButtonBehavior: .countdown
+            )
+        } else {
+            alert = AlarmPresentation.Alert(
+                title: LocalizedStringResource(stringLiteral: title),
+                stopButton: AlarmButton(text: LocalizedStringResource(stringLiteral: l10n["alarm.stop"]), textColor: .white, systemImageName: "stop.fill"),
+                secondaryButton: snoozeButton,
+                secondaryButtonBehavior: .countdown
+            )
+        }
         let countdown = AlarmPresentation.Countdown(title: LocalizedStringResource(stringLiteral: l10n("alarm.snoozing", title)), pauseButton: nil)
         let attributes = AlarmAttributes<ConciergeAlarmMetadata>(
             presentation: AlarmPresentation(alert: alert, countdown: countdown),
             metadata: ConciergeAlarmMetadata(alarmID: alarm.id, label: alarm.label),
-            tintColor: ConciergeStyle.tint
+            // A fixed colour: the attributes are encoded and drawn by the system.
+            tintColor: Color(hex: 0x0B7470)
         )
         let configuration = AlarmManager.AlarmConfiguration<ConciergeAlarmMetadata>(
             // The snooze: after Snooze, the alarm rings again `snoozeMinutes` later.
