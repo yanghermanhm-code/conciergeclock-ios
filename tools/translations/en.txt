@@ -1,0 +1,316 @@
+common.settings | Settings
+common.done | Done
+common.cancel | Cancel
+common.delete | Delete
+common.ok | OK
+common.add | Add
+settings.appearance | Appearance
+settings.theme | Theme
+theme.system | System
+theme.light | Light
+theme.dark | Dark
+settings.language | Language
+language.system | System default (%@)
+settings.languageFooter | Changes apply immediately.
+settings.haptics | Haptics
+settings.appIcon | App icon
+icon.dark | Dark
+icon.light | Light
+settings.aboutApp | About Concierge Clock
+ai.ready | Ready
+ai.notReady | Not available
+about.title | About
+about.version | Version %1$@ (%2$@)
+about.offline.title | 100% on your iPhone
+about.tracking.title | Zero tracking
+about.data.title | Your data, your choice
+about.data.detail | Export or back up everything whenever you like. Nothing leaves your phone unless you send it.
+about.price.title | Pay once, own it
+about.price.detail | No subscriptions and no paywalls. Every feature is included.
+about.product | A Greater Good Software product
+about.acknowledgements | Open-source licenses
+about.terms | Terms of Use
+company.title | About Greater Good Software
+company.tagline | Respectful software that works for you, not on you.
+company.mission | Greater Good Software builds simple, private tools that help people do their best work and live well. Good software should be paid for once, work offline, and never trade your attention or your data for profit.
+company.principles | Our principles
+company.privacy.title | Private by design
+company.privacy.detail | Your data stays on your device. No accounts, no tracking, no ads.
+company.fair.title | Fair pricing
+company.fair.detail | Pay once and own it. No subscriptions, no paywalls.
+company.access.title | Made for everyone
+company.access.detail | Accessible, multilingual and designed for every kind of mind.
+company.lasting.title | Built to last
+company.lasting.detail | Works offline, keeps working, and your data is always yours to export.
+company.products | Our apps
+company.preppilot | Offline test preparation from your own notes, with practice that adapts to you.
+company.focusfound | Offline focus timer, task planner and distraction blocker.
+company.fotophilter | Offline photo editor with film looks, retouching and motion.
+company.footer | Made with care for the greater good.
+a11y.companyLogo | About Greater Good Software
+error.title | Something went wrong
+error.launchTitle | Concierge Clock couldn't open its data
+launch.skipHint | Double-tap to skip the animation.
+minutes.count | %d min
+backup.title | Backup & Export
+backup.header | Backup
+backup.now | Back Up Now
+backup.restore | Restore from Backup
+backup.last | Last backup: %@
+backup.never | No backup yet.
+backup.confirmTitle | Replace everything with this backup?
+backup.confirmRestore | Restore Backup
+backup.openFailed | Couldn't open the backup
+backup.error.notABackup | This isn't a Concierge Clock backup, or the file is damaged.
+backup.error.newer | This backup was made by a newer version of Concierge Clock. Update the app, then try again.
+backup.error.damaged | This backup is damaged and can't be restored. Nothing was changed.
+backup.error.write | The file couldn't be written. Check that there is enough free space.
+export.footer | Reports and spreadsheets are made on this iPhone. You choose where to send them.
+export.csv | Spreadsheets (CSV)
+export.working | Preparing…
+ai.title | Offline AI
+ai.models | Models
+ai.choice | Model
+ai.choice.automatic | Automatic (%@)
+ai.wifiOnly | Download on Wi-Fi only
+ai.options | Options
+ai.storageUsed | Space used by models
+ai.storageFree | Free on this iPhone
+ai.deleteTitle | Delete %@?
+ai.deleteFailed | Couldn't delete the model
+ai.recommended | Recommended
+ai.e4bHint | Best questions. Needs an iPhone with 8 GB of memory (iPhone 15 Pro or newer).
+ai.e2bHint | Smaller and faster. Runs on iPhones with 6 GB of memory.
+ai.cpuNote | On this iPhone it runs on the processor: works, but much slower.
+ai.download | Download
+ai.progress | %1$@ of %2$@
+ai.pause | Pause
+ai.resume | Resume
+ai.verifying | Checking the download…
+ai.installed | Ready
+ai.retry | Try again
+ai.failed.network | The download stopped. Check the connection and try again.
+ai.failed.checksum | The downloaded file didn't pass the check and was deleted. Try again.
+ai.failed.appGroup | Offline AI isn't set up in this build (App Groups capability missing).
+ai.failed.space | Not enough space: free up %@ and try again.
+guide.title | Set up offline AI
+guide.close | Close
+guide.next | Next
+guide.back | Back
+guide.done | Done
+guide.step | Step %1$d of %2$d
+guide.intro.title | Your iPhone
+guide.intro.body | This iPhone has %1$@ of memory, so the recommended model is %2$@ (a %3$@ download). It runs entirely on your iPhone; nothing you study is uploaded.
+guide.intro.unsupported | This iPhone has %@ of memory; the offline AI needs at least 6 GB. The app keeps working with its built-in features.
+guide.open.title | Open %@'s settings
+guide.find.title | Tap Offline AI
+guide.find.body | In Settings, find the Offline AI row and tap it.
+guide.model.title | Find the recommended model
+guide.model.body | Look for %@ with the green Recommended label. It is the best model this iPhone runs well.
+guide.model.e4bNote | Gemma 4 E4B also works here, but only on the processor and much more slowly. Choose E2B.
+guide.space.title | Check Wi-Fi and free space
+guide.space.body | Connect to Wi-Fi and leave Download on Wi-Fi only switched on. Installing needs %@ of free space for a moment.
+guide.download.title | Tap Download
+guide.download.body | Tap Download under the recommended model. A bar shows the progress. You can leave the app: the download carries on. Keep the iPhone charging and on Wi-Fi.
+guide.ready.title | Wait for Ready
+guide.ready.body | When the download ends, the app checks the file (a minute or two), then the model shows a green Ready.
+guide.turnOn.title | Turn on Use offline AI
+guide.turnOn.body | At the top of the Offline AI screen, make sure the switch is on (green).
+guide.verify.title | Check that it works
+guide.status.ready | Already set up on this iPhone.
+guide.status.downloading | Downloading now: %d%%
+guide.mock.settings | Settings
+guide.mock.offlineAI | Offline AI
+guide.mock.recommended | Recommended
+guide.mock.download | Download
+guide.mock.ready | Ready
+guide.mock.useAI | Use offline AI
+guide.mock.wifi | Download on Wi-Fi only
+guide.app.open | Show me how, step by step
+settings.startHere | Important: start here
+settings.startHere.open | Open Offline AI
+settings.startHere.ready | Offline AI is ready: %@
+settings.startHere.downloading | Downloading %1$@: %2$d%%
+ai.test | Test offline AI
+ai.test.footer | Loads the model and times a few short replies, to show what works on this iPhone and how fast. Takes up to a few minutes.
+ai.test.load | Load the model
+ai.test.plain | Short reply
+ai.test.speed | Writing speed
+ai.test.wordsPerSecond | %@ words per second
+tab.alarms | Alarms
+tab.concierge | Concierge
+tab.sounds | Sounds
+tab.trends | Trends
+settings.concierge | Your concierge
+settings.aiFooter | Offline AI (Gemma) judges which events matter, varies the butler's lines and understands looser requests, all on your iPhone. Without it, built-in rules are used.
+settings.startHere.body | Download %1$@ (%2$@) for this iPhone. Your concierge then judges which events matter, speaks more naturally and understands looser requests, all on your iPhone. Takes a few minutes on Wi-Fi.
+ai.use | Use offline AI
+ai.useFooter | When it is off or not downloaded, your concierge uses built-in rules: every feature still works.
+ai.unsupported | This iPhone doesn't have enough memory for the offline AI. Concierge Clock uses its built-in rules instead.
+ai.modelsFooter | Google's Gemma 4 (Apache 2.0), downloaded once from Hugging Face and checked before use. It runs entirely on this iPhone and is shared with PrepPilot, FocusFound and FotoPhilter, so it is downloaded only once.
+ai.deleteMessage | PrepPilot, FocusFound and FotoPhilter use the same copy, so they lose it too. It can be downloaded again.
+ai.test.json | Importance check (JSON)
+guide.intro.shared | One download serves all Greater Good Software apps (Concierge Clock, PrepPilot, FocusFound, FotoPhilter) on this iPhone.
+guide.app.openSettings | Tap the gear button at the top of any tab.
+guide.app.check | On the Concierge tab, the Offline AI card says “Ready: %@”.
+about.offline.detail | No accounts, no cloud, no servers. Concierge Clock works in Airplane Mode.
+about.tracking.detail | No analytics, no ads, and no record of your calendar or of what you say.
+about.onDevice.title | AI that stays on your iPhone
+about.onDevice.detail | The optional offline AI runs on your iPhone. Your calendar and reminders are never uploaded.
+about.voice.title | Listening, never recording
+about.voice.detail | Your voice is understood on the iPhone and never saved. Only wake times and counts are kept.
+company.conciergeclock | Offline talking alarm clock with a morning briefing from your own calendar.
+error.launchMessage | Your alarms and wake log have not been deleted. Please restart the app. If this keeps happening, contact support with this message:\n\n%@
+terms.body | Concierge Clock is sold as a one-time purchase and licensed to you under the Apple Standard End User License Agreement.\n\nYour alarms, settings and wake log stay on your iPhone. Greater Good Software never receives, stores or shares them.\n\nConcierge Clock helps you wake up and plan your day. For anything you cannot miss, set a second alarm. Briefings are made automatically and can contain mistakes, so check your calendar for anything important.\n\nConcierge Clock is provided “as is”, without warranties of any kind.
+backup.footer | A backup holds your settings, alarms and wake log in one .conciergeclock file. Save it to Files, iCloud Drive or a computer — Concierge Clock never uploads it.
+backup.confirmMessage | Backup from %1$@: %2$d alarms and %3$d mornings in the wake log. Everything currently in Concierge Clock on this iPhone will be replaced.
+backup.auto.header | Automatic backup
+backup.auto.choose | Choose a Folder…
+backup.auto.folder | Folder
+backup.auto.last | Last automatic backup
+backup.auto.change | Change Folder…
+backup.auto.stop | Stop Automatic Backup
+backup.auto.folderGone | The folder can't be reached. Choose it again.
+backup.auto.failed | The last automatic backup couldn't be saved. It will try again later.
+backup.auto.footer | Once a day, a backup is saved to the folder you choose (for example in iCloud Drive). The 7 newest are kept.
+export.file.wakeLog | Wake log
+export.file.alarms | Alarms
+alarms.count | Alarms: %d
+alarms.empty.title | No alarms yet
+alarms.empty.message | Your alarms will appear here.
+alarms.soon.title | Coming in the next update
+alarms.soon.message | Alarms arrive in Phase 1b, built on iOS's own alarm system, so they ring even in silent mode and during Focus.
+alarms.soon.ring | Real alarms on the Lock Screen and in the Dynamic Island
+alarms.soon.repeat | Repeat days, labels and one-off alarms
+alarms.soon.snooze | Snooze by voice or button, 5 minutes by default
+alarms.soon.skip | Skip the next alarm, or days off in your calendar
+alarms.soon.widget | Next-alarm widgets
+concierge.greeting.morning | Good morning.
+concierge.greeting.afternoon | Good afternoon.
+concierge.greeting.evening | Good evening.
+concierge.greeting.night | Good night.
+concierge.introduction | I am %@, your concierge.
+concierge.customize | Customize Your Concierge
+concierge.briefMe | Brief Me Now
+concierge.briefMe.soon | Spoken briefings arrive in Phase 2.
+concierge.nextAlarm | Next alarm
+concierge.noAlarm | No alarm set
+concierge.ai.ready | Ready: %@
+concierge.ai.setup | Not set up yet: Settings › Offline AI.
+concierge.ai.unsupported | Not available on this iPhone. Built-in rules are used.
+concierge.soon.title | What your concierge will do
+concierge.soon.message | Each update adds more. Everything runs on your iPhone.
+concierge.soon.brief | Read your day aloud: the time, events, due reminders and what matters
+concierge.soon.talk | Understand “snooze 10 minutes”, “I'm awake” or “mark it done”
+concierge.soon.nightstand | Nightstand Mode: ambient sound overnight, a full conversation at the alarm
+concierge.soon.ask | Answer “What's on today?”
+concierge.soon.reminders | Remind you before events and when tasks are due
+sounds.soon.title | Sounds are on their way
+sounds.soon.message | They arrive in Phase 4. Every sound is made on your iPhone: nothing to download.
+sounds.soon.noise | White, pink and brown noise
+sounds.soon.ambient | Rain and a soft ambient pad
+sounds.soon.wake | Chimes and clear wake sounds
+sounds.soon.timer | Sleep timer
+sounds.soon.ramp | Separate volumes and a gradual ramp-up
+trends.score.title | Your wake score
+trends.score.intro | Each morning is scored out of 100. It counts both how long you took to get up and how often you snoozed.
+trends.score.late | −%1$d per minute late after %2$d minutes' grace, at most −%3$d
+trends.score.snooze | −%d per snooze
+trends.score.check | −%d if you miss “Are you really up?”
+trends.score.success | %d or more counts as a successful wake
+trends.score.change | Change these in Settings › Mornings.
+trends.logged | Mornings logged: %d
+trends.soon.title | Trends and advice
+trends.soon.message | They arrive in Phase 5, once a few mornings are logged.
+trends.soon.chart | Alarm time vs. the time you got up (7, 14, 30 days, all time)
+trends.soon.metrics | Average lateness, success rate, snoozes, weekdays vs. weekends
+trends.soon.advisor | One-tap suggestions for volume, ramp-up and sounds
+trends.soon.experiments | 7-night experiments, compared fairly
+trends.soon.health | Sleep from Apple Health (optional)
+butler.title | Your Concierge
+butler.names | Names
+butler.formalName | Formal name
+butler.familiarName | Familiar name
+butler.namesFooter | The formal name is used in the Professional tone, the familiar one in the others.
+butler.voiceHeader | Voice
+butler.voice | Accent
+butler.voiceApproximated | No iPhone voice has exactly this accent yet, so the closest voice is used with regional wording.
+butler.voiceEnglishOnly | Accents apply to English. Other languages use that language's own voice.
+butler.voiceFooter | Voice preview arrives with spoken briefings in Phase 2.
+butler.tone | Tone
+butler.mildSwearing | Allow mild swearing
+butler.briefing | Briefing
+butler.length | Length
+butler.language | Spoken language
+butler.speakTitles | Read event titles aloud
+butler.speakTitlesOn | Each event is read with its title, a short summary, its start time and whether it looks important.
+butler.speakTitlesOff | Events are read as “a private event”, with the time and whether it looks important.
+tone.moderate | Moderate
+tone.professional | Professional
+tone.child | For a child
+tone.unhinged | Unhinged
+tone.moderate.hint | Natural, clear and helpful.
+tone.professional.hint | Crisp and formal: a British butler, slightly snobbish.
+tone.child.hint | Warm, simple and gentle.
+tone.unhinged.hint | Blunt, dramatic and impatient. For laughs, never cruel.
+tone.moderate.sample | “Good morning, it's seven o'clock. You've got the dentist at 9:15.” — %@
+tone.professional.sample | “Good morning. It is seven o'clock, and the dentist expects you at a quarter past nine. I would not dawdle.” — %@
+tone.child.sample | “Good morning, sunshine! It's seven o'clock. After breakfast we're going to the dentist.” — %@
+tone.unhinged.sample | “It's SEVEN. Dentist. 9:15. Get up before I start narrating your life choices.” — %@
+unhinged.title | Unhinged tone
+unhinged.message | Your concierge becomes blunt, dramatic and impatient, for laughs. It may use mild swearing (you can turn that off). It never uses slurs, hate or real abuse.
+unhinged.confirm | Turn On
+length.quick | Quick
+length.standard | Standard
+length.full | Full
+length.quick.hint | The time, your next event and how many more. About 15 seconds.
+length.standard.hint | Adds your top three events and due reminders, each with a short summary.
+length.full.hint | Everything today, each with its time, summary and importance.
+repeat.once | Once
+repeat.everyDay | Every day
+repeat.weekdays | Weekdays
+repeat.weekends | Weekends
+snooze.title | Snooze
+snooze.default | Default snooze
+snooze.custom | Custom length
+snooze.footer | Used when you say “snooze” or “give me a bit” without a time. Say “snooze 10 minutes” or “half an hour” for a different length.
+snooze.escalation | Firmer with each snooze
+snooze.limitOn | Limit snoozes
+snooze.limit | Most snoozes
+snooze.escalationFooter | With each snooze your concierge is a little less patient. With a limit, no more snoozes are offered after it.
+morning.title | Mornings
+morning.awakeCheck | “Are you really up?”
+morning.awakeCheckDelay | Ask after
+morning.awakeCheckFooter | After you dismiss by voice, your concierge checks in quietly. If you don't answer, the alarm rings again.
+morning.nightstand | Nightstand Mode
+morning.bedtimePreview | Bedtime preview of tomorrow
+morning.sunrise | Sunrise screen
+morning.sunriseMinutes | Starts before the alarm
+morning.nightstandFooter | For when the iPhone is on its charger overnight. Arrives in Phase 3.
+morning.calendar | Calendar
+morning.suggestAlarm | Suggest alarm times
+morning.getReady | Time to get ready
+morning.suggestAlarmFooter | Based on your first event of the day and the time you need to get ready.
+morning.daysOff | Days off
+morning.addKeyword | Add a word
+morning.daysOffFooter | Alarms set to skip days off don't ring on public holidays or when an all-day event's title contains one of these words.
+morning.health | Use sleep from Apple Health
+morning.healthFooter | Optional and read-only, for Trends (Phase 5). Nothing is written to Health.
+score.title | Wake score
+score.grace | Grace period
+score.lateMinute | Each minute late
+score.maxLate | Most lost for lateness
+score.snooze | Each snooze
+score.missedCheck | Missed check
+score.threshold | Success at or above
+score.points | %d points
+score.reset | Reset to Defaults
+score.footer | Each morning starts at 100. Changing these re-scores every morning already logged.
+accent.canadianMale | Canadian, male
+accent.canadianFemale | Canadian, female
+accent.southernMale | Southern US, male
+accent.southernFemale | Southern US, female
+accent.britishMale | British, male
+accent.britishFemale | British, female
+accent.indianMale | Indian, male
+accent.indianFemale | Indian, female

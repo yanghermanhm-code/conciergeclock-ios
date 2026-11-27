@@ -1,0 +1,316 @@
+common.settings | Ajustes
+common.done | OK
+common.cancel | Cancelar
+common.delete | Apagar
+common.ok | OK
+common.add | Adicionar
+settings.appearance | Aparência
+settings.theme | Tema
+theme.system | Sistema
+theme.light | Claro
+theme.dark | Escuro
+settings.language | Idioma
+language.system | Padrão do sistema (%@)
+settings.languageFooter | As alterações são aplicadas na hora.
+settings.haptics | Vibração tátil
+settings.appIcon | Ícone do app
+icon.dark | Escuro
+icon.light | Claro
+settings.aboutApp | Sobre o Concierge Clock
+ai.ready | Pronta
+ai.notReady | Indisponível
+about.title | Sobre
+about.version | Versão %1$@ (%2$@)
+about.offline.title | 100% no seu iPhone
+about.tracking.title | Zero rastreamento
+about.data.title | Seus dados, sua escolha
+about.data.detail | Exporte ou faça backup de tudo quando quiser. Nada sai do seu celular a menos que você envie.
+about.price.title | Pague uma vez, é seu
+about.price.detail | Sem assinaturas e sem paywalls. Todos os recursos estão incluídos.
+about.product | Um produto Greater Good Software
+about.acknowledgements | Licenças de código aberto
+about.terms | Termos de Uso
+company.title | Sobre a Greater Good Software
+company.tagline | Software respeitoso, que trabalha para você, não às suas custas.
+company.mission | A Greater Good Software cria ferramentas simples e privadas que ajudam as pessoas a fazer seu melhor trabalho e a viver bem. Um bom software deve ser pago uma única vez, funcionar offline e nunca trocar sua atenção ou seus dados por lucro.
+company.principles | Nossos princípios
+company.privacy.title | Privado desde a concepção
+company.privacy.detail | Seus dados ficam no seu aparelho. Sem contas, sem rastreamento, sem anúncios.
+company.fair.title | Preço justo
+company.fair.detail | Pague uma vez e é seu. Sem assinaturas, sem paywalls.
+company.access.title | Feito para todos
+company.access.detail | Acessível, multilíngue e pensado para todo tipo de mente.
+company.lasting.title | Feito para durar
+company.lasting.detail | Funciona offline, continua funcionando e seus dados podem sempre ser exportados.
+company.products | Nossos apps
+company.preppilot | Preparação para provas offline a partir das suas anotações, com prática que se adapta a você.
+company.focusfound | Timer de foco offline, planejador de tarefas e bloqueador de distrações.
+company.fotophilter | Editor de fotos offline com visuais de filme, retoque e movimento.
+company.footer | Feito com carinho, pelo bem comum.
+a11y.companyLogo | Sobre a Greater Good Software
+error.title | Algo deu errado
+error.launchTitle | O Concierge Clock não conseguiu abrir seus dados
+launch.skipHint | Toque duas vezes para pular a animação.
+minutes.count | %d min
+backup.title | Backup e exportação
+backup.header | Backup
+backup.now | Fazer backup agora
+backup.restore | Restaurar backup
+backup.last | Último backup: %@
+backup.never | Nenhum backup ainda.
+backup.confirmTitle | Substituir tudo por este backup?
+backup.confirmRestore | Restaurar backup
+backup.openFailed | Não foi possível abrir o backup
+backup.error.notABackup | Este não é um backup do Concierge Clock, ou o arquivo está danificado.
+backup.error.newer | Este backup foi feito por uma versão mais recente do Concierge Clock. Atualize o app e tente de novo.
+backup.error.damaged | Este backup está danificado e não pode ser restaurado. Nada foi alterado.
+backup.error.write | Não foi possível gravar o arquivo. Verifique se há espaço livre suficiente.
+export.footer | Relatórios e planilhas são criados neste iPhone. Você escolhe para onde enviá-los.
+export.csv | Planilhas (CSV)
+export.working | Preparando…
+ai.title | IA offline
+ai.models | Modelos
+ai.choice | Modelo
+ai.choice.automatic | Automático (%@)
+ai.wifiOnly | Baixar só no Wi-Fi
+ai.options | Opções
+ai.storageUsed | Espaço usado pelos modelos
+ai.storageFree | Livre neste iPhone
+ai.deleteTitle | Apagar %@?
+ai.deleteFailed | Não foi possível apagar o modelo
+ai.recommended | Recomendado
+ai.e4bHint | As melhores questões. Requer iPhone com 8 GB de memória (iPhone 15 Pro ou mais novo).
+ai.e2bHint | Menor e mais rápido. Funciona em iPhone com 6 GB de memória.
+ai.cpuNote | Neste iPhone roda no processador: funciona, mas bem mais devagar.
+ai.download | Baixar
+ai.progress | %1$@ de %2$@
+ai.pause | Pausar
+ai.resume | Retomar
+ai.verifying | Verificando o download…
+ai.installed | Pronto
+ai.retry | Tentar de novo
+ai.failed.network | O download parou. Verifique a conexão e tente de novo.
+ai.failed.checksum | O arquivo baixado não passou na verificação e foi apagado. Tente de novo.
+ai.failed.appGroup | A IA offline não está configurada nesta versão (falta o recurso App Groups).
+ai.failed.space | Espaço insuficiente: libere %@ e tente de novo.
+guide.title | Configurar a IA offline
+guide.close | Fechar
+guide.next | Próximo
+guide.back | Voltar
+guide.done | Concluído
+guide.step | Passo %1$d de %2$d
+guide.intro.title | Seu iPhone
+guide.intro.body | Este iPhone tem %1$@ de memória, então o modelo recomendado é o %2$@ (download de %3$@). Ele roda inteiramente no seu iPhone; nada do que você estuda é enviado.
+guide.intro.unsupported | Este iPhone tem %@ de memória; a IA offline precisa de pelo menos 6 GB. O app continua funcionando com os recursos integrados.
+guide.open.title | Abra os ajustes do %@
+guide.find.title | Toque em IA offline
+guide.find.body | Nos Ajustes, encontre a linha IA offline e toque nela.
+guide.model.title | Encontre o modelo recomendado
+guide.model.body | Procure o %@ com a etiqueta verde Recomendado. É o melhor modelo que este iPhone roda bem.
+guide.model.e4bNote | O Gemma 4 E4B também funciona aqui, mas só no processador e bem mais devagar. Escolha o E2B.
+guide.space.title | Verifique o Wi-Fi e o espaço livre
+guide.space.body | Conecte-se ao Wi-Fi e deixe Baixar só no Wi-Fi ativado. A instalação precisa de %@ livres por um momento.
+guide.download.title | Toque em Baixar
+guide.download.body | Toque em Baixar abaixo do modelo recomendado. Uma barra mostra o progresso. Você pode sair do app: o download continua. Mantenha o iPhone carregando e no Wi-Fi.
+guide.ready.title | Aguarde Pronto
+guide.ready.body | Quando o download termina, o app verifica o arquivo (um ou dois minutos) e o modelo mostra Pronto em verde.
+guide.turnOn.title | Ative Usar IA offline
+guide.turnOn.body | No topo da tela IA offline, confira se a chave está ativada (verde).
+guide.verify.title | Confira se funciona
+guide.status.ready | Já está configurado neste iPhone.
+guide.status.downloading | Baixando: %d%%
+guide.mock.settings | Ajustes
+guide.mock.offlineAI | IA offline
+guide.mock.recommended | Recomendado
+guide.mock.download | Baixar
+guide.mock.ready | Pronto
+guide.mock.useAI | Usar IA offline
+guide.mock.wifi | Baixar só no Wi-Fi
+guide.app.open | Mostre como, passo a passo
+settings.startHere | Importante: comece aqui
+settings.startHere.open | Abrir IA offline
+settings.startHere.ready | A IA offline está pronta: %@
+settings.startHere.downloading | Baixando %1$@: %2$d%%
+ai.test | Testar a IA offline
+ai.test.footer | Carrega o modelo e cronometra algumas respostas curtas para mostrar o que funciona neste iPhone e com que velocidade. Pode levar alguns minutos.
+ai.test.load | Carregar o modelo
+ai.test.plain | Resposta curta
+ai.test.speed | Velocidade de escrita
+ai.test.wordsPerSecond | %@ palavras por segundo
+tab.alarms | Alarmes
+tab.concierge | Concierge
+tab.sounds | Sons
+tab.trends | Tendências
+settings.concierge | Seu concierge
+settings.aiFooter | A IA offline (Gemma) avalia quais eventos importam, varia as falas do mordomo e entende pedidos mais livres, tudo no seu iPhone. Sem ela, são usadas regras integradas.
+settings.startHere.body | Baixe %1$@ (%2$@) para este iPhone. Seu concierge passa a avaliar quais eventos importam, falar com mais naturalidade e entender pedidos mais livres, tudo no seu iPhone. Leva alguns minutos no Wi-Fi.
+ai.use | Usar IA offline
+ai.useFooter | Desligada ou não baixada, seu concierge usa regras integradas: todos os recursos continuam funcionando.
+ai.unsupported | Este iPhone não tem memória suficiente para a IA offline. O Concierge Clock usa suas regras integradas.
+ai.modelsFooter | Gemma 4 do Google (Apache 2.0), baixado uma vez do Hugging Face e verificado antes do uso. Roda totalmente neste iPhone e é compartilhado com PrepPilot, FocusFound e FotoPhilter, então é baixado uma única vez.
+ai.deleteMessage | PrepPilot, FocusFound e FotoPhilter usam a mesma cópia, então também a perdem. Ela pode ser baixada de novo.
+ai.test.json | Verificação de importância (JSON)
+guide.intro.shared | Um único download serve todos os apps da Greater Good Software (Concierge Clock, PrepPilot, FocusFound, FotoPhilter) neste iPhone.
+guide.app.openSettings | Toque no botão de engrenagem no topo de qualquer aba.
+guide.app.check | Na aba Concierge, o cartão IA offline mostra “Pronta: %@”.
+about.offline.detail | Sem contas, sem nuvem, sem servidores. O Concierge Clock funciona no modo avião.
+about.tracking.detail | Sem análises, sem anúncios e sem registro da sua agenda ou do que você diz.
+about.onDevice.title | IA que fica no seu iPhone
+about.onDevice.detail | A IA offline opcional roda no seu iPhone. Sua agenda e seus lembretes nunca são enviados.
+about.voice.title | Escuta, nunca grava
+about.voice.detail | Sua voz é entendida no iPhone e nunca é salva. Só ficam os horários de acordar e as contagens.
+company.conciergeclock | Despertador falante offline, com um resumo matinal da sua própria agenda.
+error.launchMessage | Seus alarmes e seu registro de despertares não foram apagados. Reinicie o app. Se isso continuar, fale com o suporte enviando esta mensagem:\n\n%@
+terms.body | O Concierge Clock é vendido como compra única e licenciado para você sob o Contrato de Licença de Usuário Final Padrão da Apple.\n\nSeus alarmes, ajustes e registro de despertares ficam no seu iPhone. A Greater Good Software nunca os recebe, armazena ou compartilha.\n\nO Concierge Clock ajuda você a acordar e planejar o dia. Para o que você não pode perder, defina um segundo alarme. Os resumos são gerados automaticamente e podem conter erros; confira sua agenda para o que for importante.\n\nO Concierge Clock é fornecido “no estado em que se encontra”, sem garantias de qualquer tipo.
+backup.footer | Um backup guarda seus ajustes, alarmes e registro de despertares em um arquivo .conciergeclock. Salve no app Arquivos, no iCloud Drive ou em um computador — o Concierge Clock nunca o envia.
+backup.confirmMessage | Backup de %1$@: %2$d alarmes e %3$d manhãs no registro de despertares. Tudo o que está agora no Concierge Clock neste iPhone será substituído.
+backup.auto.header | Backup automático
+backup.auto.choose | Escolher uma pasta…
+backup.auto.folder | Pasta
+backup.auto.last | Último backup automático
+backup.auto.change | Trocar pasta…
+backup.auto.stop | Parar backup automático
+backup.auto.folderGone | Não foi possível acessar a pasta. Escolha-a de novo.
+backup.auto.failed | Não foi possível salvar o último backup automático. Será tentado de novo mais tarde.
+backup.auto.footer | Uma vez por dia, um backup é salvo na pasta que você escolher (por exemplo, no iCloud Drive). Os 7 mais recentes são mantidos.
+export.file.wakeLog | Registro de despertares
+export.file.alarms | Alarmes
+alarms.count | Alarmes: %d
+alarms.empty.title | Nenhum alarme ainda
+alarms.empty.message | Seus alarmes aparecerão aqui.
+alarms.soon.title | Na próxima atualização
+alarms.soon.message | Os alarmes chegam na fase 1b, usando o próprio sistema de alarmes do iOS, então tocam mesmo no modo silencioso e durante um Foco.
+alarms.soon.ring | Alarmes de verdade na tela bloqueada e na Dynamic Island
+alarms.soon.repeat | Dias de repetição, rótulos e alarmes únicos
+alarms.soon.snooze | Soneca por voz ou botão, 5 minutos por padrão
+alarms.soon.skip | Pular o próximo alarme ou as folgas da sua agenda
+alarms.soon.widget | Widgets do próximo alarme
+concierge.greeting.morning | Bom dia.
+concierge.greeting.afternoon | Boa tarde.
+concierge.greeting.evening | Boa noite.
+concierge.greeting.night | Boa noite.
+concierge.introduction | Eu sou %@, seu concierge.
+concierge.customize | Personalizar seu concierge
+concierge.briefMe | Me atualize agora
+concierge.briefMe.soon | Os resumos falados chegam na fase 2.
+concierge.nextAlarm | Próximo alarme
+concierge.noAlarm | Nenhum alarme definido
+concierge.ai.ready | Pronta: %@
+concierge.ai.setup | Ainda não configurada: Ajustes › IA offline.
+concierge.ai.unsupported | Indisponível neste iPhone. São usadas as regras integradas.
+concierge.soon.title | O que seu concierge vai fazer
+concierge.soon.message | Cada atualização traz mais. Tudo roda no seu iPhone.
+concierge.soon.brief | Ler seu dia em voz alta: a hora, os eventos, os lembretes pendentes e o que importa
+concierge.soon.talk | Entender “soneca de 10 minutos”, “já acordei” ou “marque como feito”
+concierge.soon.nightstand | Modo Mesa de cabeceira: som ambiente à noite e conversa completa no alarme
+concierge.soon.ask | Responder “O que tenho hoje?”
+concierge.soon.reminders | Avisar antes dos eventos e quando as tarefas vencem
+sounds.soon.title | Os sons estão chegando
+sounds.soon.message | Chegam na fase 4. Cada som é criado no seu iPhone: nada para baixar.
+sounds.soon.noise | Ruído branco, rosa e marrom
+sounds.soon.ambient | Chuva e um fundo ambiente suave
+sounds.soon.wake | Sinos e sons de despertar nítidos
+sounds.soon.timer | Timer de sono
+sounds.soon.ramp | Volumes separados e aumento gradual
+trends.score.title | Sua nota de despertar
+trends.score.intro | Cada manhã recebe uma nota de 0 a 100. Conta quanto você demorou para levantar e quantas vezes usou a soneca.
+trends.score.late | −%1$d por minuto de atraso após %2$d minutos de tolerância, no máximo −%3$d
+trends.score.snooze | −%d por soneca
+trends.score.check | −%d se você não responder “Acordou mesmo?”
+trends.score.success | %d ou mais conta como despertar bem-sucedido
+trends.score.change | Altere em Ajustes › Manhãs.
+trends.logged | Manhãs registradas: %d
+trends.soon.title | Tendências e conselhos
+trends.soon.message | Chegam na fase 5, depois de algumas manhãs registradas.
+trends.soon.chart | Hora do alarme versus a hora em que você levantou (7, 14, 30 dias, tudo)
+trends.soon.metrics | Atraso médio, taxa de sucesso, sonecas, dias úteis e fins de semana
+trends.soon.advisor | Sugestões com um toque para volume, aumento gradual e sons
+trends.soon.experiments | Testes de 7 noites, comparados de forma justa
+trends.soon.health | Sono do app Saúde (opcional)
+butler.title | Seu concierge
+butler.names | Nomes
+butler.formalName | Nome formal
+butler.familiarName | Apelido
+butler.namesFooter | O nome formal é usado no tom Profissional; o apelido, nos outros.
+butler.voiceHeader | Voz
+butler.voice | Sotaque
+butler.voiceApproximated | Nenhuma voz do iPhone tem exatamente esse sotaque ainda, então é usada a mais próxima, com expressões regionais.
+butler.voiceEnglishOnly | Os sotaques valem para o inglês. Os outros idiomas usam a própria voz.
+butler.voiceFooter | A prévia da voz chega com os resumos falados na fase 2.
+butler.tone | Tom
+butler.mildSwearing | Permitir palavrões leves
+butler.briefing | Resumo
+butler.length | Duração
+butler.language | Idioma falado
+butler.speakTitles | Ler os títulos dos eventos
+butler.speakTitlesOn | Cada evento é lido com título, um resumo curto, hora de início e se parece importante.
+butler.speakTitlesOff | Os eventos são lidos como “um evento particular”, com a hora e se parece importante.
+tone.moderate | Moderado
+tone.professional | Profissional
+tone.child | Para criança
+tone.unhinged | Sem filtro
+tone.moderate.hint | Natural, claro e prestativo.
+tone.professional.hint | Polido e formal: um mordomo britânico, um tanto esnobe.
+tone.child.hint | Carinhoso, simples e gentil.
+tone.unhinged.hint | Direto, dramático e impaciente. Para rir, nunca cruel.
+tone.moderate.sample | “Bom dia, são sete horas. Você tem dentista às 9h15.” — %@
+tone.professional.sample | “Bom dia. São sete horas, e o dentista o aguarda às nove e quinze. Eu não me demoraria.” — %@
+tone.child.sample | “Bom dia, solzinho! São sete horas. Depois do café da manhã, vamos ao dentista.” — %@
+tone.unhinged.sample | “São SETE horas. Dentista. 9h15. Levanta antes que eu comece a narrar suas escolhas de vida.” — %@
+unhinged.title | Tom sem filtro
+unhinged.message | Seu concierge fica direto, dramático e impaciente, para rir. Pode usar palavrões leves (dá para desligar). Nunca usa ofensas, ódio ou abuso de verdade.
+unhinged.confirm | Ativar
+length.quick | Rápido
+length.standard | Padrão
+length.full | Completo
+length.quick.hint | A hora, seu próximo evento e quantos mais há. Cerca de 15 segundos.
+length.standard.hint | Inclui seus três principais eventos e lembretes pendentes, cada um com um resumo curto.
+length.full.hint | Tudo de hoje, cada item com hora, resumo e importância.
+repeat.once | Uma vez
+repeat.everyDay | Todos os dias
+repeat.weekdays | Dias úteis
+repeat.weekends | Fins de semana
+snooze.title | Soneca
+snooze.default | Soneca padrão
+snooze.custom | Duração personalizada
+snooze.footer | Usada quando você diz “soneca” ou “só mais um pouco” sem dizer o tempo. Diga “soneca de 10 minutos” ou “meia hora” para outra duração.
+snooze.escalation | Mais firme a cada soneca
+snooze.limitOn | Limitar sonecas
+snooze.limit | Máximo de sonecas
+snooze.escalationFooter | A cada soneca seu concierge fica um pouco menos paciente. Com um limite, nenhuma soneca é oferecida depois dele.
+morning.title | Manhãs
+morning.awakeCheck | “Acordou mesmo?”
+morning.awakeCheckDelay | Perguntar após
+morning.awakeCheckFooter | Depois que você desliga por voz, seu concierge confere em voz baixa. Sem resposta, o alarme toca de novo.
+morning.nightstand | Modo Mesa de cabeceira
+morning.bedtimePreview | Prévia de amanhã na hora de dormir
+morning.sunrise | Tela de nascer do sol
+morning.sunriseMinutes | Começa antes do alarme
+morning.nightstandFooter | Para quando o iPhone fica no carregador durante a noite. Chega na fase 3.
+morning.calendar | Agenda
+morning.suggestAlarm | Sugerir horários de alarme
+morning.getReady | Tempo para se arrumar
+morning.suggestAlarmFooter | Com base no seu primeiro evento do dia e no tempo de que você precisa para se arrumar.
+morning.daysOff | Folgas
+morning.addKeyword | Adicionar palavra
+morning.daysOffFooter | Alarmes configurados para pular folgas não tocam em feriados nem quando o título de um evento de dia inteiro contém uma destas palavras.
+morning.health | Usar o sono do app Saúde
+morning.healthFooter | Opcional e somente leitura, para Tendências (fase 5). Nada é gravado no Saúde.
+score.title | Nota de despertar
+score.grace | Tolerância
+score.lateMinute | Cada minuto de atraso
+score.maxLate | Perda máxima por atraso
+score.snooze | Cada soneca
+score.missedCheck | Verificação sem resposta
+score.threshold | Sucesso a partir de
+score.points | %d pontos
+score.reset | Restaurar padrões
+score.footer | Cada manhã começa em 100. Mudar estes valores recalcula todas as manhãs já registradas.
+accent.canadianMale | Canadense, masculino
+accent.canadianFemale | Canadense, feminino
+accent.southernMale | Sul dos EUA, masculino
+accent.southernFemale | Sul dos EUA, feminino
+accent.britishMale | Britânico, masculino
+accent.britishFemale | Britânica, feminino
+accent.indianMale | Indiano, masculino
+accent.indianFemale | Indiana, feminino

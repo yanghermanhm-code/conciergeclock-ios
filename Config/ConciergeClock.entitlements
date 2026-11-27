@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>com.apple.security.application-groups</key>
+	<array>
+		<!-- Shared with the widgets (Phase 1b): next alarm snapshot. On this iPhone only. -->
+		<string>group.com.greatergoodsoftware.conciergeclock</string>
+		<!-- Offline AI models, shared with PrepPilot, FocusFound and FotoPhilter (one download for all). -->
+		<string>group.com.greatergoodsoftware.models</string>
+	</array>
+	<!-- Gemma needs more memory than the default app limit on 6–8 GB iPhones. -->
+	<key>com.apple.developer.kernel.increased-memory-limit</key>
+	<true/>
+</dict>
+</plist>

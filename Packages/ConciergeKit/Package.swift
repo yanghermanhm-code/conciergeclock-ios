@@ -1,0 +1,51 @@
+// swift-tools-version: 6.2
+import PackageDescription
+
+// ConciergeKit holds everything that is not the app shell itself.
+//
+//   ConciergeCore – pure Swift (Foundation only): settings, the butler persona (name, accent,
+//                   tone, briefing length), alarms, the wake log, the wake score, Advisor
+//                   recommendations, JSON backup payloads and CSV export. Portable to Android
+//                   (see docs/DATA_SCHEMA.md). No Apple-only frameworks.
+//   ConciergeData – SQLite persistence (GRDB): migrations, stores, JSON backup and restore.
+//
+// Later phases add ConciergeAudio (synthesised ambient sound), ConciergeSpeech (voices,
+// listening, command parsing) and ConciergeBriefing (calendar summary builder).
+//
+// Both modules use the Swift 6 language mode, like PrepPilot's PrepCore and PrepData.
+//
+// Run the tests in Xcode: choose the "ConciergeKit-Package" scheme, pick an iPhone simulator,
+// and press ⌘U.
+let package = Package(
+    name: "ConciergeKit",
+    platforms: [
+        .iOS(.v26),
+        .macOS(.v26),
+    ],
+    products: [
+        .library(name: "ConciergeCore", targets: ["ConciergeCore"]),
+        .library(name: "ConciergeData", targets: ["ConciergeData"]),
+    ],
+    dependencies: [
+        .package(url: "https://github.com/groue/GRDB.swift.git", from: "7.0.0"),
+    ],
+    targets: [
+        .target(name: "ConciergeCore"),
+        .target(
+            name: "ConciergeData",
+            dependencies: [
+                "ConciergeCore",
+                .product(name: "GRDB", package: "GRDB.swift"),
+            ]
+        ),
+        .testTarget(name: "ConciergeCoreTests", dependencies: ["ConciergeCore"]),
+        .testTarget(
+            name: "ConciergeDataTests",
+            dependencies: [
+                "ConciergeCore",
+                "ConciergeData",
+                .product(name: "GRDB", package: "GRDB.swift"),
+            ]
+        ),
+    ]
+)

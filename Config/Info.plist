@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!--
+  Keys that Xcode's generated Info.plist cannot express on its own. Xcode merges this file
+  with the generated one (GENERATE_INFOPLIST_FILE = YES + INFOPLIST_FILE = Config/Info.plist).
+  It lives outside the synchronised ConciergeClock/ folder so it is not copied as a resource.
+  Translations of the permission texts: ConciergeClock/<lang>.lproj/InfoPlist.strings.
+
+  Phase 1a asks for no permissions. Calendars, Reminders, Microphone, Speech Recognition,
+  AlarmKit and Apple Health texts are added with the phases that use them.
+-->
+<plist version="1.0">
+<dict>
+	<!-- Full backups (.conciergeclock, JSON): created here and opened from Files, AirDrop and Mail. -->
+	<key>UTExportedTypeDeclarations</key>
+	<array>
+		<dict>
+			<key>UTTypeIdentifier</key>
+			<string>com.greatergoodsoftware.conciergeclock.backup</string>
+			<key>UTTypeDescription</key>
+			<string>Concierge Clock Backup</string>
+			<key>UTTypeConformsTo</key>
+			<array>
+				<string>public.json</string>
+			</array>
+			<key>UTTypeTagSpecification</key>
+			<dict>
+				<key>public.filename-extension</key>
+				<array>
+					<string>conciergeclock</string>
+				</array>
+			</dict>
+		</dict>
+	</array>
+	<key>CFBundleDocumentTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeName</key>
+			<string>Concierge Clock Backup</string>
+			<key>LSHandlerRank</key>
+			<string>Owner</string>
+			<key>LSItemContentTypes</key>
+			<array>
+				<string>com.greatergoodsoftware.conciergeclock.backup</string>
+			</array>
+		</dict>
+	</array>
+	<!-- Backups are read when opened, never edited in place. -->
+	<key>LSSupportsOpeningDocumentsInPlace</key>
+	<false/>
+	<!-- The only network use is the optional offline AI model download, which the person starts (https only). -->
+	<key>NSAppTransportSecurity</key>
+	<dict/>
+</dict>
+</plist>

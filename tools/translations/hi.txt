@@ -1,0 +1,316 @@
+common.settings | सेटिंग्स
+common.done | हो गया
+common.cancel | रद्द करें
+common.delete | हटाएँ
+common.ok | ठीक है
+common.add | जोड़ें
+settings.appearance | रूप-रंग
+settings.theme | थीम
+theme.system | सिस्टम
+theme.light | हल्का
+theme.dark | गहरा
+settings.language | भाषा
+language.system | सिस्टम डिफ़ॉल्ट (%@)
+settings.languageFooter | बदलाव तुरंत लागू होते हैं।
+settings.haptics | हैप्टिक्स
+settings.appIcon | ऐप आइकन
+icon.dark | गहरा
+icon.light | हल्का
+settings.aboutApp | Concierge Clock के बारे में
+ai.ready | तैयार
+ai.notReady | उपलब्ध नहीं
+about.title | परिचय
+about.version | संस्करण %1$@ (%2$@)
+about.offline.title | 100% आपके iPhone पर
+about.tracking.title | कोई ट्रैकिंग नहीं
+about.data.title | आपका डेटा, आपकी मर्ज़ी
+about.data.detail | जब चाहें सब कुछ एक्सपोर्ट या बैकअप करें। जब तक आप न भेजें, कुछ भी आपके फ़ोन से बाहर नहीं जाता।
+about.price.title | एक बार भुगतान, हमेशा के लिए आपका
+about.price.detail | कोई सदस्यता नहीं, कोई पेवॉल नहीं। सभी सुविधाएँ शामिल हैं।
+about.product | Greater Good Software का एक उत्पाद
+about.acknowledgements | ओपन-सोर्स लाइसेंस
+about.terms | उपयोग की शर्तें
+company.title | Greater Good Software के बारे में
+company.tagline | सम्मानजनक सॉफ़्टवेयर जो आपके लिए काम करे, आप पर नहीं।
+company.mission | Greater Good Software सरल और निजी टूल बनाता है जो लोगों को अपना सर्वश्रेष्ठ काम करने और अच्छा जीवन जीने में मदद करते हैं। अच्छे सॉफ़्टवेयर के लिए एक ही बार भुगतान होना चाहिए, उसे ऑफ़लाइन काम करना चाहिए, और उसे कभी भी आपके ध्यान या डेटा का सौदा मुनाफ़े के लिए नहीं करना चाहिए।
+company.principles | हमारे सिद्धांत
+company.privacy.title | डिज़ाइन से ही निजी
+company.privacy.detail | आपका डेटा आपके डिवाइस पर ही रहता है। कोई खाता नहीं, कोई ट्रैकिंग नहीं, कोई विज्ञापन नहीं।
+company.fair.title | उचित मूल्य
+company.fair.detail | एक बार भुगतान करें और हमेशा के लिए आपका। कोई सदस्यता नहीं, कोई पेवॉल नहीं।
+company.access.title | सबके लिए बना
+company.access.detail | सुलभ, बहुभाषी और हर तरह के मन के लिए डिज़ाइन किया गया।
+company.lasting.title | लंबे समय तक चलने के लिए बना
+company.lasting.detail | ऑफ़लाइन काम करता है, चलता रहता है, और आपका डेटा हमेशा एक्सपोर्ट किया जा सकता है।
+company.products | हमारे ऐप
+company.preppilot | आपके अपने नोट्स से ऑफ़लाइन परीक्षा तैयारी, ऐसा अभ्यास जो आपके अनुसार ढलता है।
+company.focusfound | ऑफ़लाइन फ़ोकस टाइमर, कार्य योजनाकार और ध्यान भटकाने वाली चीज़ों का ब्लॉकर।
+company.fotophilter | फ़िल्म लुक, रीटच और मोशन वाला ऑफ़लाइन फ़ोटो एडिटर।
+company.footer | सबकी भलाई के लिए, लगन से बनाया गया।
+a11y.companyLogo | Greater Good Software के बारे में
+error.title | कुछ गड़बड़ हो गई
+error.launchTitle | Concierge Clock अपना डेटा नहीं खोल सका
+launch.skipHint | एनिमेशन छोड़ने के लिए दो बार टैप करें।
+minutes.count | %d मिनट
+backup.title | बैकअप और निर्यात
+backup.header | बैकअप
+backup.now | अभी बैकअप लें
+backup.restore | बैकअप से वापस लाएँ
+backup.last | पिछला बैकअप: %@
+backup.never | अभी कोई बैकअप नहीं।
+backup.confirmTitle | सब कुछ इस बैकअप से बदलें?
+backup.confirmRestore | बैकअप वापस लाएँ
+backup.openFailed | बैकअप नहीं खुल सका
+backup.error.notABackup | यह Concierge Clock बैकअप नहीं है, या फ़ाइल ख़राब है।
+backup.error.newer | यह बैकअप Concierge Clock के नए संस्करण से बना है। ऐप अपडेट करें, फिर से कोशिश करें।
+backup.error.damaged | यह बैकअप ख़राब है और वापस नहीं लाया जा सकता। कुछ नहीं बदला गया।
+backup.error.write | फ़ाइल लिखी नहीं जा सकी। जाँचें कि पर्याप्त जगह खाली है।
+export.footer | रिपोर्ट और स्प्रेडशीट इसी iPhone पर बनती हैं। उन्हें कहाँ भेजना है, यह आप चुनते हैं।
+export.csv | स्प्रेडशीट (CSV)
+export.working | तैयार हो रहा है…
+ai.title | ऑफ़लाइन AI
+ai.models | मॉडल
+ai.choice | मॉडल
+ai.choice.automatic | स्वचालित (%@)
+ai.wifiOnly | केवल Wi-Fi पर डाउनलोड करो
+ai.options | विकल्प
+ai.storageUsed | मॉडल द्वारा प्रयुक्त स्थान
+ai.storageFree | इस iPhone पर खाली
+ai.deleteTitle | %@ हटाएँ?
+ai.deleteFailed | मॉडल हटाया नहीं जा सका
+ai.recommended | सुझाया गया
+ai.e4bHint | सबसे अच्छे प्रश्न। 8 GB मेमोरी वाला iPhone चाहिए (iPhone 15 Pro या नया)।
+ai.e2bHint | छोटा और तेज़। 6 GB मेमोरी वाले iPhone पर चलता है।
+ai.cpuNote | इस iPhone पर यह प्रोसेसर पर चलता है: चलता है, पर बहुत धीमा।
+ai.download | डाउनलोड करो
+ai.progress | %2$@ में से %1$@
+ai.pause | रोकें
+ai.resume | फिर शुरू करो
+ai.verifying | डाउनलोड जाँचा जा रहा है…
+ai.installed | तैयार
+ai.retry | फिर कोशिश करो
+ai.failed.network | डाउनलोड रुक गया। कनेक्शन जाँचकर फिर कोशिश करो।
+ai.failed.checksum | डाउनलोड की गई फ़ाइल जाँच में विफल रही और हटा दी गई। फिर कोशिश करो।
+ai.failed.appGroup | इस बिल्ड में ऑफ़लाइन AI सेट नहीं है (App Groups क्षमता नहीं है)।
+ai.failed.space | जगह कम है: %@ खाली करके फिर कोशिश करो।
+guide.title | ऑफ़लाइन AI सेट करो
+guide.close | बंद करो
+guide.next | आगे
+guide.back | पीछे
+guide.done | हो गया
+guide.step | चरण %1$d / %2$d
+guide.intro.title | तुम्हारा iPhone
+guide.intro.body | इस iPhone में %1$@ मेमोरी है, इसलिए सुझाया गया मॉडल %2$@ है (%3$@ डाउनलोड)। यह पूरी तरह तुम्हारे iPhone पर चलता है; कुछ भी अपलोड नहीं होता।
+guide.intro.unsupported | इस iPhone में %@ मेमोरी है; ऑफ़लाइन AI के लिए कम से कम 6 GB चाहिए। ऐप अपनी अंतर्निहित सुविधाओं से चलता रहेगा।
+guide.open.title | %@ की सेटिंग्स खोलो
+guide.find.title | ऑफ़लाइन AI पर टैप करो
+guide.find.body | सेटिंग्स में ऑफ़लाइन AI वाली पंक्ति ढूँढकर टैप करो।
+guide.model.title | सुझाया गया मॉडल ढूँढो
+guide.model.body | हरे सुझाया गया लेबल वाला %@ ढूँढो। यह इस iPhone पर अच्छी तरह चलने वाला सबसे अच्छा मॉडल है।
+guide.model.e4bNote | Gemma 4 E4B भी यहाँ चलता है, पर सिर्फ़ प्रोसेसर पर और बहुत धीमा। E2B चुनो।
+guide.space.title | Wi-Fi और खाली जगह जाँचो
+guide.space.body | Wi-Fi से जुड़ो और केवल Wi-Fi पर डाउनलोड करो चालू रहने दो। इंस्टॉल के लिए थोड़ी देर %@ खाली जगह चाहिए।
+guide.download.title | डाउनलोड पर टैप करो
+guide.download.body | सुझाए गए मॉडल के नीचे डाउनलोड पर टैप करो। एक पट्टी प्रगति दिखाती है। तुम ऐप छोड़ सकते हो: डाउनलोड चलता रहेगा। iPhone को चार्ज और Wi-Fi पर रखो।
+guide.ready.title | तैयार दिखने तक रुको
+guide.ready.body | डाउनलोड पूरा होने पर ऐप फ़ाइल जाँचता है (एक-दो मिनट), फिर मॉडल पर हरा तैयार दिखता है।
+guide.turnOn.title | ऑफ़लाइन AI इस्तेमाल करो चालू करो
+guide.turnOn.body | ऑफ़लाइन AI स्क्रीन के ऊपर स्विच चालू (हरा) होना चाहिए।
+guide.verify.title | जाँचो कि यह चल रहा है
+guide.status.ready | इस iPhone पर पहले से सेट है।
+guide.status.downloading | डाउनलोड हो रहा है: %d%%
+guide.mock.settings | सेटिंग्स
+guide.mock.offlineAI | ऑफ़लाइन AI
+guide.mock.recommended | सुझाया गया
+guide.mock.download | डाउनलोड करो
+guide.mock.ready | तैयार
+guide.mock.useAI | ऑफ़लाइन AI इस्तेमाल करो
+guide.mock.wifi | केवल Wi-Fi पर डाउनलोड करो
+guide.app.open | कैसे करें, चरण-दर-चरण दिखाओ
+settings.startHere | ज़रूरी: यहाँ से शुरू करो
+settings.startHere.open | ऑफ़लाइन AI खोलो
+settings.startHere.ready | ऑफ़लाइन AI तैयार है: %@
+settings.startHere.downloading | %1$@ डाउनलोड हो रहा है: %2$d%%
+ai.test | ऑफ़लाइन AI जाँचो
+ai.test.footer | मॉडल लोड करके कुछ छोटे उत्तरों का समय मापता है, ताकि दिखे कि इस iPhone पर क्या चलता है और कितना तेज़। कुछ मिनट लग सकते हैं।
+ai.test.load | मॉडल लोड करना
+ai.test.plain | छोटा उत्तर
+ai.test.speed | लिखने की गति
+ai.test.wordsPerSecond | %@ शब्द प्रति सेकंड
+tab.alarms | अलार्म
+tab.concierge | कंसीयर्ज
+tab.sounds | ध्वनियाँ
+tab.trends | रुझान
+settings.concierge | आपका कंसीयर्ज
+settings.aiFooter | ऑफ़लाइन AI (Gemma) तय करता है कि कौन-से इवेंट ज़रूरी हैं, बटलर की बातों में विविधता लाता है और ढीले-ढाले अनुरोध भी समझता है — सब आपके iPhone पर। इसके बिना अंतर्निहित नियम इस्तेमाल होते हैं।
+settings.startHere.body | इस iPhone के लिए %1$@ (%2$@) डाउनलोड करें। फिर आपका कंसीयर्ज तय करेगा कि कौन-से इवेंट ज़रूरी हैं, ज़्यादा स्वाभाविक बोलेगा और ढीले-ढाले अनुरोध भी समझेगा — सब आपके iPhone पर। Wi-Fi पर कुछ मिनट लगते हैं।
+ai.use | ऑफ़लाइन AI इस्तेमाल करें
+ai.useFooter | बंद होने या डाउनलोड न होने पर आपका कंसीयर्ज अंतर्निहित नियम इस्तेमाल करता है: हर सुविधा काम करती रहती है।
+ai.unsupported | इस iPhone में ऑफ़लाइन AI के लिए पर्याप्त मेमोरी नहीं है। Concierge Clock अपने अंतर्निहित नियम इस्तेमाल करता है।
+ai.modelsFooter | Google का Gemma 4 (Apache 2.0), Hugging Face से एक बार डाउनलोड और इस्तेमाल से पहले जाँचा जाता है। यह पूरी तरह इसी iPhone पर चलता है और PrepPilot, FocusFound व FotoPhilter के साथ साझा होता है, इसलिए एक ही बार डाउनलोड होता है।
+ai.deleteMessage | PrepPilot, FocusFound और FotoPhilter भी यही प्रति इस्तेमाल करते हैं, इसलिए वे भी इसे खो देंगे। इसे फिर से डाउनलोड किया जा सकता है।
+ai.test.json | महत्व जाँच (JSON)
+guide.intro.shared | एक ही डाउनलोड इस iPhone पर Greater Good Software के सभी ऐप्स (Concierge Clock, PrepPilot, FocusFound, FotoPhilter) के काम आता है।
+guide.app.openSettings | किसी भी टैब के ऊपर गियर बटन पर टैप करें।
+guide.app.check | कंसीयर्ज टैब में ऑफ़लाइन AI कार्ड पर “तैयार: %@” दिखेगा।
+about.offline.detail | कोई अकाउंट नहीं, कोई क्लाउड नहीं, कोई सर्वर नहीं। Concierge Clock एयरप्लेन मोड में काम करता है।
+about.tracking.detail | कोई एनालिटिक्स नहीं, कोई विज्ञापन नहीं, और आपके कैलेंडर या आपकी कही बातों का कोई रिकॉर्ड नहीं।
+about.onDevice.title | AI जो आपके iPhone पर ही रहता है
+about.onDevice.detail | वैकल्पिक ऑफ़लाइन AI आपके iPhone पर चलता है। आपका कैलेंडर और रिमाइंडर कभी अपलोड नहीं होते।
+about.voice.title | सुनता है, रिकॉर्ड नहीं करता
+about.voice.detail | आपकी आवाज़ iPhone पर ही समझी जाती है और कभी सहेजी नहीं जाती। सिर्फ़ जागने का समय और गिनती रखी जाती है।
+company.conciergeclock | ऑफ़लाइन बोलने वाली अलार्म घड़ी, आपके अपने कैलेंडर से सुबह की ब्रीफ़िंग के साथ।
+error.launchMessage | आपके अलार्म और जागने का लॉग हटाए नहीं गए हैं। कृपया ऐप फिर से शुरू करें। अगर ऐसा होता रहे, तो इस संदेश के साथ सहायता से संपर्क करें:\n\n%@
+terms.body | Concierge Clock एक बार की ख़रीद के रूप में बेचा जाता है और Apple के मानक एंड यूज़र लाइसेंस एग्रीमेंट के तहत आपको लाइसेंस दिया जाता है।\n\nआपके अलार्म, सेटिंग्स और जागने का लॉग आपके iPhone पर ही रहते हैं। Greater Good Software उन्हें कभी प्राप्त, संग्रहित या साझा नहीं करता।\n\nConcierge Clock आपको जागने और दिन की योजना बनाने में मदद करता है। जो चीज़ किसी हाल में छूटनी नहीं चाहिए, उसके लिए दूसरा अलार्म भी लगाएँ। ब्रीफ़िंग अपने-आप बनती है और उसमें गलतियाँ हो सकती हैं, इसलिए ज़रूरी बातों के लिए अपना कैलेंडर देखें।\n\nConcierge Clock “जैसा है” उपलब्ध कराया जाता है, बिना किसी प्रकार की वारंटी के।
+backup.footer | बैकअप आपकी सेटिंग्स, अलार्म और जागने का लॉग एक .conciergeclock फ़ाइल में रखता है। इसे Files, iCloud Drive या कंप्यूटर में सहेजें — Concierge Clock इसे कभी अपलोड नहीं करता।
+backup.confirmMessage | %1$@ का बैकअप: %2$d अलार्म और जागने के लॉग में %3$d सुबहें। इस iPhone पर Concierge Clock में अभी मौजूद सब कुछ बदल दिया जाएगा।
+backup.auto.header | स्वचालित बैकअप
+backup.auto.choose | फ़ोल्डर चुनें…
+backup.auto.folder | फ़ोल्डर
+backup.auto.last | पिछला स्वचालित बैकअप
+backup.auto.change | फ़ोल्डर बदलें…
+backup.auto.stop | स्वचालित बैकअप बंद करें
+backup.auto.folderGone | फ़ोल्डर तक नहीं पहुँचा जा सका। उसे फिर से चुनें।
+backup.auto.failed | पिछला स्वचालित बैकअप सहेजा नहीं जा सका। बाद में फिर कोशिश होगी।
+backup.auto.footer | दिन में एक बार आपके चुने फ़ोल्डर (जैसे iCloud Drive) में बैकअप सहेजा जाता है। सबसे नए 7 रखे जाते हैं।
+export.file.wakeLog | जागने का लॉग
+export.file.alarms | अलार्म
+alarms.count | अलार्म: %d
+alarms.empty.title | अभी कोई अलार्म नहीं
+alarms.empty.message | आपके अलार्म यहाँ दिखेंगे।
+alarms.soon.title | अगले अपडेट में
+alarms.soon.message | अलार्म फ़ेज़ 1b में आएँगे, iOS के अपने अलार्म सिस्टम पर बने, इसलिए साइलेंट मोड और फ़ोकस में भी बजेंगे।
+alarms.soon.ring | लॉक स्क्रीन और Dynamic Island पर असली अलार्म
+alarms.soon.repeat | दोहराने के दिन, लेबल और एक-बार वाले अलार्म
+alarms.soon.snooze | आवाज़ या बटन से स्नूज़, डिफ़ॉल्ट 5 मिनट
+alarms.soon.skip | अगला अलार्म या कैलेंडर की छुट्टियाँ छोड़ें
+alarms.soon.widget | अगले अलार्म के विजेट
+concierge.greeting.morning | सुप्रभात।
+concierge.greeting.afternoon | नमस्कार।
+concierge.greeting.evening | शुभ संध्या।
+concierge.greeting.night | शुभ रात्रि।
+concierge.introduction | मैं %@ हूँ, आपका कंसीयर्ज।
+concierge.customize | अपना कंसीयर्ज बदलें
+concierge.briefMe | अभी ब्रीफ़ करें
+concierge.briefMe.soon | बोलकर ब्रीफ़िंग फ़ेज़ 2 में आएगी।
+concierge.nextAlarm | अगला अलार्म
+concierge.noAlarm | कोई अलार्म नहीं लगा
+concierge.ai.ready | तैयार: %@
+concierge.ai.setup | अभी सेट नहीं: सेटिंग्स › ऑफ़लाइन AI।
+concierge.ai.unsupported | इस iPhone पर उपलब्ध नहीं। अंतर्निहित नियम इस्तेमाल होते हैं।
+concierge.soon.title | आपका कंसीयर्ज क्या करेगा
+concierge.soon.message | हर अपडेट कुछ नया जोड़ता है। सब कुछ आपके iPhone पर चलता है।
+concierge.soon.brief | आपका दिन बोलकर सुनाना: समय, इवेंट, बकाया रिमाइंडर और जो ज़रूरी है
+concierge.soon.talk | “10 मिनट स्नूज़”, “मैं जाग गया” या “पूरा मार्क करो” समझना
+concierge.soon.nightstand | नाइटस्टैंड मोड: रात भर हल्की ध्वनि, अलार्म पर पूरी बातचीत
+concierge.soon.ask | “आज क्या है?” का जवाब देना
+concierge.soon.reminders | इवेंट से पहले और काम की नियत तारीख़ पर याद दिलाना
+sounds.soon.title | ध्वनियाँ आ रही हैं
+sounds.soon.message | फ़ेज़ 4 में। हर ध्वनि आपके iPhone पर बनती है: कुछ डाउनलोड नहीं करना।
+sounds.soon.noise | व्हाइट, पिंक और ब्राउन नॉइज़
+sounds.soon.ambient | बारिश और हल्की परिवेश ध्वनि
+sounds.soon.wake | घंटियाँ और साफ़ जगाने वाली ध्वनियाँ
+sounds.soon.timer | स्लीप टाइमर
+sounds.soon.ramp | अलग-अलग वॉल्यूम और धीरे-धीरे बढ़ती आवाज़
+trends.score.title | आपका जागने का स्कोर
+trends.score.intro | हर सुबह 100 में से अंक मिलते हैं। इसमें गिना जाता है कि उठने में कितना समय लगा और कितनी बार स्नूज़ किया।
+trends.score.late | %2$d मिनट की छूट के बाद हर मिनट देरी पर −%1$d, अधिकतम −%3$d
+trends.score.snooze | हर स्नूज़ पर −%d
+trends.score.check | “सच में उठ गए?” छूटने पर −%d
+trends.score.success | %d या ज़्यादा को सफल जागना माना जाता है
+trends.score.change | इन्हें सेटिंग्स › सुबह में बदलें।
+trends.logged | दर्ज सुबहें: %d
+trends.soon.title | रुझान और सलाह
+trends.soon.message | फ़ेज़ 5 में, कुछ सुबहें दर्ज होने के बाद।
+trends.soon.chart | अलार्म का समय बनाम उठने का समय (7, 14, 30 दिन, सभी)
+trends.soon.metrics | औसत देरी, सफलता दर, स्नूज़, सप्ताह के दिन बनाम सप्ताहांत
+trends.soon.advisor | वॉल्यूम, धीरे बढ़ती आवाज़ और ध्वनियों के लिए एक-टैप सुझाव
+trends.soon.experiments | 7 रातों के प्रयोग, निष्पक्ष तुलना के साथ
+trends.soon.health | Apple Health से नींद (वैकल्पिक)
+butler.title | आपका कंसीयर्ज
+butler.names | नाम
+butler.formalName | औपचारिक नाम
+butler.familiarName | घरेलू नाम
+butler.namesFooter | औपचारिक नाम पेशेवर लहजे में, घरेलू नाम बाकी लहजों में इस्तेमाल होता है।
+butler.voiceHeader | आवाज़
+butler.voice | लहजा
+butler.voiceApproximated | अभी किसी iPhone आवाज़ में ठीक यही लहजा नहीं है, इसलिए सबसे नज़दीकी आवाज़ क्षेत्रीय शब्दों के साथ इस्तेमाल होती है।
+butler.voiceEnglishOnly | लहजे अंग्रेज़ी पर लागू होते हैं। दूसरी भाषाएँ अपनी आवाज़ इस्तेमाल करती हैं।
+butler.voiceFooter | आवाज़ का पूर्वावलोकन फ़ेज़ 2 में बोलकर ब्रीफ़िंग के साथ आएगा।
+butler.tone | अंदाज़
+butler.mildSwearing | हल्की गाली की अनुमति दें
+butler.briefing | ब्रीफ़िंग
+butler.length | लंबाई
+butler.language | बोली जाने वाली भाषा
+butler.speakTitles | इवेंट के शीर्षक बोलें
+butler.speakTitlesOn | हर इवेंट उसके शीर्षक, छोटे सारांश, शुरू होने के समय और ज़रूरी लगने या न लगने के साथ पढ़ा जाता है।
+butler.speakTitlesOff | इवेंट “एक निजी इवेंट” के रूप में पढ़े जाते हैं, समय और ज़रूरी लगने या न लगने के साथ।
+tone.moderate | संतुलित
+tone.professional | पेशेवर
+tone.child | बच्चे के लिए
+tone.unhinged | बेलगाम
+tone.moderate.hint | स्वाभाविक, साफ़ और मददगार।
+tone.professional.hint | सधा हुआ और औपचारिक: एक ब्रिटिश बटलर, थोड़ा नकचढ़ा।
+tone.child.hint | गर्मजोशी भरा, सरल और कोमल।
+tone.unhinged.hint | बेबाक, नाटकीय और बेसब्र। मज़े के लिए, कभी क्रूर नहीं।
+tone.moderate.sample | “सुप्रभात, सात बजे हैं। 9:15 पर आपका डेंटिस्ट है।” — %@
+tone.professional.sample | “सुप्रभात। सात बज चुके हैं, और डेंटिस्ट सवा नौ बजे आपकी प्रतीक्षा करेंगे। मैं देर न करता।” — %@
+tone.child.sample | “सुप्रभात, प्यारे! सात बज गए। नाश्ते के बाद हम डेंटिस्ट के पास चलेंगे।” — %@
+tone.unhinged.sample | “सात बज गए! डेंटिस्ट! 9:15! उठो, वरना मैं तुम्हारी ज़िंदगी के फ़ैसलों पर कमेंट्री शुरू कर दूँगा।” — %@
+unhinged.title | बेलगाम अंदाज़
+unhinged.message | आपका कंसीयर्ज मज़े के लिए बेबाक, नाटकीय और बेसब्र हो जाता है। वह हल्की गालियाँ दे सकता है (आप इसे बंद कर सकते हैं)। अपशब्द, नफ़रत या असली दुर्व्यवहार कभी नहीं।
+unhinged.confirm | चालू करें
+length.quick | छोटी
+length.standard | सामान्य
+length.full | पूरी
+length.quick.hint | समय, आपका अगला इवेंट और कितने और हैं। लगभग 15 सेकंड।
+length.standard.hint | आपके तीन मुख्य इवेंट और बकाया रिमाइंडर भी, हर एक के छोटे सारांश के साथ।
+length.full.hint | आज का सब कुछ, हर चीज़ अपने समय, सारांश और महत्व के साथ।
+repeat.once | एक बार
+repeat.everyDay | हर दिन
+repeat.weekdays | सप्ताह के दिन
+repeat.weekends | सप्ताहांत
+snooze.title | स्नूज़
+snooze.default | डिफ़ॉल्ट स्नूज़
+snooze.custom | अपनी अवधि
+snooze.footer | जब आप बिना समय बताए “स्नूज़” या “थोड़ी देर और” कहते हैं, तब इस्तेमाल होता है। दूसरी अवधि के लिए “10 मिनट स्नूज़” या “आधा घंटा” कहें।
+snooze.escalation | हर स्नूज़ पर ज़्यादा सख़्त
+snooze.limitOn | स्नूज़ सीमित करें
+snooze.limit | अधिकतम स्नूज़
+snooze.escalationFooter | हर स्नूज़ के साथ आपका कंसीयर्ज थोड़ा कम धैर्यवान होता है। सीमा लगाने पर उसके बाद और स्नूज़ नहीं दिया जाता।
+morning.title | सुबह
+morning.awakeCheck | “सच में उठ गए?”
+morning.awakeCheckDelay | इतनी देर बाद पूछें
+morning.awakeCheckFooter | आवाज़ से अलार्म बंद करने के बाद आपका कंसीयर्ज धीरे से पूछता है। जवाब न मिले तो अलार्म फिर बजता है।
+morning.nightstand | नाइटस्टैंड मोड
+morning.bedtimePreview | सोते समय कल की झलक
+morning.sunrise | सूर्योदय स्क्रीन
+morning.sunriseMinutes | अलार्म से पहले शुरू
+morning.nightstandFooter | जब iPhone रात भर चार्जर पर हो। फ़ेज़ 3 में आएगा।
+morning.calendar | कैलेंडर
+morning.suggestAlarm | अलार्म का समय सुझाएँ
+morning.getReady | तैयार होने का समय
+morning.suggestAlarmFooter | दिन के आपके पहले इवेंट और तैयार होने में लगने वाले समय के आधार पर।
+morning.daysOff | छुट्टी के दिन
+morning.addKeyword | शब्द जोड़ें
+morning.daysOffFooter | छुट्टी के दिन छोड़ने वाले अलार्म सार्वजनिक छुट्टियों पर, या जब पूरे दिन के इवेंट के शीर्षक में इनमें से कोई शब्द हो, नहीं बजते।
+morning.health | Apple Health की नींद इस्तेमाल करें
+morning.healthFooter | वैकल्पिक और केवल पढ़ने के लिए, रुझानों (फ़ेज़ 5) के लिए। Health में कुछ नहीं लिखा जाता।
+score.title | जागने का स्कोर
+score.grace | छूट का समय
+score.lateMinute | हर मिनट देरी
+score.maxLate | देरी के लिए अधिकतम कटौती
+score.snooze | हर स्नूज़
+score.missedCheck | छूटी जाँच
+score.threshold | सफलता इतने या ज़्यादा पर
+score.points | %d अंक
+score.reset | डिफ़ॉल्ट पर लौटें
+score.footer | हर सुबह 100 से शुरू होती है। इन्हें बदलने पर पहले से दर्ज हर सुबह का स्कोर फिर से निकाला जाता है।
+accent.canadianMale | कनाडाई, पुरुष
+accent.canadianFemale | कनाडाई, महिला
+accent.southernMale | दक्षिणी अमेरिकी, पुरुष
+accent.southernFemale | दक्षिणी अमेरिकी, महिला
+accent.britishMale | ब्रिटिश, पुरुष
+accent.britishFemale | ब्रिटिश, महिला
+accent.indianMale | भारतीय, पुरुष
+accent.indianFemale | भारतीय, महिला

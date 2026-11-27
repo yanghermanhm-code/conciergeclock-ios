@@ -1,0 +1,316 @@
+common.settings | 设置
+common.done | 完成
+common.cancel | 取消
+common.delete | 删除
+common.ok | 好
+common.add | 添加
+settings.appearance | 外观
+settings.theme | 主题
+theme.system | 跟随系统
+theme.light | 浅色
+theme.dark | 深色
+settings.language | 语言
+language.system | 跟随系统（%@）
+settings.languageFooter | 更改立即生效。
+settings.haptics | 触感反馈
+settings.appIcon | App 图标
+icon.dark | 深色
+icon.light | 浅色
+settings.aboutApp | 关于 Concierge Clock
+ai.ready | 已就绪
+ai.notReady | 不可用
+about.title | 关于
+about.version | 版本 %1$@（%2$@）
+about.offline.title | 完全在你的 iPhone 上
+about.tracking.title | 零追踪
+about.data.title | 你的数据，由你决定
+about.data.detail | 随时导出或备份全部数据。除非你主动发送，任何数据都不会离开你的手机。
+about.price.title | 一次付费，永久拥有
+about.price.detail | 无订阅，无付费墙。包含全部功能。
+about.product | Greater Good Software 出品
+about.acknowledgements | 开源许可
+about.terms | 使用条款
+company.title | 关于 Greater Good Software
+company.tagline | 尊重用户的软件：为你服务，而不是利用你。
+company.mission | Greater Good Software 打造简单、私密的工具，帮助人们做好工作、好好生活。好的软件应该一次付费、离线可用，并且永远不拿你的注意力或数据去换取利润。
+company.principles | 我们的原则
+company.privacy.title | 隐私优先
+company.privacy.detail | 数据保留在你的设备上。无账户、无追踪、无广告。
+company.fair.title | 公平定价
+company.fair.detail | 一次付费，永久拥有。无订阅，无付费墙。
+company.access.title | 人人可用
+company.access.detail | 无障碍、多语言，为各种思维方式而设计。
+company.lasting.title | 经久耐用
+company.lasting.detail | 离线可用，持续可用，你的数据随时可以导出。
+company.products | 我们的应用
+company.preppilot | 离线备考应用，用你自己的笔记出题，练习随你调整。
+company.focusfound | 离线专注计时器、任务规划和分心屏蔽工具。
+company.fotophilter | 离线照片编辑器，提供胶片风格、修饰和动效。
+company.footer | 用心打造，为了更大的善。
+a11y.companyLogo | 关于 Greater Good Software
+error.title | 出现问题
+error.launchTitle | Concierge Clock 无法打开其数据
+launch.skipHint | 轻点两下跳过动画。
+minutes.count | %d 分钟
+backup.title | 备份与导出
+backup.header | 备份
+backup.now | 立即备份
+backup.restore | 从备份恢复
+backup.last | 上次备份：%@
+backup.never | 还没有备份。
+backup.confirmTitle | 用此备份替换所有内容？
+backup.confirmRestore | 恢复备份
+backup.openFailed | 无法打开备份
+backup.error.notABackup | 这不是 Concierge Clock 备份，或者文件已损坏。
+backup.error.newer | 此备份由更新版本的 Concierge Clock 创建。请更新 App 后再试。
+backup.error.damaged | 此备份已损坏，无法恢复。没有更改任何内容。
+backup.error.write | 无法写入文件。请检查是否有足够的可用空间。
+export.footer | 报告和表格在这台 iPhone 上生成，由你决定发送到哪里。
+export.csv | 表格（CSV）
+export.working | 正在准备…
+ai.title | 离线 AI
+ai.models | 模型
+ai.choice | 模型
+ai.choice.automatic | 自动（%@）
+ai.wifiOnly | 仅通过 Wi-Fi 下载
+ai.options | 选项
+ai.storageUsed | 模型占用空间
+ai.storageFree | 此 iPhone 可用空间
+ai.deleteTitle | 删除 %@？
+ai.deleteFailed | 无法删除模型
+ai.recommended | 推荐
+ai.e4bHint | 题目质量最佳。需要 8 GB 内存的 iPhone（iPhone 15 Pro 或更新机型）。
+ai.e2bHint | 更小更快。可在 6 GB 内存的 iPhone 上运行。
+ai.cpuNote | 在这台 iPhone 上用处理器运行：可以用，但慢很多。
+ai.download | 下载
+ai.progress | %1$@ / %2$@
+ai.pause | 暂停
+ai.resume | 继续
+ai.verifying | 正在校验下载…
+ai.installed | 就绪
+ai.retry | 重试
+ai.failed.network | 下载已中断。请检查网络后重试。
+ai.failed.checksum | 下载的文件未通过校验，已删除。请重试。
+ai.failed.appGroup | 此版本未设置离线 AI（缺少 App Groups 功能）。
+ai.failed.space | 空间不足：请释放 %@ 后重试。
+guide.title | 设置离线 AI
+guide.close | 关闭
+guide.next | 下一步
+guide.back | 上一步
+guide.done | 完成
+guide.step | 第 %1$d 步，共 %2$d 步
+guide.intro.title | 你的 iPhone
+guide.intro.body | 这台 iPhone 有 %1$@ 内存，推荐模型是 %2$@（下载 %3$@）。它完全在你的 iPhone 上运行，学习内容不会上传。
+guide.intro.unsupported | 这台 iPhone 有 %@ 内存；离线 AI 至少需要 6 GB。应用会继续使用内置功能。
+guide.open.title | 打开 %@ 的设置
+guide.find.title | 点按“离线 AI”
+guide.find.body | 在设置中找到“离线 AI”一行并点按。
+guide.model.title | 找到推荐的模型
+guide.model.body | 找到带有绿色“推荐”标签的 %@。这是这台 iPhone 能流畅运行的最佳模型。
+guide.model.e4bNote | Gemma 4 E4B 也能在这里运行，但只能用处理器，速度慢很多。请选择 E2B。
+guide.space.title | 检查 Wi-Fi 和可用空间
+guide.space.body | 连接 Wi-Fi，并保持“仅通过 Wi-Fi 下载”开启。安装时需要暂时占用 %@ 可用空间。
+guide.download.title | 点按“下载”
+guide.download.body | 在推荐模型下点按“下载”，进度条会显示进度。你可以离开应用，下载会继续。请保持 iPhone 充电并连接 Wi-Fi。
+guide.ready.title | 等待显示“就绪”
+guide.ready.body | 下载完成后，应用会校验文件（一两分钟），随后模型显示绿色“就绪”。
+guide.turnOn.title | 打开“使用离线 AI”
+guide.turnOn.body | 在“离线 AI”页面顶部，确认开关已打开（绿色）。
+guide.verify.title | 确认已生效
+guide.status.ready | 这台 iPhone 已设置好。
+guide.status.downloading | 正在下载：%d%%
+guide.mock.settings | 设置
+guide.mock.offlineAI | 离线 AI
+guide.mock.recommended | 推荐
+guide.mock.download | 下载
+guide.mock.ready | 就绪
+guide.mock.useAI | 使用离线 AI
+guide.mock.wifi | 仅通过 Wi-Fi 下载
+guide.app.open | 一步步教我
+settings.startHere | 重要：从这里开始
+settings.startHere.open | 打开离线 AI
+settings.startHere.ready | 离线 AI 已就绪：%@
+settings.startHere.downloading | 正在下载 %1$@：%2$d%%
+ai.test | 测试离线 AI
+ai.test.footer | 加载模型并为几次简短回复计时，查看这台 iPhone 上哪些功能可用以及速度。最多需要几分钟。
+ai.test.load | 加载模型
+ai.test.plain | 简短回复
+ai.test.speed | 写作速度
+ai.test.wordsPerSecond | 每秒 %@ 个词
+tab.alarms | 闹钟
+tab.concierge | 管家
+tab.sounds | 声音
+tab.trends | 趋势
+settings.concierge | 你的管家
+settings.aiFooter | 离线 AI（Gemma）判断哪些日程重要、让管家的说法更多样，并能听懂更随意的请求，全部在你的 iPhone 上完成。未启用时使用内置规则。
+settings.startHere.body | 为这台 iPhone 下载 %1$@（%2$@）。之后你的管家会判断哪些日程重要、说话更自然、听懂更随意的请求，全部在 iPhone 上完成。使用无线局域网需几分钟。
+ai.use | 使用离线 AI
+ai.useFooter | 关闭或未下载时，管家使用内置规则：所有功能照常可用。
+ai.unsupported | 这台 iPhone 的内存不足以运行离线 AI。Concierge Clock 将使用内置规则。
+ai.modelsFooter | Google 的 Gemma 4（Apache 2.0），从 Hugging Face 下载一次并在使用前校验。它完全在这台 iPhone 上运行，并与 PrepPilot、FocusFound 和 FotoPhilter 共用，只需下载一次。
+ai.deleteMessage | PrepPilot、FocusFound 和 FotoPhilter 使用同一份副本，它们也会失去它。之后可以重新下载。
+ai.test.json | 重要性判断（JSON）
+guide.intro.shared | 一次下载即可供这台 iPhone 上所有 Greater Good Software 应用（Concierge Clock、PrepPilot、FocusFound、FotoPhilter）使用。
+guide.app.openSettings | 轻点任意标签页顶部的齿轮按钮。
+guide.app.check | 在“管家”标签页中，离线 AI 卡片显示“已就绪：%@”。
+about.offline.detail | 无需账户，没有云端，没有服务器。Concierge Clock 可在飞行模式下使用。
+about.tracking.detail | 没有分析，没有广告，不记录你的日历或你说的话。
+about.onDevice.title | 留在 iPhone 上的 AI
+about.onDevice.detail | 可选的离线 AI 在你的 iPhone 上运行。你的日历和提醒事项从不上传。
+about.voice.title | 只听，不录
+about.voice.detail | 你的语音在 iPhone 上识别，从不保存。只保留起床时间和次数。
+company.conciergeclock | 离线会说话的闹钟，用你自己的日历做晨间简报。
+error.launchMessage | 你的闹钟和起床记录没有被删除。请重新启动应用。如果问题持续，请将以下信息发送给支持团队：\n\n%@
+terms.body | Concierge Clock 以一次性购买方式出售，并依据 Apple 标准最终用户许可协议授权给你使用。\n\n你的闹钟、设置和起床记录保存在你的 iPhone 上。Greater Good Software 从不接收、存储或分享它们。\n\nConcierge Clock 帮助你起床和安排一天。对于绝不能错过的事，请再设一个闹钟。简报为自动生成，可能有误，重要事项请以日历为准。\n\nConcierge Clock 按“原样”提供，不作任何形式的保证。
+backup.footer | 备份会把你的设置、闹钟和起床记录保存在一个 .conciergeclock 文件中。可存到“文件”、iCloud 云盘或电脑——Concierge Clock 从不上传。
+backup.confirmMessage | 来自 %1$@ 的备份：%2$d 个闹钟，起床记录中 %3$d 个早晨。这台 iPhone 上 Concierge Clock 现有的全部内容都将被替换。
+backup.auto.header | 自动备份
+backup.auto.choose | 选择文件夹…
+backup.auto.folder | 文件夹
+backup.auto.last | 上次自动备份
+backup.auto.change | 更换文件夹…
+backup.auto.stop | 停止自动备份
+backup.auto.folderGone | 无法访问该文件夹。请重新选择。
+backup.auto.failed | 上次自动备份未能保存。稍后会再试。
+backup.auto.footer | 每天一次，备份会保存到你选择的文件夹（例如 iCloud 云盘）。保留最新的 7 份。
+export.file.wakeLog | 起床记录
+export.file.alarms | 闹钟
+alarms.count | 闹钟：%d 个
+alarms.empty.title | 还没有闹钟
+alarms.empty.message | 你的闹钟会显示在这里。
+alarms.soon.title | 下次更新推出
+alarms.soon.message | 闹钟将在第 1b 阶段推出，基于 iOS 自带的闹钟系统，因此在静音模式和专注模式下也会响。
+alarms.soon.ring | 锁定屏幕和灵动岛上的真正闹钟
+alarms.soon.repeat | 重复日期、标签和一次性闹钟
+alarms.soon.snooze | 用语音或按钮稍后提醒，默认 5 分钟
+alarms.soon.skip | 跳过下一次闹钟，或跳过日历中的休息日
+alarms.soon.widget | 下一个闹钟小组件
+concierge.greeting.morning | 早上好。
+concierge.greeting.afternoon | 下午好。
+concierge.greeting.evening | 晚上好。
+concierge.greeting.night | 晚安。
+concierge.introduction | 我是 %@，你的管家。
+concierge.customize | 定制你的管家
+concierge.briefMe | 现在给我简报
+concierge.briefMe.soon | 语音简报将在第 2 阶段推出。
+concierge.nextAlarm | 下一个闹钟
+concierge.noAlarm | 未设闹钟
+concierge.ai.ready | 已就绪：%@
+concierge.ai.setup | 尚未设置：设置 › 离线 AI。
+concierge.ai.unsupported | 这台 iPhone 不支持。将使用内置规则。
+concierge.soon.title | 你的管家将会做什么
+concierge.soon.message | 每次更新都会增加更多功能。一切都在你的 iPhone 上运行。
+concierge.soon.brief | 朗读你的一天：时间、日程、到期提醒和重要事项
+concierge.soon.talk | 听懂“稍后 10 分钟”“我醒了”或“标记为完成”
+concierge.soon.nightstand | 床头模式：夜间播放环境音，闹钟时完整对话
+concierge.soon.ask | 回答“我今天有什么安排？”
+concierge.soon.reminders | 在日程开始前和任务到期时提醒你
+sounds.soon.title | 声音即将推出
+sounds.soon.message | 第 4 阶段推出。每种声音都在你的 iPhone 上生成：无需下载。
+sounds.soon.noise | 白噪音、粉红噪音和棕噪音
+sounds.soon.ambient | 雨声和柔和的环境音
+sounds.soon.wake | 钟声和清晰的唤醒声
+sounds.soon.timer | 睡眠定时器
+sounds.soon.ramp | 独立音量和渐强
+trends.score.title | 你的起床得分
+trends.score.intro | 每个早晨满分 100。既看你多久起床，也看你稍后提醒了几次。
+trends.score.late | 宽限 %2$d 分钟后，每迟到一分钟 −%1$d，最多 −%3$d
+trends.score.snooze | 每次稍后提醒 −%d
+trends.score.check | 错过“真的起来了吗？”时 −%d
+trends.score.success | %d 分或以上算成功起床
+trends.score.change | 可在 设置 › 早晨 中更改。
+trends.logged | 已记录早晨：%d
+trends.soon.title | 趋势与建议
+trends.soon.message | 第 5 阶段推出，需先记录几个早晨。
+trends.soon.chart | 闹钟时间与实际起床时间对比（7、14、30 天、全部）
+trends.soon.metrics | 平均迟到、成功率、稍后提醒次数、工作日与周末
+trends.soon.advisor | 一键建议：音量、渐强和声音
+trends.soon.experiments | 7 晚试验，公平对比
+trends.soon.health | 来自 Apple“健康”的睡眠数据（可选）
+butler.title | 你的管家
+butler.names | 名字
+butler.formalName | 正式名
+butler.familiarName | 昵称
+butler.namesFooter | “专业”语气使用正式名，其他语气使用昵称。
+butler.voiceHeader | 声音
+butler.voice | 口音
+butler.voiceApproximated | 目前还没有 iPhone 声音完全是这种口音，因此使用最接近的声音并配合地方用语。
+butler.voiceEnglishOnly | 口音只适用于英语。其他语言使用该语言自己的声音。
+butler.voiceFooter | 声音试听将随语音简报在第 2 阶段推出。
+butler.tone | 语气
+butler.mildSwearing | 允许轻微粗口
+butler.briefing | 简报
+butler.length | 长度
+butler.language | 播报语言
+butler.speakTitles | 朗读日程标题
+butler.speakTitlesOn | 每个日程都会读出标题、简短摘要、开始时间以及是否看起来重要。
+butler.speakTitlesOff | 日程会读作“一项私人日程”，并说明时间以及是否看起来重要。
+tone.moderate | 适中
+tone.professional | 专业
+tone.child | 对孩子说
+tone.unhinged | 放飞
+tone.moderate.hint | 自然、清楚、乐于助人。
+tone.professional.hint | 干练正式：一位略带傲气的英式管家。
+tone.child.hint | 温暖、简单、温柔。
+tone.unhinged.hint | 直接、夸张、没耐心。只为好笑，从不刻薄。
+tone.moderate.sample | “早上好，现在七点。你九点十五分要看牙医。”—— %@
+tone.professional.sample | “早上好。现在是七点整，牙医九点一刻恭候您。我建议您不要磨蹭。”—— %@
+tone.child.sample | “早上好，小太阳！现在七点啦。吃完早饭我们去看牙医。”—— %@
+tone.unhinged.sample | “七点了！牙医！九点十五！快起来，不然我就开始点评你的人生选择了。”—— %@
+unhinged.title | 放飞语气
+unhinged.message | 你的管家会变得直接、夸张、没耐心，只为好笑。可能会说轻微粗口（可以关闭）。绝不使用侮辱、仇恨或真正的辱骂。
+unhinged.confirm | 开启
+length.quick | 简短
+length.standard | 标准
+length.full | 完整
+length.quick.hint | 时间、下一个日程以及之后还有几个。约 15 秒。
+length.standard.hint | 另加最重要的三个日程和到期提醒，各附简短摘要。
+length.full.hint | 今天的全部内容，每项都有时间、摘要和重要程度。
+repeat.once | 一次
+repeat.everyDay | 每天
+repeat.weekdays | 工作日
+repeat.weekends | 周末
+snooze.title | 稍后提醒
+snooze.default | 默认稍后提醒
+snooze.custom | 自定义时长
+snooze.footer | 当你说“稍后提醒”或“再睡一会儿”而没说时间时使用。说“稍后 10 分钟”或“半小时”可指定其他时长。
+snooze.escalation | 每次稍后提醒更坚决
+snooze.limitOn | 限制稍后提醒次数
+snooze.limit | 最多次数
+snooze.escalationFooter | 每稍后提醒一次，管家就少一点耐心。设置上限后，达到上限便不再提供稍后提醒。
+morning.title | 早晨
+morning.awakeCheck | “真的起来了吗？”
+morning.awakeCheckDelay | 询问时间
+morning.awakeCheckFooter | 你用语音关闭闹钟后，管家会轻声确认。如果没有回应，闹钟会再次响起。
+morning.nightstand | 床头模式
+morning.bedtimePreview | 睡前预览明天
+morning.sunrise | 日出屏幕
+morning.sunriseMinutes | 在闹钟前开始
+morning.nightstandFooter | 适用于 iPhone 整夜放在充电器上时。第 3 阶段推出。
+morning.calendar | 日历
+morning.suggestAlarm | 建议闹钟时间
+morning.getReady | 准备时间
+morning.suggestAlarmFooter | 根据你当天的第一个日程和你需要的准备时间。
+morning.daysOff | 休息日
+morning.addKeyword | 添加词语
+morning.daysOffFooter | 设为跳过休息日的闹钟，在公共假日或全天日程标题包含以下任一词语时不会响。
+morning.health | 使用“健康”中的睡眠数据
+morning.healthFooter | 可选，只读，用于趋势（第 5 阶段）。不会向“健康”写入任何内容。
+score.title | 起床得分
+score.grace | 宽限时间
+score.lateMinute | 每迟到一分钟
+score.maxLate | 迟到最多扣分
+score.snooze | 每次稍后提醒
+score.missedCheck | 错过确认
+score.threshold | 成功分数线
+score.points | %d 分
+score.reset | 恢复默认
+score.footer | 每个早晨从 100 分开始。更改后会重新计算所有已记录的早晨。
+accent.canadianMale | 加拿大口音，男声
+accent.canadianFemale | 加拿大口音，女声
+accent.southernMale | 美国南方口音，男声
+accent.southernFemale | 美国南方口音，女声
+accent.britishMale | 英式口音，男声
+accent.britishFemale | 英式口音，女声
+accent.indianMale | 印度口音，男声
+accent.indianFemale | 印度口音，女声

@@ -1,0 +1,12 @@
+{
+  "images": [
+    {
+      "filename": "ProductIcon-ConciergeClock.png",
+      "idiom": "universal"
+    }
+  ],
+  "info": {
+    "author": "xcode",
+    "version": 1
+  }
+}
