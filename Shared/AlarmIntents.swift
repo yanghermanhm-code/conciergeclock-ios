@@ -15,8 +15,8 @@ enum AlarmIntentAction: String, Sendable {
 }
 
 struct StopAlarmIntent: LiveActivityIntent {
-    static var title: LocalizedStringResource = "Stop"
-    static var isDiscoverable = false
+    static let title: LocalizedStringResource = "Stop"
+    static let isDiscoverable = false
 
     @Parameter(title: "Ring")
     var ringID: String
@@ -40,8 +40,8 @@ struct StopAlarmIntent: LiveActivityIntent {
 }
 
 struct SnoozeAlarmIntent: LiveActivityIntent {
-    static var title: LocalizedStringResource = "Snooze"
-    static var isDiscoverable = false
+    static let title: LocalizedStringResource = "Snooze"
+    static let isDiscoverable = false
 
     @Parameter(title: "Ring")
     var ringID: String

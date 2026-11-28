@@ -52,7 +52,7 @@ final class AlarmScheduler {
     @discardableResult
     func requestAuthorization() async -> Bool {
         do {
-            authorization = Self.map(try await manager.requestAuthorization())
+            authorization = Self.map(try await Self.requestAlarmKitAuthorization())
         } catch {
             authorization = .denied
         }
@@ -117,42 +117,69 @@ final class AlarmScheduler {
         let snoozeMinutes = settings.snoozeMinutes(for: alarm)
         let l10n = Localizer(language: AppLanguage.resolve(code: settings.languageCode))
         let title = alarm.label.nonBlank ?? l10n["alarm.defaultTitle"]
-        let snoozeButton = AlarmButton(text: LocalizedStringResource(stringLiteral: l10n["alarm.snooze"]), textColor: .white, systemImageName: "zzz")
+        let request = RingRequest(
+            id: ring.id, fireDate: ring.fireDate, alarmID: alarm.id, label: alarm.label, title: title,
+            stopText: l10n["alarm.stop"], snoozeText: l10n["alarm.snooze"], snoozingText: l10n("alarm.snoozing", title),
+            snoozeSeconds: TimeInterval(snoozeMinutes * 60)
+        )
+        try await Self.scheduleRing(request)
+        try? occurrences.insertIfNew(AlarmOccurrence(
+            id: ring.id.uuidString, alarmID: alarm.id, scheduledAt: ring.fireDate, snoozeMinutes: snoozeMinutes
+        ))
+    }
+
+    /// Everything AlarmKit needs for one ring, as plain values, so the call to AlarmKit happens
+    /// outside the main actor without sending main-actor state across (Swift 6 data-race safety).
+    private struct RingRequest: Sendable {
+        let id: UUID
+        let fireDate: Date
+        let alarmID: String
+        let label: String
+        let title: String
+        let stopText: String
+        let snoozeText: String
+        let snoozingText: String
+        let snoozeSeconds: TimeInterval
+    }
+
+    nonisolated private static func requestAlarmKitAuthorization() async throws -> AlarmManager.AuthorizationState {
+        try await AlarmManager.shared.requestAuthorization()
+    }
+
+    nonisolated private static func scheduleRing(_ request: RingRequest) async throws {
+        let snoozeButton = AlarmButton(text: LocalizedStringResource(stringLiteral: request.snoozeText), textColor: .white, systemImageName: "zzz")
         let alert: AlarmPresentation.Alert
         if #available(iOS 26.1, *) {
             // From iOS 26.1 the system draws the Stop button itself.
             alert = AlarmPresentation.Alert(
-                title: LocalizedStringResource(stringLiteral: title),
+                title: LocalizedStringResource(stringLiteral: request.title),
                 secondaryButton: snoozeButton,
                 secondaryButtonBehavior: .countdown
             )
         } else {
             alert = AlarmPresentation.Alert(
-                title: LocalizedStringResource(stringLiteral: title),
-                stopButton: AlarmButton(text: LocalizedStringResource(stringLiteral: l10n["alarm.stop"]), textColor: .white, systemImageName: "stop.fill"),
+                title: LocalizedStringResource(stringLiteral: request.title),
+                stopButton: AlarmButton(text: LocalizedStringResource(stringLiteral: request.stopText), textColor: .white, systemImageName: "stop.fill"),
                 secondaryButton: snoozeButton,
                 secondaryButtonBehavior: .countdown
             )
         }
-        let countdown = AlarmPresentation.Countdown(title: LocalizedStringResource(stringLiteral: l10n("alarm.snoozing", title)), pauseButton: nil)
+        let countdown = AlarmPresentation.Countdown(title: LocalizedStringResource(stringLiteral: request.snoozingText), pauseButton: nil)
         let attributes = AlarmAttributes<ConciergeAlarmMetadata>(
             presentation: AlarmPresentation(alert: alert, countdown: countdown),
-            metadata: ConciergeAlarmMetadata(alarmID: alarm.id, label: alarm.label),
+            metadata: ConciergeAlarmMetadata(alarmID: request.alarmID, label: request.label),
             // A fixed colour: the attributes are encoded and drawn by the system.
             tintColor: Color(hex: 0x0B7470)
         )
         let configuration = AlarmManager.AlarmConfiguration<ConciergeAlarmMetadata>(
-            // The snooze: after Snooze, the alarm rings again `snoozeMinutes` later.
-            countdownDuration: AlarmKit.Alarm.CountdownDuration(preAlert: nil, postAlert: TimeInterval(snoozeMinutes * 60)),
-            schedule: .fixed(ring.fireDate),
+            // The snooze: after Snooze, the alarm rings again after the snooze length.
+            countdownDuration: AlarmKit.Alarm.CountdownDuration(preAlert: nil, postAlert: request.snoozeSeconds),
+            schedule: .fixed(request.fireDate),
             attributes: attributes,
-            stopIntent: StopAlarmIntent(ringID: ring.id.uuidString),
-            secondaryIntent: SnoozeAlarmIntent(ringID: ring.id.uuidString)
+            stopIntent: StopAlarmIntent(ringID: request.id.uuidString),
+            secondaryIntent: SnoozeAlarmIntent(ringID: request.id.uuidString)
         )
-        _ = try await manager.schedule(id: ring.id, configuration: configuration)
-        try? occurrences.insertIfNew(AlarmOccurrence(
-            id: ring.id.uuidString, alarmID: alarm.id, scheduledAt: ring.fireDate, snoozeMinutes: snoozeMinutes
-        ))
+        _ = try await AlarmManager.shared.schedule(id: request.id, configuration: configuration)
     }
 
     // MARK: Stop, snooze, missed
