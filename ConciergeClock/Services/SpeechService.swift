@@ -34,7 +34,9 @@ final class SpeechService: NSObject {
     /// Speaks `briefing` line by line in the persona's voice. Stops anything already speaking.
     func speak(_ briefing: Briefing, persona: Persona) {
         stop()
-        activateSession()
+        // The audio session is switched on off the main thread (it can block for a moment);
+        // the synthesizer queues the lines meanwhile and starts as soon as audio is ready.
+        Self.activateSession()
         let voice = VoiceCatalog.voice(for: persona)
         let prosody = Prosody.forPersona(persona)
         current = briefing
@@ -64,13 +66,25 @@ final class SpeechService: NSObject {
         current = nil
         lineForUtterance = [:]
         lastUtterance = nil
-        try? AVAudioSession.sharedInstance().setActive(false, options: .notifyOthersOnDeactivation)
+        Self.deactivateSession()
     }
 
-    private func activateSession() {
-        let session = AVAudioSession.sharedInstance()
-        try? session.setCategory(.playback, mode: .spokenAudio, options: [.duckOthers])
-        try? session.setActive(true)
+    /// AVAudioSession calls can block (Xcode flags them as a hang risk on the main thread), so
+    /// they run in order on one background queue.
+    private static let audioQueue = DispatchQueue(label: "com.greatergoodsoftware.conciergeclock.audio", qos: .userInitiated)
+
+    private static func activateSession() {
+        audioQueue.async {
+            let session = AVAudioSession.sharedInstance()
+            try? session.setCategory(.playback, mode: .spokenAudio, options: [.duckOthers])
+            try? session.setActive(true)
+        }
+    }
+
+    private static func deactivateSession() {
+        audioQueue.async {
+            try? AVAudioSession.sharedInstance().setActive(false, options: .notifyOthersOnDeactivation)
+        }
     }
 
     fileprivate func didStart(_ id: ObjectIdentifier) {

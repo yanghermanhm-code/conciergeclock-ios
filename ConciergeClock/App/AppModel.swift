@@ -188,6 +188,7 @@ final class AppModel {
 
     func didEnterBackground() {
         speech.stop()
+        briefings.cancelRanking()
         backups.autoBackupIfDue(settings: settings)
     }
 

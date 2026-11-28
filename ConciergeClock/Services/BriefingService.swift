@@ -53,6 +53,14 @@ final class BriefingService {
         rankWithModel(found, signature: signature, now: now)
     }
 
+    /// Stops Gemma's ranking (the app is going to the background, where iOS does not allow GPU
+    /// work); the next refresh starts it again.
+    func cancelRanking() {
+        rankTask?.cancel()
+        rankTask = nil
+        isRanking = false
+    }
+
     private func rankWithModel(_ found: [BriefingItem], signature: [String], now: Date) {
         rankTask?.cancel()
         isRanking = false
