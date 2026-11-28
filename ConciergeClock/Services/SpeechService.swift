@@ -130,7 +130,7 @@ final class SpeechService: NSObject {
 
     /// AVAudioSession calls can block (Xcode flags them as a hang risk on the main thread), so
     /// they run in order on one background queue.
-    static let audioQueue = DispatchQueue(label: "com.greatergoodsoftware.conciergeclock.audio", qos: .userInitiated)
+    nonisolated static let audioQueue = DispatchQueue(label: "com.greatergoodsoftware.conciergeclock.audio", qos: .userInitiated)
 
     private static func activateSession() {
         audioQueue.async {

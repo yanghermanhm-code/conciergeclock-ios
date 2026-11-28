@@ -11,7 +11,7 @@ final class ListeningService {
         case granted, denied, notDetermined
     }
 
-    private var engine: AVAudioEngine?
+    private let microphone = MicrophoneTap()
     private var request: SFSpeechAudioBufferRecognitionRequest?
     private var task: SFSpeechRecognitionTask?
 
@@ -50,27 +50,12 @@ final class ListeningService {
     /// The conversation audio session (play and record, loudspeaker) must already be active.
     func listen(with recognizer: SFSpeechRecognizer, timeout: TimeInterval = 8) async -> String {
         stop()
-        let engine = AVAudioEngine()
         let request = SFSpeechAudioBufferRecognitionRequest()
         request.shouldReportPartialResults = true
         request.requiresOnDeviceRecognition = true
         request.taskHint = .confirmation
-        let input = engine.inputNode
-        let format = input.outputFormat(forBus: 0)
-        guard format.sampleRate > 0 else { return "" }
-        // The request accepts buffers from the audio thread (Apple's documented use).
-        nonisolated(unsafe) let tapRequest = request
-        input.installTap(onBus: 0, bufferSize: 1024, format: format) { @Sendable buffer, _ in
-            tapRequest.append(buffer)
-        }
-        engine.prepare()
-        do {
-            try engine.start()
-        } catch {
-            input.removeTap(onBus: 0)
-            return ""
-        }
-        self.engine = engine
+        // Starting the microphone can block, so it happens on the audio queue.
+        guard await microphone.start(feeding: request) else { return "" }
         self.request = request
 
         let collector = TranscriptCollector()
@@ -97,13 +82,59 @@ final class ListeningService {
     }
 
     func stop() {
-        engine?.stop()
-        engine?.inputNode.removeTap(onBus: 0)
+        microphone.stop()
         request?.endAudio()
         task?.cancel()
-        engine = nil
         request = nil
         task = nil
+    }
+}
+
+/// The microphone, run on the audio queue (starting and stopping it can block the main thread).
+/// Every use of `engine` happens on that one serial queue.
+private final class MicrophoneTap: @unchecked Sendable {
+    private var engine: AVAudioEngine?
+
+    /// Feeds the microphone into `request`. False when the microphone cannot start.
+    func start(feeding request: SFSpeechAudioBufferRecognitionRequest) async -> Bool {
+        // The request accepts buffers from the audio thread (Apple's documented use).
+        nonisolated(unsafe) let feed = request
+        return await withCheckedContinuation { (continuation: CheckedContinuation<Bool, Never>) in
+            SpeechService.audioQueue.async {
+                self.stopNow()
+                let engine = AVAudioEngine()
+                let input = engine.inputNode
+                let format = input.outputFormat(forBus: 0)
+                guard format.sampleRate > 0 else {
+                    continuation.resume(returning: false)
+                    return
+                }
+                input.installTap(onBus: 0, bufferSize: 1024, format: format) { @Sendable buffer, _ in
+                    feed.append(buffer)
+                }
+                engine.prepare()
+                do {
+                    try engine.start()
+                } catch {
+                    input.removeTap(onBus: 0)
+                    continuation.resume(returning: false)
+                    return
+                }
+                self.engine = engine
+                continuation.resume(returning: true)
+            }
+        }
+    }
+
+    func stop() {
+        SpeechService.audioQueue.async { self.stopNow() }
+    }
+
+    /// On the audio queue only.
+    private func stopNow() {
+        engine?.stop()
+        engine?.inputNode.removeTap(onBus: 0)
+        engine = nil
     }
 }
 

@@ -68,29 +68,40 @@ final class SoundLibrary {
             // Render on demand if the launch render has not finished yet, and use the playback
             // audio session so the preview is heard in silent mode (off the main thread: these
             // calls can block).
-            let file = await Task.detached(priority: .userInitiated) { () -> URL? in
+            // Starting the player activates audio too, so it happens there as well.
+            let started = await Task.detached(priority: .userInitiated) { () -> PlayerBox? in
                 if Self.fileURL(for: sound) == nil { Self.renderMissing() }
+                guard let file = Self.fileURL(for: sound) else { return nil }
                 let session = AVAudioSession.sharedInstance()
                 try? session.setCategory(.playback, mode: .default, options: [.duckOthers])
                 try? session.setActive(true)
-                return Self.fileURL(for: sound)
+                guard let player = try? AVAudioPlayer(contentsOf: file) else { return nil }
+                player.play()
+                return PlayerBox(player: player)
             }.value
-            guard let file, let player = try? AVAudioPlayer(contentsOf: file) else { return }
-            self.player = player
+            guard let started else { return }
+            self.player = started.player
             previewing = sound
-            player.play()
-            stopTask = Task { [weak self] in
+            stopTask = Task {
                 try? await Task.sleep(for: .seconds(8))
                 guard !Task.isCancelled else { return }
-                self?.stopPreview()
+                self.stopPreview()
             }
         }
     }
 
     func stopPreview() {
         stopTask?.cancel()
-        player?.stop()
+        if let player {
+            let box = PlayerBox(player: player)
+            SpeechService.audioQueue.async { box.player.stop() }
+        }
         player = nil
         previewing = nil
     }
+}
+
+/// Hands an audio player between the main thread and the audio queue (used by one side at a time).
+private struct PlayerBox: @unchecked Sendable {
+    let player: AVAudioPlayer
 }
