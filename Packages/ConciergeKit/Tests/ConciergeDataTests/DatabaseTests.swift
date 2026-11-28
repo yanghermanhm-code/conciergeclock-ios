@@ -152,23 +152,41 @@ final class DatabaseTests: XCTestCase {
 
     // MARK: Occurrences (Phase 1b)
 
-    func testStopWritesTheWakeLogOnceWithInferredSnoozes() throws {
+    func testStopWritesTheWakeLogOnce() throws {
         let db = try AppDatabase.inMemory()
         try AlarmStore(database: db).save(Alarm(id: "A1", label: "Work", snoozeMinutes: 5, createdAt: t0), at: t0)
         let store = OccurrenceStore(database: db)
         try store.insertIfNew(AlarmOccurrence(id: "R1", alarmID: "A1", scheduledAt: t0, snoozeMinutes: 5, createdAt: t0))
         try store.insertIfNew(AlarmOccurrence(id: "R1", alarmID: "A1", scheduledAt: t0, snoozeMinutes: 5, snoozeCount: 9, createdAt: t0))
-        try store.addSnooze(id: "R1")
-        // Stopped 11 minutes after the ring: two 5-minute snoozes, although one tap was reported.
-        let event = try XCTUnwrap(try store.finish(id: "R1", stoppedAt: t0.addingTimeInterval(11 * 60), method: .system, rules: .default))
-        XCTAssertEqual(event.snoozeCount, 2)
-        XCTAssertEqual(event.snoozedMinutes, 10)
+        let event = try XCTUnwrap(try store.finish(id: "R1", stoppedAt: t0.addingTimeInterval(4 * 60), method: .system, rules: .default))
+        XCTAssertEqual(event.snoozeCount, 0)
         XCTAssertEqual(event.alarmLabel, "Work")
-        XCTAssertEqual(event.score, 44) // 100 − (11 − 2) × 4 − 2 × 10
+        XCTAssertEqual(event.score, 92) // 100 − (4 − 2) × 4
         XCTAssertNil(try store.finish(id: "R1", stoppedAt: t0, method: .system, rules: .default))
         XCTAssertEqual(try WakeLogStore(database: db).count(), 1)
         XCTAssertEqual(try store.occurrence(id: "R1")?.status, .finished)
         XCTAssertTrue(try store.scheduled().isEmpty)
+    }
+
+    func testRemindAgainTwiceThenDismissLogsOneMorning() throws {
+        let db = try AppDatabase.inMemory()
+        try AlarmStore(database: db).save(Alarm(id: "A1", label: "Gym", createdAt: t0), at: t0)
+        let store = OccurrenceStore(database: db)
+        try store.insertIfNew(AlarmOccurrence(id: "R1", alarmID: "A1", scheduledAt: t0, snoozeMinutes: 5, createdAt: t0))
+        // 07:00 ring → "remind me in 10 minutes" → 07:10 ring → "5 more" → 07:15 ring → "I'm up".
+        try store.addFollowUp(after: "R1", newRingID: "F1", at: t0.addingTimeInterval(600), now: t0.addingTimeInterval(30))
+        XCTAssertEqual(try store.pendingFollowUps(after: t0).map(\.id), ["F1"])
+        try store.addFollowUp(after: "F1", newRingID: "F2", at: t0.addingTimeInterval(900), now: t0.addingTimeInterval(620))
+        XCTAssertEqual(try store.occurrence(id: "F1")?.status, .finished)
+        XCTAssertEqual(try store.origin(of: "F2")?.id, "R1")
+        let event = try XCTUnwrap(try store.finishMorning(ringID: "F2", stoppedAt: t0.addingTimeInterval(920), method: .voice, rules: .default))
+        XCTAssertEqual(event.id, "R1")
+        XCTAssertEqual(event.snoozeCount, 2)
+        XCTAssertEqual(event.snoozedMinutes, 15)
+        XCTAssertEqual(event.dismissMethod, .voice)
+        XCTAssertEqual(try WakeLogStore(database: db).count(), 1)
+        XCTAssertTrue(try store.scheduled().isEmpty)
+        XCTAssertTrue(try store.pendingFollowUps(after: t0).isEmpty)
     }
 
     func testMissedRingScoresZero() throws {

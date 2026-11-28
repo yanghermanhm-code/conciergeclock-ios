@@ -509,3 +509,49 @@ sound.digital | צפצופים קלסיים
 sound.digital.hint | כמו שעון מעורר ליד המיטה.
 sound.iPhoneDefault | שעון מעורר של iPhone
 sound.iPhoneDefault.hint | צליל השעון המעורר של ה‑iPhone עצמו.
+brief.moderate.alarm.this | זה השעון המעורר %@ שלך.
+brief.moderate.alarm.thisNoLabel | זה השעון המעורר שלך.
+brief.moderate.alarm.ask | לכבות את השעון, או להזכיר לך שוב בעוד %d דקות?
+brief.moderate.alarm.respondHint | הקש/י על ״תשובה״ כדי לענות לי.
+brief.moderate.ack.dismiss | בסדר, השעון כובה.
+brief.moderate.ack.remind | הבנתי. אזכיר לך שוב ב‑%@.
+brief.moderate.ack.unclear | סליחה, לא הבנתי. לכבות את השעון, או להזכיר בעוד %d דקות?
+brief.moderate.ack.noAnswer | אין תשובה, אז אזכיר לך שוב ב‑%@.
+brief.professional.alarm.this | זהו השעון המעורר %@ שלך.
+brief.professional.alarm.thisNoLabel | זהו השעון המעורר שלך.
+brief.professional.alarm.ask | האם לכבות את השעון, או להזכיר לך שוב בעוד %d דקות?
+brief.professional.alarm.respondHint | לחץ/י על ״תשובה״ כדי למסור לי את תשובתך.
+brief.professional.ack.dismiss | טוב מאוד. השעון כובה.
+brief.professional.ack.remind | כרצונך. אזכיר לך שוב ב‑%@.
+brief.professional.ack.unclear | סליחה? האם לכבות את השעון, או להזכיר בעוד %d דקות?
+brief.professional.ack.noAnswer | אין מענה, אני רואה. אשוב ב‑%@.
+brief.child.alarm.this | זה השעון המעורר %@ שלך!
+brief.child.alarm.thisNoLabel | זה השעון המעורר שלך!
+brief.child.alarm.ask | קמת, או שאעיר אותך שוב בעוד %d דקות?
+brief.child.alarm.respondHint | לחץ/י על ״תשובה״ כדי לספר לי.
+brief.child.ack.dismiss | כל הכבוד! השעון כבוי.
+brief.child.ack.remind | בסדר! אעיר אותך ב‑%@.
+brief.child.ack.unclear | אופס, לא שמעתי. קמת, או שאעיר אותך בעוד %d דקות?
+brief.child.ack.noAnswer | דובון ישנוני! אעיר אותך ב‑%@.
+brief.unhinged.alarm.this | זה השעון המעורר %@ שלך. זוכר שכיוונת אותו? אני כן.
+brief.unhinged.alarm.thisNoLabel | זה השעון המעורר שלך. ברור.
+brief.unhinged.alarm.ask | אז. לכבות את השעון, או לחזור בעוד %d דקות ולעשות את כל זה שוב?
+brief.unhinged.alarm.respondHint | לחץ על ״תשובה״ ודבר איתי.
+brief.unhinged.ack.dismiss | סוף סוף. השעון כובה.
+brief.unhinged.ack.remind | טוב. אחזור ב‑%@. לצערי.
+brief.unhinged.ack.unclear | מה זה היה? לכבות, או עוד %d דקות בחברתי?
+brief.unhinged.ack.noAnswer | שקט. נפלא. אחזור ב‑%@.
+alarm.respond | תשובה
+conversation.dismiss | כיבוי
+conversation.remind | תזכורת בעוד %d דק׳
+conversation.repeat | חזרה
+conversation.speaking | מדבר…
+conversation.listening | מקשיב…
+conversation.thinking | חושב…
+conversation.done.dismissed | השעון כובה
+conversation.done.remind | אזכיר לך ב‑%@
+conversation.noPermission | אשר/י מיקרופון וזיהוי דיבור בהגדרות כדי לענות בקול. בינתיים השתמש/י בכפתורים.
+conversation.noRecognizer | ה‑iPhone לא מזהה את השפה הזו במכשיר. השתמש/י בכפתורים.
+conversation.tapToAnswer | הקש/י על כפתור כדי לענות.
+infoplist.microphone | כשהשעון המעורר מצלצל, Concierge Clock מקשיב לתשובה שלך (״כבה״, ״תזכיר לי בעוד 10 דקות״). הקול שלך נשאר ב‑iPhone הזה ולעולם לא מוקלט.
+infoplist.speech | התשובה שלך לשעון המעורר הופכת לטקסט ב‑iPhone הזה כדי להבין אותה. שום דבר לא נשלח או נשמר.

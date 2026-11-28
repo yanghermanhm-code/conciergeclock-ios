@@ -24,6 +24,9 @@ final class AlarmScheduler {
     private(set) var lastError: String?
     /// The next planned rings (for the Alarms tab and the Concierge tab).
     private(set) var upcoming: [PlannedRing] = []
+    /// A ring that is sounding right now (seen while the app runs): the app starts the
+    /// conversation for it when it is on screen.
+    private(set) var alertingRingID: String?
 
     private let database: AppDatabase
     private let settings: SettingsStore
@@ -33,6 +36,11 @@ final class AlarmScheduler {
     /// Rings seen ringing or snoozing while the app was running.
     @ObservationIgnored private var ringing: Set<UUID> = []
     @ObservationIgnored private var reconcileTask: Task<Void, Never>?
+    /// Rings the app has silenced to talk about them: their disappearance is not a Stop.
+    @ObservationIgnored private var inConversation: Set<String> = []
+    @ObservationIgnored private let ringSounds = RingSoundRenderer()
+    /// Today's items for the spoken alarm sound (set by the app).
+    @ObservationIgnored var itemsForAnnouncement: (@MainActor (Date) async -> [RankedItem])?
 
     init(database: AppDatabase, settings: SettingsStore, calendars: CalendarService) {
         self.database = database
@@ -95,7 +103,12 @@ final class AlarmScheduler {
         writeWidgetSnapshot(rings: rings, alarms: alarms, settings: current)
         guard authorization == .authorized else { return }
 
-        let wanted = Set(rings.map(\.id))
+        // "Remind me again" rings are kept and (if iOS lost them) scheduled again.
+        let followUps = ((try? occurrences.pendingFollowUps(after: now.addingTimeInterval(-60))) ?? [])
+            .compactMap { occurrence in UUID(uuidString: occurrence.id).map { PlannedRing(id: $0, alarmID: occurrence.alarmID, fireDate: max(occurrence.scheduledAt, now.addingTimeInterval(3))) } }
+        let allRings = rings + followUps
+        let wanted = Set(allRings.map(\.id))
+        RingSoundRenderer.prune(keeping: wanted)
         let scheduled = (try? manager.alarms) ?? []
         for alarm in scheduled where !wanted.contains(alarm.id) && alarm.state == .scheduled {
             try? manager.cancel(id: alarm.id)
@@ -103,10 +116,10 @@ final class AlarmScheduler {
         }
         let present = Set(scheduled.map(\.id))
         var failure: String?
-        for ring in rings where !present.contains(ring.id) {
+        for ring in allRings where !present.contains(ring.id) || needsFreshAnnouncement(ring, now: now) {
             guard let alarm = alarms.first(where: { $0.id == ring.alarmID }) else { continue }
             do {
-                try await schedule(ring, alarm: alarm, settings: current)
+                try await schedule(ring, alarm: alarm, settings: current, replacing: present.contains(ring.id))
             } catch {
                 failure = error.localizedDescription
             }
@@ -114,16 +127,35 @@ final class AlarmScheduler {
         lastError = failure
     }
 
-    private func schedule(_ ring: PlannedRing, alarm: ConciergeCore.Alarm, settings: AppSettings) async throws {
+    /// Rings in the next 24 hours get their spoken announcement re-recorded at most hourly, so
+    /// "what's next" stays current.
+    private func needsFreshAnnouncement(_ ring: PlannedRing, now: Date) -> Bool {
+        ring.fireDate.timeIntervalSince(now) < 24 * 3600 && !RingSoundRenderer.isFresh(ringID: ring.id, now: now)
+            && (try? manager.alarms.first { $0.id == ring.id }?.state) == .scheduled
+    }
+
+    private func schedule(_ ring: PlannedRing, alarm: ConciergeCore.Alarm, settings: AppSettings, replacing: Bool = false) async throws {
         let snoozeMinutes = settings.snoozeMinutes(for: alarm)
         let l10n = Localizer(language: AppLanguage.resolve(code: settings.languageCode))
         let title = alarm.label.nonBlank ?? l10n["alarm.defaultTitle"]
+        let sound = AlarmSound.resolve(alarm.soundID)
+        // The announcement recorded into the sound: which alarm, what's next, dismiss or remind?
+        var soundFile = Self.soundFile(for: alarm)
+        if sound.isSynthesised {
+            let persona = settings.persona(for: alarm)
+            let items = await itemsForAnnouncement?(ring.fireDate) ?? []
+            let announcement = BriefingBuilder(persona: persona, speakTitles: settings.speakEventTitles)
+                .alarmAnnouncement(alarmLabel: alarm.label, items: items, now: ring.fireDate, snoozeMinutes: snoozeMinutes, forSoundFile: true)
+            if let spoken = await ringSounds.render(ringID: ring.id, announcement: announcement, persona: persona, sound: sound) {
+                soundFile = spoken
+            }
+        }
         let request = RingRequest(
             id: ring.id, fireDate: ring.fireDate, alarmID: alarm.id, label: alarm.label, title: title,
-            stopText: l10n["alarm.stop"], snoozeText: l10n["alarm.snooze"], snoozingText: l10n("alarm.snoozing", title),
-            snoozeSeconds: TimeInterval(snoozeMinutes * 60),
-            soundFile: Self.soundFile(for: alarm)
+            stopText: l10n["alarm.stop"], respondText: l10n["alarm.respond"],
+            soundFile: soundFile
         )
+        if replacing { try? manager.cancel(id: ring.id) }
         try await Self.scheduleRing(request)
         try? occurrences.insertIfNew(AlarmOccurrence(
             id: ring.id.uuidString, alarmID: alarm.id, scheduledAt: ring.fireDate, snoozeMinutes: snoozeMinutes
@@ -139,9 +171,7 @@ final class AlarmScheduler {
         let label: String
         let title: String
         let stopText: String
-        let snoozeText: String
-        let snoozingText: String
-        let snoozeSeconds: TimeInterval
+        let respondText: String
         /// A file in Library/Sounds/, or nil for the iPhone's default alarm sound.
         let soundFile: String?
     }
@@ -160,53 +190,76 @@ final class AlarmScheduler {
     }
 
     nonisolated private static func scheduleRing(_ request: RingRequest) async throws {
-        let snoozeButton = AlarmButton(text: LocalizedStringResource(stringLiteral: request.snoozeText), textColor: .white, systemImageName: "zzz")
+        // "Respond" opens Concierge Clock, which silences the ring, speaks and listens.
+        let respondButton = AlarmButton(text: LocalizedStringResource(stringLiteral: request.respondText), textColor: .white, systemImageName: "mic.fill")
         let alert: AlarmPresentation.Alert
         if #available(iOS 26.1, *) {
             // From iOS 26.1 the system draws the Stop button itself.
             alert = AlarmPresentation.Alert(
                 title: LocalizedStringResource(stringLiteral: request.title),
-                secondaryButton: snoozeButton,
-                secondaryButtonBehavior: .countdown
+                secondaryButton: respondButton,
+                secondaryButtonBehavior: .custom
             )
         } else {
             alert = AlarmPresentation.Alert(
                 title: LocalizedStringResource(stringLiteral: request.title),
                 stopButton: AlarmButton(text: LocalizedStringResource(stringLiteral: request.stopText), textColor: .white, systemImageName: "stop.fill"),
-                secondaryButton: snoozeButton,
-                secondaryButtonBehavior: .countdown
+                secondaryButton: respondButton,
+                secondaryButtonBehavior: .custom
             )
         }
-        let countdown = AlarmPresentation.Countdown(title: LocalizedStringResource(stringLiteral: request.snoozingText), pauseButton: nil)
         let attributes = AlarmAttributes<ConciergeAlarmMetadata>(
-            presentation: AlarmPresentation(alert: alert, countdown: countdown),
+            presentation: AlarmPresentation(alert: alert),
             metadata: ConciergeAlarmMetadata(alarmID: request.alarmID, label: request.label),
             // A fixed colour: the attributes are encoded and drawn by the system.
             tintColor: Color(hex: 0x0B7470)
         )
         let configuration = AlarmManager.AlarmConfiguration<ConciergeAlarmMetadata>(
-            // The snooze: after Snooze, the alarm rings again after the snooze length.
-            countdownDuration: AlarmKit.Alarm.CountdownDuration(preAlert: nil, postAlert: request.snoozeSeconds),
             schedule: .fixed(request.fireDate),
             attributes: attributes,
             stopIntent: StopAlarmIntent(ringID: request.id.uuidString),
-            secondaryIntent: SnoozeAlarmIntent(ringID: request.id.uuidString),
+            secondaryIntent: RespondToAlarmIntent(ringID: request.id.uuidString),
             sound: request.soundFile.map { AlertConfiguration.AlertSound.named($0) } ?? .default
         )
         _ = try await AlarmManager.shared.schedule(id: request.id, configuration: configuration)
     }
 
-    // MARK: Stop, snooze, missed
+    // MARK: Stop, respond, remind again, missed
 
-    /// The Stop button (Lock Screen, Dynamic Island or the app): log the morning, plan ahead.
+    /// The Stop button (Lock Screen, Dynamic Island): ends the morning and plans ahead.
     func didStop(ringID: String, method: DismissMethod = .system, at now: Date = Date()) async {
-        _ = try? occurrences.finish(id: ringID, stoppedAt: now, method: method, rules: settings.settings.wakeScoreRules, now: now)
+        guard !inConversation.contains(ringID) else { return }
+        _ = try? occurrences.finishMorning(ringID: ringID, stoppedAt: now, method: method, rules: settings.settings.wakeScoreRules, now: now)
         await reconcile(now: now)
     }
 
-    /// The Snooze button.
+    /// Kept for alarms scheduled by earlier builds with a Snooze button.
     func didSnooze(ringID: String, at now: Date = Date()) {
         try? occurrences.addSnooze(id: ringID, at: now)
+    }
+
+    /// The conversation takes over a ring: silence it (its end is not a Stop).
+    func silenceForConversation(ringID: String) {
+        inConversation.insert(ringID)
+        if alertingRingID == ringID { alertingRingID = nil }
+        if let id = UUID(uuidString: ringID) {
+            try? manager.stop(id: id)
+        }
+    }
+
+    /// "Dismiss": ends the morning (logged once, on the first ring).
+    func dismiss(ringID: String, method: DismissMethod, at now: Date = Date()) async {
+        _ = try? occurrences.finishMorning(ringID: ringID, stoppedAt: now, method: method, rules: settings.settings.wakeScoreRules, now: now)
+        inConversation.remove(ringID)
+        await reconcile(now: now)
+    }
+
+    /// "Remind me again": a new ring of the same alarm at `date` (counted as a snooze).
+    func remindAgain(ringID: String, at date: Date, now: Date = Date()) async {
+        let newID = UUID()
+        _ = try? occurrences.addFollowUp(after: ringID, newRingID: newID.uuidString, at: date, now: now)
+        inConversation.remove(ringID)
+        await reconcile(now: now)
     }
 
     /// Rings more than three hours past due that were never stopped count as missed.
@@ -214,7 +267,7 @@ final class AlarmScheduler {
         let active = Set(((try? manager.alarms) ?? []).filter { $0.state != .scheduled }.map(\.id.uuidString))
         for occurrence in (try? occurrences.scheduled()) ?? []
         where occurrence.scheduledAt.addingTimeInterval(AlarmOccurrence.missedAfter) < now && !active.contains(occurrence.id) {
-            _ = try? occurrences.finish(id: occurrence.id, stoppedAt: nil, method: .missed, rules: rules, now: now)
+            _ = try? occurrences.finishMorning(ringID: occurrence.id, stoppedAt: nil, method: .missed, rules: rules, now: now)
         }
         try? occurrences.pruneFinished(before: now.addingTimeInterval(-60 * 24 * 3600))
     }
@@ -231,6 +284,12 @@ final class AlarmScheduler {
                 let present = Set(alarms.map(\.id))
                 let stopped = ringing.subtracting(present)
                 ringing = ringing.union(active).intersection(present)
+                // A ring that started sounding: the app (if on screen) talks to the person.
+                if let alerting = alarms.first(where: { $0.state == .alerting })?.id.uuidString, !inConversation.contains(alerting) {
+                    alertingRingID = alerting
+                } else if alarms.allSatisfy({ $0.state != .alerting }) {
+                    alertingRingID = nil
+                }
                 for id in stopped {
                     await didStop(ringID: id.uuidString)
                 }

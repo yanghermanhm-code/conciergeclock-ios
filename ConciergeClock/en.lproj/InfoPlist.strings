@@ -3,3 +3,5 @@
 "NSAlarmKitUsageDescription" = "Concierge Clock schedules your alarms so they ring even when the app is closed, in silent mode or during Focus.";
 "NSCalendarsFullAccessUsageDescription" = "Concierge Clock reads your calendars on this iPhone to tell you about your day and to skip alarms on days off. Nothing is uploaded or changed.";
 "NSRemindersFullAccessUsageDescription" = "Concierge Clock reads your reminders on this iPhone to tell you what is due, and marks one done only when you ask. Nothing is uploaded.";
+"NSMicrophoneUsageDescription" = "Concierge Clock listens for your answer when an alarm goes off (\"dismiss\", \"remind me in 10 minutes\"). Your voice stays on this iPhone and is never recorded.";
+"NSSpeechRecognitionUsageDescription" = "Your answer to an alarm is turned into text on this iPhone to understand it. Nothing is sent or stored.";

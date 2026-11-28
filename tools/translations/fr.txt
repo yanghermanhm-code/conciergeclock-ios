@@ -509,3 +509,49 @@ sound.digital | Bips classiques
 sound.digital.hint | Comme un réveil de chevet.
 sound.iPhoneDefault | Alarme de l’iPhone
 sound.iPhoneDefault.hint | Le son d’alarme de l’iPhone.
+brief.moderate.alarm.this | C’est votre alarme %@.
+brief.moderate.alarm.thisNoLabel | C’est votre alarme.
+brief.moderate.alarm.ask | Voulez-vous arrêter l’alarme, ou que je vous le rappelle dans %d minutes ?
+brief.moderate.alarm.respondHint | Touchez Répondre pour me répondre.
+brief.moderate.ack.dismiss | D’accord, alarme arrêtée.
+brief.moderate.ack.remind | Entendu. Je vous le rappelle à %@.
+brief.moderate.ack.unclear | Désolé, je n’ai pas compris. Arrêter l’alarme, ou vous le rappeler dans %d minutes ?
+brief.moderate.ack.noAnswer | Pas de réponse : je vous le rappelle à %@.
+brief.professional.alarm.this | Voici votre alarme %@.
+brief.professional.alarm.thisNoLabel | Voici votre alarme.
+brief.professional.alarm.ask | Dois-je arrêter l’alarme, ou vous le rappeler dans %d minutes ?
+brief.professional.alarm.respondHint | Touchez Répondre pour me donner votre réponse.
+brief.professional.ack.dismiss | Très bien. L’alarme est arrêtée.
+brief.professional.ack.remind | Fort bien. Je vous le rappellerai à %@.
+brief.professional.ack.unclear | Je vous demande pardon ? Dois-je arrêter l’alarme, ou vous le rappeler dans %d minutes ?
+brief.professional.ack.noAnswer | Aucune réponse, je vois. Je reviendrai à %@.
+brief.child.alarm.this | C’est ton alarme %@ !
+brief.child.alarm.thisNoLabel | C’est ton alarme !
+brief.child.alarm.ask | Tu es réveillé, ou je te réveille encore dans %d minutes ?
+brief.child.alarm.respondHint | Touche Répondre pour me dire.
+brief.child.ack.dismiss | Bravo ! L’alarme est arrêtée.
+brief.child.ack.remind | D’accord ! Je te réveille à %@.
+brief.child.ack.unclear | Oups, je n’ai pas entendu. Tu es réveillé, ou je te réveille dans %d minutes ?
+brief.child.ack.noAnswer | Petite marmotte ! Je te réveille à %@.
+brief.unhinged.alarm.this | C’est votre alarme %@. Vous vous souvenez l’avoir réglée ? Moi oui.
+brief.unhinged.alarm.thisNoLabel | C’est votre alarme. Évidemment.
+brief.unhinged.alarm.ask | Alors. On arrête l’alarme, ou je reviens dans %d minutes pour tout recommencer ?
+brief.unhinged.alarm.respondHint | Touchez Répondre et parlez-moi.
+brief.unhinged.ack.dismiss | Enfin. Alarme arrêtée.
+brief.unhinged.ack.remind | Bon. Je reviens à %@. Hélas.
+brief.unhinged.ack.unclear | Pardon ? On arrête, ou encore %d minutes de ma compagnie ?
+brief.unhinged.ack.noAnswer | Le silence. Merveilleux. Je reviens à %@.
+alarm.respond | Répondre
+conversation.dismiss | Arrêter
+conversation.remind | Rappel dans %d min
+conversation.repeat | Répéter
+conversation.speaking | Je parle…
+conversation.listening | J’écoute…
+conversation.thinking | Je réfléchis…
+conversation.done.dismissed | Alarme arrêtée
+conversation.done.remind | Je vous le rappelle à %@
+conversation.noPermission | Autorisez le micro et la reconnaissance vocale dans Réglages pour répondre à la voix. En attendant, utilisez les boutons.
+conversation.noRecognizer | Votre iPhone ne peut pas reconnaître cette langue sur l’appareil. Utilisez les boutons.
+conversation.tapToAnswer | Touchez un bouton pour répondre.
+infoplist.microphone | Concierge Clock écoute votre réponse quand une alarme sonne (« arrête », « rappelle-moi dans 10 minutes »). Votre voix reste sur cet iPhone et n’est jamais enregistrée.
+infoplist.speech | Votre réponse à une alarme est convertie en texte sur cet iPhone pour la comprendre. Rien n’est envoyé ni conservé.

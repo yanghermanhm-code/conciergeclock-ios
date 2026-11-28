@@ -13,6 +13,8 @@ enum AlarmIntentRouter {
             await model.scheduler.didStop(ringID: ringID)
         case .snooze:
             model.scheduler.didSnooze(ringID: ringID)
+        case .respond:
+            model.startAlarmConversation(ringID: ringID)
         }
     }
 }

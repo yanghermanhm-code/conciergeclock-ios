@@ -79,6 +79,45 @@ public enum AlarmToneSynthesizer {
         return buffer
     }
 
+    /// An alarm sound with the butler's announcement in it, for when the app is closed: a short
+    /// burst of `sound`, the speech, a pause, again until `duration`. `speech` is mono at
+    /// `speechRate` and is resampled. Returns nil when there is no speech (use the plain sound).
+    public static func announcement(sound: AlarmSound, speech: [Float], speechRate: Double, duration: Double = AlarmToneSynthesizer.duration) -> [Float]? {
+        guard !speech.isEmpty, speechRate > 0 else { return nil }
+        let chime = render(sound == .iPhoneDefault ? .conciergeBell : sound, duration: 3) ?? []
+        var voice = resample(speech, from: speechRate, to: sampleRate)
+        normalise(&voice, peak: 0.89)
+        var output: [Float] = []
+        let total = Int(duration * sampleRate)
+        let gap = [Float](repeating: 0, count: Int(0.4 * sampleRate))
+        let pause = [Float](repeating: 0, count: Int(1.5 * sampleRate))
+        while output.count < total {
+            output += chime.map { $0 * 0.75 } + gap + voice + pause
+        }
+        output = Array(output.prefix(total))
+        fadeOut(&output, seconds: 0.4, sampleRate: sampleRate)
+        return output
+    }
+
+    /// Linear-interpolation resampling (speech only needs to stay intelligible).
+    static func resample(_ samples: [Float], from source: Double, to target: Double) -> [Float] {
+        guard source != target, !samples.isEmpty else { return samples }
+        let ratio = source / target
+        let count = Int(Double(samples.count) / ratio)
+        return (0..<count).map { index in
+            let position = Double(index) * ratio
+            let lower = Int(position)
+            let upper = min(lower + 1, samples.count - 1)
+            let fraction = Float(position - Double(lower))
+            return samples[lower] * (1 - fraction) + samples[upper] * fraction
+        }
+    }
+
+    /// Mono samples as a WAV file at the synthesiser's sample rate.
+    public static func wav(samples: [Float]) -> Data {
+        WAVEncoder.encode(samples, sampleRate: Int(sampleRate))
+    }
+
     /// The rendered sound as a WAV file.
     public static func wav(_ sound: AlarmSound) -> Data? {
         render(sound).map { WAVEncoder.encode($0, sampleRate: Int(sampleRate)) }

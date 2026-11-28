@@ -25,12 +25,15 @@ public struct AlarmOccurrence: Codable, Sendable, Hashable, Identifiable {
     /// The snooze length the ring was scheduled with.
     public var snoozeMinutes: Int
     public var status: OccurrenceStatus
+    /// For a "remind me again" ring: the ring the person was woken by first (the morning is
+    /// logged once, on that ring). Nil for rings planned from an alarm. Since database version 4.
+    public var originID: RecordID?
     public var createdAt: Date
     public var updatedAt: Date
 
     public init(
         id: RecordID, alarmID: RecordID, scheduledAt: Date, snoozeMinutes: Int, snoozeCount: Int = 0,
-        status: OccurrenceStatus = .scheduled, createdAt: Date = Date()
+        status: OccurrenceStatus = .scheduled, originID: RecordID? = nil, createdAt: Date = Date()
     ) {
         self.id = id
         self.schemaVersion = SchemaVersion.occurrence
@@ -39,6 +42,7 @@ public struct AlarmOccurrence: Codable, Sendable, Hashable, Identifiable {
         self.snoozeCount = max(0, snoozeCount)
         self.snoozeMinutes = snoozeMinutes.clamped(to: Snooze.minuteRange)
         self.status = status
+        self.originID = originID
         self.createdAt = createdAt
         self.updatedAt = createdAt
     }
@@ -46,15 +50,13 @@ public struct AlarmOccurrence: Codable, Sendable, Hashable, Identifiable {
     /// A ring not stopped this long after it was due counts as missed.
     public static let missedAfter: TimeInterval = 3 * 3600
 
-    /// The wake log entry for this ring, stopped at `stoppedAt` (nil = missed). Snoozes are
-    /// the reported taps, or — when taps were not reported — what the elapsed time implies.
+    /// The wake log entry for this ring, stopped at `stoppedAt` (nil = missed). Snoozes are the
+    /// times the person asked to be reminded again (each "remind me" adds one).
     public func wakeEvent(
         alarm: Alarm?, stoppedAt: Date?, method: DismissMethod, awakeCheck: AwakeCheckResult = .notAsked,
         rules: WakeScoreRules, calendar: Calendar = .current, now: Date = Date()
     ) -> WakeEvent {
-        let snoozes = stoppedAt.map {
-            max(snoozeCount, AlarmPlanner.inferredSnoozes(scheduledAt: scheduledAt, stoppedAt: $0, snoozeMinutes: snoozeMinutes))
-        } ?? snoozeCount
+        let snoozes = snoozeCount
         return WakeEvent(
             id: id,
             alarmID: alarm?.id,
@@ -63,7 +65,7 @@ public struct AlarmOccurrence: Codable, Sendable, Hashable, Identifiable {
             dismissedAt: stoppedAt,
             dismissMethod: stoppedAt == nil ? .missed : method,
             snoozeCount: snoozes,
-            snoozedMinutes: snoozes * snoozeMinutes,
+            snoozedMinutes: stoppedAt.map { max(0, Int($0.timeIntervalSince(scheduledAt) / 60)) }.map { snoozes > 0 ? $0 : 0 } ?? 0,
             ambientSoundID: alarm?.ambientSoundID,
             wakeSoundID: alarm?.soundID,
             nightstandMode: false,

@@ -25,6 +25,7 @@ final class SpeechService: NSObject {
     @ObservationIgnored private let synthesizer = AVSpeechSynthesizer()
     @ObservationIgnored private var lineForUtterance: [ObjectIdentifier: Int] = [:]
     @ObservationIgnored private var lastUtterance: ObjectIdentifier?
+    @ObservationIgnored private var finished: CheckedContinuation<Void, Never>?
 
     override init() {
         super.init()
@@ -34,9 +35,13 @@ final class SpeechService: NSObject {
     /// Speaks `briefing` line by line in the persona's voice. Stops anything already speaking.
     func speak(_ briefing: Briefing, persona: Persona) {
         stop()
+        enqueue(briefing, persona: persona, activate: true)
+    }
+
+    private func enqueue(_ briefing: Briefing, persona: Persona, activate: Bool) {
         // The audio session is switched on off the main thread (it can block for a moment);
         // the synthesizer queues the lines meanwhile and starts as soon as audio is ready.
-        Self.activateSession()
+        if activate { Self.activateSession() }
         let voice = VoiceCatalog.voice(for: persona)
         let prosody = Prosody.forPersona(persona)
         current = briefing
@@ -53,6 +58,23 @@ final class SpeechService: NSObject {
         state = briefing.lines.isEmpty ? .idle : .speaking
     }
 
+    /// Speaks `briefing` and returns when it has been said (or stopped). `loudspeaker`: wake-up
+    /// announcements always come out of the iPhone's speaker, even with headphones connected,
+    /// using a session that can listen straight afterwards.
+    func speakAndWait(_ briefing: Briefing, persona: Persona, loudspeaker: Bool) async {
+        stop()
+        if loudspeaker {
+            await Self.activateConversationSession()
+        } else {
+            Self.activateSession()
+        }
+        await withCheckedContinuation { (continuation: CheckedContinuation<Void, Never>) in
+            finished = continuation
+            enqueue(briefing, persona: persona, activate: false)
+            if briefing.lines.isEmpty { finish() }
+        }
+    }
+
     func stop() {
         if synthesizer.isSpeaking {
             synthesizer.stopSpeaking(at: .immediate)
@@ -66,12 +88,37 @@ final class SpeechService: NSObject {
         current = nil
         lineForUtterance = [:]
         lastUtterance = nil
-        Self.deactivateSession()
+        if let finished {
+            self.finished = nil
+            finished.resume()
+            // The conversation keeps the session for listening; it releases it when done.
+        } else {
+            Self.deactivateSession()
+        }
+    }
+
+    /// The session for alarm conversations: play and record, always on the loudspeaker.
+    /// Awaited, so speech and listening start only once the route is set.
+    static func activateConversationSession() async {
+        await withCheckedContinuation { (continuation: CheckedContinuation<Void, Never>) in
+            audioQueue.async {
+                let session = AVAudioSession.sharedInstance()
+                try? session.setCategory(.playAndRecord, mode: .default, options: [.defaultToSpeaker, .duckOthers])
+                try? session.setActive(true)
+                try? session.overrideOutputAudioPort(.speaker)
+                continuation.resume()
+            }
+        }
+    }
+
+    /// Releases the audio session after a conversation.
+    static func endConversationSession() {
+        deactivateSession()
     }
 
     /// AVAudioSession calls can block (Xcode flags them as a hang risk on the main thread), so
     /// they run in order on one background queue.
-    private static let audioQueue = DispatchQueue(label: "com.greatergoodsoftware.conciergeclock.audio", qos: .userInitiated)
+    static let audioQueue = DispatchQueue(label: "com.greatergoodsoftware.conciergeclock.audio", qos: .userInitiated)
 
     private static func activateSession() {
         audioQueue.async {
@@ -81,7 +128,7 @@ final class SpeechService: NSObject {
         }
     }
 
-    private static func deactivateSession() {
+    static func deactivateSession() {
         audioQueue.async {
             try? AVAudioSession.sharedInstance().setActive(false, options: .notifyOthersOnDeactivation)
         }

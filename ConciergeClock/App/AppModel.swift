@@ -29,6 +29,8 @@ final class AppModel {
     let speech = SpeechService()
     /// The alarm sounds (rendered into Library/Sounds/ for AlarmKit) and their previews.
     let sounds = SoundLibrary()
+    /// The conversation with a ringing alarm, shown full screen.
+    private(set) var conversation: AlarmConversation?
     /// The offline AI model (Gemma): download, choice and engine. Shared with Greater Good
     /// Software's other apps.
     let models: ModelService
@@ -55,6 +57,15 @@ final class AppModel {
         self.calendars = calendars
         self.scheduler = AlarmScheduler(database: database, settings: settings, calendars: calendars)
         self.briefings = BriefingService(calendars: calendars, settings: settings, models: models)
+        // The alarm's recorded announcement mentions what is next at the ring's time.
+        let settingsStore = settings
+        scheduler.itemsForAnnouncement = { @MainActor date in
+            let current = settingsStore.settings
+            let items = await calendars.briefingItems(
+                excludingCalendars: Set(current.excludedCalendarIDs), excludingLists: Set(current.excludedReminderListIDs), now: date
+            )
+            return ImportanceRules.rank(items)
+        }
     }
 
     /// The app's real database (Application Support, never purged by iOS).
@@ -168,6 +179,29 @@ final class AppModel {
         scheduler.setNeedsReconcile()
         backups.autoBackupIfDue(settings: settings)
         Task { await briefings.refresh() }
+    }
+
+    /// The app's language, for text made outside views.
+    var l10n: Localizer {
+        Localizer(language: AppLanguage.resolve(code: settings.settings.languageCode))
+    }
+
+    // MARK: Alarm conversation
+
+    /// Starts the conversation for a ringing alarm (from the Respond button, or because the
+    /// app is on screen when an alarm goes off).
+    func startAlarmConversation(ringID: String) {
+        guard conversation?.ringID != ringID else { return }
+        let alarmID = (try? OccurrenceStore(database: database).occurrence(id: ringID))?.alarmID
+        let alarm = alarmID.flatMap { id in alarmList.first { $0.id == id } }
+        speech.stop()
+        let conversation = AlarmConversation(ringID: ringID, alarm: alarm, model: self)
+        self.conversation = conversation
+        conversation.start()
+    }
+
+    func endAlarmConversation(_ ended: AlarmConversation) {
+        if conversation === ended { conversation = nil }
     }
 
     // MARK: Briefing

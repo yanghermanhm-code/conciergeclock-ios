@@ -11,7 +11,7 @@ import Foundation
 // only needs the intent types.
 
 enum AlarmIntentAction: String, Sendable {
-    case stop, snooze
+    case stop, snooze, respond
 }
 
 struct StopAlarmIntent: LiveActivityIntent {
@@ -56,6 +56,30 @@ struct SnoozeAlarmIntent: LiveActivityIntent {
 
     func perform() async throws -> some IntentResult {
         await AlarmIntentPerformer.perform(.snooze, ringID: ringID)
+        return .result()
+    }
+}
+
+/// The alarm's "Respond" button: opens Concierge Clock, which silences the ring, speaks the
+/// announcement (dismiss or remind again?) on the loudspeaker and listens for the answer.
+struct RespondToAlarmIntent: LiveActivityIntent {
+    static let title: LocalizedStringResource = "Respond"
+    static let isDiscoverable = false
+    static let openAppWhenRun = true
+
+    @Parameter(title: "Ring")
+    var ringID: String
+
+    init() {
+        ringID = ""
+    }
+
+    init(ringID: String) {
+        self.ringID = ringID
+    }
+
+    func perform() async throws -> some IntentResult {
+        await AlarmIntentPerformer.perform(.respond, ringID: ringID)
         return .result()
     }
 }

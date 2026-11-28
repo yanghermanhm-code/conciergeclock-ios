@@ -115,6 +115,15 @@ enum Migrations {
             )
         }
 
+        // "Remind me again" rings point at the ring that woke the person first.
+        migrator.registerMigration("v4-follow-up-rings") { db in
+            try db.alter(table: "alarmOccurrence") { t in t.add(column: "originID", .text) }
+            try db.execute(
+                sql: "INSERT OR REPLACE INTO keyValue (key, value) VALUES (?, ?)",
+                arguments: [AppDatabase.Key.schemaVersion, try JSONEncoder().encode(4)]
+            )
+        }
+
         return migrator
     }
 }

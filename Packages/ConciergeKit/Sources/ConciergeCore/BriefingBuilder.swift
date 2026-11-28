@@ -174,6 +174,71 @@ public struct BriefingBuilder: Sendable {
         return Briefing(languageCode: persona.languageCode, lines: lines)
     }
 
+    // MARK: Alarm conversation
+
+    /// What the butler says when an alarm goes off: the greeting and time, which alarm this is,
+    /// the next item coming up, and the question — dismiss, or remind again in `snoozeMinutes`?
+    /// `forSoundFile`: the version recorded into the alarm's sound (heard with the app closed),
+    /// which ends by pointing at the Respond button.
+    public func alarmAnnouncement(alarmLabel: String, items: [RankedItem], now: Date, snoozeMinutes: Int, forSoundFile: Bool = false) -> Briefing {
+        var lines: [BriefingLine] = []
+        func add(_ kind: BriefingLine.Kind, _ text: String) {
+            guard let text = text.nonBlank else { return }
+            lines.append(BriefingLine(id: lines.count, kind: kind, text: text))
+        }
+        add(.greeting, greeting(now: now))
+        add(.time, phrases.format("brief.\(tone).time", time(now)))
+        if let label = alarmLabel.nonBlank {
+            add(.item, phrases.format("brief.\(tone).alarm.this", speakTitles ? label : phrases["brief.private"]))
+        } else {
+            add(.item, phrases["brief.\(tone).alarm.thisNoLabel"])
+        }
+        if let next = nextItem(items, now: now) {
+            if next.item.kind == .event {
+                add(.next, nextLine(next, now: now))
+            } else {
+                let key = next.item.isOverdue ? "brief.\(tone).overdue" : "brief.\(tone).reminderItem"
+                add(.reminder, phrases.format(key, title(next.item)))
+            }
+            if next.importance == .high { add(.important, phrases["brief.\(tone).important"]) }
+        } else {
+            add(.next, phrases["brief.\(tone).noEvents"])
+        }
+        add(.closing, phrases.format("brief.\(tone).alarm.ask", snoozeMinutes))
+        if forSoundFile { add(.closing, phrases["brief.\(tone).alarm.respondHint"]) }
+        return Briefing(languageCode: persona.languageCode, lines: lines)
+    }
+
+    /// The butler's reply once the person has answered.
+    public func acknowledgement(_ reply: AlarmReply, remindAt date: Date?, snoozeMinutes: Int) -> String {
+        switch reply {
+        case .dismiss:
+            return phrases["brief.\(tone).ack.dismiss"]
+        case .remindIn, .remindAt:
+            return phrases.format("brief.\(tone).ack.remind", time(date ?? Date()))
+        case .repeatPrompt, .unknown:
+            return phrases.format("brief.\(tone).ack.unclear", snoozeMinutes)
+        }
+    }
+
+    /// Said when nobody answers: the alarm will ring again at `date`.
+    public func noAnswer(remindAt date: Date) -> String {
+        phrases.format("brief.\(tone).ack.noAnswer", time(date))
+    }
+
+    /// The event under way or next today, else the most important due reminder.
+    func nextItem(_ items: [RankedItem], now: Date) -> RankedItem? {
+        let endOfDay = calendar.date(byAdding: .day, value: 1, to: calendar.startOfDay(for: now)) ?? now
+        let event = items
+            .filter { $0.item.kind == .event && !$0.item.isAllDay }
+            .filter { ($0.item.endDate ?? $0.item.date ?? now) > now && ($0.item.date ?? now) < endOfDay }
+            .min { ($0.item.date ?? now) < ($1.item.date ?? now) }
+        if let event { return event }
+        return items
+            .filter { $0.item.kind == .reminder }
+            .max { ($0.importance, $1.item.date ?? Date.distantFuture) < ($1.importance, $0.item.date ?? Date.distantFuture) }
+    }
+
     // MARK: Pieces
 
     func greeting(now: Date) -> String {

@@ -56,6 +56,8 @@ INFO_PLIST_KEYS = [
     ("NSAlarmKitUsageDescription", "infoplist.alarmKit"),
     ("NSCalendarsFullAccessUsageDescription", "infoplist.calendars"),
     ("NSRemindersFullAccessUsageDescription", "infoplist.reminders"),
+    ("NSMicrophoneUsageDescription", "infoplist.microphone"),
+    ("NSSpeechRecognitionUsageDescription", "infoplist.speech"),
 ]
 
 def escape(value):

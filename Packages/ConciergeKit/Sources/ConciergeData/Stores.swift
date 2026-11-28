@@ -186,6 +186,69 @@ public struct OccurrenceStore: Sendable {
         }
     }
 
+    /// "Remind me again" rings still to come (kept when the scheduler re-plans).
+    public func pendingFollowUps(after date: Date) throws -> [AlarmOccurrence] {
+        try database.writer.read { db in
+            try AlarmOccurrence
+                .filter(Column("status") == OccurrenceStatus.scheduled.rawValue)
+                .filter(Column("originID") != nil)
+                .filter(Column("scheduledAt") > date)
+                .fetchAll(db)
+        }
+    }
+
+    /// The ring whose morning a ring belongs to (itself, or the ring that woke the person first).
+    public func origin(of id: RecordID) throws -> AlarmOccurrence? {
+        guard let ring = try occurrence(id: id) else { return nil }
+        guard let originID = ring.originID else { return ring }
+        return try occurrence(id: originID) ?? ring
+    }
+
+    /// "Remind me again": counts a snooze on the first ring of this morning and records the new
+    /// ring (to be handed to AlarmKit by the scheduler). The ring that just sounded is closed.
+    @discardableResult
+    public func addFollowUp(after ringID: RecordID, newRingID: RecordID, at fireDate: Date, now: Date = Date()) throws -> AlarmOccurrence? {
+        try database.writer.write { db in
+            guard let ring = try AlarmOccurrence.fetchOne(db, key: ringID) else { return nil }
+            let originID = ring.originID ?? ring.id
+            guard var origin = try AlarmOccurrence.fetchOne(db, key: originID) else { return nil }
+            origin.snoozeCount += 1
+            origin.updatedAt = now
+            try origin.update(db)
+            if ring.originID != nil, var closed = try AlarmOccurrence.fetchOne(db, key: ringID) {
+                closed.status = .finished
+                closed.updatedAt = now
+                try closed.update(db)
+            }
+            let followUp = AlarmOccurrence(
+                id: newRingID, alarmID: ring.alarmID, scheduledAt: fireDate, snoozeMinutes: ring.snoozeMinutes,
+                originID: originID, createdAt: now
+            )
+            try followUp.insert(db)
+            return followUp
+        }
+    }
+
+    /// Ends the morning a ring belongs to: logs it on the first ring (once) and closes every
+    /// "remind me again" ring of that morning.
+    @discardableResult
+    public func finishMorning(ringID: RecordID, stoppedAt: Date?, method: DismissMethod, rules: WakeScoreRules, now: Date = Date()) throws -> WakeEvent? {
+        let originID = try origin(of: ringID)?.id ?? ringID
+        let event = try finish(id: originID, stoppedAt: stoppedAt, method: method, rules: rules, now: now)
+        try database.writer.write { db in
+            let rings = try AlarmOccurrence
+                .filter(Column("originID") == originID || Column("id") == ringID)
+                .filter(Column("status") == OccurrenceStatus.scheduled.rawValue)
+                .fetchAll(db)
+            for var ring in rings {
+                ring.status = stoppedAt == nil ? .missed : .finished
+                ring.updatedAt = now
+                try ring.update(db)
+            }
+        }
+        return event
+    }
+
     /// Deletes outcomes older than 60 days (the wake log keeps the history).
     public func pruneFinished(before date: Date) throws {
         _ = try database.writer.write { db in

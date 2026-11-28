@@ -1,4 +1,4 @@
-# Data schema (database schemaVersion 3, backup schemaVersion 1)
+# Data schema (database schemaVersion 4, backup schemaVersion 1)
 
 This document is the **contract** for the on-device database, the JSON backup format and a future
 Android app. Field names are identical in Swift, SQLite and JSON.
@@ -67,8 +67,10 @@ Variance (minutes) = `dismissedAt − scheduledAt` (negative = early), derived, 
 One ring handed to AlarmKit. `id` (the AlarmKit alarm UUID, uppercase string — derived from the alarm id
 and ring time, see `AlarmPlanner.occurrenceID`), `schemaVersion`, `alarmID`, `scheduledAt`, `snoozeCount`
 (reported Snooze taps), `snoozeMinutes` (the length it was scheduled with), `status` (`scheduled` \|
-`finished` \| `missed` \| `cancelled`), `createdAt`, `updatedAt`. When stopped, its `wakeEvent` is written
-with the same `id`; snoozes = max(reported, floor((stoppedAt − scheduledAt) / snoozeMinutes)). Outcomes
+`finished` \| `missed` \| `cancelled`), `originID` (since database version 4, occurrence record version 2: for a
+"remind again" ring, the id of the morning's first ring; null for a first ring), `createdAt`, `updatedAt`.
+Each "remind again" adds one to the first ring's `snoozeCount`. When the morning ends (dismissed, or missed),
+one `wakeEvent` is written with the first ring's `id` and `scheduledAt`; snoozes = its `snoozeCount`. Outcomes
 older than 60 days are deleted (the wake log keeps the history).
 
 ### recommendation (Wake Optimization Advisor)
@@ -111,7 +113,7 @@ off, PTO, Out of office, OOO] · `healthSleepEnabled` false · `wakeScoreRules` 
 {
   "format": "conciergeclock-backup",
   "schemaVersion": 1,
-  "databaseSchemaVersion": 3,
+  "databaseSchemaVersion": 4,
   "createdAt": "2026-11-27T07:12:00.000Z",
   "appVersion": "1.0 (1)",
   "settings": { … },

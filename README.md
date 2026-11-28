@@ -37,6 +37,18 @@ subscriptions, no tracking.
    Island; the Simulator shows them but cannot be relied on for sound and timing).
 5. Pick your iPhone (or a simulator) and press **⌘R**.
 
+### What to try in Phase 3a (the alarm conversation)
+
+- Set an alarm for a minute from now with a label (e.g. "Work") and lock the iPhone. When it
+  rings you hear the butler over the alarm sound: the time, "This is your Work alarm", your next
+  event or reminder, and "dismiss, or remind you again in 5 minutes? Press Respond".
+- Press **Respond**: the app opens, he asks again on the loudspeaker and listens. Try "I'm up",
+  "remind me in 10 minutes", "half an hour", "remind me at quarter past seven", "say that again",
+  or anything else (Gemma works it out). He confirms aloud and does it.
+- Say nothing twice: he reminds you again after the snooze length. The buttons do the same.
+- Keep the app open on screen when an alarm rings: the conversation starts by itself.
+- Trends keeps one entry per morning, with each "remind again" counted as a snooze.
+
 ### What to try in Phase 2
 
 - **Concierge tab › Brief Me Now:** Charles reads today — the time, your next event with where,

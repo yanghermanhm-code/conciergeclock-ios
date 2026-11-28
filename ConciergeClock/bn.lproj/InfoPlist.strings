@@ -3,3 +3,5 @@
 "NSAlarmKitUsageDescription" = "Concierge Clock আপনার অ্যালার্ম নির্ধারণ করে, যাতে অ্যাপ বন্ধ থাকলেও, সাইলেন্ট মোডে বা ফোকাসের সময়ও বাজে।";
 "NSCalendarsFullAccessUsageDescription" = "আপনার দিনের কথা জানাতে ও ছুটির দিনে অ্যালার্ম বাদ দিতে Concierge Clock এই iPhone-এ আপনার ক্যালেন্ডার পড়ে। কিছুই আপলোড বা পরিবর্তন হয় না।";
 "NSRemindersFullAccessUsageDescription" = "কী বাকি আছে জানাতে Concierge Clock এই iPhone-এ আপনার রিমাইন্ডার পড়ে, আর আপনি বললে তবেই একটিকে সম্পন্ন চিহ্নিত করে। কিছুই আপলোড হয় না।";
+"NSMicrophoneUsageDescription" = "অ্যালার্ম বাজলে Concierge Clock আপনার উত্তর শোনে (\"বন্ধ করো\", \"10 মিনিট পরে মনে করাও\")। আপনার কণ্ঠ এই iPhone-এই থাকে এবং কখনো রেকর্ড হয় না।";
+"NSSpeechRecognitionUsageDescription" = "অ্যালার্মে আপনার উত্তর বুঝতে এই iPhone-এই লেখায় রূপান্তর করা হয়। কিছুই পাঠানো বা রাখা হয় না।";

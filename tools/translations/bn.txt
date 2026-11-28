@@ -509,3 +509,49 @@ sound.digital | ক্লাসিক বিপ
 sound.digital.hint | বিছানার পাশের অ্যালার্ম ঘড়ির মতো।
 sound.iPhoneDefault | iPhone অ্যালার্ম
 sound.iPhoneDefault.hint | iPhone-এর নিজস্ব অ্যালার্ম শব্দ।
+brief.moderate.alarm.this | এটি আপনার %@ অ্যালার্ম।
+brief.moderate.alarm.thisNoLabel | এটি আপনার অ্যালার্ম।
+brief.moderate.alarm.ask | অ্যালার্ম বন্ধ করব, নাকি %d মিনিট পরে আবার মনে করিয়ে দেব?
+brief.moderate.alarm.respondHint | উত্তর দিতে উত্তর দিন চাপুন।
+brief.moderate.ack.dismiss | ঠিক আছে, অ্যালার্ম বন্ধ।
+brief.moderate.ack.remind | বুঝেছি। %@-এ আবার মনে করিয়ে দেব।
+brief.moderate.ack.unclear | দুঃখিত, বুঝতে পারিনি। অ্যালার্ম বন্ধ করব, নাকি %d মিনিট পরে মনে করাব?
+brief.moderate.ack.noAnswer | উত্তর পাইনি, তাই %@-এ আবার মনে করিয়ে দেব।
+brief.professional.alarm.this | এটি আপনার %@ অ্যালার্ম।
+brief.professional.alarm.thisNoLabel | এটি আপনার অ্যালার্ম।
+brief.professional.alarm.ask | আমি কি অ্যালার্ম বন্ধ করব, নাকি %d মিনিট পরে আবার মনে করিয়ে দেব?
+brief.professional.alarm.respondHint | আপনার উত্তর জানাতে উত্তর দিন চাপুন।
+brief.professional.ack.dismiss | বেশ। অ্যালার্ম বন্ধ করা হলো।
+brief.professional.ack.remind | যথা আজ্ঞা। আমি %@-এ আবার মনে করিয়ে দেব।
+brief.professional.ack.unclear | মাফ করবেন? আমি কি অ্যালার্ম বন্ধ করব, নাকি %d মিনিট পরে মনে করাব?
+brief.professional.ack.noAnswer | উত্তর নেই, বুঝলাম। আমি %@-এ ফিরব।
+brief.child.alarm.this | এটা তোমার %@ অ্যালার্ম!
+brief.child.alarm.thisNoLabel | এটা তোমার অ্যালার্ম!
+brief.child.alarm.ask | তুমি উঠেছ, নাকি %d মিনিট পরে আবার জাগাব?
+brief.child.alarm.respondHint | আমাকে বলতে উত্তর দিন চাপো।
+brief.child.ack.dismiss | দারুণ! অ্যালার্ম বন্ধ।
+brief.child.ack.remind | আচ্ছা! %@-এ আবার জাগাব।
+brief.child.ack.unclear | উফ, শুনতে পাইনি। উঠেছ, নাকি %d মিনিট পরে জাগাব?
+brief.child.ack.noAnswer | ঘুমকাতুরে! %@-এ আবার জাগাব।
+brief.unhinged.alarm.this | এটা তোমার %@ অ্যালার্ম। মনে আছে সেট করেছিলে? আমার আছে।
+brief.unhinged.alarm.thisNoLabel | এটা তোমার অ্যালার্ম। স্পষ্টতই।
+brief.unhinged.alarm.ask | তো। অ্যালার্ম বন্ধ করব, নাকি %d মিনিট পরে ফিরে এসে আবার এসব করব?
+brief.unhinged.alarm.respondHint | উত্তর দিন চাপো আর আমার সাথে কথা বলো।
+brief.unhinged.ack.dismiss | অবশেষে। অ্যালার্ম বন্ধ।
+brief.unhinged.ack.remind | ঠিক আছে। আমি %@-এ ফিরব। দুর্ভাগ্যবশত।
+brief.unhinged.ack.unclear | কী বললে? বন্ধ, নাকি আমার সঙ্গে আরও %d মিনিট?
+brief.unhinged.ack.noAnswer | নীরবতা। চমৎকার। আমি %@-এ ফিরব।
+alarm.respond | উত্তর দিন
+conversation.dismiss | বন্ধ করুন
+conversation.remind | %d মিনিটে মনে করান
+conversation.repeat | আবার
+conversation.speaking | বলছে…
+conversation.listening | শুনছে…
+conversation.thinking | ভাবছে…
+conversation.done.dismissed | অ্যালার্ম বন্ধ
+conversation.done.remind | %@-এ মনে করিয়ে দেব
+conversation.noPermission | কণ্ঠে উত্তর দিতে সেটিংসে মাইক্রোফোন ও স্পিচ রিকগনিশনের অনুমতি দিন। ততক্ষণ বোতাম ব্যবহার করুন।
+conversation.noRecognizer | আপনার iPhone এই ভাষা ডিভাইসে চিনতে পারে না। বোতাম ব্যবহার করুন।
+conversation.tapToAnswer | উত্তর দিতে একটি বোতাম চাপুন।
+infoplist.microphone | অ্যালার্ম বাজলে Concierge Clock আপনার উত্তর শোনে ("বন্ধ করো", "10 মিনিট পরে মনে করাও")। আপনার কণ্ঠ এই iPhone-এই থাকে এবং কখনো রেকর্ড হয় না।
+infoplist.speech | অ্যালার্মে আপনার উত্তর বুঝতে এই iPhone-এই লেখায় রূপান্তর করা হয়। কিছুই পাঠানো বা রাখা হয় না।

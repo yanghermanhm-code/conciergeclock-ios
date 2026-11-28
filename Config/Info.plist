@@ -16,6 +16,10 @@
 	<!-- Read on the iPhone: every calendar account in iOS Settings (iCloud, Google, Outlook, Exchange…). -->
 	<key>NSCalendarsFullAccessUsageDescription</key>
 	<string>Concierge Clock reads your calendars on this iPhone to tell you about your day and to skip alarms on days off. Nothing is uploaded or changed.</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>Concierge Clock listens for your answer when an alarm goes off ("dismiss", "remind me in 10 minutes"). Your voice stays on this iPhone and is never recorded.</string>
+	<key>NSSpeechRecognitionUsageDescription</key>
+	<string>Your answer to an alarm is turned into text on this iPhone to understand it. Nothing is sent or stored.</string>
 	<key>NSRemindersFullAccessUsageDescription</key>
 	<string>Concierge Clock reads your reminders on this iPhone to tell you what is due, and marks one done only when you ask. Nothing is uploaded.</string>
 	<!-- The alarm's Lock Screen and Dynamic Island view (AlarmKit Live Activity). -->

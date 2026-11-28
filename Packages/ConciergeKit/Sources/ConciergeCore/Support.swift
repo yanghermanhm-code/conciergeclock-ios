@@ -18,7 +18,7 @@ public extension RecordID {
 /// (`BackupMigrator` for backups, `Migrations` for the database).
 public enum SchemaVersion {
     /// SQLite database (also recorded in the `keyValue` table).
-    public static let database = 3
+    public static let database = 4
     /// `AppSettings` document.
     public static let settings = 1
     /// Alarms (version 2 adds `date`; version-1 records decode with no date).
@@ -26,7 +26,7 @@ public enum SchemaVersion {
     /// Wake log entries.
     public static let wakeEvent = 1
     /// Scheduled rings (this iPhone only, not in backups).
-    public static let occurrence = 1
+    public static let occurrence = 2
     /// Wake Optimization Advisor recommendations.
     public static let recommendation = 1
     /// `.conciergeclock` JSON backups.

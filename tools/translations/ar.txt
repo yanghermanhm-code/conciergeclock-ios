@@ -509,3 +509,49 @@ sound.digital | صفير كلاسيكي
 sound.digital.hint | مثل منبّه بجانب السرير.
 sound.iPhoneDefault | منبّه iPhone
 sound.iPhoneDefault.hint | صوت المنبّه الخاص بـ iPhone.
+brief.moderate.alarm.this | هذا منبّه %@ الخاص بك.
+brief.moderate.alarm.thisNoLabel | هذا منبّهك.
+brief.moderate.alarm.ask | هل أوقف المنبّه، أم أذكّرك مرة أخرى بعد %d دقائق؟
+brief.moderate.alarm.respondHint | اضغط ردّ لتجيبني.
+brief.moderate.ack.dismiss | حسنًا، تم إيقاف المنبّه.
+brief.moderate.ack.remind | فهمت. سأذكّرك مرة أخرى في %@.
+brief.moderate.ack.unclear | عذرًا، لم أفهم. أوقف المنبّه، أم أذكّرك بعد %d دقائق؟
+brief.moderate.ack.noAnswer | لا إجابة، لذا سأذكّرك في %@.
+brief.professional.alarm.this | هذا منبّه %@ الخاص بك.
+brief.professional.alarm.thisNoLabel | هذا منبّهك.
+brief.professional.alarm.ask | أأوقف المنبّه، أم أذكّرك مجددًا بعد %d دقائق؟
+brief.professional.alarm.respondHint | اضغط ردّ لتعطيني جوابك.
+brief.professional.ack.dismiss | حسنًا جدًا. تم إيقاف المنبّه.
+brief.professional.ack.remind | كما تشاء. سأذكّرك مجددًا في %@.
+brief.professional.ack.unclear | عفوًا؟ أأوقف المنبّه، أم أذكّرك بعد %d دقائق؟
+brief.professional.ack.noAnswer | لا جواب، كما أرى. سأعود في %@.
+brief.child.alarm.this | هذا منبّه %@ الخاص بك!
+brief.child.alarm.thisNoLabel | هذا منبّهك!
+brief.child.alarm.ask | هل استيقظت، أم أوقظك مرة أخرى بعد %d دقائق؟
+brief.child.alarm.respondHint | اضغط ردّ لتخبرني.
+brief.child.ack.dismiss | أحسنت! توقف المنبّه.
+brief.child.ack.remind | حسنًا! سأوقظك في %@.
+brief.child.ack.unclear | أوه، لم أسمع. هل استيقظت، أم أوقظك بعد %d دقائق؟
+brief.child.ack.noAnswer | يا نعسان! سأوقظك في %@.
+brief.unhinged.alarm.this | هذا منبّه %@ الخاص بك. أتذكر أنك ضبطته؟ أنا أتذكر.
+brief.unhinged.alarm.thisNoLabel | هذا منبّهك. بالطبع.
+brief.unhinged.alarm.ask | إذن. أوقف المنبّه، أم أعود بعد %d دقائق لنعيد كل هذا؟
+brief.unhinged.alarm.respondHint | اضغط ردّ وكلّمني.
+brief.unhinged.ack.dismiss | أخيرًا. تم إيقاف المنبّه.
+brief.unhinged.ack.remind | حسنًا. سأعود في %@. للأسف.
+brief.unhinged.ack.unclear | ماذا؟ إيقاف، أم %d دقائق أخرى من صحبتي؟
+brief.unhinged.ack.noAnswer | صمت. رائع. سأعود في %@.
+alarm.respond | ردّ
+conversation.dismiss | إيقاف
+conversation.remind | تذكير بعد %d د
+conversation.repeat | إعادة
+conversation.speaking | يتحدث…
+conversation.listening | يستمع…
+conversation.thinking | يفكر…
+conversation.done.dismissed | تم إيقاف المنبّه
+conversation.done.remind | سأذكّرك في %@
+conversation.noPermission | اسمح بالميكروفون والتعرف على الكلام في الإعدادات لتجيب بصوتك. حتى ذلك الحين استخدم الأزرار.
+conversation.noRecognizer | لا يستطيع iPhone التعرف على هذه اللغة على الجهاز. استخدم الأزرار.
+conversation.tapToAnswer | اضغط زرًا للإجابة.
+infoplist.microphone | يستمع Concierge Clock إلى جوابك عندما يرنّ المنبّه («أوقفه»، «ذكّرني بعد 10 دقائق»). يبقى صوتك على هذا الـ iPhone ولا يُسجَّل أبدًا.
+infoplist.speech | يُحوَّل جوابك للمنبّه إلى نص على هذا الـ iPhone لفهمه. لا يُرسَل أو يُحفَظ شيء.

@@ -69,6 +69,14 @@ struct RootView: View {
         } message: {
             Text(backupError ?? "")
         }
+        // An alarm went off while the app is on screen: talk at once.
+        .onChange(of: model.scheduler.alertingRingID) { _, ringID in
+            guard let ringID, scenePhase == .active else { return }
+            model.startAlarmConversation(ringID: ringID)
+        }
+        .fullScreenCover(item: Binding(get: { model.conversation }, set: { _ in })) { conversation in
+            AlarmConversationView(conversation: conversation)
+        }
         .onChange(of: scenePhase, initial: true) { _, phase in
             switch phase {
             case .active: model.didBecomeActive()
