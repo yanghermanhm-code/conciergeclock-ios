@@ -169,7 +169,8 @@ extension CalendarService {
                 let predicate = store.predicateForIncompleteReminders(withDueDateStarting: nil, ending: end, calendars: lists)
                 let store = self.store
                 let reminders: [BriefingItem] = await withCheckedContinuation { continuation in
-                    store.fetchReminders(matching: predicate) { found in
+                    // EventKit calls back on a background queue: the closure must not be main-actor isolated.
+                    store.fetchReminders(matching: predicate) { @Sendable found in
                         let mapped: [BriefingItem] = (found ?? []).compactMap { reminder in
                             guard let components = reminder.dueDateComponents,
                                   let due = calendar.date(from: components) else { return nil }

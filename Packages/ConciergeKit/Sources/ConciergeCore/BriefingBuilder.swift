@@ -118,7 +118,7 @@ public struct BriefingBuilder: Sendable {
             .sorted { ($0.item.date ?? now) < ($1.item.date ?? now) }
         let reminders = items
             .filter { $0.item.kind == .reminder }
-            .sorted { ($0.importance, $1.item.date ?? .distantFuture) > ($1.importance, $0.item.date ?? .distantFuture) }
+            .sorted { ($0.importance, $1.item.date ?? Date.distantFuture) > ($1.importance, $0.item.date ?? Date.distantFuture) }
 
         if let next = events.first {
             add(.next, nextLine(next, now: now))

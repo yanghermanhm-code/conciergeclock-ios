@@ -55,6 +55,7 @@ final class BriefingService {
 
     private func rankWithModel(_ found: [BriefingItem], signature: [String], now: Date) {
         rankTask?.cancel()
+        isRanking = false
         guard let generator = models.textGenerator(), !found.isEmpty else { return }
         isRanking = true
         rankTask = Task { [weak self] in
