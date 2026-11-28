@@ -58,8 +58,10 @@ final class ListeningService {
         let input = engine.inputNode
         let format = input.outputFormat(forBus: 0)
         guard format.sampleRate > 0 else { return "" }
+        // The request accepts buffers from the audio thread (Apple's documented use).
+        nonisolated(unsafe) let tapRequest = request
         input.installTap(onBus: 0, bufferSize: 1024, format: format) { @Sendable buffer, _ in
-            request.append(buffer)
+            tapRequest.append(buffer)
         }
         engine.prepare()
         do {

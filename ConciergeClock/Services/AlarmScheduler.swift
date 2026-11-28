@@ -108,16 +108,18 @@ final class AlarmScheduler {
             .compactMap { occurrence in UUID(uuidString: occurrence.id).map { PlannedRing(id: $0, alarmID: occurrence.alarmID, fireDate: max(occurrence.scheduledAt, now.addingTimeInterval(3))) } }
         let allRings = rings + followUps
         let wanted = Set(allRings.map(\.id))
-        RingSoundRenderer.prune(keeping: wanted)
         let scheduled = (try? manager.alarms) ?? []
+        // Keep the recording of a ring that is sounding (or counting down) right now.
+        RingSoundRenderer.prune(keeping: wanted.union(scheduled.filter { $0.state != .scheduled }.map(\.id)))
         for alarm in scheduled where !wanted.contains(alarm.id) && alarm.state == .scheduled {
             try? manager.cancel(id: alarm.id)
             try? occurrences.setStatus(.cancelled, id: alarm.id.uuidString, at: now)
         }
         let present = Set(scheduled.map(\.id))
         var failure: String?
-        for ring in allRings where !present.contains(ring.id) || needsFreshAnnouncement(ring, now: now) {
+        for ring in allRings {
             guard let alarm = alarms.first(where: { $0.id == ring.alarmID }) else { continue }
+            guard !present.contains(ring.id) || needsFreshAnnouncement(ring, alarm: alarm, now: now) else { continue }
             do {
                 try await schedule(ring, alarm: alarm, settings: current, replacing: present.contains(ring.id))
             } catch {
@@ -129,10 +131,17 @@ final class AlarmScheduler {
 
     /// Rings in the next 24 hours get their spoken announcement re-recorded at most hourly, so
     /// "what's next" stays current.
-    private func needsFreshAnnouncement(_ ring: PlannedRing, now: Date) -> Bool {
-        ring.fireDate.timeIntervalSince(now) < 24 * 3600 && !RingSoundRenderer.isFresh(ringID: ring.id, now: now)
+    /// Recording is tried at most hourly per ring, also when it fails (no voice for the language),
+    /// so a ring is never rescheduled on every refresh.
+    private func needsFreshAnnouncement(_ ring: PlannedRing, alarm: ConciergeCore.Alarm, now: Date) -> Bool {
+        guard AlarmSound.resolve(alarm.soundID).isSynthesised, ring.fireDate.timeIntervalSince(now) < 24 * 3600 else { return false }
+        if let tried = announcementAttempts[ring.id], now.timeIntervalSince(tried) < 3600 { return false }
+        return !RingSoundRenderer.isFresh(ringID: ring.id, now: now)
             && (try? manager.alarms.first { $0.id == ring.id }?.state) == .scheduled
     }
+
+    /// When each ring's announcement was last recorded (or tried).
+    private var announcementAttempts: [UUID: Date] = [:]
 
     private func schedule(_ ring: PlannedRing, alarm: ConciergeCore.Alarm, settings: AppSettings, replacing: Bool = false) async throws {
         let snoozeMinutes = settings.snoozeMinutes(for: alarm)
@@ -142,6 +151,7 @@ final class AlarmScheduler {
         // The announcement recorded into the sound: which alarm, what's next, dismiss or remind?
         var soundFile = Self.soundFile(for: alarm)
         if sound.isSynthesised {
+            announcementAttempts[ring.id] = Date()
             let persona = settings.persona(for: alarm)
             let items = await itemsForAnnouncement?(ring.fireDate) ?? []
             let announcement = BriefingBuilder(persona: persona, speakTitles: settings.speakEventTitles)
@@ -215,6 +225,7 @@ final class AlarmScheduler {
             tintColor: Color(hex: 0x0B7470)
         )
         let configuration = AlarmManager.AlarmConfiguration<ConciergeAlarmMetadata>(
+            countdownDuration: nil,
             schedule: .fixed(request.fireDate),
             attributes: attributes,
             stopIntent: StopAlarmIntent(ringID: request.id.uuidString),

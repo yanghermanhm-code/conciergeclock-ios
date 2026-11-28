@@ -68,12 +68,24 @@ final class SpeechService: NSObject {
         } else {
             Self.activateSession()
         }
+        speakToken += 1
+        let token = speakToken
+        // Safety net: if the voice never reports back (no voice for the language), carry on.
+        let limit = 10 + Double(briefing.text.count) * 0.15
+        Task { [weak self] in
+            try? await Task.sleep(for: .seconds(limit))
+            guard let self, self.speakToken == token, self.finished != nil else { return }
+            self.stop()
+        }
         await withCheckedContinuation { (continuation: CheckedContinuation<Void, Never>) in
             finished = continuation
             enqueue(briefing, persona: persona, activate: false)
             if briefing.lines.isEmpty { finish() }
         }
     }
+
+    /// Identifies the current `speakAndWait`, so an old safety timer cannot stop a newer one.
+    @ObservationIgnored private var speakToken = 0
 
     func stop() {
         if synthesizer.isSpeaking {
