@@ -81,3 +81,10 @@ Agreed during planning (November 2026). Implementation decisions per phase follo
 | Voices | Apple's voices for now: the accent's locale (English) or the briefing language, the persona's gender where available, best quality installed (Premium > Enhanced > default); novelty and Personal Voices excluded. Settings shows which voice is used, its quality, and a guide to download better ones. Prosody (speed, pitch) per tone. Bundled engine: Phase 7. | Works offline on every iPhone today. |
 | Previews | Preview Voice (a short sample: greeting, time, "the dentist at 9:15", the snooze question), Hear Every Voice (all 8 accents and 4 tones), Preview My Briefing (today's real script). | Agreed: preview everything on the phone. |
 | Audio | `.playback` + spoken-audio mode + duck others: plays on the loudspeaker unless headphones are connected. Wake-up announcements (Phase 3) will force the loudspeaker. | Previews respect headphones; wake-ups must be heard. |
+
+## Phase 2 — additions from device testing
+
+| Topic | Decision | Why |
+|---|---|---|
+| Exact-date alarms | The alarm editor offers **Repeat** (weekdays) or **On a date** (calendar picker, from today). A dated alarm rings once on that date, is scheduled with AlarmKit however far ahead it is, ignores "skip days off", and shows "Done" once the date has passed. Database version 3 adds `alarm.date`; backups from older versions open unchanged. | Product owner: the time could be set but not the exact date. |
+| Audio session | Activation and deactivation run on a background queue. Gemma ranking stops when the app goes to the background (iOS forbids GPU work there). | Xcode's hang-risk warning and GPU errors seen on device. |

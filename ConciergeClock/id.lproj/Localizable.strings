@@ -480,3 +480,10 @@
 "voices.guide.indian" = "India: Inggris (India), misalnya Rishi (pria), Isha atau Veena (wanita).";
 "voices.guide.american" = "AS bagian selatan dan Kanada: Inggris (AS), misalnya Evan atau Nathan (pria), Ava atau Zoe (wanita).";
 "voices.guide.footer" = "Pengunduhan butuh Wi-Fi sekali; Concierge Clock sendiri tidak pernah online untuk suara.";
+"editor.when" = "Kapan";
+"editor.when.repeat" = "Ulangi";
+"editor.when.date" = "Pada tanggal";
+"editor.date" = "Tanggal";
+"editor.dateFooter" = "Berbunyi sekali, pada %@.";
+"editor.datePast" = "Tanggal itu sudah lewat. Pilih tanggal baru.";
+"alarms.past" = "Selesai: tanggalnya sudah lewat";

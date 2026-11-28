@@ -481,3 +481,10 @@ voices.guide.british | בריטי: אנגלית (בריטניה), למשל Danie
 voices.guide.indian | הודי: אנגלית (הודו), למשל Rishi (גבר), Isha או Veena (אישה).
 voices.guide.american | דרום ארה״ב וקנדה: אנגלית (ארה״ב), למשל Evan או Nathan (גבר), Ava או Zoe (אישה).
 voices.guide.footer | ההורדה דורשת Wi‑Fi פעם אחת; Concierge Clock עצמו אף פעם לא מתחבר לרשת בשביל קולות.
+editor.when | מתי
+editor.when.repeat | חזרה
+editor.when.date | בתאריך
+editor.date | תאריך
+editor.dateFooter | מצלצל פעם אחת, ב‑%@.
+editor.datePast | התאריך הזה עבר. בחר/י תאריך חדש.
+alarms.past | הסתיים: התאריך עבר

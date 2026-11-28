@@ -480,3 +480,10 @@
 "voices.guide.indian" = "印度：英语（印度），例如 Rishi（男声），Isha 或 Veena（女声）。";
 "voices.guide.american" = "美国南方和加拿大：英语（美国），例如 Evan 或 Nathan（男声），Ava 或 Zoe（女声）。";
 "voices.guide.footer" = "下载只需一次 Wi-Fi；Concierge Clock 本身从不为声音联网。";
+"editor.when" = "何时";
+"editor.when.repeat" = "重复";
+"editor.when.date" = "指定日期";
+"editor.date" = "日期";
+"editor.dateFooter" = "只响一次：%@。";
+"editor.datePast" = "该日期已过。请选择新日期。";
+"alarms.past" = "已结束：日期已过";

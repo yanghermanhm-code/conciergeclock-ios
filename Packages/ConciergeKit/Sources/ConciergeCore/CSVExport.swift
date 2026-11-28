@@ -39,7 +39,7 @@ public enum CSVExport {
             [
                 alarm.label,
                 String(format: "%02d:%02d", alarm.hour, alarm.minute),
-                Weekdays.all.filter { alarm.repeatDays.contains($0) }.compactMap { dayNames[$0] }.joined(separator: " "),
+                alarm.isDated ? (alarm.date?.rawValue ?? "") : Weekdays.all.filter { alarm.repeatDays.contains($0) }.compactMap { dayNames[$0] }.joined(separator: " "),
                 alarm.isEnabled ? "yes" : "no",
                 alarm.snoozeMinutes.map(String.init) ?? "default",
                 alarm.toneOverride?.rawValue ?? "default",

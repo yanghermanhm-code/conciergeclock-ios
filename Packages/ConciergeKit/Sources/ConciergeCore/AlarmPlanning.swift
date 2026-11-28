@@ -36,6 +36,14 @@ public enum AlarmPlanner {
             var cursor = now
             var found = 0
             // Each step moves past one candidate ring, so the loop always ends.
+            // An alarm for an exact date is scheduled however far ahead it is, and rings on that
+            // date even if it looks like a day off (the person chose it).
+            if alarm.isDated {
+                if let fire = alarm.nextFireDate(after: now, calendar: calendar) {
+                    rings.append(PlannedRing(id: occurrenceID(alarmID: alarm.id, fireDate: fire), alarmID: alarm.id, fireDate: fire))
+                }
+                continue
+            }
             while found < ringsAhead, let next = alarm.nextFireDate(after: cursor, calendar: calendar), next <= limit {
                 cursor = next
                 if alarm.skipOnDaysOff, isDayOff(DayKey(next, calendar: calendar)) { continue }

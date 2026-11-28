@@ -481,3 +481,10 @@ voices.guide.british | Británico: Inglés (Reino Unido), por ejemplo Daniel o A
 voices.guide.indian | Indio: Inglés (India), por ejemplo Rishi (hombre), Isha o Veena (mujer).
 voices.guide.american | Sur de EE. UU. y Canadá: Inglés (EE. UU.), por ejemplo Evan o Nathan (hombre), Ava o Zoe (mujer).
 voices.guide.footer | La descarga necesita wifi una vez; Concierge Clock nunca se conecta a internet para las voces.
+editor.when | Cuándo
+editor.when.repeat | Repetir
+editor.when.date | En una fecha
+editor.date | Fecha
+editor.dateFooter | Suena una vez, el %@.
+editor.datePast | Esa fecha ya pasó. Elige otra.
+alarms.past | Terminada: la fecha ya pasó

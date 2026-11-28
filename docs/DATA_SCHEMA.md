@@ -1,4 +1,4 @@
-# Data schema (database schemaVersion 2, backup schemaVersion 1)
+# Data schema (database schemaVersion 3, backup schemaVersion 1)
 
 This document is the **contract** for the on-device database, the JSON backup format and a future
 Android app. Field names are identical in Swift, SQLite and JSON.
@@ -36,6 +36,7 @@ General rules (the same as FocusFound and PrepPilot):
 | rampUpSeconds | int | 0–300 |
 | ambientSoundID | text? | Nightstand Mode sound |
 | skipDay | text? | `YYYY-MM-DD` of a single skipped occurrence |
+| date | text? | since database version 3 (alarm record version 2): `YYYY-MM-DD` of a one-off alarm on an exact date; only when `repeatDays` is empty. Scheduled however far ahead, and not skipped on days off |
 | skipOnDaysOff | bool | holidays and day-off keywords in the calendar |
 | snoozeLimit | int? | 0–20; null = no limit |
 | createdAt / updatedAt | datetime | |
@@ -110,7 +111,7 @@ off, PTO, Out of office, OOO] · `healthSleepEnabled` false · `wakeScoreRules` 
 {
   "format": "conciergeclock-backup",
   "schemaVersion": 1,
-  "databaseSchemaVersion": 2,
+  "databaseSchemaVersion": 3,
   "createdAt": "2026-11-27T07:12:00.000Z",
   "appVersion": "1.0 (1)",
   "settings": { … },

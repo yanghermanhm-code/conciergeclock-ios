@@ -73,4 +73,21 @@ final class PlannerTests: XCTestCase {
         try snapshot.write(to: folder)
         XCTAssertEqual(NextAlarmSnapshot.read(from: folder), snapshot)
     }
+
+    func testExactDateAlarmRingsOnThatDayOnlyAndBeyondTheHorizon() {
+        let christmas = DayKey(date(2026, 12, 25, 12, 0), calendar: calendar)
+        let alarm = Alarm(id: "X", hour: 6, minute: 45, repeatDays: [], date: christmas)
+        XCTAssertTrue(alarm.isDated)
+        XCTAssertEqual(alarm.nextFireDate(after: now, calendar: calendar), date(2026, 12, 25, 6, 45))
+        XCTAssertNil(alarm.nextFireDate(after: date(2026, 12, 25, 7, 0), calendar: calendar))
+        // 28 days ahead (beyond the 8-day horizon), and not skipped although Christmas is a day off.
+        let rings = AlarmPlanner.plan(alarms: [alarm], after: now, calendar: calendar) { _ in true }
+        XCTAssertEqual(rings.map(\.fireDate), [date(2026, 12, 25, 6, 45)])
+    }
+
+    func testRepeatingAlarmIgnoresADate() {
+        let alarm = Alarm(id: "R", hour: 7, minute: 0, repeatDays: Weekdays.workWeek, date: DayKey(date(2026, 12, 25, 12, 0), calendar: calendar))
+        XCTAssertNil(alarm.date)
+        XCTAssertFalse(alarm.isDated)
+    }
 }

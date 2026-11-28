@@ -32,11 +32,25 @@ struct AlarmEditorView: View {
                 }
 
                 Section {
-                    WeekdayPicker(days: $alarm.repeatDays)
+                    Picker(l10n["editor.when"], selection: scheduleBinding) {
+                        Text(l10n["editor.when.repeat"]).tag(ScheduleKind.repeating)
+                        Text(l10n["editor.when.date"]).tag(ScheduleKind.date)
+                    }
+                    .pickerStyle(.segmented)
+                    switch scheduleKind {
+                    case .repeating:
+                        WeekdayPicker(days: repeatBinding)
+                    case .date:
+                        DatePicker(
+                            l10n["editor.date"], selection: dateBinding,
+                            in: Calendar.current.startOfDay(for: Date())..., displayedComponents: .date
+                        )
+                        .datePickerStyle(.graphical)
+                    }
                 } header: {
                     Text(l10n["editor.repeat"])
                 } footer: {
-                    Text(alarm.repeatDays.isEmpty ? l10n["editor.repeatOnce"] : l10n.repeatText(alarm.repeatDays))
+                    Text(footerText)
                 }
 
                 Section {
@@ -124,6 +138,61 @@ struct AlarmEditorView: View {
                 alarm.skipDay = nil
             }
         )
+    }
+
+    private enum ScheduleKind: Hashable {
+        case repeating, date
+    }
+
+    private var scheduleKind: ScheduleKind {
+        alarm.repeatDays.isEmpty && alarm.date != nil ? .date : .repeating
+    }
+
+    /// Switching to "On a date" picks the next day this time comes round; switching back
+    /// clears the date (no repeat days = the next occurrence of the time).
+    private var scheduleBinding: Binding<ScheduleKind> {
+        Binding(
+            get: { scheduleKind },
+            set: { kind in
+                switch kind {
+                case .date:
+                    alarm.repeatDays = []
+                    let next = Alarm(hour: alarm.hour, minute: alarm.minute, repeatDays: []).nextFireDate(after: Date()) ?? Date()
+                    alarm.date = DayKey(next)
+                case .repeating:
+                    alarm.date = nil
+                }
+                alarm.skipDay = nil
+            }
+        )
+    }
+
+    private var repeatBinding: Binding<Set<Weekday>> {
+        Binding(
+            get: { alarm.repeatDays },
+            set: { days in
+                alarm.repeatDays = days
+                if !days.isEmpty { alarm.date = nil }
+            }
+        )
+    }
+
+    private var dateBinding: Binding<Date> {
+        Binding(
+            get: { alarm.date?.date() ?? Date() },
+            set: { alarm.date = DayKey($0) }
+        )
+    }
+
+    /// "Mon Wed Fri", "Rings once…", or "Friday 12 December 2026 at 7:00 — in 14 days".
+    private var footerText: String {
+        if scheduleKind == .date, let fire = alarm.nextFireDate(after: Date()) {
+            return l10n("editor.dateFooter", fire.formatted(Date.FormatStyle(date: .complete, time: .shortened).locale(l10n.locale)))
+        }
+        if scheduleKind == .date {
+            return l10n["editor.datePast"]
+        }
+        return alarm.repeatDays.isEmpty ? l10n["editor.repeatOnce"] : l10n.repeatText(alarm.repeatDays)
     }
 
     private var snoozeBinding: Binding<Int?> {

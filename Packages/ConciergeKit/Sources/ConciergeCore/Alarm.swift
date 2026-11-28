@@ -30,7 +30,8 @@ public struct Alarm: Codable, Sendable, Hashable, Identifiable {
     /// Local time of day.
     public var hour: Int
     public var minute: Int
-    /// Days it repeats on (see `Weekday`). Empty = rings once, at the next `hour:minute`.
+    /// Days it repeats on (see `Weekday`). Empty = rings once: on `date` if set, otherwise at
+    /// the next `hour:minute`.
     public var repeatDays: Set<Weekday>
     public var isEnabled: Bool
     /// Snooze length for this alarm in minutes, or nil for the default in Settings.
@@ -47,6 +48,9 @@ public struct Alarm: Codable, Sendable, Hashable, Identifiable {
     public var ambientSoundID: String?
     /// Skip only the next occurrence on this day.
     public var skipDay: DayKey?
+    /// A one-off alarm on this exact date (only when it does not repeat). Nil = the next
+    /// occurrence of the time. Added in database version 3; older data decodes as nil.
+    public var date: DayKey?
     /// Skip days that look like days off in the calendar (holidays, "Vacation", "Day off").
     public var skipOnDaysOff: Bool
     /// Most snoozes before the butler stops offering one (nil = no limit).
@@ -59,7 +63,7 @@ public struct Alarm: Codable, Sendable, Hashable, Identifiable {
         repeatDays: Set<Weekday> = Weekdays.workWeek, isEnabled: Bool = true, snoozeMinutes: Int? = nil,
         toneOverride: PersonaTone? = nil, accentOverride: VoiceAccent? = nil, lengthOverride: BriefingLength? = nil,
         soundID: String = Alarm.defaultSoundID, rampUpSeconds: Int = 30, ambientSoundID: String? = nil,
-        skipDay: DayKey? = nil, skipOnDaysOff: Bool = true, snoozeLimit: Int? = nil, createdAt: Date = Date(), updatedAt: Date? = nil
+        skipDay: DayKey? = nil, date: DayKey? = nil, skipOnDaysOff: Bool = true, snoozeLimit: Int? = nil, createdAt: Date = Date(), updatedAt: Date? = nil
     ) {
         self.id = id
         self.schemaVersion = SchemaVersion.alarm
@@ -77,6 +81,7 @@ public struct Alarm: Codable, Sendable, Hashable, Identifiable {
         self.rampUpSeconds = rampUpSeconds.clamped(to: 0...300)
         self.ambientSoundID = ambientSoundID
         self.skipDay = skipDay
+        self.date = repeatDays.isEmpty ? date : nil
         self.skipOnDaysOff = skipOnDaysOff
         self.snoozeLimit = snoozeLimit.map { $0.clamped(to: 0...20) }
         self.createdAt = createdAt
@@ -90,11 +95,22 @@ public struct Alarm: Codable, Sendable, Hashable, Identifiable {
 
     public var repeats: Bool { !repeatDays.isEmpty }
 
+    /// A one-off alarm for an exact date.
+    public var isDated: Bool { !repeats && date != nil }
+
     /// The next time this alarm rings at or after `now`, honouring repeat days and the
     /// one-off skip (days off from the calendar are applied by the scheduler, which can read
     /// the calendar). Nil when disabled.
     public func nextFireDate(after now: Date, calendar: Calendar = .current) -> Date? {
         guard isEnabled else { return nil }
+        if !repeats, let date {
+            // Exactly that day at the alarm's time; nothing once it has passed.
+            guard let day = date.date(calendar: calendar),
+                  let fire = calendar.date(bySettingHour: hour, minute: minute, second: 0, of: day),
+                  fire > now else { return nil }
+            if let skipDay, DayKey(fire, calendar: calendar) == skipDay { return nil }
+            return fire
+        }
         let startOfToday = calendar.startOfDay(for: now)
         // Look up to 8 days ahead: enough for any weekly pattern plus one skipped day.
         for offset in 0...8 {

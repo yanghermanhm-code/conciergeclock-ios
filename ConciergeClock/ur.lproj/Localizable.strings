@@ -480,3 +480,10 @@
 "voices.guide.indian" = "ہندوستانی: انگریزی (بھارت)، مثلاً Rishi (مرد)، Isha یا Veena (خاتون)۔";
 "voices.guide.american" = "جنوبی امریکی اور کینیڈین: انگریزی (امریکہ)، مثلاً Evan یا Nathan (مرد)، Ava یا Zoe (خاتون)۔";
 "voices.guide.footer" = "ڈاؤن لوڈ کے لیے ایک بار Wi-Fi چاہیے؛ Concierge Clock خود آوازوں کے لیے کبھی آن لائن نہیں جاتا۔";
+"editor.when" = "کب";
+"editor.when.repeat" = "دہرائیں";
+"editor.when.date" = "کسی تاریخ پر";
+"editor.date" = "تاریخ";
+"editor.dateFooter" = "ایک بار بجے گا، %@ کو۔";
+"editor.datePast" = "وہ تاریخ گزر چکی ہے۔ نئی تاریخ منتخب کریں۔";
+"alarms.past" = "مکمل: تاریخ گزر گئی";

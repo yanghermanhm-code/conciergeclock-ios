@@ -106,6 +106,15 @@ enum Migrations {
             )
         }
 
+        // Alarms for an exact date.
+        migrator.registerMigration("v3-alarm-date") { db in
+            try db.alter(table: "alarm") { t in t.add(column: "date", .text) }
+            try db.execute(
+                sql: "INSERT OR REPLACE INTO keyValue (key, value) VALUES (?, ?)",
+                arguments: [AppDatabase.Key.schemaVersion, try JSONEncoder().encode(3)]
+            )
+        }
+
         return migrator
     }
 }

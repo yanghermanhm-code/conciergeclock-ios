@@ -138,7 +138,7 @@ private struct AlarmRow: View {
                     Text(l10n.time(time))
                         .font(.system(.largeTitle, design: .rounded, weight: .semibold).monospacedDigit())
                         .foregroundStyle(alarm.isEnabled ? Theme.textPrimary : Theme.textSecondary)
-                    Text([alarm.label.nonBlank, l10n.repeatText(alarm.repeatDays)].compactMap { $0 }.joined(separator: " · "))
+                    Text([alarm.label.nonBlank, scheduleText].compactMap { $0 }.joined(separator: " · "))
                         .font(.subheadline)
                         .foregroundStyle(Theme.textSecondary)
                     if alarm.isEnabled {
@@ -159,6 +159,14 @@ private struct AlarmRow: View {
         .accessibilityAction(named: l10n["common.edit"], onEdit)
     }
 
+    /// Repeat days, or the exact date of a one-off alarm.
+    private var scheduleText: String {
+        if alarm.isDated, let day = alarm.date?.date() {
+            return day.formatted(Date.FormatStyle(date: .abbreviated, time: .omitted).locale(l10n.locale))
+        }
+        return l10n.repeatText(alarm.repeatDays)
+    }
+
     @ViewBuilder
     private var nextRingLine: some View {
         if alarm.skipDay != nil {
@@ -169,6 +177,10 @@ private struct AlarmRow: View {
             Label(l10n("alarms.nextRing", l10n.dateTime(next)), systemImage: "bell")
                 .font(.caption)
                 .foregroundStyle(ConciergeStyle.tint)
+        } else if alarm.isDated {
+            Label(l10n["alarms.past"], systemImage: "checkmark.circle")
+                .font(.caption)
+                .foregroundStyle(Theme.textSecondary)
         }
     }
 }

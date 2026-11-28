@@ -480,3 +480,10 @@
 "voices.guide.indian" = "Indien : Anglais (Inde), par exemple Rishi (homme), Isha ou Veena (femme).";
 "voices.guide.american" = "Sud des États-Unis et Canada : Anglais (États-Unis), par exemple Evan ou Nathan (homme), Ava ou Zoe (femme).";
 "voices.guide.footer" = "Le téléchargement demande le Wi-Fi une fois ; Concierge Clock lui-même ne va jamais en ligne pour les voix.";
+"editor.when" = "Quand";
+"editor.when.repeat" = "Répéter";
+"editor.when.date" = "À une date";
+"editor.date" = "Date";
+"editor.dateFooter" = "Sonne une fois, le %@.";
+"editor.datePast" = "Cette date est passée. Choisissez une nouvelle date.";
+"alarms.past" = "Terminé : la date est passée";

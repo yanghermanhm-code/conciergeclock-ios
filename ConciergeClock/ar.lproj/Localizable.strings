@@ -480,3 +480,10 @@
 "voices.guide.indian" = "الهندية: الإنجليزية (الهند)، مثل Rishi (رجل)، وIsha أو Veena (امرأة).";
 "voices.guide.american" = "جنوب الولايات المتحدة وكندا: الإنجليزية (الولايات المتحدة)، مثل Evan أو Nathan (رجل)، وAva أو Zoe (امرأة).";
 "voices.guide.footer" = "يحتاج التنزيل إلى Wi-Fi مرة واحدة؛ لا يتصل Concierge Clock نفسه بالإنترنت للأصوات أبدًا.";
+"editor.when" = "متى";
+"editor.when.repeat" = "التكرار";
+"editor.when.date" = "في تاريخ";
+"editor.date" = "التاريخ";
+"editor.dateFooter" = "يرنّ مرة واحدة، في %@.";
+"editor.datePast" = "مضى ذلك التاريخ. اختر تاريخًا جديدًا.";
+"alarms.past" = "انتهى: مضى التاريخ";

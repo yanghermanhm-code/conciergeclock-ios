@@ -481,3 +481,10 @@ voices.guide.british | ব্রিটিশ: ইংরেজি (যুক্�
 voices.guide.indian | ভারতীয়: ইংরেজি (ভারত), যেমন Rishi (পুরুষ), Isha বা Veena (নারী)।
 voices.guide.american | দক্ষিণ মার্কিন ও কানাডীয়: ইংরেজি (যুক্তরাষ্ট্র), যেমন Evan বা Nathan (পুরুষ), Ava বা Zoe (নারী)।
 voices.guide.footer | ডাউনলোডে একবার Wi-Fi লাগে; Concierge Clock নিজে কণ্ঠের জন্য কখনো অনলাইনে যায় না।
+editor.when | কখন
+editor.when.repeat | পুনরাবৃত্তি
+editor.when.date | নির্দিষ্ট তারিখে
+editor.date | তারিখ
+editor.dateFooter | একবার বাজবে, %@-এ।
+editor.datePast | সেই তারিখ পেরিয়ে গেছে। নতুন তারিখ বেছে নিন।
+alarms.past | শেষ: তারিখ পেরিয়ে গেছে
