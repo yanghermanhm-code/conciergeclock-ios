@@ -149,10 +149,10 @@ settings.startHere.body | Baixe %1$@ (%2$@) para este iPhone. Seu concierge pass
 ai.use | Usar IA offline
 ai.useFooter | Desligada ou não baixada, seu concierge usa regras integradas: todos os recursos continuam funcionando.
 ai.unsupported | Este iPhone não tem memória suficiente para a IA offline. O ConciergeClock usa suas regras integradas.
-ai.modelsFooter | Gemma 4 do Google (Apache 2.0), baixado uma vez do Hugging Face e verificado antes do uso. Roda totalmente neste iPhone e é compartilhado com PrepPilot, FocusFound e FotoPhilter, então é baixado uma única vez.
-ai.deleteMessage | PrepPilot, FocusFound e FotoPhilter usam a mesma cópia, então também a perdem. Ela pode ser baixada de novo.
+ai.modelsFooter | Gemma 4 do Google (Apache 2.0), baixado uma vez do Hugging Face e verificado antes do uso. Roda totalmente neste iPhone e é compartilhado com PrepPilot, FocusFound, FotoPhilter e NoteNook, então é baixado uma única vez.
+ai.deleteMessage | PrepPilot, FocusFound, FotoPhilter e NoteNook usam a mesma cópia, então também a perdem. Ela pode ser baixada de novo.
 ai.test.json | Verificação de importância (JSON)
-guide.intro.shared | Um único download serve todos os apps da Greater Good Software (ConciergeClock, PrepPilot, FocusFound, FotoPhilter) neste iPhone.
+guide.intro.shared | Um único download serve todos os apps da Greater Good Software (ConciergeClock, PrepPilot, FocusFound, FotoPhilter, NoteNook) neste iPhone.
 guide.app.openSettings | Toque no botão de engrenagem no topo de qualquer aba.
 guide.app.check | Na aba Concierge, o cartão IA offline mostra “Pronta: %@”.
 about.offline.detail | Sem contas, sem nuvem, sem servidores. O ConciergeClock funciona no modo avião.
@@ -162,6 +162,7 @@ about.onDevice.detail | A IA offline opcional roda no seu iPhone. Sua agenda e s
 about.voice.title | Escuta, nunca grava
 about.voice.detail | Sua voz é entendida no iPhone e nunca é salva. Só ficam os horários de acordar e as contagens.
 company.conciergeclock | Despertador falante offline, com um resumo matinal da sua própria agenda.
+company.notenook | Leitor e notas de voz offline, pensados para a dislexia.
 error.launchMessage | Seus alarmes e seu registro de despertares não foram apagados. Reinicie o app. Se isso continuar, fale com o suporte enviando esta mensagem:\n\n%@
 terms.body | O ConciergeClock é vendido como compra única e licenciado para você sob o Contrato de Licença de Usuário Final Padrão da Apple.\n\nSeus alarmes, ajustes e registro de despertares ficam no seu iPhone. A Greater Good Software nunca os recebe, armazena ou compartilha.\n\nO ConciergeClock ajuda você a acordar e planejar o dia. Para o que você não pode perder, defina um segundo alarme. Os resumos são gerados automaticamente e podem conter erros; confira sua agenda para o que for importante.\n\nO ConciergeClock é fornecido “no estado em que se encontra”, sem garantias de qualquer tipo.
 backup.footer | Um backup guarda seus ajustes, alarmes e registro de despertares em um arquivo .conciergeclock. Salve no app Arquivos, no iCloud Drive ou em um computador — o ConciergeClock nunca o envia.

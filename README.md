@@ -94,7 +94,7 @@ subscriptions, no tracking.
 
 Settings › **Offline AI** (or the orange *Set up offline AI* card) › **Show me how, step by
 step**. The model lives in the App Group `group.com.greatergoodsoftware.models`, shared with
-PrepPilot, FocusFound and FotoPhilter: if one of them already downloaded it, it is ready here.
+PrepPilot, FocusFound, FotoPhilter and NoteNook: if one of them already downloaded it, it is ready here.
 Test on a real iPhone; the Simulator cannot run the model at a useful speed. Full guide:
 [docs/OFFLINE_AI_SETUP.md](docs/OFFLINE_AI_SETUP.md).
 

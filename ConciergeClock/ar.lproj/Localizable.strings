@@ -151,10 +151,10 @@
 "ai.use" = "استخدام الذكاء الاصطناعي دون اتصال";
 "ai.useFooter" = "عند إيقافه أو عدم تنزيله يستخدم الكونسيرج القواعد المدمجة: تبقى كل الميزات متاحة.";
 "ai.unsupported" = "ذاكرة هذا الـ iPhone لا تكفي للذكاء الاصطناعي دون اتصال. يستخدم ConciergeClock قواعده المدمجة.";
-"ai.modelsFooter" = "Gemma 4 من Google (Apache 2.0)، يُنزَّل مرة واحدة من Hugging Face ويُتحقق منه قبل الاستخدام. يعمل بالكامل على هذا الـ iPhone ويُشارك مع PrepPilot وFocusFound وFotoPhilter، فيُنزَّل مرة واحدة فقط.";
-"ai.deleteMessage" = "يستخدم PrepPilot وFocusFound وFotoPhilter النسخة نفسها، لذا ستُحذف لديها أيضًا. يمكن تنزيلها مرة أخرى.";
+"ai.modelsFooter" = "Gemma 4 من Google (Apache 2.0)، يُنزَّل مرة واحدة من Hugging Face ويُتحقق منه قبل الاستخدام. يعمل بالكامل على هذا الـ iPhone ويُشارك مع PrepPilot وFocusFound وFotoPhilter وNoteNook، فيُنزَّل مرة واحدة فقط.";
+"ai.deleteMessage" = "يستخدم PrepPilot وFocusFound وFotoPhilter وNoteNook النسخة نفسها، لذا ستُحذف لديها أيضًا. يمكن تنزيلها مرة أخرى.";
 "ai.test.json" = "فحص الأهمية (JSON)";
-"guide.intro.shared" = "تنزيل واحد يخدم كل تطبيقات Greater Good Software (ConciergeClock وPrepPilot وFocusFound وFotoPhilter) على هذا الـ iPhone.";
+"guide.intro.shared" = "تنزيل واحد يخدم كل تطبيقات Greater Good Software (ConciergeClock وPrepPilot وFocusFound وFotoPhilter وNoteNook) على هذا الـ iPhone.";
 "guide.app.openSettings" = "اضغط زر الترس أعلى أي علامة تبويب.";
 "guide.app.check" = "في علامة تبويب الكونسيرج، تظهر على بطاقة الذكاء الاصطناعي دون اتصال عبارة «جاهز: %@».";
 "about.offline.detail" = "لا حسابات ولا سحابة ولا خوادم. يعمل ConciergeClock في وضع الطيران.";
@@ -164,6 +164,7 @@
 "about.voice.title" = "يستمع ولا يسجّل";
 "about.voice.detail" = "يُفهم صوتك على iPhone ولا يُحفظ أبدًا. لا يُحتفظ إلا بأوقات الاستيقاظ والأعداد.";
 "company.conciergeclock" = "منبّه ناطق دون اتصال، مع موجز صباحي من تقويمك أنت.";
+"company.notenook" = "قارئ وملاحظات صوتية دون اتصال، مصمَّم لذوي عُسر القراءة.";
 "error.launchMessage" = "لم تُحذف منبّهاتك ولا سجل استيقاظك. أعد تشغيل التطبيق. إذا تكرر ذلك، فتواصل مع الدعم مع هذه الرسالة:\n\n%@";
 "terms.body" = "يُباع ConciergeClock بشراء لمرة واحدة ويُرخَّص لك بموجب اتفاقية ترخيص المستخدم النهائي القياسية من Apple.\n\nتبقى منبّهاتك وإعداداتك وسجل استيقاظك على iPhone. لا تستلمها Greater Good Software ولا تخزنها ولا تشاركها أبدًا.\n\nيساعدك ConciergeClock على الاستيقاظ وتنظيم يومك. لكل ما لا يجوز أن يفوتك، اضبط منبّهًا ثانيًا. تُنشأ الموجزات تلقائيًا وقد تحتوي على أخطاء، فراجع تقويمك في كل ما هو مهم.\n\nيُقدَّم ConciergeClock «كما هو» دون أي ضمانات من أي نوع.";
 "backup.footer" = "تحفظ النسخة الاحتياطية إعداداتك ومنبّهاتك وسجل استيقاظك في ملف ‎.conciergeclock واحد. احفظها في «الملفات» أو iCloud Drive أو على حاسوب — لا يرفعها ConciergeClock أبدًا.";

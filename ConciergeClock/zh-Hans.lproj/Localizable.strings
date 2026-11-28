@@ -151,10 +151,10 @@
 "ai.use" = "使用离线 AI";
 "ai.useFooter" = "关闭或未下载时，管家使用内置规则：所有功能照常可用。";
 "ai.unsupported" = "这台 iPhone 的内存不足以运行离线 AI。ConciergeClock 将使用内置规则。";
-"ai.modelsFooter" = "Google 的 Gemma 4（Apache 2.0），从 Hugging Face 下载一次并在使用前校验。它完全在这台 iPhone 上运行，并与 PrepPilot、FocusFound 和 FotoPhilter 共用，只需下载一次。";
-"ai.deleteMessage" = "PrepPilot、FocusFound 和 FotoPhilter 使用同一份副本，它们也会失去它。之后可以重新下载。";
+"ai.modelsFooter" = "Google 的 Gemma 4（Apache 2.0），从 Hugging Face 下载一次并在使用前校验。它完全在这台 iPhone 上运行，并与 PrepPilot、FocusFound、FotoPhilter 和 NoteNook 共用，只需下载一次。";
+"ai.deleteMessage" = "PrepPilot、FocusFound、FotoPhilter 和 NoteNook 使用同一份副本，它们也会失去它。之后可以重新下载。";
 "ai.test.json" = "重要性判断（JSON）";
-"guide.intro.shared" = "一次下载即可供这台 iPhone 上所有 Greater Good Software 应用（ConciergeClock、PrepPilot、FocusFound、FotoPhilter）使用。";
+"guide.intro.shared" = "一次下载即可供这台 iPhone 上所有 Greater Good Software 应用（ConciergeClock、PrepPilot、FocusFound、FotoPhilter、NoteNook）使用。";
 "guide.app.openSettings" = "轻点任意标签页顶部的齿轮按钮。";
 "guide.app.check" = "在“管家”标签页中，离线 AI 卡片显示“已就绪：%@”。";
 "about.offline.detail" = "无需账户，没有云端，没有服务器。ConciergeClock 可在飞行模式下使用。";
@@ -164,6 +164,7 @@
 "about.voice.title" = "只听，不录";
 "about.voice.detail" = "你的语音在 iPhone 上识别，从不保存。只保留起床时间和次数。";
 "company.conciergeclock" = "离线会说话的闹钟，用你自己的日历做晨间简报。";
+"company.notenook" = "为阅读障碍人士设计的离线阅读器和语音笔记。";
 "error.launchMessage" = "你的闹钟和起床记录没有被删除。请重新启动应用。如果问题持续，请将以下信息发送给支持团队：\n\n%@";
 "terms.body" = "ConciergeClock 以一次性购买方式出售，并依据 Apple 标准最终用户许可协议授权给你使用。\n\n你的闹钟、设置和起床记录保存在你的 iPhone 上。Greater Good Software 从不接收、存储或分享它们。\n\nConciergeClock 帮助你起床和安排一天。对于绝不能错过的事，请再设一个闹钟。简报为自动生成，可能有误，重要事项请以日历为准。\n\nConciergeClock 按“原样”提供，不作任何形式的保证。";
 "backup.footer" = "备份会把你的设置、闹钟和起床记录保存在一个 .conciergeclock 文件中。可存到“文件”、iCloud 云盘或电脑——ConciergeClock 从不上传。";

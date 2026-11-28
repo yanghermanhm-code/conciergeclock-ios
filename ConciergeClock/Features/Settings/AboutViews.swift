@@ -163,7 +163,7 @@ enum Acknowledgements {
 }
 
 /// "About Greater Good Software", opened by tapping the logo in the top bar. Same text as
-/// PrepPilot, FocusFound and FotoPhilter, with ConciergeClock added to "Our apps".
+/// PrepPilot, FocusFound and FotoPhilter, with ConciergeClock and NoteNook added to "Our apps".
 struct AboutCompanyView: View {
     @Environment(\.l10n) private var l10n
     @Environment(\.dismiss) private var dismiss
@@ -211,6 +211,7 @@ struct AboutCompanyView: View {
                         product(name: "PrepPilot", detailKey: "company.preppilot")
                         product(name: "FocusFound", detailKey: "company.focusfound")
                         product(name: "FotoPhilter", detailKey: "company.fotophilter")
+                        product(name: "NoteNook", detailKey: "company.notenook")
                     }
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .cardStyle()

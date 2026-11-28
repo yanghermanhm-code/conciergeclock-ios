@@ -149,10 +149,10 @@ settings.startHere.body | اس iPhone کے لیے %1$@ (%2$@) ڈاؤن لوڈ ک
 ai.use | آف لائن AI استعمال کریں
 ai.useFooter | بند ہونے یا ڈاؤن لوڈ نہ ہونے پر آپ کا کنسیئرج بلٹ اِن اصول استعمال کرتا ہے: ہر فیچر کام کرتا رہتا ہے۔
 ai.unsupported | اس iPhone میں آف لائن AI کے لیے کافی میموری نہیں ہے۔ ConciergeClock اپنے بلٹ اِن اصول استعمال کرتا ہے۔
-ai.modelsFooter | Google کا Gemma 4 (Apache 2.0)، Hugging Face سے ایک بار ڈاؤن لوڈ اور استعمال سے پہلے جانچا جاتا ہے۔ یہ مکمل طور پر اسی iPhone پر چلتا ہے اور PrepPilot، FocusFound اور FotoPhilter کے ساتھ شیئر ہوتا ہے، اس لیے صرف ایک بار ڈاؤن لوڈ ہوتا ہے۔
-ai.deleteMessage | PrepPilot، FocusFound اور FotoPhilter بھی یہی کاپی استعمال کرتے ہیں، اس لیے وہ بھی اسے کھو دیں گے۔ اسے دوبارہ ڈاؤن لوڈ کیا جا سکتا ہے۔
+ai.modelsFooter | Google کا Gemma 4 (Apache 2.0)، Hugging Face سے ایک بار ڈاؤن لوڈ اور استعمال سے پہلے جانچا جاتا ہے۔ یہ مکمل طور پر اسی iPhone پر چلتا ہے اور PrepPilot، FocusFound، FotoPhilter اور NoteNook کے ساتھ شیئر ہوتا ہے، اس لیے صرف ایک بار ڈاؤن لوڈ ہوتا ہے۔
+ai.deleteMessage | PrepPilot، FocusFound، FotoPhilter اور NoteNook بھی یہی کاپی استعمال کرتے ہیں، اس لیے وہ بھی اسے کھو دیں گے۔ اسے دوبارہ ڈاؤن لوڈ کیا جا سکتا ہے۔
 ai.test.json | اہمیت کی جانچ (JSON)
-guide.intro.shared | ایک ہی ڈاؤن لوڈ اس iPhone پر Greater Good Software کی تمام ایپس (ConciergeClock، PrepPilot، FocusFound، FotoPhilter) کے کام آتا ہے۔
+guide.intro.shared | ایک ہی ڈاؤن لوڈ اس iPhone پر Greater Good Software کی تمام ایپس (ConciergeClock، PrepPilot، FocusFound، FotoPhilter، NoteNook) کے کام آتا ہے۔
 guide.app.openSettings | کسی بھی ٹیب کے اوپر گیئر بٹن پر ٹیپ کریں۔
 guide.app.check | کنسیئرج ٹیب میں آف لائن AI کارڈ پر “تیار: %@” نظر آئے گا۔
 about.offline.detail | کوئی اکاؤنٹ نہیں، کوئی کلاؤڈ نہیں، کوئی سرور نہیں۔ ConciergeClock ایئرپلین موڈ میں کام کرتا ہے۔
@@ -162,6 +162,7 @@ about.onDevice.detail | اختیاری آف لائن AI آپ کے iPhone پر چ
 about.voice.title | سنتا ہے، ریکارڈ نہیں کرتا
 about.voice.detail | آپ کی آواز iPhone پر ہی سمجھی جاتی ہے اور کبھی محفوظ نہیں ہوتی۔ صرف جاگنے کے اوقات اور گنتی رکھی جاتی ہے۔
 company.conciergeclock | آف لائن بولنے والی الارم گھڑی، آپ کے اپنے کیلنڈر سے صبح کی بریفنگ کے ساتھ۔
+company.notenook | ڈسلیکسیا کے لیے بنایا گیا آف لائن ریڈر اور وائس نوٹس۔
 error.launchMessage | آپ کے الارم اور جاگنے کا ریکارڈ حذف نہیں ہوئے۔ براہ کرم ایپ دوبارہ شروع کریں۔ اگر ایسا ہوتا رہے تو یہ پیغام لے کر سپورٹ سے رابطہ کریں:\n\n%@
 terms.body | ConciergeClock ایک بار کی خریداری کے طور پر فروخت ہوتا ہے اور Apple کے معیاری اینڈ یوزر لائسنس ایگریمنٹ کے تحت آپ کو لائسنس دیا جاتا ہے۔\n\nآپ کے الارم، سیٹنگز اور جاگنے کا ریکارڈ آپ کے iPhone پر ہی رہتے ہیں۔ Greater Good Software انہیں کبھی وصول، محفوظ یا شیئر نہیں کرتا۔\n\nConciergeClock آپ کو جاگنے اور دن کی منصوبہ بندی میں مدد دیتا ہے۔ جو چیز کسی صورت نہیں چھوٹنی چاہیے، اس کے لیے دوسرا الارم بھی لگائیں۔ بریفنگ خودکار طور پر بنتی ہے اور اس میں غلطیاں ہو سکتی ہیں، اس لیے اہم باتوں کے لیے اپنا کیلنڈر دیکھیں۔\n\nConciergeClock “جیسا ہے” کی بنیاد پر فراہم کیا جاتا ہے، کسی قسم کی ضمانت کے بغیر۔
 backup.footer | بیک اپ آپ کی سیٹنگز، الارم اور جاگنے کا ریکارڈ ایک .conciergeclock فائل میں رکھتا ہے۔ اسے Files، iCloud Drive یا کمپیوٹر میں محفوظ کریں — ConciergeClock اسے کبھی اپ لوڈ نہیں کرتا۔

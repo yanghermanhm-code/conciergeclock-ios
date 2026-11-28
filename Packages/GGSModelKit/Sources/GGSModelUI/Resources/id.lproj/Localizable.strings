@@ -34,6 +34,6 @@
 "guide.mock.useAI" = "Gunakan AI offline";
 "guide.mock.wifi" = "Unduh hanya lewat Wi-Fi";
 "guide.app.open" = "Tunjukkan caranya, langkah demi langkah";
-"guide.intro.shared" = "Satu unduhan untuk semua aplikasi Greater Good Software (ConciergeClock, PrepPilot, FocusFound, FotoPhilter) di iPhone ini.";
+"guide.intro.shared" = "Satu unduhan untuk semua aplikasi Greater Good Software (ConciergeClock, PrepPilot, FocusFound, FotoPhilter, NoteNook) di iPhone ini.";
 "guide.app.openSettings" = "Ketuk tombol roda gigi di bagian atas tab mana pun.";
 "guide.app.check" = "Di tab Concierge, kartu AI offline menampilkan “Siap: %@”.";

@@ -102,3 +102,9 @@ Agreed during planning (November 2026). Implementation decisions per phase follo
 | No answer | Two silences, or three replies not understood, = remind again after the snooze length. Closing the screen = dismiss. | A sleeper must never be left without an alarm. |
 | Wake log | A "remind again" ring is a follow-up of the morning's first ring (`alarmOccurrence.originID`) and counts as a snooze. Dismissing writes **one** wake-log entry for the morning, scored from the first ring's time and the number of reminders. | Wake score definition (Phase 1a). |
 | Loudspeaker | The conversation uses play-and-record with the loudspeaker forced on. | Product owner: all wake announcements on speakerphone. |
+
+## Greater Good Software family
+
+| Topic | Decision | Why |
+|---|---|---|
+| NoteNook | NoteNook (offline reader and voice notes for dyslexic readers, repository `yanghermanhm-code-notenook-ios`) joins the family: listed in About › Our apps with its icon, and named wherever the shared Gemma download is explained (it uses the same App Group, `group.com.greatergoodsoftware.models`). Until NoteNook has its own icon, `Design/notenook-product-icon.svg` is an open-book mesh in the family style, following NoteNook's master prompt (§2.2); replace the PNG when NoteNook's icon generator exists. | Product owner, Nov 2026. |

@@ -34,6 +34,6 @@
 "guide.mock.useAI" = "অফলাইন AI ব্যবহার";
 "guide.mock.wifi" = "শুধু Wi-Fi-তে ডাউনলোড";
 "guide.app.open" = "ধাপে ধাপে দেখাও";
-"guide.intro.shared" = "একটি ডাউনলোডই এই iPhone-এ Greater Good Software-এর সব অ্যাপের (ConciergeClock, PrepPilot, FocusFound, FotoPhilter) কাজে লাগে।";
+"guide.intro.shared" = "একটি ডাউনলোডই এই iPhone-এ Greater Good Software-এর সব অ্যাপের (ConciergeClock, PrepPilot, FocusFound, FotoPhilter, NoteNook) কাজে লাগে।";
 "guide.app.openSettings" = "যেকোনো ট্যাবের উপরে গিয়ার বোতামে ট্যাপ করুন।";
 "guide.app.check" = "কনসিয়ার্জ ট্যাবে অফলাইন AI কার্ডে “প্রস্তুত: %@” দেখাবে।";

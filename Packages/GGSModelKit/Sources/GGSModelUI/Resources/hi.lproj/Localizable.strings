@@ -34,6 +34,6 @@
 "guide.mock.useAI" = "ऑफ़लाइन AI इस्तेमाल करो";
 "guide.mock.wifi" = "केवल Wi-Fi पर डाउनलोड करो";
 "guide.app.open" = "कैसे करें, चरण-दर-चरण दिखाओ";
-"guide.intro.shared" = "एक ही डाउनलोड इस iPhone पर Greater Good Software के सभी ऐप्स (ConciergeClock, PrepPilot, FocusFound, FotoPhilter) के काम आता है।";
+"guide.intro.shared" = "एक ही डाउनलोड इस iPhone पर Greater Good Software के सभी ऐप्स (ConciergeClock, PrepPilot, FocusFound, FotoPhilter, NoteNook) के काम आता है।";
 "guide.app.openSettings" = "किसी भी टैब के ऊपर गियर बटन पर टैप करें।";
 "guide.app.check" = "कंसीयर्ज टैब में ऑफ़लाइन AI कार्ड पर “तैयार: %@” दिखेगा।";

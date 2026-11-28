@@ -151,10 +151,10 @@
 "ai.use" = "Use offline AI";
 "ai.useFooter" = "When it is off or not downloaded, your concierge uses built-in rules: every feature still works.";
 "ai.unsupported" = "This iPhone doesn't have enough memory for the offline AI. ConciergeClock uses its built-in rules instead.";
-"ai.modelsFooter" = "Google's Gemma 4 (Apache 2.0), downloaded once from Hugging Face and checked before use. It runs entirely on this iPhone and is shared with PrepPilot, FocusFound and FotoPhilter, so it is downloaded only once.";
-"ai.deleteMessage" = "PrepPilot, FocusFound and FotoPhilter use the same copy, so they lose it too. It can be downloaded again.";
+"ai.modelsFooter" = "Google's Gemma 4 (Apache 2.0), downloaded once from Hugging Face and checked before use. It runs entirely on this iPhone and is shared with PrepPilot, FocusFound, FotoPhilter and NoteNook, so it is downloaded only once.";
+"ai.deleteMessage" = "PrepPilot, FocusFound, FotoPhilter and NoteNook use the same copy, so they lose it too. It can be downloaded again.";
 "ai.test.json" = "Importance check (JSON)";
-"guide.intro.shared" = "One download serves all Greater Good Software apps (ConciergeClock, PrepPilot, FocusFound, FotoPhilter) on this iPhone.";
+"guide.intro.shared" = "One download serves all Greater Good Software apps (ConciergeClock, PrepPilot, FocusFound, FotoPhilter, NoteNook) on this iPhone.";
 "guide.app.openSettings" = "Tap the gear button at the top of any tab.";
 "guide.app.check" = "On the Concierge tab, the Offline AI card says “Ready: %@”.";
 "about.offline.detail" = "No accounts, no cloud, no servers. ConciergeClock works in Airplane Mode.";
@@ -164,6 +164,7 @@
 "about.voice.title" = "Listening, never recording";
 "about.voice.detail" = "Your voice is understood on the iPhone and never saved. Only wake times and counts are kept.";
 "company.conciergeclock" = "Offline talking alarm clock with a morning briefing from your own calendar.";
+"company.notenook" = "Offline reader and voice notes, made for dyslexic readers.";
 "error.launchMessage" = "Your alarms and wake log have not been deleted. Please restart the app. If this keeps happening, contact support with this message:\n\n%@";
 "terms.body" = "ConciergeClock is sold as a one-time purchase and licensed to you under the Apple Standard End User License Agreement.\n\nYour alarms, settings and wake log stay on your iPhone. Greater Good Software never receives, stores or shares them.\n\nConciergeClock helps you wake up and plan your day. For anything you cannot miss, set a second alarm. Briefings are made automatically and can contain mistakes, so check your calendar for anything important.\n\nConciergeClock is provided “as is”, without warranties of any kind.";
 "backup.footer" = "A backup holds your settings, alarms and wake log in one .conciergeclock file. Save it to Files, iCloud Drive or a computer — ConciergeClock never uploads it.";

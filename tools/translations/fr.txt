@@ -149,10 +149,10 @@ settings.startHere.body | Téléchargez %1$@ (%2$@) pour cet iPhone. Votre conci
 ai.use | Utiliser l’IA hors ligne
 ai.useFooter | Désactivée ou non téléchargée, votre concierge utilise des règles intégrées : toutes les fonctions restent disponibles.
 ai.unsupported | Cet iPhone n’a pas assez de mémoire pour l’IA hors ligne. ConciergeClock utilise ses règles intégrées.
-ai.modelsFooter | Gemma 4 de Google (Apache 2.0), téléchargé une fois depuis Hugging Face et vérifié avant usage. Il fonctionne entièrement sur cet iPhone et est partagé avec PrepPilot, FocusFound et FotoPhilter : un seul téléchargement.
-ai.deleteMessage | PrepPilot, FocusFound et FotoPhilter utilisent la même copie : ils la perdent aussi. Elle peut être téléchargée à nouveau.
+ai.modelsFooter | Gemma 4 de Google (Apache 2.0), téléchargé une fois depuis Hugging Face et vérifié avant usage. Il fonctionne entièrement sur cet iPhone et est partagé avec PrepPilot, FocusFound, FotoPhilter et NoteNook : un seul téléchargement.
+ai.deleteMessage | PrepPilot, FocusFound, FotoPhilter et NoteNook utilisent la même copie : ils la perdent aussi. Elle peut être téléchargée à nouveau.
 ai.test.json | Vérification d’importance (JSON)
-guide.intro.shared | Un seul téléchargement sert toutes les apps Greater Good Software (ConciergeClock, PrepPilot, FocusFound, FotoPhilter) sur cet iPhone.
+guide.intro.shared | Un seul téléchargement sert toutes les apps Greater Good Software (ConciergeClock, PrepPilot, FocusFound, FotoPhilter, NoteNook) sur cet iPhone.
 guide.app.openSettings | Touchez le bouton en forme d’engrenage en haut de n’importe quel onglet.
 guide.app.check | Dans l’onglet Concierge, la carte IA hors ligne indique « Prête : %@ ».
 about.offline.detail | Aucun compte, aucun cloud, aucun serveur. ConciergeClock fonctionne en mode Avion.
@@ -162,6 +162,7 @@ about.onDevice.detail | L’IA hors ligne facultative fonctionne sur votre iPhon
 about.voice.title | Écouter, jamais enregistrer
 about.voice.detail | Votre voix est comprise sur l’iPhone et jamais enregistrée. Seuls les heures de réveil et les comptes sont conservés.
 company.conciergeclock | Réveil parlant hors ligne, avec un point du matin tiré de votre propre calendrier.
+company.notenook | Lecteur et notes vocales hors ligne, conçus pour la dyslexie.
 error.launchMessage | Vos alarmes et votre journal de réveil n’ont pas été supprimés. Redémarrez l’app. Si cela se reproduit, contactez l’assistance avec ce message :\n\n%@
 terms.body | ConciergeClock est vendu en achat unique et vous est concédé sous licence selon le contrat de licence utilisateur final standard d’Apple.\n\nVos alarmes, réglages et journal de réveil restent sur votre iPhone. Greater Good Software ne les reçoit, ne les stocke et ne les partage jamais.\n\nConciergeClock vous aide à vous réveiller et à organiser votre journée. Pour tout ce que vous ne pouvez pas manquer, réglez une deuxième alarme. Les points du matin sont générés automatiquement et peuvent contenir des erreurs : vérifiez votre calendrier pour tout ce qui est important.\n\nConciergeClock est fourni « en l’état », sans garantie d’aucune sorte.
 backup.footer | Une sauvegarde contient vos réglages, alarmes et journal de réveil dans un fichier .conciergeclock. Enregistrez-la dans Fichiers, iCloud Drive ou sur un ordinateur — ConciergeClock ne l’envoie jamais.

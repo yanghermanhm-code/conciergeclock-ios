@@ -151,10 +151,10 @@
 "ai.use" = "অফলাইন AI ব্যবহার করুন";
 "ai.useFooter" = "বন্ধ থাকলে বা ডাউনলোড না হলে আপনার কনসিয়ার্জ বিল্ট-ইন নিয়ম ব্যবহার করে: সব ফিচার কাজ করতে থাকে।";
 "ai.unsupported" = "এই iPhone-এ অফলাইন AI-এর জন্য যথেষ্ট মেমরি নেই। ConciergeClock তার বিল্ট-ইন নিয়ম ব্যবহার করে।";
-"ai.modelsFooter" = "Google-এর Gemma 4 (Apache 2.0), Hugging Face থেকে একবার ডাউনলোড করে ব্যবহারের আগে যাচাই করা হয়। এটি পুরোপুরি এই iPhone-এ চলে এবং PrepPilot, FocusFound ও FotoPhilter-এর সাথে ভাগ করা হয়, তাই একবারই ডাউনলোড হয়।";
-"ai.deleteMessage" = "PrepPilot, FocusFound ও FotoPhilter একই কপি ব্যবহার করে, তাই তারাও এটি হারাবে। এটি আবার ডাউনলোড করা যায়।";
+"ai.modelsFooter" = "Google-এর Gemma 4 (Apache 2.0), Hugging Face থেকে একবার ডাউনলোড করে ব্যবহারের আগে যাচাই করা হয়। এটি পুরোপুরি এই iPhone-এ চলে এবং PrepPilot, FocusFound, FotoPhilter ও NoteNook-এর সাথে ভাগ করা হয়, তাই একবারই ডাউনলোড হয়।";
+"ai.deleteMessage" = "PrepPilot, FocusFound, FotoPhilter ও NoteNook একই কপি ব্যবহার করে, তাই তারাও এটি হারাবে। এটি আবার ডাউনলোড করা যায়।";
 "ai.test.json" = "গুরুত্ব যাচাই (JSON)";
-"guide.intro.shared" = "একটি ডাউনলোডই এই iPhone-এ Greater Good Software-এর সব অ্যাপের (ConciergeClock, PrepPilot, FocusFound, FotoPhilter) কাজে লাগে।";
+"guide.intro.shared" = "একটি ডাউনলোডই এই iPhone-এ Greater Good Software-এর সব অ্যাপের (ConciergeClock, PrepPilot, FocusFound, FotoPhilter, NoteNook) কাজে লাগে।";
 "guide.app.openSettings" = "যেকোনো ট্যাবের উপরে গিয়ার বোতামে ট্যাপ করুন।";
 "guide.app.check" = "কনসিয়ার্জ ট্যাবে অফলাইন AI কার্ডে “প্রস্তুত: %@” দেখাবে।";
 "about.offline.detail" = "কোনো অ্যাকাউন্ট নেই, কোনো ক্লাউড নেই, কোনো সার্ভার নেই। ConciergeClock এয়ারপ্লেন মোডে কাজ করে।";
@@ -164,6 +164,7 @@
 "about.voice.title" = "শোনে, কখনো রেকর্ড করে না";
 "about.voice.detail" = "আপনার কণ্ঠ iPhone-এই বোঝা হয় এবং কখনো সংরক্ষিত হয় না। শুধু জাগার সময় আর গণনা রাখা হয়।";
 "company.conciergeclock" = "অফলাইনে কথা বলা অ্যালার্ম ঘড়ি, আপনার নিজের ক্যালেন্ডার থেকে সকালের ব্রিফিংসহ।";
+"company.notenook" = "ডিসলেক্সিয়ার জন্য তৈরি অফলাইন রিডার ও ভয়েস নোট।";
 "error.launchMessage" = "আপনার অ্যালার্ম ও জাগার লগ মুছে যায়নি। অনুগ্রহ করে অ্যাপটি আবার চালু করুন। বারবার এমন হলে এই বার্তাসহ সহায়তার সাথে যোগাযোগ করুন:\n\n%@";
 "terms.body" = "ConciergeClock একবারের কেনাকাটা হিসেবে বিক্রি হয় এবং Apple-এর স্ট্যান্ডার্ড এন্ড ইউজার লাইসেন্স এগ্রিমেন্টের অধীনে আপনাকে লাইসেন্স দেওয়া হয়।\n\nআপনার অ্যালার্ম, সেটিংস ও জাগার লগ আপনার iPhone-এই থাকে। Greater Good Software কখনো এগুলো গ্রহণ, সংরক্ষণ বা শেয়ার করে না।\n\nConciergeClock আপনাকে জাগতে ও দিনের পরিকল্পনা করতে সাহায্য করে। যা কোনোভাবেই মিস করা যাবে না, তার জন্য দ্বিতীয় অ্যালার্মও দিন। ব্রিফিং স্বয়ংক্রিয়ভাবে তৈরি হয় এবং তাতে ভুল থাকতে পারে, তাই গুরুত্বপূর্ণ বিষয়ের জন্য ক্যালেন্ডার দেখে নিন।\n\nConciergeClock “যেমন আছে” ভিত্তিতে দেওয়া হয়, কোনো ধরনের ওয়ারেন্টি ছাড়া।";
 "backup.footer" = "ব্যাকআপে আপনার সেটিংস, অ্যালার্ম ও জাগার লগ একটি .conciergeclock ফাইলে থাকে। এটি Files, iCloud Drive বা কম্পিউটারে সংরক্ষণ করুন — ConciergeClock কখনো এটি আপলোড করে না।";

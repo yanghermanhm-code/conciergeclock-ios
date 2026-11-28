@@ -151,10 +151,10 @@
 "ai.use" = "Gunakan AI offline";
 "ai.useFooter" = "Jika dimatikan atau belum diunduh, concierge Anda memakai aturan bawaan: semua fitur tetap berfungsi.";
 "ai.unsupported" = "Memori iPhone ini tidak cukup untuk AI offline. ConciergeClock memakai aturan bawaannya.";
-"ai.modelsFooter" = "Gemma 4 dari Google (Apache 2.0), diunduh sekali dari Hugging Face dan diperiksa sebelum dipakai. Berjalan sepenuhnya di iPhone ini dan dipakai bersama PrepPilot, FocusFound, dan FotoPhilter, jadi cukup diunduh sekali.";
-"ai.deleteMessage" = "PrepPilot, FocusFound, dan FotoPhilter memakai salinan yang sama, jadi ikut kehilangan. Model bisa diunduh lagi.";
+"ai.modelsFooter" = "Gemma 4 dari Google (Apache 2.0), diunduh sekali dari Hugging Face dan diperiksa sebelum dipakai. Berjalan sepenuhnya di iPhone ini dan dipakai bersama PrepPilot, FocusFound, FotoPhilter, dan NoteNook, jadi cukup diunduh sekali.";
+"ai.deleteMessage" = "PrepPilot, FocusFound, FotoPhilter, dan NoteNook memakai salinan yang sama, jadi ikut kehilangan. Model bisa diunduh lagi.";
 "ai.test.json" = "Pemeriksaan kepentingan (JSON)";
-"guide.intro.shared" = "Satu unduhan untuk semua aplikasi Greater Good Software (ConciergeClock, PrepPilot, FocusFound, FotoPhilter) di iPhone ini.";
+"guide.intro.shared" = "Satu unduhan untuk semua aplikasi Greater Good Software (ConciergeClock, PrepPilot, FocusFound, FotoPhilter, NoteNook) di iPhone ini.";
 "guide.app.openSettings" = "Ketuk tombol roda gigi di bagian atas tab mana pun.";
 "guide.app.check" = "Di tab Concierge, kartu AI offline menampilkan “Siap: %@”.";
 "about.offline.detail" = "Tanpa akun, tanpa cloud, tanpa server. ConciergeClock berfungsi dalam Mode Pesawat.";
@@ -164,6 +164,7 @@
 "about.voice.title" = "Mendengar, tidak merekam";
 "about.voice.detail" = "Suara Anda dipahami di iPhone dan tidak pernah disimpan. Hanya waktu bangun dan hitungan yang disimpan.";
 "company.conciergeclock" = "Jam alarm berbicara offline dengan ringkasan pagi dari kalender Anda sendiri.";
+"company.notenook" = "Pembaca dan catatan suara offline, dirancang untuk disleksia.";
 "error.launchMessage" = "Alarm dan catatan bangun Anda tidak terhapus. Mulai ulang aplikasi. Jika terus terjadi, hubungi dukungan dengan pesan ini:\n\n%@";
 "terms.body" = "ConciergeClock dijual sebagai pembelian sekali dan dilisensikan kepada Anda berdasarkan Perjanjian Lisensi Pengguna Akhir Standar Apple.\n\nAlarm, pengaturan, dan catatan bangun Anda tetap di iPhone Anda. Greater Good Software tidak pernah menerima, menyimpan, atau membagikannya.\n\nConciergeClock membantu Anda bangun dan merencanakan hari. Untuk hal yang tidak boleh terlewat, pasang alarm kedua. Ringkasan dibuat otomatis dan bisa mengandung kesalahan, jadi periksa kalender Anda untuk hal penting.\n\nConciergeClock disediakan “sebagaimana adanya”, tanpa jaminan apa pun.";
 "backup.footer" = "Cadangan menyimpan pengaturan, alarm, dan catatan bangun Anda dalam satu file .conciergeclock. Simpan ke File, iCloud Drive, atau komputer — ConciergeClock tidak pernah mengunggahnya.";

@@ -34,6 +34,6 @@
 "guide.mock.useAI" = "使用离线 AI";
 "guide.mock.wifi" = "仅通过 Wi-Fi 下载";
 "guide.app.open" = "一步步教我";
-"guide.intro.shared" = "一次下载即可供这台 iPhone 上所有 Greater Good Software 应用（ConciergeClock、PrepPilot、FocusFound、FotoPhilter）使用。";
+"guide.intro.shared" = "一次下载即可供这台 iPhone 上所有 Greater Good Software 应用（ConciergeClock、PrepPilot、FocusFound、FotoPhilter、NoteNook）使用。";
 "guide.app.openSettings" = "轻点任意标签页顶部的齿轮按钮。";
 "guide.app.check" = "在“管家”标签页中，离线 AI 卡片显示“已就绪：%@”。";

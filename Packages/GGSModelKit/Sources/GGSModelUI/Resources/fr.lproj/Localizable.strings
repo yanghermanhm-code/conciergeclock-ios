@@ -34,6 +34,6 @@
 "guide.mock.useAI" = "Utiliser l’IA hors ligne";
 "guide.mock.wifi" = "Télécharger en Wi-Fi uniquement";
 "guide.app.open" = "Montre-moi comment, étape par étape";
-"guide.intro.shared" = "Un seul téléchargement sert toutes les apps Greater Good Software (ConciergeClock, PrepPilot, FocusFound, FotoPhilter) sur cet iPhone.";
+"guide.intro.shared" = "Un seul téléchargement sert toutes les apps Greater Good Software (ConciergeClock, PrepPilot, FocusFound, FotoPhilter, NoteNook) sur cet iPhone.";
 "guide.app.openSettings" = "Touchez le bouton en forme d’engrenage en haut de n’importe quel onglet.";
 "guide.app.check" = "Dans l’onglet Concierge, la carte IA hors ligne indique « Prête : %@ ».";

@@ -151,10 +151,10 @@
 "ai.use" = "ऑफ़लाइन AI इस्तेमाल करें";
 "ai.useFooter" = "बंद होने या डाउनलोड न होने पर आपका कंसीयर्ज अंतर्निहित नियम इस्तेमाल करता है: हर सुविधा काम करती रहती है।";
 "ai.unsupported" = "इस iPhone में ऑफ़लाइन AI के लिए पर्याप्त मेमोरी नहीं है। ConciergeClock अपने अंतर्निहित नियम इस्तेमाल करता है।";
-"ai.modelsFooter" = "Google का Gemma 4 (Apache 2.0), Hugging Face से एक बार डाउनलोड और इस्तेमाल से पहले जाँचा जाता है। यह पूरी तरह इसी iPhone पर चलता है और PrepPilot, FocusFound व FotoPhilter के साथ साझा होता है, इसलिए एक ही बार डाउनलोड होता है।";
-"ai.deleteMessage" = "PrepPilot, FocusFound और FotoPhilter भी यही प्रति इस्तेमाल करते हैं, इसलिए वे भी इसे खो देंगे। इसे फिर से डाउनलोड किया जा सकता है।";
+"ai.modelsFooter" = "Google का Gemma 4 (Apache 2.0), Hugging Face से एक बार डाउनलोड और इस्तेमाल से पहले जाँचा जाता है। यह पूरी तरह इसी iPhone पर चलता है और PrepPilot, FocusFound, FotoPhilter व NoteNook के साथ साझा होता है, इसलिए एक ही बार डाउनलोड होता है।";
+"ai.deleteMessage" = "PrepPilot, FocusFound, FotoPhilter और NoteNook भी यही प्रति इस्तेमाल करते हैं, इसलिए वे भी इसे खो देंगे। इसे फिर से डाउनलोड किया जा सकता है।";
 "ai.test.json" = "महत्व जाँच (JSON)";
-"guide.intro.shared" = "एक ही डाउनलोड इस iPhone पर Greater Good Software के सभी ऐप्स (ConciergeClock, PrepPilot, FocusFound, FotoPhilter) के काम आता है।";
+"guide.intro.shared" = "एक ही डाउनलोड इस iPhone पर Greater Good Software के सभी ऐप्स (ConciergeClock, PrepPilot, FocusFound, FotoPhilter, NoteNook) के काम आता है।";
 "guide.app.openSettings" = "किसी भी टैब के ऊपर गियर बटन पर टैप करें।";
 "guide.app.check" = "कंसीयर्ज टैब में ऑफ़लाइन AI कार्ड पर “तैयार: %@” दिखेगा।";
 "about.offline.detail" = "कोई अकाउंट नहीं, कोई क्लाउड नहीं, कोई सर्वर नहीं। ConciergeClock एयरप्लेन मोड में काम करता है।";
@@ -164,6 +164,7 @@
 "about.voice.title" = "सुनता है, रिकॉर्ड नहीं करता";
 "about.voice.detail" = "आपकी आवाज़ iPhone पर ही समझी जाती है और कभी सहेजी नहीं जाती। सिर्फ़ जागने का समय और गिनती रखी जाती है।";
 "company.conciergeclock" = "ऑफ़लाइन बोलने वाली अलार्म घड़ी, आपके अपने कैलेंडर से सुबह की ब्रीफ़िंग के साथ।";
+"company.notenook" = "डिस्लेक्सिया के लिए बना ऑफ़लाइन रीडर और वॉइस नोट्स।";
 "error.launchMessage" = "आपके अलार्म और जागने का लॉग हटाए नहीं गए हैं। कृपया ऐप फिर से शुरू करें। अगर ऐसा होता रहे, तो इस संदेश के साथ सहायता से संपर्क करें:\n\n%@";
 "terms.body" = "ConciergeClock एक बार की ख़रीद के रूप में बेचा जाता है और Apple के मानक एंड यूज़र लाइसेंस एग्रीमेंट के तहत आपको लाइसेंस दिया जाता है।\n\nआपके अलार्म, सेटिंग्स और जागने का लॉग आपके iPhone पर ही रहते हैं। Greater Good Software उन्हें कभी प्राप्त, संग्रहित या साझा नहीं करता।\n\nConciergeClock आपको जागने और दिन की योजना बनाने में मदद करता है। जो चीज़ किसी हाल में छूटनी नहीं चाहिए, उसके लिए दूसरा अलार्म भी लगाएँ। ब्रीफ़िंग अपने-आप बनती है और उसमें गलतियाँ हो सकती हैं, इसलिए ज़रूरी बातों के लिए अपना कैलेंडर देखें।\n\nConciergeClock “जैसा है” उपलब्ध कराया जाता है, बिना किसी प्रकार की वारंटी के।";
 "backup.footer" = "बैकअप आपकी सेटिंग्स, अलार्म और जागने का लॉग एक .conciergeclock फ़ाइल में रखता है। इसे Files, iCloud Drive या कंप्यूटर में सहेजें — ConciergeClock इसे कभी अपलोड नहीं करता।";

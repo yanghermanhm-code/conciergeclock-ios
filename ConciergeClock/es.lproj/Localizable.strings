@@ -151,10 +151,10 @@
 "ai.use" = "Usar IA sin conexión";
 "ai.useFooter" = "Si está desactivada o sin descargar, tu conserje usa reglas integradas: todas las funciones siguen disponibles.";
 "ai.unsupported" = "Este iPhone no tiene memoria suficiente para la IA sin conexión. ConciergeClock usa sus reglas integradas.";
-"ai.modelsFooter" = "Gemma 4 de Google (Apache 2.0), descargado una vez de Hugging Face y verificado antes de usarlo. Funciona por completo en este iPhone y se comparte con PrepPilot, FocusFound y FotoPhilter, así que se descarga una sola vez.";
-"ai.deleteMessage" = "PrepPilot, FocusFound y FotoPhilter usan la misma copia, así que también la pierden. Se puede volver a descargar.";
+"ai.modelsFooter" = "Gemma 4 de Google (Apache 2.0), descargado una vez de Hugging Face y verificado antes de usarlo. Funciona por completo en este iPhone y se comparte con PrepPilot, FocusFound, FotoPhilter y NoteNook, así que se descarga una sola vez.";
+"ai.deleteMessage" = "PrepPilot, FocusFound, FotoPhilter y NoteNook usan la misma copia, así que también la pierden. Se puede volver a descargar.";
 "ai.test.json" = "Comprobación de importancia (JSON)";
-"guide.intro.shared" = "Una sola descarga sirve para todas las apps de Greater Good Software (ConciergeClock, PrepPilot, FocusFound, FotoPhilter) en este iPhone.";
+"guide.intro.shared" = "Una sola descarga sirve para todas las apps de Greater Good Software (ConciergeClock, PrepPilot, FocusFound, FotoPhilter, NoteNook) en este iPhone.";
 "guide.app.openSettings" = "Toca el botón del engranaje en la parte superior de cualquier pestaña.";
 "guide.app.check" = "En la pestaña Conserje, la tarjeta IA sin conexión dice «Lista: %@».";
 "about.offline.detail" = "Sin cuentas, sin nube, sin servidores. ConciergeClock funciona en modo avión.";
@@ -164,6 +164,7 @@
 "about.voice.title" = "Escucha, nunca graba";
 "about.voice.detail" = "Tu voz se entiende en el iPhone y nunca se guarda. Solo se conservan horas de despertar y recuentos.";
 "company.conciergeclock" = "Despertador parlante sin conexión, con un resumen matinal de tu propio calendario.";
+"company.notenook" = "Lector y notas de voz sin conexión, pensados para la dislexia.";
 "error.launchMessage" = "Tus alarmas y tu registro de despertares no se han borrado. Reinicia la app. Si vuelve a ocurrir, contacta con soporte con este mensaje:\n\n%@";
 "terms.body" = "ConciergeClock se vende como compra única y se te concede bajo el Contrato de Licencia de Usuario Final Estándar de Apple.\n\nTus alarmas, ajustes y registro de despertares se quedan en tu iPhone. Greater Good Software nunca los recibe, guarda ni comparte.\n\nConciergeClock te ayuda a despertar y organizar el día. Para lo que no puedas perderte, pon una segunda alarma. Los resúmenes se generan automáticamente y pueden contener errores: revisa tu calendario para lo importante.\n\nConciergeClock se ofrece «tal cual», sin garantías de ningún tipo.";
 "backup.footer" = "Una copia de seguridad guarda tus ajustes, alarmas y registro de despertares en un archivo .conciergeclock. Guárdala en Archivos, iCloud Drive o un ordenador; ConciergeClock nunca la sube.";
