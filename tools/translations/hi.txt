@@ -326,7 +326,6 @@ editor.editTitle | अलार्म बदलें
 editor.time | समय
 editor.label | लेबल (जैसे काम, जिम)
 editor.repeat | दोहराएँ
-editor.repeatOnce | एक बार बजेगा, जब अगली बार यह समय आएगा।
 editor.default | डिफ़ॉल्ट (%@)
 editor.skipDaysOff | छुट्टी के दिन छोड़ें
 editor.skipDaysOffNeedsCalendar | छुट्टी के दिन पहचानने के लिए सेटिंग्स › कैलेंडर और रिमाइंडर में कैलेंडर की अनुमति दें।
@@ -481,10 +480,32 @@ voices.guide.british | ब्रिटिश: अंग्रेज़ी (य�
 voices.guide.indian | भारतीय: अंग्रेज़ी (भारत), जैसे Rishi (पुरुष), Isha या Veena (महिला)।
 voices.guide.american | दक्षिणी अमेरिकी और कनाडाई: अंग्रेज़ी (अमेरिका), जैसे Evan या Nathan (पुरुष), Ava या Zoe (महिला)।
 voices.guide.footer | डाउनलोड के लिए एक बार Wi-Fi चाहिए; Concierge Clock ख़ुद आवाज़ों के लिए कभी ऑनलाइन नहीं जाता।
-editor.when | कब
-editor.when.repeat | दोहराएँ
-editor.when.date | किसी तारीख़ को
 editor.date | तारीख़
-editor.dateFooter | एक बार बजेगा, %@ को।
 editor.datePast | वह तारीख़ बीत चुकी है। नई तारीख़ चुनें।
 alarms.past | पूरा: तारीख़ बीत गई
+editor.onDate | किसी तय तारीख़ को
+editor.repeatHint | कोई दिन नहीं चुना: एक बार बजेगा, जब अगली बार यह समय आएगा।
+editor.nextRing | अगला: %@
+editor.ringsOnce | एक बार बजेगा: %@
+sound.title | ध्वनि
+sound.footer | हर ध्वनि आपके iPhone पर बनती है और ऐप बंद होने पर भी बजती है। सुनने के लिए किसी ध्वनि पर टैप करें।
+sound.conciergeBell | कंसीयर्ज घंटी
+sound.conciergeBell.hint | पीतल की काउंटर घंटी: टिंग… टिंग-टिंग।
+sound.grandfatherClock | ग्रैंडफ़ादर घड़ी
+sound.grandfatherClock.hint | गहरी घंटी पर वेस्टमिंस्टर की धुन।
+sound.chime | झंकार
+sound.chime.hint | ऊपर चढ़ती झंकार।
+sound.gentleRise | धीमी शुरुआत
+sound.gentleRise.hint | धीरे शुरू होकर तेज़ होती है।
+sound.acousticBell | ध्वनिक घंटी
+sound.acousticBell.hint | लंबी गूँज वाली गर्म घंटी।
+sound.singingBowl | सिंगिंग बाउल
+sound.singingBowl.hint | गहरा, शांत बाउल।
+sound.marimba | मारिम्बा
+sound.marimba.hint | लकड़ी की तेज़ धुन।
+sound.musicBox | म्यूज़िक बॉक्स
+sound.musicBox.hint | छोटी, चमकदार धुन।
+sound.digital | क्लासिक बीप
+sound.digital.hint | बिस्तर के पास वाली अलार्म घड़ी जैसी।
+sound.iPhoneDefault | iPhone अलार्म
+sound.iPhoneDefault.hint | iPhone की अपनी अलार्म ध्वनि।

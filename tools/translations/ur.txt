@@ -326,7 +326,6 @@ editor.editTitle | الارم میں ترمیم
 editor.time | وقت
 editor.label | لیبل (مثلاً کام، جم)
 editor.repeat | دہرائیں
-editor.repeatOnce | ایک بار بجے گا، جب اگلی بار یہ وقت آئے گا۔
 editor.default | ڈیفالٹ (%@)
 editor.skipDaysOff | چھٹی کے دن چھوڑیں
 editor.skipDaysOffNeedsCalendar | چھٹی کے دن پہچاننے کے لیے سیٹنگز › کیلنڈر اور یاد دہانیاں میں کیلنڈر کی اجازت دیں۔
@@ -481,10 +480,32 @@ voices.guide.british | برطانوی: انگریزی (برطانیہ)، مثل�
 voices.guide.indian | ہندوستانی: انگریزی (بھارت)، مثلاً Rishi (مرد)، Isha یا Veena (خاتون)۔
 voices.guide.american | جنوبی امریکی اور کینیڈین: انگریزی (امریکہ)، مثلاً Evan یا Nathan (مرد)، Ava یا Zoe (خاتون)۔
 voices.guide.footer | ڈاؤن لوڈ کے لیے ایک بار Wi-Fi چاہیے؛ Concierge Clock خود آوازوں کے لیے کبھی آن لائن نہیں جاتا۔
-editor.when | کب
-editor.when.repeat | دہرائیں
-editor.when.date | کسی تاریخ پر
 editor.date | تاریخ
-editor.dateFooter | ایک بار بجے گا، %@ کو۔
 editor.datePast | وہ تاریخ گزر چکی ہے۔ نئی تاریخ منتخب کریں۔
 alarms.past | مکمل: تاریخ گزر گئی
+editor.onDate | کسی مخصوص تاریخ پر
+editor.repeatHint | کوئی دن منتخب نہیں: ایک بار بجے گا، جب اگلی بار یہ وقت آئے گا۔
+editor.nextRing | اگلا: %@
+editor.ringsOnce | ایک بار بجے گا: %@
+sound.title | آواز
+sound.footer | ہر آواز آپ کے iPhone پر بنتی ہے اور ایپ بند ہونے پر بھی بجتی ہے۔ سننے کے لیے کسی آواز پر ٹیپ کریں۔
+sound.conciergeBell | کنسیئرج گھنٹی
+sound.conciergeBell.hint | پیتل کی کاؤنٹر گھنٹی: ٹن… ٹن ٹن۔
+sound.grandfatherClock | گرینڈ فادر گھڑی
+sound.grandfatherClock.hint | گہری گھنٹی پر ویسٹ منسٹر کی دھن۔
+sound.chime | جھنکار
+sound.chime.hint | اوپر چڑھتی جھنکار۔
+sound.gentleRise | آہستہ آغاز
+sound.gentleRise.hint | آہستہ شروع ہو کر تیز ہوتی ہے۔
+sound.acousticBell | صوتی گھنٹی
+sound.acousticBell.hint | لمبی گونج والی گرم گھنٹی۔
+sound.singingBowl | سنگنگ باؤل
+sound.singingBowl.hint | گہرا، پرسکون باؤل۔
+sound.marimba | مارمبا
+sound.marimba.hint | لکڑی کی تیز دھن۔
+sound.musicBox | میوزک باکس
+sound.musicBox.hint | چھوٹی، روشن دھن۔
+sound.digital | کلاسک بیپ
+sound.digital.hint | بستر کے پاس والی الارم گھڑی جیسی۔
+sound.iPhoneDefault | iPhone الارم
+sound.iPhoneDefault.hint | iPhone کی اپنی الارم آواز۔

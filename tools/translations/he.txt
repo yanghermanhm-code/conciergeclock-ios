@@ -326,7 +326,6 @@ editor.editTitle | עריכת שעון מעורר
 editor.time | שעה
 editor.label | תווית (למשל עבודה, כושר)
 editor.repeat | חזרה
-editor.repeatOnce | מצלצל פעם אחת, בפעם הבאה שהשעה הזו מגיעה.
 editor.default | ברירת מחדל (%@)
 editor.skipDaysOff | לדלג על ימי חופש
 editor.skipDaysOffNeedsCalendar | אשר/י גישה ליומן בהגדרות › יומנים ותזכורות כדי שאפשר יהיה למצוא ימי חופש.
@@ -481,10 +480,32 @@ voices.guide.british | בריטי: אנגלית (בריטניה), למשל Danie
 voices.guide.indian | הודי: אנגלית (הודו), למשל Rishi (גבר), Isha או Veena (אישה).
 voices.guide.american | דרום ארה״ב וקנדה: אנגלית (ארה״ב), למשל Evan או Nathan (גבר), Ava או Zoe (אישה).
 voices.guide.footer | ההורדה דורשת Wi‑Fi פעם אחת; Concierge Clock עצמו אף פעם לא מתחבר לרשת בשביל קולות.
-editor.when | מתי
-editor.when.repeat | חזרה
-editor.when.date | בתאריך
 editor.date | תאריך
-editor.dateFooter | מצלצל פעם אחת, ב‑%@.
 editor.datePast | התאריך הזה עבר. בחר/י תאריך חדש.
 alarms.past | הסתיים: התאריך עבר
+editor.onDate | בתאריך מסוים
+editor.repeatHint | לא נבחרו ימים: מצלצל פעם אחת, בפעם הבאה שהשעה הזו מגיעה.
+editor.nextRing | הבא: %@
+editor.ringsOnce | מצלצל פעם אחת: %@
+sound.title | צליל
+sound.footer | כל צליל נוצר ב‑iPhone ומצלצל גם כשהיישום סגור. הקש/י על צליל כדי לשמוע אותו.
+sound.conciergeBell | פעמון הקונסיירז׳
+sound.conciergeBell.hint | פעמון דלפק מנחושת: דינג… דינג-דינג.
+sound.grandfatherClock | שעון סבא
+sound.grandfatherClock.hint | צלצולי וסטמינסטר על פעמון עמוק.
+sound.chime | פעמוני רוח
+sound.chime.hint | פעמונים עולים.
+sound.gentleRise | עלייה עדינה
+sound.gentleRise.hint | מתחיל בשקט ומתגבר.
+sound.acousticBell | פעמון אקוסטי
+sound.acousticBell.hint | פעמון חם עם הדהוד ארוך.
+sound.singingBowl | קערה שרה
+sound.singingBowl.hint | קערה עמוקה ורגועה.
+sound.marimba | מרימבה
+sound.marimba.hint | מנגינת עץ מהירה.
+sound.musicBox | תיבת נגינה
+sound.musicBox.hint | מנגינה קטנה ובהירה.
+sound.digital | צפצופים קלסיים
+sound.digital.hint | כמו שעון מעורר ליד המיטה.
+sound.iPhoneDefault | שעון מעורר של iPhone
+sound.iPhoneDefault.hint | צליל השעון המעורר של ה‑iPhone עצמו.

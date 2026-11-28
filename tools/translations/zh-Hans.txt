@@ -326,7 +326,6 @@ editor.editTitle | 编辑闹钟
 editor.time | 时间
 editor.label | 标签（如：上班、健身）
 editor.repeat | 重复
-editor.repeatOnce | 响一次，在下一次到达这个时间时。
 editor.default | 默认（%@）
 editor.skipDaysOff | 休息日不响
 editor.skipDaysOffNeedsCalendar | 请在 设置 › 日历与提醒事项 中允许访问日历，以便识别休息日。
@@ -481,10 +480,32 @@ voices.guide.british | 英式：英语（英国），例如 Daniel 或 Arthur（
 voices.guide.indian | 印度：英语（印度），例如 Rishi（男声），Isha 或 Veena（女声）。
 voices.guide.american | 美国南方和加拿大：英语（美国），例如 Evan 或 Nathan（男声），Ava 或 Zoe（女声）。
 voices.guide.footer | 下载只需一次 Wi-Fi；Concierge Clock 本身从不为声音联网。
-editor.when | 何时
-editor.when.repeat | 重复
-editor.when.date | 指定日期
 editor.date | 日期
-editor.dateFooter | 只响一次：%@。
 editor.datePast | 该日期已过。请选择新日期。
 alarms.past | 已结束：日期已过
+editor.onDate | 指定日期
+editor.repeatHint | 未选择日期：只响一次，在下一次到达这个时间时。
+editor.nextRing | 下次：%@
+editor.ringsOnce | 只响一次：%@
+sound.title | 声音
+sound.footer | 每种声音都在你的 iPhone 上生成，即使应用关闭也会响。轻点声音即可试听。
+sound.conciergeBell | 管家铃
+sound.conciergeBell.hint | 黄铜服务铃：叮……叮叮。
+sound.grandfatherClock | 落地钟
+sound.grandfatherClock.hint | 低沉钟声奏出的威斯敏斯特报时曲。
+sound.chime | 风铃
+sound.chime.hint | 逐渐升高的音管风铃。
+sound.gentleRise | 渐强
+sound.gentleRise.hint | 先轻柔，再逐渐变响。
+sound.acousticBell | 原声钟
+sound.acousticBell.hint | 温暖、余音悠长的钟声。
+sound.singingBowl | 颂钵
+sound.singingBowl.hint | 低沉平和的颂钵。
+sound.marimba | 马林巴
+sound.marimba.hint | 轻快的木琴旋律。
+sound.musicBox | 音乐盒
+sound.musicBox.hint | 明亮的小曲。
+sound.digital | 经典哔声
+sound.digital.hint | 就像床头闹钟。
+sound.iPhoneDefault | iPhone 闹钟
+sound.iPhoneDefault.hint | iPhone 自带的闹钟声。

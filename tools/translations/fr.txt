@@ -326,7 +326,6 @@ editor.editTitle | Modifier l’alarme
 editor.time | Heure
 editor.label | Libellé (ex. Travail, Sport)
 editor.repeat | Répéter
-editor.repeatOnce | Sonne une fois, la prochaine fois que cette heure arrive.
 editor.default | Par défaut (%@)
 editor.skipDaysOff | Sauter les jours de congé
 editor.skipDaysOffNeedsCalendar | Autorisez l’accès au calendrier dans Réglages › Calendriers et rappels pour trouver les jours de congé.
@@ -481,10 +480,32 @@ voices.guide.british | Britannique : Anglais (Royaume-Uni), par exemple Daniel o
 voices.guide.indian | Indien : Anglais (Inde), par exemple Rishi (homme), Isha ou Veena (femme).
 voices.guide.american | Sud des États-Unis et Canada : Anglais (États-Unis), par exemple Evan ou Nathan (homme), Ava ou Zoe (femme).
 voices.guide.footer | Le téléchargement demande le Wi-Fi une fois ; Concierge Clock lui-même ne va jamais en ligne pour les voix.
-editor.when | Quand
-editor.when.repeat | Répéter
-editor.when.date | À une date
 editor.date | Date
-editor.dateFooter | Sonne une fois, le %@.
 editor.datePast | Cette date est passée. Choisissez une nouvelle date.
 alarms.past | Terminé : la date est passée
+editor.onDate | À une date précise
+editor.repeatHint | Aucun jour choisi : sonne une fois, la prochaine fois que cette heure arrive.
+editor.nextRing | Prochaine : %@
+editor.ringsOnce | Sonne une fois : %@
+sound.title | Son
+sound.footer | Chaque son est créé sur votre iPhone et sonne même app fermée. Touchez un son pour l’écouter.
+sound.conciergeBell | Cloche du concierge
+sound.conciergeBell.hint | Une sonnette de comptoir en laiton : ding… ding-ding.
+sound.grandfatherClock | Horloge comtoise
+sound.grandfatherClock.hint | Le carillon de Westminster sur une cloche grave.
+sound.chime | Carillons
+sound.chime.hint | Des carillons qui montent.
+sound.gentleRise | Montée douce
+sound.gentleRise.hint | Commence doucement puis monte.
+sound.acousticBell | Cloche acoustique
+sound.acousticBell.hint | Une cloche chaleureuse qui résonne longtemps.
+sound.singingBowl | Bol chantant
+sound.singingBowl.hint | Un bol grave et apaisant.
+sound.marimba | Marimba
+sound.marimba.hint | Une petite mélodie en bois.
+sound.musicBox | Boîte à musique
+sound.musicBox.hint | Un petit air lumineux.
+sound.digital | Bips classiques
+sound.digital.hint | Comme un réveil de chevet.
+sound.iPhoneDefault | Alarme de l’iPhone
+sound.iPhoneDefault.hint | Le son d’alarme de l’iPhone.

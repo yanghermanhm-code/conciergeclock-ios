@@ -22,39 +22,41 @@ struct AlarmEditorView: View {
         let settings = model.settings.settings
         NavigationStack {
             Form {
+                // The time is always set the same way. With nothing else chosen, the alarm rings
+                // the next time this time comes round (today if still ahead, otherwise tomorrow).
                 Section {
-                    // Repeating alarms: just the time. Dated alarms set date and time together below.
-                    if scheduleKind == .repeating {
-                        DatePicker(l10n["editor.time"], selection: timeBinding, displayedComponents: .hourAndMinute)
-                            .datePickerStyle(.wheel)
-                            .labelsHidden()
-                            .frame(maxWidth: .infinity)
-                    }
+                    DatePicker(l10n["editor.time"], selection: timeBinding, displayedComponents: .hourAndMinute)
+                        .datePickerStyle(.wheel)
+                        .labelsHidden()
+                        .frame(maxWidth: .infinity)
                     TextField(l10n["editor.label"], text: $alarm.label)
                         .accessibilityIdentifier("editor.label")
+                } footer: {
+                    Text(footerText)
+                        .font(.footnote.weight(.semibold))
+                        .foregroundStyle(ConciergeStyle.tint)
                 }
 
                 Section {
-                    Picker(l10n["editor.when"], selection: scheduleBinding) {
-                        Text(l10n["editor.when.repeat"]).tag(ScheduleKind.repeating)
-                        Text(l10n["editor.when.date"]).tag(ScheduleKind.date)
-                    }
-                    .pickerStyle(.segmented)
-                    switch scheduleKind {
-                    case .repeating:
-                        WeekdayPicker(days: repeatBinding)
-                    case .date:
-                        // Today and the current minute are allowed: an alarm set for "now" rings at once.
-                        DatePicker(
-                            l10n["editor.date"], selection: dateTimeBinding,
-                            in: Self.startOfCurrentMinute()..., displayedComponents: [.date, .hourAndMinute]
-                        )
-                        .datePickerStyle(.graphical)
+                    WeekdayPicker(days: repeatBinding)
+                    Toggle(l10n["editor.onDate"], isOn: onDateBinding)
+                        .disabled(!alarm.repeatDays.isEmpty)
+                    if alarm.isDated {
+                        DatePicker(l10n["editor.date"], selection: dateBinding, in: Calendar.current.startOfDay(for: Date())..., displayedComponents: .date)
                     }
                 } header: {
                     Text(l10n["editor.repeat"])
                 } footer: {
-                    Text(footerText)
+                    Text(alarm.repeatDays.isEmpty ? l10n["editor.repeatHint"] : l10n.repeatText(alarm.repeatDays))
+                }
+
+                Section {
+                    NavigationLink {
+                        SoundPickerView(selection: $alarm.soundID)
+                    } label: {
+                        LabeledContent(l10n["sound.title"], value: l10n.soundName(AlarmSound.resolve(alarm.soundID)))
+                    }
+                    .accessibilityIdentifier("editor.sound")
                 }
 
                 Section {
@@ -144,30 +146,27 @@ struct AlarmEditorView: View {
         )
     }
 
-    private enum ScheduleKind: Hashable {
-        case repeating, date
-    }
-
-    private var scheduleKind: ScheduleKind {
-        alarm.repeatDays.isEmpty && alarm.date != nil ? .date : .repeating
-    }
-
-    /// Switching to "On a date" picks the next day this time comes round; switching back
-    /// clears the date (no repeat days = the next occurrence of the time).
-    private var scheduleBinding: Binding<ScheduleKind> {
+    private var repeatBinding: Binding<Set<Weekday>> {
         Binding(
-            get: { scheduleKind },
-            set: { kind in
-                switch kind {
-                case .date:
-                    alarm.repeatDays = []
-                    // The next time the chosen time comes round (today if it is still ahead,
-                    // including the current minute).
-                    let now = Date()
-                    let today = Calendar.current.date(bySettingHour: alarm.hour, minute: alarm.minute, second: 0, of: now) ?? now
-                    let next = today >= Self.startOfCurrentMinute(now) ? today : (Calendar.current.date(byAdding: .day, value: 1, to: today) ?? today)
+            get: { alarm.repeatDays },
+            set: { days in
+                alarm.repeatDays = days
+                if !days.isEmpty { alarm.date = nil }
+                alarm.skipDay = nil
+            }
+        )
+    }
+
+    /// "On a specific date": off = the next time the time comes round. Turning it on starts on
+    /// that same day, so only the date needs changing.
+    private var onDateBinding: Binding<Bool> {
+        Binding(
+            get: { alarm.isDated },
+            set: { on in
+                if on {
+                    let next = Alarm(hour: alarm.hour, minute: alarm.minute, repeatDays: []).nextFireDate(after: Date()) ?? Date()
                     alarm.date = DayKey(next)
-                case .repeating:
+                } else {
                     alarm.date = nil
                 }
                 alarm.skipDay = nil
@@ -175,46 +174,21 @@ struct AlarmEditorView: View {
         )
     }
 
-    private var repeatBinding: Binding<Set<Weekday>> {
+    private var dateBinding: Binding<Date> {
         Binding(
-            get: { alarm.repeatDays },
-            set: { days in
-                alarm.repeatDays = days
-                if !days.isEmpty { alarm.date = nil }
-            }
+            get: { alarm.date?.date() ?? Date() },
+            set: { alarm.date = DayKey($0) }
         )
     }
 
-    /// The dated alarm's day and time as one value.
-    private var dateTimeBinding: Binding<Date> {
-        Binding(
-            get: {
-                let day = alarm.date?.date() ?? Date()
-                return Calendar.current.date(bySettingHour: alarm.hour, minute: alarm.minute, second: 0, of: day) ?? day
-            },
-            set: { value in
-                let parts = Calendar.current.dateComponents([.hour, .minute], from: value)
-                alarm.date = DayKey(value)
-                alarm.hour = parts.hour ?? alarm.hour
-                alarm.minute = parts.minute ?? alarm.minute
-                alarm.skipDay = nil
-            }
-        )
-    }
-
-    static func startOfCurrentMinute(_ now: Date = Date()) -> Date {
-        Calendar.current.dateInterval(of: .minute, for: now)?.start ?? now
-    }
-
-    /// "Mon Wed Fri", "Rings once…", or "Friday 12 December 2026 at 7:00 — in 14 days".
+    /// When it will ring, in words: "Rings tomorrow, Tue 2 Dec at 7:00".
     private var footerText: String {
-        if scheduleKind == .date, let fire = alarm.nextFireDate(after: Date()) {
-            return l10n("editor.dateFooter", fire.formatted(Date.FormatStyle(date: .complete, time: .shortened).locale(l10n.locale)))
+        guard let fire = alarm.nextFireDate(after: Date()) else {
+            return alarm.isDated ? l10n["editor.datePast"] : ""
         }
-        if scheduleKind == .date {
-            return l10n["editor.datePast"]
-        }
-        return alarm.repeatDays.isEmpty ? l10n["editor.repeatOnce"] : l10n.repeatText(alarm.repeatDays)
+        let when = fire.formatted(Date.FormatStyle(date: .complete, time: .shortened).locale(l10n.locale))
+        if alarm.repeats { return l10n("editor.nextRing", when) }
+        return l10n("editor.ringsOnce", when)
     }
 
     private var snoozeBinding: Binding<Int?> {

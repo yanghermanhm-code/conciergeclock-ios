@@ -60,6 +60,15 @@ Trends; offline AI uses Gemma like the sibling apps).
    (Gemma)** works out the conversation and whether to add an alarm or a future reminder (for
    example "remind me in 5 minutes"). Phase 3.
 
+6. **Voices are bundled inside the app** — never downloaded or set up separately on the iPhone
+   (Phase 2b).
+7. **Alarm times:** with only a time set, the alarm rings at the next instance of that time; a
+   specific date is optional and simple to choose.
+8. **Alarm sounds are selectable** (not only the iPhone's default sound).
+9. **When an alarm sounds, the app always asks whether to dismiss or remind again**, and works out
+   what the person says with on-device speech recognition and the offline AI (Gemma) — e.g.
+   "dismiss", "I'm up", "ten more minutes", "remind me at quarter past" (Phase 3).
+
 ## Original specification (as attached)
 
 > The attachment ended mid-sentence at "`Views/` — Alarms"; it is reproduced exactly.

@@ -88,7 +88,7 @@ public struct Alarm: Codable, Sendable, Hashable, Identifiable {
         self.updatedAt = updatedAt ?? createdAt
     }
 
-    public static let defaultSoundID = "chime.soft"
+    public static let defaultSoundID = AlarmSound.default.rawValue
 
     /// Minutes after midnight.
     public var minuteOfDay: Int { hour * 60 + minute }

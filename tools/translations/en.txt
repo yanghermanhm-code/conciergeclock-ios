@@ -326,7 +326,6 @@ editor.editTitle | Edit Alarm
 editor.time | Time
 editor.label | Label (e.g. Work, Gym)
 editor.repeat | Repeat
-editor.repeatOnce | Rings once, the next time this time comes round.
 editor.default | Default (%@)
 editor.skipDaysOff | Skip days off
 editor.skipDaysOffNeedsCalendar | Allow calendar access in Settings › Calendars & Reminders so days off can be found.
@@ -481,10 +480,32 @@ voices.guide.british | British: English (UK), for example Daniel or Arthur (male
 voices.guide.indian | Indian: English (India), for example Rishi (male), Isha or Veena (female).
 voices.guide.american | Southern US and Canadian: English (US), for example Evan or Nathan (male), Ava or Zoe (female).
 voices.guide.footer | Downloading needs Wi-Fi once; Concierge Clock itself never goes online for voices.
-editor.when | When
-editor.when.repeat | Repeat
-editor.when.date | On a date
 editor.date | Date
-editor.dateFooter | Rings once, on %@.
 editor.datePast | That date has passed. Choose a new date.
 alarms.past | Done: that date has passed
+editor.onDate | On a specific date
+editor.repeatHint | No days chosen: rings once, the next time this time comes round.
+editor.nextRing | Next: %@
+editor.ringsOnce | Rings once: %@
+sound.title | Sound
+sound.footer | Every sound is made on your iPhone and rings even when the app is closed. Tap a sound to hear it.
+sound.conciergeBell | Concierge Bell
+sound.conciergeBell.hint | A brass service bell: ding… ding-ding.
+sound.grandfatherClock | Grandfather Clock
+sound.grandfatherClock.hint | The Westminster chimes on a deep bell.
+sound.chime | Chimes
+sound.chime.hint | Rising tuned chimes.
+sound.gentleRise | Gentle Rise
+sound.gentleRise.hint | Starts softly and grows louder.
+sound.acousticBell | Acoustic Bell
+sound.acousticBell.hint | A warm bell with a long ring.
+sound.singingBowl | Singing Bowl
+sound.singingBowl.hint | A calm, deep bowl.
+sound.marimba | Marimba
+sound.marimba.hint | A quick wooden melody.
+sound.musicBox | Music Box
+sound.musicBox.hint | A bright little tune.
+sound.digital | Classic Beeps
+sound.digital.hint | Like a bedside alarm clock.
+sound.iPhoneDefault | iPhone Alarm
+sound.iPhoneDefault.hint | The iPhone's own alarm sound.

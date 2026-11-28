@@ -1,3 +1,4 @@
+import ActivityKit
 import AlarmKit
 import ConciergeCore
 import ConciergeData
@@ -120,7 +121,8 @@ final class AlarmScheduler {
         let request = RingRequest(
             id: ring.id, fireDate: ring.fireDate, alarmID: alarm.id, label: alarm.label, title: title,
             stopText: l10n["alarm.stop"], snoozeText: l10n["alarm.snooze"], snoozingText: l10n("alarm.snoozing", title),
-            snoozeSeconds: TimeInterval(snoozeMinutes * 60)
+            snoozeSeconds: TimeInterval(snoozeMinutes * 60),
+            soundFile: Self.soundFile(for: alarm)
         )
         try await Self.scheduleRing(request)
         try? occurrences.insertIfNew(AlarmOccurrence(
@@ -140,6 +142,17 @@ final class AlarmScheduler {
         let snoozeText: String
         let snoozingText: String
         let snoozeSeconds: TimeInterval
+        /// A file in Library/Sounds/, or nil for the iPhone's default alarm sound.
+        let soundFile: String?
+    }
+
+    /// The alarm's chosen sound as a rendered file name (rendered now if missing), or nil for
+    /// the iPhone default.
+    private static func soundFile(for alarm: ConciergeCore.Alarm) -> String? {
+        let sound = AlarmSound.resolve(alarm.soundID)
+        guard sound.isSynthesised else { return nil }
+        if SoundLibrary.fileURL(for: sound) == nil { SoundLibrary.renderMissing() }
+        return SoundLibrary.fileURL(for: sound) == nil ? nil : sound.fileName
     }
 
     nonisolated private static func requestAlarmKitAuthorization() async throws -> AlarmManager.AuthorizationState {
@@ -177,7 +190,8 @@ final class AlarmScheduler {
             schedule: .fixed(request.fireDate),
             attributes: attributes,
             stopIntent: StopAlarmIntent(ringID: request.id.uuidString),
-            secondaryIntent: SnoozeAlarmIntent(ringID: request.id.uuidString)
+            secondaryIntent: SnoozeAlarmIntent(ringID: request.id.uuidString),
+            sound: request.soundFile.map { AlertConfiguration.AlertSound.named($0) } ?? .default
         )
         _ = try await AlarmManager.shared.schedule(id: request.id, configuration: configuration)
     }

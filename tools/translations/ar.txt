@@ -326,7 +326,6 @@ editor.editTitle | تعديل المنبّه
 editor.time | الوقت
 editor.label | التسمية (مثل العمل، الرياضة)
 editor.repeat | التكرار
-editor.repeatOnce | يرنّ مرة واحدة، عندما يحين هذا الوقت في المرة القادمة.
 editor.default | الافتراضي (%@)
 editor.skipDaysOff | تخطي أيام العطلة
 editor.skipDaysOffNeedsCalendar | اسمح بالوصول إلى التقويم من الإعدادات › التقويمات والتذكيرات ليُعثر على أيام العطلة.
@@ -481,10 +480,32 @@ voices.guide.british | البريطانية: الإنجليزية (المملك�
 voices.guide.indian | الهندية: الإنجليزية (الهند)، مثل Rishi (رجل)، وIsha أو Veena (امرأة).
 voices.guide.american | جنوب الولايات المتحدة وكندا: الإنجليزية (الولايات المتحدة)، مثل Evan أو Nathan (رجل)، وAva أو Zoe (امرأة).
 voices.guide.footer | يحتاج التنزيل إلى Wi-Fi مرة واحدة؛ لا يتصل Concierge Clock نفسه بالإنترنت للأصوات أبدًا.
-editor.when | متى
-editor.when.repeat | التكرار
-editor.when.date | في تاريخ
 editor.date | التاريخ
-editor.dateFooter | يرنّ مرة واحدة، في %@.
 editor.datePast | مضى ذلك التاريخ. اختر تاريخًا جديدًا.
 alarms.past | انتهى: مضى التاريخ
+editor.onDate | في تاريخ محدد
+editor.repeatHint | لم تُختر أيام: يرنّ مرة واحدة، عندما يحين هذا الوقت في المرة القادمة.
+editor.nextRing | التالي: %@
+editor.ringsOnce | يرنّ مرة واحدة: %@
+sound.title | الصوت
+sound.footer | كل صوت يُنشأ على iPhone ويرنّ حتى والتطبيق مغلق. اضغط على صوت لسماعه.
+sound.conciergeBell | جرس الكونسيرج
+sound.conciergeBell.hint | جرس مكتب نحاسي: دينغ… دينغ-دينغ.
+sound.grandfatherClock | ساعة الجد
+sound.grandfatherClock.hint | دقات وستمنستر على جرس عميق.
+sound.chime | أجراس الرياح
+sound.chime.hint | أجراس متصاعدة.
+sound.gentleRise | تصاعد هادئ
+sound.gentleRise.hint | يبدأ هادئًا ثم يعلو.
+sound.acousticBell | جرس صوتي
+sound.acousticBell.hint | جرس دافئ برنين طويل.
+sound.singingBowl | وعاء غنائي
+sound.singingBowl.hint | وعاء عميق وهادئ.
+sound.marimba | ماريمبا
+sound.marimba.hint | لحن خشبي سريع.
+sound.musicBox | صندوق موسيقى
+sound.musicBox.hint | لحن صغير مشرق.
+sound.digital | صفير كلاسيكي
+sound.digital.hint | مثل منبّه بجانب السرير.
+sound.iPhoneDefault | منبّه iPhone
+sound.iPhoneDefault.hint | صوت المنبّه الخاص بـ iPhone.

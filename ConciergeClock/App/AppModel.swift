@@ -27,6 +27,8 @@ final class AppModel {
     let briefings: BriefingService
     /// The butler's voice.
     let speech = SpeechService()
+    /// The alarm sounds (rendered into Library/Sounds/ for AlarmKit) and their previews.
+    let sounds = SoundLibrary()
     /// The offline AI model (Gemma): download, choice and engine. Shared with Greater Good
     /// Software's other apps.
     let models: ModelService
@@ -69,6 +71,7 @@ final class AppModel {
     /// Starts observing the database. Safe to call more than once.
     func start() {
         guard alarmsTask == nil else { return }
+        sounds.prepare()
         scheduler.startObservingSystemAlarms()
         let alarmStore = alarms
         alarmsTask = Task { [weak self] in
