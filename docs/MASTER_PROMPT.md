@@ -45,6 +45,21 @@ Trends; offline AI uses Gemma like the sibling apps).
 | 16 | Icon | (b) butler with a service tray; colours: navy with a brass/gold and teal ring |
 | 17 | Default voice | Professional, slightly snobbish British |
 
+## Additions after planning (product owner, November 2026)
+
+1. **Calendars:** the phone's own calendars, Google and Outlook (and Exchange / Microsoft 365, iCloud,
+   Yahoo) must be available — through the iPhone's accounts, read offline (Phase 1b).
+2. **Speakerphone:** every wake-up announcement plays on the loudspeaker.
+3. **Previews:** the voices and the announcements can be previewed on the phone (Phase 2).
+4. **Wake-up safety call** (call a preset number if not awake after a set time): **dropped** — iOS
+   requires a confirmation tap for every call, and anything needing manual steps after setup is not
+   useful (see DECISIONS.md).
+5. **Alarms behave separately from events and reminders.** Calendar and reminder items are read out
+   one at a time, **pausing for a spoken reply** — "OK, I understand", "Yes, I will go", "Dismiss" or
+   anything of that nature — to decide whether to remind again at the next step. The **offline AI
+   (Gemma)** works out the conversation and whether to add an alarm or a future reminder (for
+   example "remind me in 5 minutes"). Phase 3.
+
 ## Original specification (as attached)
 
 > The attachment ended mid-sentence at "`Views/` — Alarms"; it is reproduced exactly.

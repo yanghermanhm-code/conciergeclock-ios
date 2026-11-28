@@ -187,7 +187,6 @@ concierge.greeting.night | Good night.
 concierge.introduction | I am %@, your concierge.
 concierge.customize | Customize Your Concierge
 concierge.briefMe | Brief Me Now
-concierge.briefMe.soon | Spoken briefings arrive in Phase 2.
 concierge.nextAlarm | Next alarm
 concierge.noAlarm | No alarm set
 concierge.ai.ready | Ready: %@
@@ -195,7 +194,6 @@ concierge.ai.setup | Not set up yet: Settings › Offline AI.
 concierge.ai.unsupported | Not available on this iPhone. Built-in rules are used.
 concierge.soon.title | What your concierge will do
 concierge.soon.message | Each update adds more. Everything runs on your iPhone.
-concierge.soon.brief | Read your day aloud: the time, events, due reminders and what matters
 concierge.soon.talk | Understand “snooze 10 minutes”, “I'm awake” or “mark it done”
 concierge.soon.nightstand | Nightstand Mode: ambient sound overnight, a full conversation at the alarm
 concierge.soon.ask | Answer “What's on today?”
@@ -231,7 +229,7 @@ butler.voiceHeader | Voice
 butler.voice | Accent
 butler.voiceApproximated | No iPhone voice has exactly this accent yet, so the closest voice is used with regional wording.
 butler.voiceEnglishOnly | Accents apply to English. Other languages use that language's own voice.
-butler.voiceFooter | Voice preview arrives with spoken briefings in Phase 2.
+butler.voiceFooter | Voices are the iPhone's own and work offline. A built-in engine with more natural voices arrives in Phase 7.
 butler.tone | Tone
 butler.mildSwearing | Allow mild swearing
 butler.briefing | Briefing
@@ -334,7 +332,7 @@ editor.skipDaysOff | Skip days off
 editor.skipDaysOffNeedsCalendar | Allow calendar access in Settings › Calendars & Reminders so days off can be found.
 editor.snoozeFooter | Snooze on the Lock Screen rings again after this many minutes. Days off are public holidays and all-day events containing your day-off words.
 editor.butler | Your concierge for this alarm
-editor.butlerFooter | Default follows Settings › Your Concierge. Spoken briefings arrive in Phase 2.
+editor.butlerFooter | Default follows Settings › Your Concierge.
 editor.delete | Delete Alarm
 editor.deleteConfirm | Delete this alarm? Its mornings stay in your wake log.
 calendars.title | Calendars & Reminders
@@ -378,3 +376,108 @@ widget.tomorrow | Tomorrow
 infoplist.alarmKit | Concierge Clock schedules your alarms so they ring even when the app is closed, in silent mode or during Focus.
 infoplist.calendars | Concierge Clock reads your calendars on this iPhone to tell you about your day and to skip alarms on days off. Nothing is uploaded or changed.
 infoplist.reminders | Concierge Clock reads your reminders on this iPhone to tell you what is due, and marks one done only when you ask. Nothing is uploaded.
+brief.moderate.greeting.morning | Good morning.
+brief.moderate.greeting.afternoon | Good afternoon.
+brief.moderate.greeting.evening | Good evening.
+brief.moderate.greeting.night | Hello. It's late.
+brief.moderate.time | It's %@.
+brief.moderate.next | Next up: %1$@ at %2$@, in %3$@.
+brief.moderate.nextNow | %1$@ is on now; it started at %2$@.
+brief.moderate.important | This one looks important.
+brief.moderate.noEvents | Nothing else on your calendar today.
+brief.moderate.more | Events after that: %d.
+brief.moderate.item | %1$@ at %2$@.
+brief.moderate.reminders | Reminders due: %d.
+brief.moderate.reminderItem | Reminder: %@.
+brief.moderate.overdue | Overdue: %@.
+brief.moderate.closing.onDemand | That's everything for now.
+brief.moderate.closing.alarm | Want me to remind you again in %d minutes?
+brief.professional.greeting.morning | Good morning.
+brief.professional.greeting.afternoon | Good afternoon.
+brief.professional.greeting.evening | Good evening.
+brief.professional.greeting.night | Good evening. It is rather late.
+brief.professional.time | It is %@.
+brief.professional.next | Your next engagement is %1$@, at %2$@, in %3$@.
+brief.professional.nextNow | %1$@ is already under way; it began at %2$@. One would hurry.
+brief.professional.important | I would treat this one as important.
+brief.professional.noEvents | Your diary is clear for the rest of the day. How restful.
+brief.professional.more | Further engagements today: %d.
+brief.professional.item | %1$@, at %2$@.
+brief.professional.reminders | Matters awaiting your attention: %d.
+brief.professional.reminderItem | You asked to be reminded: %@.
+brief.professional.overdue | %@ is, I regret to say, overdue.
+brief.professional.closing.onDemand | That will be all for now.
+brief.professional.closing.alarm | Shall I return in %d minutes, or will you be rising?
+brief.child.greeting.morning | Good morning, sunshine!
+brief.child.greeting.afternoon | Good afternoon, superstar!
+brief.child.greeting.evening | Good evening!
+brief.child.greeting.night | Hello! It's very late.
+brief.child.time | It's %@.
+brief.child.next | Next, %1$@ at %2$@. That's in %3$@.
+brief.child.nextNow | %1$@ is happening right now! It started at %2$@.
+brief.child.important | This one is important!
+brief.child.noEvents | Nothing else is planned today. Hooray!
+brief.child.more | Other things today: %d.
+brief.child.item | %1$@ at %2$@.
+brief.child.reminders | Things to remember: %d.
+brief.child.reminderItem | Remember: %@.
+brief.child.overdue | Oops, this was due already: %@.
+brief.child.closing.onDemand | That's all. You've got this!
+brief.child.closing.alarm | Shall I wake you again in %d minutes?
+brief.unhinged.greeting.morning | Oh, you're alive. Good morning, I suppose.
+brief.unhinged.greeting.afternoon | It's the afternoon. Congratulations on existing.
+brief.unhinged.greeting.evening | Evening. Again.
+brief.unhinged.greeting.night | Why are we awake right now?
+brief.unhinged.time | It is %@. Yes, really.
+brief.unhinged.next | Next: %1$@, at %2$@. That's in %3$@, so move.
+brief.unhinged.nextNow | %1$@ already started at %2$@. Fantastic. Run.
+brief.unhinged.important | This one actually matters. Don't blow it.
+brief.unhinged.noEvents | Your calendar is empty. Suspicious, but fine.
+brief.unhinged.more | Still to come after that: %d. Pace yourself.
+brief.unhinged.item | %1$@ at %2$@.
+brief.unhinged.reminders | Reminders you've been ignoring: %d.
+brief.unhinged.reminderItem | Reminder: %@. Do it.
+brief.unhinged.overdue | %@ is overdue. Shocking. Truly.
+brief.unhinged.closing.onDemand | That's it. Go.
+brief.unhinged.closing.alarm | Fine. %d more minutes. But I'm judging you.
+brief.unhinged.swear.1 | Get your arse out of bed.
+brief.unhinged.swear.2 | Bloody hell, it's time.
+brief.private | a private event
+brief.summary.at | at %@
+brief.summary.for | for %@
+brief.summary.with | with %d others
+brief.sample.dentist | the dentist
+concierge.stop | Stop
+today.title | Today
+today.ranking | Offline AI is checking…
+today.noAccess | Allow calendars and reminders (card below) so your concierge can tell you about your day.
+today.empty | Nothing else today.
+today.source.ai | Importance judged by the offline AI (Gemma), on this iPhone.
+today.source.rules | Importance judged by built-in rules. Once the offline AI is set up, Gemma judges it.
+today.untitled | Untitled
+today.important | Important
+today.overdue | Overdue
+today.due | Due %@
+today.dueToday | Due today
+today.allDay | All day
+butler.previewVoice | Preview Voice
+butler.previewBriefing | Preview My Briefing
+voices.title | Hear Every Voice
+voices.current | Voice
+voices.none | No voice for this language on this iPhone yet. Download one (see Get Better Voices).
+voices.canImprove | A higher-quality version of this voice can be downloaded for free.
+voices.quality.premium | Premium
+voices.quality.enhanced | Enhanced
+voices.quality.standard | Standard
+voices.guide.title | Get Better Voices
+voices.guide.intro | Apple's Enhanced and Premium voices sound much more natural. They are free, downloaded once in the iPhone's Settings, and then work offline in Concierge Clock.
+voices.guide.step1 | Open the iPhone's Settings app.
+voices.guide.step2 | Tap Accessibility, then Spoken Content (called Read & Speak in newer iOS versions).
+voices.guide.step3 | Tap Voices, then the language (for example English), then the region.
+voices.guide.step4 | Choose a voice and tap Download next to its Enhanced or Premium version.
+voices.guide.step5 | Come back to Concierge Clock: the best installed voice is used automatically.
+voices.guide.suggestions | Suggestions for the accents
+voices.guide.british | British: English (UK), for example Daniel or Arthur (male), Kate or Serena (female).
+voices.guide.indian | Indian: English (India), for example Rishi (male), Isha or Veena (female).
+voices.guide.american | Southern US and Canadian: English (US), for example Evan or Nathan (male), Ava or Zoe (female).
+voices.guide.footer | Downloading needs Wi-Fi once; Concierge Clock itself never goes online for voices.

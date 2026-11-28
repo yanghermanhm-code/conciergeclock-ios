@@ -187,7 +187,6 @@ concierge.greeting.night | شب بخیر۔
 concierge.introduction | میں %@ ہوں، آپ کا کنسیئرج۔
 concierge.customize | اپنا کنسیئرج تبدیل کریں
 concierge.briefMe | ابھی بریفنگ دیں
-concierge.briefMe.soon | بول کر بریفنگ فیز 2 میں آئے گی۔
 concierge.nextAlarm | اگلا الارم
 concierge.noAlarm | کوئی الارم سیٹ نہیں
 concierge.ai.ready | تیار: %@
@@ -195,7 +194,6 @@ concierge.ai.setup | ابھی سیٹ نہیں: سیٹنگز › آف لائن AI
 concierge.ai.unsupported | اس iPhone پر دستیاب نہیں۔ بلٹ اِن اصول استعمال ہوتے ہیں۔
 concierge.soon.title | آپ کا کنسیئرج کیا کرے گا
 concierge.soon.message | ہر اپ ڈیٹ کچھ نیا شامل کرتی ہے۔ سب کچھ آپ کے iPhone پر چلتا ہے۔
-concierge.soon.brief | آپ کا دن بول کر سنانا: وقت، ایونٹس، واجب یاد دہانیاں اور جو اہم ہے
 concierge.soon.talk | “10 منٹ اسنوز”، “میں جاگ گیا” یا “مکمل نشان لگاؤ” سمجھنا
 concierge.soon.nightstand | نائٹ اسٹینڈ موڈ: رات بھر ہلکی آواز، الارم پر مکمل گفتگو
 concierge.soon.ask | “آج کیا ہے؟” کا جواب دینا
@@ -231,7 +229,7 @@ butler.voiceHeader | آواز
 butler.voice | لہجہ
 butler.voiceApproximated | ابھی کسی iPhone آواز میں بالکل یہی لہجہ نہیں، اس لیے قریب ترین آواز علاقائی الفاظ کے ساتھ استعمال ہوتی ہے۔
 butler.voiceEnglishOnly | لہجے انگریزی پر لاگو ہوتے ہیں۔ دوسری زبانیں اپنی آواز استعمال کرتی ہیں۔
-butler.voiceFooter | آواز کا پیش منظر فیز 2 میں بول کر بریفنگ کے ساتھ آئے گا۔
+butler.voiceFooter | آوازیں iPhone کی اپنی ہیں اور آف لائن چلتی ہیں۔ زیادہ فطری آوازوں والا بلٹ اِن انجن فیز 7 میں آئے گا۔
 butler.tone | انداز
 butler.mildSwearing | ہلکی گالی کی اجازت دیں
 butler.briefing | بریفنگ
@@ -334,7 +332,7 @@ editor.skipDaysOff | چھٹی کے دن چھوڑیں
 editor.skipDaysOffNeedsCalendar | چھٹی کے دن پہچاننے کے لیے سیٹنگز › کیلنڈر اور یاد دہانیاں میں کیلنڈر کی اجازت دیں۔
 editor.snoozeFooter | لاک اسکرین سے اسنوز کرنے پر اتنے منٹ بعد دوبارہ بجے گا۔ چھٹی کے دن سرکاری تعطیلات اور آپ کے چھٹی والے الفاظ والے پورے دن کے ایونٹس ہیں۔
 editor.butler | اس الارم کے لیے آپ کا کنسیئرج
-editor.butlerFooter | ڈیفالٹ سیٹنگز › آپ کا کنسیئرج کی پیروی کرتا ہے۔ بول کر بریفنگ فیز 2 میں آئے گی۔
+editor.butlerFooter | ڈیفالٹ سیٹنگز › آپ کا کنسیئرج کی پیروی کرتا ہے۔
 editor.delete | الارم حذف کریں
 editor.deleteConfirm | یہ الارم حذف کریں؟ اس کی صبحیں جاگنے کے ریکارڈ میں رہیں گی۔
 calendars.title | کیلنڈر اور یاد دہانیاں
@@ -378,3 +376,108 @@ widget.tomorrow | کل
 infoplist.alarmKit | Concierge Clock آپ کے الارم شیڈول کرتا ہے تاکہ وہ ایپ بند ہونے، سائلنٹ موڈ یا فوکس میں بھی بجیں۔
 infoplist.calendars | Concierge Clock آپ کا دن بتانے اور چھٹی کے دنوں میں الارم چھوڑنے کے لیے اسی iPhone پر آپ کے کیلنڈر پڑھتا ہے۔ کچھ اپ لوڈ یا تبدیل نہیں ہوتا۔
 infoplist.reminders | Concierge Clock یہ بتانے کے لیے کہ کیا واجب ہے، اسی iPhone پر آپ کی یاد دہانیاں پڑھتا ہے، اور کسی کو مکمل صرف تب نشان زد کرتا ہے جب آپ کہیں۔ کچھ اپ لوڈ نہیں ہوتا۔
+brief.moderate.greeting.morning | صبح بخیر۔
+brief.moderate.greeting.afternoon | سہ پہر بخیر۔
+brief.moderate.greeting.evening | شام بخیر۔
+brief.moderate.greeting.night | ہیلو۔ کافی دیر ہو گئی ہے۔
+brief.moderate.time | اس وقت %@ بجے ہیں۔
+brief.moderate.next | اگلا: %2$@ پر %1$@، %3$@ میں۔
+brief.moderate.nextNow | %1$@ ابھی جاری ہے؛ %2$@ پر شروع ہوا۔
+brief.moderate.important | یہ اہم لگتا ہے۔
+brief.moderate.noEvents | آج آپ کے کیلنڈر میں اور کچھ نہیں۔
+brief.moderate.more | اس کے بعد کے ایونٹس: %d۔
+brief.moderate.item | %2$@ پر %1$@۔
+brief.moderate.reminders | واجب یاد دہانیاں: %d۔
+brief.moderate.reminderItem | یاد دہانی: %@۔
+brief.moderate.overdue | وقت گزر چکا: %@۔
+brief.moderate.closing.onDemand | فی الحال اتنا ہی۔
+brief.moderate.closing.alarm | کیا میں %d منٹ بعد پھر یاد دلاؤں؟
+brief.professional.greeting.morning | صبح بخیر۔
+brief.professional.greeting.afternoon | سہ پہر بخیر۔
+brief.professional.greeting.evening | شام بخیر۔
+brief.professional.greeting.night | شام بخیر۔ کافی رات ہو چکی ہے۔
+brief.professional.time | اس وقت %@ بجے ہیں۔
+brief.professional.next | آپ کی اگلی مصروفیت %1$@ ہے، %2$@ پر، %3$@ میں۔
+brief.professional.nextNow | %1$@ %2$@ پر شروع ہو چکی ہے۔ میں ہوتا تو جلدی کرتا۔
+brief.professional.important | میں اسے اہم سمجھوں گا۔
+brief.professional.noEvents | آج باقی دن آپ کی ڈائری خالی ہے۔ کیا آرام ہے۔
+brief.professional.more | آج کی دیگر مصروفیات: %d۔
+brief.professional.item | %1$@، %2$@ پر۔
+brief.professional.reminders | آپ کی توجہ کے منتظر معاملات: %d۔
+brief.professional.reminderItem | آپ نے یاد دلانے کو کہا تھا: %@۔
+brief.professional.overdue | افسوس کے ساتھ عرض ہے، %@ کا وقت گزر چکا ہے۔
+brief.professional.closing.onDemand | فی الحال بس اتنا ہی۔
+brief.professional.closing.alarm | کیا میں %d منٹ بعد حاضر ہوں، یا آپ اٹھ رہے ہیں؟
+brief.child.greeting.morning | صبح بخیر، پیارے!
+brief.child.greeting.afternoon | سہ پہر بخیر، سپر اسٹار!
+brief.child.greeting.evening | شام بخیر!
+brief.child.greeting.night | ہیلو! بہت رات ہو گئی ہے۔
+brief.child.time | اس وقت %@ بجے ہیں۔
+brief.child.next | پھر، %2$@ پر %1$@۔ یہ %3$@ میں ہے۔
+brief.child.nextNow | %1$@ ابھی ہو رہا ہے! %2$@ پر شروع ہوا۔
+brief.child.important | یہ اہم ہے!
+brief.child.noEvents | آج اور کچھ نہیں۔ واہ!
+brief.child.more | آج کی اور باتیں: %d۔
+brief.child.item | %2$@ پر %1$@۔
+brief.child.reminders | یاد رکھنے کی باتیں: %d۔
+brief.child.reminderItem | یاد رکھنا: %@۔
+brief.child.overdue | اوہ، اس کا وقت تو گزر گیا: %@۔
+brief.child.closing.onDemand | بس اتنا ہی۔ تم کر لو گے!
+brief.child.closing.alarm | کیا میں تمہیں %d منٹ بعد پھر جگاؤں؟
+brief.unhinged.greeting.morning | اوہ، تم زندہ ہو۔ صبح بخیر، شاید۔
+brief.unhinged.greeting.afternoon | سہ پہر ہو گئی۔ موجود ہونے پر مبارک ہو۔
+brief.unhinged.greeting.evening | شام۔ پھر سے۔
+brief.unhinged.greeting.night | ہم اس وقت جاگ کیوں رہے ہیں؟
+brief.unhinged.time | %@ بجے ہیں۔ ہاں، سچ میں۔
+brief.unhinged.next | اگلا: %2$@ پر %1$@۔ %3$@ میں ہے، تو ہلو۔
+brief.unhinged.nextNow | %1$@ تو %2$@ پر شروع بھی ہو گیا۔ زبردست۔ بھاگو۔
+brief.unhinged.important | یہ واقعی اہم ہے۔ خراب مت کرنا۔
+brief.unhinged.noEvents | تمہارا کیلنڈر خالی ہے۔ مشکوک، مگر ٹھیک ہے۔
+brief.unhinged.more | اس کے بعد ابھی اور: %d۔ سنبھل کے۔
+brief.unhinged.item | %2$@ پر %1$@۔
+brief.unhinged.reminders | جن یاد دہانیوں کو تم نظرانداز کر رہے ہو: %d۔
+brief.unhinged.reminderItem | یاد دہانی: %@۔ کر ڈالو۔
+brief.unhinged.overdue | %@ کا وقت گزر گیا۔ حیران کن۔ واقعی۔
+brief.unhinged.closing.onDemand | بس۔ جاؤ۔
+brief.unhinged.closing.alarm | ٹھیک ہے۔ %d منٹ اور۔ مگر میں تمہیں پرکھ رہا ہوں۔
+brief.unhinged.swear.1 | اٹھو، کم بخت، بستر چھوڑو۔
+brief.unhinged.swear.2 | حد ہو گئی، وقت ہو گیا۔
+brief.private | ایک نجی ایونٹ
+brief.summary.at | %@ میں
+brief.summary.for | %@ کے لیے
+brief.summary.with | %d اور لوگوں کے ساتھ
+brief.sample.dentist | ڈینٹسٹ
+concierge.stop | روکیں
+today.title | آج
+today.ranking | آف لائن AI جانچ رہا ہے…
+today.noAccess | کیلنڈر اور یاد دہانیوں کی اجازت دیں (نیچے کارڈ) تاکہ آپ کا کنسیئرج آپ کے دن کے بارے میں بتا سکے۔
+today.empty | آج اور کچھ نہیں۔
+today.source.ai | اہمیت اسی iPhone پر آف لائن AI (Gemma) نے طے کی۔
+today.source.rules | اہمیت بلٹ اِن اصولوں نے طے کی۔ آف لائن AI سیٹ ہونے پر Gemma طے کرتا ہے۔
+today.untitled | بلا عنوان
+today.important | اہم
+today.overdue | وقت گزر گیا
+today.due | %@ تک
+today.dueToday | آج تک
+today.allDay | پورا دن
+butler.previewVoice | آواز سنیں
+butler.previewBriefing | میری بریفنگ سنیں
+voices.title | تمام آوازیں سنیں
+voices.current | آواز
+voices.none | اس iPhone پر اس زبان کی کوئی آواز ابھی نہیں۔ ایک ڈاؤن لوڈ کریں (بہتر آوازیں حاصل کریں دیکھیں)۔
+voices.canImprove | اس آواز کا بہتر معیار والا ورژن مفت ڈاؤن لوڈ کیا جا سکتا ہے۔
+voices.quality.premium | پریمیم
+voices.quality.enhanced | بہتر
+voices.quality.standard | معیاری
+voices.guide.title | بہتر آوازیں حاصل کریں
+voices.guide.intro | Apple کی بہتر اور پریمیم آوازیں کہیں زیادہ فطری لگتی ہیں۔ یہ مفت ہیں، iPhone کی سیٹنگز میں ایک بار ڈاؤن لوڈ ہوتی ہیں اور پھر Concierge Clock میں آف لائن چلتی ہیں۔
+voices.guide.step1 | iPhone کی سیٹنگز ایپ کھولیں۔
+voices.guide.step2 | رسائی، پھر بولا گیا مواد پر ٹیپ کریں (نئے iOS میں اس کا نام پڑھیں اور بولیں ہے)۔
+voices.guide.step3 | آوازیں، پھر زبان (مثلاً انگریزی)، پھر علاقہ پر ٹیپ کریں۔
+voices.guide.step4 | کوئی آواز منتخب کریں اور اس کے بہتر یا پریمیم ورژن کے ساتھ ڈاؤن لوڈ پر ٹیپ کریں۔
+voices.guide.step5 | Concierge Clock میں واپس آئیں: بہترین انسٹال شدہ آواز خود بخود استعمال ہوتی ہے۔
+voices.guide.suggestions | لہجوں کے لیے تجاویز
+voices.guide.british | برطانوی: انگریزی (برطانیہ)، مثلاً Daniel یا Arthur (مرد)، Kate یا Serena (خاتون)۔
+voices.guide.indian | ہندوستانی: انگریزی (بھارت)، مثلاً Rishi (مرد)، Isha یا Veena (خاتون)۔
+voices.guide.american | جنوبی امریکی اور کینیڈین: انگریزی (امریکہ)، مثلاً Evan یا Nathan (مرد)، Ava یا Zoe (خاتون)۔
+voices.guide.footer | ڈاؤن لوڈ کے لیے ایک بار Wi-Fi چاہیے؛ Concierge Clock خود آوازوں کے لیے کبھی آن لائن نہیں جاتا۔

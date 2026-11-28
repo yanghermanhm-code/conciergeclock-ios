@@ -23,6 +23,8 @@ CODE_KEY = re.compile(r'(?:l10n|self|strings)(?:\[|\()"([A-Za-z0-9_.]+)"')
 # App extensions get their own Localizable.strings with the keys under their prefix.
 EXTENSIONS = {
     ROOT / "ConciergeClockWidgets": "widget.",
+    # The butler's spoken phrases, read by ConciergeCore's BriefingBuilder in any language.
+    ROOT / "Packages" / "ConciergeKit" / "Sources" / "ConciergeCore" / "Resources": "brief.",
     # The offline AI setup guide shared by all Greater Good Software apps (GGSModelKit).
     ROOT / "Packages" / "GGSModelKit" / "Sources" / "GGSModelUI" / "Resources": "guide.",
 }

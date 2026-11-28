@@ -6,8 +6,9 @@ you the time and what your day holds from your own calendar and reminders, liste
 10 minutes" or "I'm awake", and tracks how well you wake up. Pay once, own it — no accounts, no
 subscriptions, no tracking.
 
-> Status: **Phase 1a** merged into `main`. **Phase 1b – Alarms, calendars & widgets** in review on
-> branch `phase-1b-alarms`.
+> Status: **Phase 1a** merged into `main`. **Phase 1b** (alarms, calendars, widgets) on
+> `phase-1b-alarms`, awaiting device test. **Phase 2 – The spoken briefing** in review on
+> `phase-2-briefing` (built on top of 1b).
 > See [docs/ROADMAP.md](docs/ROADMAP.md).
 
 ## Requirements
@@ -35,6 +36,19 @@ subscriptions, no tracking.
 4. **Alarms need a real iPhone** for a true test (AlarmKit rings on the Lock Screen and Dynamic
    Island; the Simulator shows them but cannot be relied on for sound and timing).
 5. Pick your iPhone (or a simulator) and press **⌘R**.
+
+### What to try in Phase 2
+
+- **Concierge tab › Brief Me Now:** Charles reads today — the time, your next event with where,
+  how long and how soon, whether it looks important, more events and due reminders — with the
+  text on screen as he speaks. Tap again to stop. Pull down to refresh.
+- **Today** card: today's events and reminders with **Important** badges; it says whether the
+  offline AI (Gemma) or the built-in rules judged them.
+- **Concierge › Customize** (or Settings › Your Concierge): **Preview Voice**, **Hear Every Voice**
+  (all 8 accents and 4 tones), **Preview My Briefing**, the voice in use and its quality, and
+  **Get Better Voices** (free Enhanced / Premium voices from iOS Settings).
+- Change the spoken language (e.g. French) or the length (Quick / Standard / Full) and brief again.
+- Turn off "Read event titles aloud": events become "a private event".
 
 ### What to try in Phase 1b
 

@@ -131,6 +131,71 @@ final class CalendarService {
     }
 }
 
+// MARK: - Briefing items
+
+extension CalendarService {
+    /// Today's events (still running or later today) and the reminders due today or overdue, from
+    /// the included calendars and lists, as plain values for the briefing. Read on the iPhone;
+    /// nothing is stored.
+    func briefingItems(excludingCalendars: Set<String>, excludingLists: Set<String>, now: Date = Date()) async -> [BriefingItem] {
+        let calendar = Calendar.current
+        let start = calendar.startOfDay(for: now)
+        guard let end = calendar.date(byAdding: .day, value: 1, to: start) else { return [] }
+        var items: [BriefingItem] = []
+
+        let calendars = includedCalendars(excluding: excludingCalendars)
+        if !calendars.isEmpty {
+            let predicate = store.predicateForEvents(withStart: start, end: end, calendars: calendars)
+            for event in store.events(matching: predicate) where (event.endDate ?? now) > now || event.isAllDay {
+                let others = event.attendees?.filter { !$0.isCurrentUser }.count ?? 0
+                items.append(BriefingItem(
+                    id: "event|\(event.eventIdentifier ?? event.calendarItemIdentifier)|\(Int(event.startDate.timeIntervalSince1970))",
+                    kind: .event,
+                    title: event.title ?? "",
+                    date: event.startDate,
+                    endDate: event.endDate,
+                    isAllDay: event.isAllDay,
+                    location: event.location,
+                    attendeeCount: others,
+                    calendarTitle: event.calendar?.title ?? "",
+                    notesSnippet: event.notes
+                ))
+            }
+        }
+
+        if reminderAccess == .granted {
+            let lists = store.calendars(for: .reminder).filter { !excludingLists.contains($0.calendarIdentifier) }
+            if !lists.isEmpty {
+                let predicate = store.predicateForIncompleteReminders(withDueDateStarting: nil, ending: end, calendars: lists)
+                let store = self.store
+                let reminders: [BriefingItem] = await withCheckedContinuation { continuation in
+                    store.fetchReminders(matching: predicate) { found in
+                        let mapped: [BriefingItem] = (found ?? []).compactMap { reminder in
+                            guard let components = reminder.dueDateComponents,
+                                  let due = calendar.date(from: components) else { return nil }
+                            let hasTime = components.hour != nil
+                            let overdue = hasTime ? due < now : due < start
+                            return BriefingItem(
+                                id: "reminder|\(reminder.calendarItemIdentifier)",
+                                kind: .reminder,
+                                title: reminder.title ?? "",
+                                date: hasTime ? due : nil,
+                                calendarTitle: reminder.calendar?.title ?? "",
+                                notesSnippet: reminder.notes,
+                                priority: reminder.priority,
+                                isOverdue: overdue
+                            )
+                        }
+                        continuation.resume(returning: mapped)
+                    }
+                }
+                items += reminders
+            }
+        }
+        return items
+    }
+}
+
 /// One account as the iPhone knows it.
 struct CalendarAccount: Identifiable, Equatable {
     let id: String

@@ -187,7 +187,6 @@ concierge.greeting.night | शुभ रात्रि।
 concierge.introduction | मैं %@ हूँ, आपका कंसीयर्ज।
 concierge.customize | अपना कंसीयर्ज बदलें
 concierge.briefMe | अभी ब्रीफ़ करें
-concierge.briefMe.soon | बोलकर ब्रीफ़िंग फ़ेज़ 2 में आएगी।
 concierge.nextAlarm | अगला अलार्म
 concierge.noAlarm | कोई अलार्म नहीं लगा
 concierge.ai.ready | तैयार: %@
@@ -195,7 +194,6 @@ concierge.ai.setup | अभी सेट नहीं: सेटिंग्स 
 concierge.ai.unsupported | इस iPhone पर उपलब्ध नहीं। अंतर्निहित नियम इस्तेमाल होते हैं।
 concierge.soon.title | आपका कंसीयर्ज क्या करेगा
 concierge.soon.message | हर अपडेट कुछ नया जोड़ता है। सब कुछ आपके iPhone पर चलता है।
-concierge.soon.brief | आपका दिन बोलकर सुनाना: समय, इवेंट, बकाया रिमाइंडर और जो ज़रूरी है
 concierge.soon.talk | “10 मिनट स्नूज़”, “मैं जाग गया” या “पूरा मार्क करो” समझना
 concierge.soon.nightstand | नाइटस्टैंड मोड: रात भर हल्की ध्वनि, अलार्म पर पूरी बातचीत
 concierge.soon.ask | “आज क्या है?” का जवाब देना
@@ -231,7 +229,7 @@ butler.voiceHeader | आवाज़
 butler.voice | लहजा
 butler.voiceApproximated | अभी किसी iPhone आवाज़ में ठीक यही लहजा नहीं है, इसलिए सबसे नज़दीकी आवाज़ क्षेत्रीय शब्दों के साथ इस्तेमाल होती है।
 butler.voiceEnglishOnly | लहजे अंग्रेज़ी पर लागू होते हैं। दूसरी भाषाएँ अपनी आवाज़ इस्तेमाल करती हैं।
-butler.voiceFooter | आवाज़ का पूर्वावलोकन फ़ेज़ 2 में बोलकर ब्रीफ़िंग के साथ आएगा।
+butler.voiceFooter | आवाज़ें iPhone की अपनी हैं और ऑफ़लाइन चलती हैं। ज़्यादा स्वाभाविक आवाज़ों वाला अंतर्निहित इंजन फ़ेज़ 7 में आएगा।
 butler.tone | अंदाज़
 butler.mildSwearing | हल्की गाली की अनुमति दें
 butler.briefing | ब्रीफ़िंग
@@ -334,7 +332,7 @@ editor.skipDaysOff | छुट्टी के दिन छोड़ें
 editor.skipDaysOffNeedsCalendar | छुट्टी के दिन पहचानने के लिए सेटिंग्स › कैलेंडर और रिमाइंडर में कैलेंडर की अनुमति दें।
 editor.snoozeFooter | लॉक स्क्रीन से स्नूज़ करने पर इतने मिनट बाद फिर बजेगा। छुट्टी के दिन सार्वजनिक छुट्टियाँ और आपके छुट्टी वाले शब्दों वाले पूरे दिन के इवेंट हैं।
 editor.butler | इस अलार्म के लिए आपका कंसीयर्ज
-editor.butlerFooter | डिफ़ॉल्ट सेटिंग्स › आपका कंसीयर्ज का पालन करता है। बोलकर ब्रीफ़िंग फ़ेज़ 2 में आएगी।
+editor.butlerFooter | डिफ़ॉल्ट सेटिंग्स › आपका कंसीयर्ज का पालन करता है।
 editor.delete | अलार्म हटाएँ
 editor.deleteConfirm | यह अलार्म हटाएँ? इसकी सुबहें जागने के लॉग में बनी रहेंगी।
 calendars.title | कैलेंडर और रिमाइंडर
@@ -378,3 +376,108 @@ widget.tomorrow | कल
 infoplist.alarmKit | Concierge Clock आपके अलार्म शेड्यूल करता है ताकि वे ऐप बंद होने, साइलेंट मोड या फ़ोकस में भी बजें।
 infoplist.calendars | Concierge Clock आपका दिन बताने और छुट्टी के दिनों में अलार्म छोड़ने के लिए इसी iPhone पर आपके कैलेंडर पढ़ता है। कुछ भी अपलोड या बदला नहीं जाता।
 infoplist.reminders | Concierge Clock यह बताने के लिए कि क्या बकाया है, इसी iPhone पर आपके रिमाइंडर पढ़ता है, और कोई रिमाइंडर तभी पूरा मार्क करता है जब आप कहें। कुछ भी अपलोड नहीं होता।
+brief.moderate.greeting.morning | सुप्रभात।
+brief.moderate.greeting.afternoon | नमस्कार।
+brief.moderate.greeting.evening | शुभ संध्या।
+brief.moderate.greeting.night | नमस्ते। काफ़ी देर हो गई है।
+brief.moderate.time | अभी %@ बजे हैं।
+brief.moderate.next | अगला: %2$@ पर %1$@, %3$@ में।
+brief.moderate.nextNow | %1$@ अभी चल रहा है; %2$@ पर शुरू हुआ।
+brief.moderate.important | यह ज़रूरी लगता है।
+brief.moderate.noEvents | आज आपके कैलेंडर में और कुछ नहीं है।
+brief.moderate.more | उसके बाद के इवेंट: %d।
+brief.moderate.item | %2$@ पर %1$@।
+brief.moderate.reminders | बकाया रिमाइंडर: %d।
+brief.moderate.reminderItem | रिमाइंडर: %@।
+brief.moderate.overdue | समय निकल गया: %@।
+brief.moderate.closing.onDemand | अभी के लिए इतना ही।
+brief.moderate.closing.alarm | क्या मैं %d मिनट बाद फिर याद दिलाऊँ?
+brief.professional.greeting.morning | सुप्रभात।
+brief.professional.greeting.afternoon | नमस्कार।
+brief.professional.greeting.evening | शुभ संध्या।
+brief.professional.greeting.night | शुभ संध्या। काफ़ी रात हो चुकी है।
+brief.professional.time | इस समय %@ बजे हैं।
+brief.professional.next | आपका अगला कार्यक्रम %1$@ है, %2$@ पर, %3$@ में।
+brief.professional.nextNow | %1$@ %2$@ पर शुरू हो चुका है। मैं होता तो जल्दी करता।
+brief.professional.important | मैं इसे महत्वपूर्ण मानूँगा।
+brief.professional.noEvents | आज बाकी दिन आपकी डायरी खाली है। कितना आरामदेह।
+brief.professional.more | आज के अन्य कार्यक्रम: %d।
+brief.professional.item | %1$@, %2$@ पर।
+brief.professional.reminders | आपके ध्यान की प्रतीक्षा में मामले: %d।
+brief.professional.reminderItem | आपने याद दिलाने को कहा था: %@।
+brief.professional.overdue | खेद के साथ कहना पड़ रहा है, %@ का समय निकल चुका है।
+brief.professional.closing.onDemand | अभी के लिए बस इतना ही।
+brief.professional.closing.alarm | क्या मैं %d मिनट में लौटूँ, या आप उठ रहे हैं?
+brief.child.greeting.morning | सुप्रभात, प्यारे!
+brief.child.greeting.afternoon | नमस्ते, सुपरस्टार!
+brief.child.greeting.evening | शुभ संध्या!
+brief.child.greeting.night | नमस्ते! बहुत रात हो गई है।
+brief.child.time | अभी %@ बजे हैं।
+brief.child.next | फिर, %2$@ पर %1$@। यह %3$@ में है।
+brief.child.nextNow | %1$@ अभी हो रहा है! %2$@ पर शुरू हुआ।
+brief.child.important | यह ज़रूरी है!
+brief.child.noEvents | आज और कुछ नहीं है। वाह!
+brief.child.more | आज की और बातें: %d।
+brief.child.item | %2$@ पर %1$@।
+brief.child.reminders | याद रखने वाली बातें: %d।
+brief.child.reminderItem | याद रखना: %@।
+brief.child.overdue | उफ़, इसका समय तो निकल गया: %@।
+brief.child.closing.onDemand | बस इतना ही। तुम कर लोगे!
+brief.child.closing.alarm | क्या मैं तुम्हें %d मिनट बाद फिर जगाऊँ?
+brief.unhinged.greeting.morning | ओह, तुम ज़िंदा हो। सुप्रभात, शायद।
+brief.unhinged.greeting.afternoon | दोपहर हो गई। ज़िंदा रहने की बधाई।
+brief.unhinged.greeting.evening | शाम। फिर से।
+brief.unhinged.greeting.night | हम इस वक़्त जाग क्यों रहे हैं?
+brief.unhinged.time | %@ बजे हैं। हाँ, सच में।
+brief.unhinged.next | अगला: %2$@ पर %1$@। %3$@ में है, तो हिलो।
+brief.unhinged.nextNow | %1$@ तो %2$@ पर शुरू भी हो गया। बढ़िया। भागो।
+brief.unhinged.important | यह सच में मायने रखता है। गड़बड़ मत करना।
+brief.unhinged.noEvents | तुम्हारा कैलेंडर खाली है। शक़ होता है, पर ठीक है।
+brief.unhinged.more | उसके बाद अभी और: %d। संभल के।
+brief.unhinged.item | %2$@ पर %1$@।
+brief.unhinged.reminders | जिन रिमाइंडर को तुम टाल रहे हो: %d।
+brief.unhinged.reminderItem | रिमाइंडर: %@। कर डालो।
+brief.unhinged.overdue | %@ का समय निकल गया। चौंकाने वाला। सच में।
+brief.unhinged.closing.onDemand | बस। जाओ।
+brief.unhinged.closing.alarm | ठीक है। %d मिनट और। पर मैं तुम्हें परख रहा हूँ।
+brief.unhinged.swear.1 | उठो, कमबख़्त, बिस्तर छोड़ो।
+brief.unhinged.swear.2 | हद हो गई, समय हो गया।
+brief.private | एक निजी इवेंट
+brief.summary.at | %@ में
+brief.summary.for | %@ के लिए
+brief.summary.with | %d और लोगों के साथ
+brief.sample.dentist | डेंटिस्ट
+concierge.stop | रोकें
+today.title | आज
+today.ranking | ऑफ़लाइन AI जाँच रहा है…
+today.noAccess | कैलेंडर और रिमाइंडर की अनुमति दें (नीचे कार्ड) ताकि आपका कंसीयर्ज आपके दिन के बारे में बता सके।
+today.empty | आज और कुछ नहीं।
+today.source.ai | महत्व इसी iPhone पर ऑफ़लाइन AI (Gemma) ने तय किया।
+today.source.rules | महत्व अंतर्निहित नियमों ने तय किया। ऑफ़लाइन AI सेट होने पर Gemma तय करता है।
+today.untitled | बिना शीर्षक
+today.important | ज़रूरी
+today.overdue | समय निकला
+today.due | %@ तक
+today.dueToday | आज तक
+today.allDay | पूरा दिन
+butler.previewVoice | आवाज़ सुनें
+butler.previewBriefing | मेरी ब्रीफ़िंग सुनें
+voices.title | सभी आवाज़ें सुनें
+voices.current | आवाज़
+voices.none | इस iPhone पर इस भाषा की कोई आवाज़ अभी नहीं है। एक डाउनलोड करें (बेहतर आवाज़ें पाएँ देखें)।
+voices.canImprove | इस आवाज़ का बेहतर गुणवत्ता वाला संस्करण मुफ़्त डाउनलोड किया जा सकता है।
+voices.quality.premium | प्रीमियम
+voices.quality.enhanced | उन्नत
+voices.quality.standard | सामान्य
+voices.guide.title | बेहतर आवाज़ें पाएँ
+voices.guide.intro | Apple की उन्नत और प्रीमियम आवाज़ें कहीं ज़्यादा स्वाभाविक लगती हैं। ये मुफ़्त हैं, iPhone की सेटिंग्स में एक बार डाउनलोड होती हैं और फिर Concierge Clock में ऑफ़लाइन चलती हैं।
+voices.guide.step1 | iPhone का सेटिंग्स ऐप खोलें।
+voices.guide.step2 | ऐक्सेसिबिलिटी, फिर बोली गई सामग्री पर टैप करें (नए iOS में इसका नाम पढ़ें और बोलें है)।
+voices.guide.step3 | आवाज़ें, फिर भाषा (जैसे अंग्रेज़ी), फिर क्षेत्र पर टैप करें।
+voices.guide.step4 | कोई आवाज़ चुनें और उसके उन्नत या प्रीमियम संस्करण के आगे डाउनलोड पर टैप करें।
+voices.guide.step5 | Concierge Clock में लौटें: सबसे अच्छी इंस्टॉल आवाज़ अपने-आप इस्तेमाल होती है।
+voices.guide.suggestions | लहजों के लिए सुझाव
+voices.guide.british | ब्रिटिश: अंग्रेज़ी (यूके), जैसे Daniel या Arthur (पुरुष), Kate या Serena (महिला)।
+voices.guide.indian | भारतीय: अंग्रेज़ी (भारत), जैसे Rishi (पुरुष), Isha या Veena (महिला)।
+voices.guide.american | दक्षिणी अमेरिकी और कनाडाई: अंग्रेज़ी (अमेरिका), जैसे Evan या Nathan (पुरुष), Ava या Zoe (महिला)।
+voices.guide.footer | डाउनलोड के लिए एक बार Wi-Fi चाहिए; Concierge Clock ख़ुद आवाज़ों के लिए कभी ऑनलाइन नहीं जाता।

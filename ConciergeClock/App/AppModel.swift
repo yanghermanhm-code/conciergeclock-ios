@@ -23,6 +23,10 @@ final class AppModel {
     let calendars: CalendarService
     /// AlarmKit: real alarms, snooze, the wake log written by each ring, widgets.
     let scheduler: AlarmScheduler
+    /// Today's items with their importance, and the briefing script.
+    let briefings: BriefingService
+    /// The butler's voice.
+    let speech = SpeechService()
     /// The offline AI model (Gemma): download, choice and engine. Shared with Greater Good
     /// Software's other apps.
     let models: ModelService
@@ -48,6 +52,7 @@ final class AppModel {
         let calendars = CalendarService()
         self.calendars = calendars
         self.scheduler = AlarmScheduler(database: database, settings: settings, calendars: calendars)
+        self.briefings = BriefingService(calendars: calendars, settings: settings, models: models)
     }
 
     /// The app's real database (Application Support, never purged by iOS).
@@ -159,9 +164,30 @@ final class AppModel {
         calendars.refresh()
         scheduler.setNeedsReconcile()
         backups.autoBackupIfDue(settings: settings)
+        Task { await briefings.refresh() }
+    }
+
+    // MARK: Briefing
+
+    /// "Brief Me Now": refreshes today's items, then speaks (or stops if already speaking).
+    func briefMeNow() {
+        if speech.state == .speaking {
+            speech.stop()
+            return
+        }
+        Task {
+            await briefings.refresh()
+            speech.speak(briefings.briefing(), persona: persona)
+        }
+    }
+
+    /// Plays a short sample in `persona`'s voice, tone and language.
+    func previewVoice(_ persona: Persona) {
+        speech.speak(briefings.sample(for: persona), persona: persona)
     }
 
     func didEnterBackground() {
+        speech.stop()
         backups.autoBackupIfDue(settings: settings)
     }
 

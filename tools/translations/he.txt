@@ -187,7 +187,6 @@ concierge.greeting.night | לילה טוב.
 concierge.introduction | אני %@, הקונסיירז׳ שלך.
 concierge.customize | התאמת הקונסיירז׳ שלך
 concierge.briefMe | תדרך אותי עכשיו
-concierge.briefMe.soon | תדריכים מדוברים מגיעים בשלב 2.
 concierge.nextAlarm | השעון המעורר הבא
 concierge.noAlarm | אין שעון מעורר
 concierge.ai.ready | מוכן: %@
@@ -195,7 +194,6 @@ concierge.ai.setup | עדיין לא הוגדר: הגדרות › בינה מל�
 concierge.ai.unsupported | לא זמין ב‑iPhone הזה. משתמשים בכללים המובנים.
 concierge.soon.title | מה הקונסיירז׳ שלך יעשה
 concierge.soon.message | כל עדכון מוסיף עוד. הכול פועל ב‑iPhone.
-concierge.soon.brief | להקריא את היום שלך: השעה, האירועים, התזכורות שהגיע מועדן ומה שחשוב
 concierge.soon.talk | להבין ״נודניק 10 דקות״, ״אני ער/ה״ או ״סמן כבוצע״
 concierge.soon.nightstand | מצב שידה: צליל רקע כל הלילה, שיחה מלאה בזמן ההשכמה
 concierge.soon.ask | לענות על ״מה יש לי היום?״
@@ -231,7 +229,7 @@ butler.voiceHeader | קול
 butler.voice | מבטא
 butler.voiceApproximated | עדיין אין קול iPhone במבטא הזה בדיוק, לכן משתמשים בקול הקרוב ביותר עם ביטויים מקומיים.
 butler.voiceEnglishOnly | המבטאים חלים על אנגלית. שפות אחרות משתמשות בקול שלהן.
-butler.voiceFooter | תצוגה מקדימה של הקול מגיעה עם התדריכים המדוברים בשלב 2.
+butler.voiceFooter | הקולות הם של ה‑iPhone עצמו ופועלים בלי רשת. מנוע מובנה עם קולות טבעיים יותר מגיע בשלב 7.
 butler.tone | טון
 butler.mildSwearing | לאפשר קללות קלות
 butler.briefing | תדריך
@@ -334,7 +332,7 @@ editor.skipDaysOff | לדלג על ימי חופש
 editor.skipDaysOffNeedsCalendar | אשר/י גישה ליומן בהגדרות › יומנים ותזכורות כדי שאפשר יהיה למצוא ימי חופש.
 editor.snoozeFooter | נודניק ממסך הנעילה מצלצל שוב אחרי מספר הדקות הזה. ימי חופש הם חגים ואירועים של יום שלם שמכילים את מילות החופש שלך.
 editor.butler | הקונסיירז׳ לשעון הזה
-editor.butlerFooter | ברירת המחדל לפי הגדרות › הקונסיירז׳ שלך. תדריכים מדוברים מגיעים בשלב 2.
+editor.butlerFooter | ברירת המחדל לפי הגדרות › הקונסיירז׳ שלך.
 editor.delete | מחיקת השעון
 editor.deleteConfirm | למחוק את השעון המעורר? הבקרים שלו נשארים ביומן ההשכמה.
 calendars.title | יומנים ותזכורות
@@ -378,3 +376,108 @@ widget.tomorrow | מחר
 infoplist.alarmKit | ‏Concierge Clock מתזמן את השעונים המעוררים כדי שיצלצלו גם כשהיישום סגור, במצב שקט או בזמן ריכוז.
 infoplist.calendars | ‏Concierge Clock קורא את היומנים שלך ב‑iPhone הזה כדי לספר לך על היום ולדלג על שעונים בימי חופש. שום דבר לא מועלה או משתנה.
 infoplist.reminders | ‏Concierge Clock קורא את התזכורות שלך ב‑iPhone הזה כדי לומר מה הגיע מועדו, ומסמן תזכורת כבוצעה רק כשתבקש/י. שום דבר לא מועלה.
+brief.moderate.greeting.morning | בוקר טוב.
+brief.moderate.greeting.afternoon | צהריים טובים.
+brief.moderate.greeting.evening | ערב טוב.
+brief.moderate.greeting.night | שלום. כבר מאוחר.
+brief.moderate.time | השעה %@.
+brief.moderate.next | הבא בתור: %1$@ ב‑%2$@, בעוד %3$@.
+brief.moderate.nextNow | %1$@ מתקיים עכשיו; התחיל ב‑%2$@.
+brief.moderate.important | זה נראה חשוב.
+brief.moderate.noEvents | אין יותר כלום ביומן שלך היום.
+brief.moderate.more | אירועים אחרי זה: %d.
+brief.moderate.item | %1$@ ב‑%2$@.
+brief.moderate.reminders | תזכורות שהגיע מועדן: %d.
+brief.moderate.reminderItem | תזכורת: %@.
+brief.moderate.overdue | באיחור: %@.
+brief.moderate.closing.onDemand | זה הכול לעכשיו.
+brief.moderate.closing.alarm | להזכיר לך שוב בעוד %d דקות?
+brief.professional.greeting.morning | בוקר טוב.
+brief.professional.greeting.afternoon | צהריים טובים.
+brief.professional.greeting.evening | ערב טוב.
+brief.professional.greeting.night | ערב טוב. השעה מאוחרת למדי.
+brief.professional.time | השעה %@.
+brief.professional.next | ההתחייבות הבאה שלך היא %1$@, ב‑%2$@, בעוד %3$@.
+brief.professional.nextNow | %1$@ כבר התחיל ב‑%2$@. במקומך הייתי ממהר.
+brief.professional.important | הייתי מתייחס לזה כחשוב.
+brief.professional.noEvents | היומן שלך פנוי לשארית היום. כמה נינוח.
+brief.professional.more | התחייבויות נוספות היום: %d.
+brief.professional.item | %1$@, ב‑%2$@.
+brief.professional.reminders | עניינים הממתינים לתשומת לבך: %d.
+brief.professional.reminderItem | ביקשת שאזכיר לך: %@.
+brief.professional.overdue | ‏%@, לצערי, באיחור.
+brief.professional.closing.onDemand | זה יהיה הכול לעת עתה.
+brief.professional.closing.alarm | לחזור בעוד %d דקות, או שתקום עכשיו?
+brief.child.greeting.morning | בוקר טוב, שמש שלי!
+brief.child.greeting.afternoon | צהריים טובים, כוכב!
+brief.child.greeting.evening | ערב טוב!
+brief.child.greeting.night | שלום! כבר מאוחר מאוד.
+brief.child.time | השעה %@.
+brief.child.next | אחר כך, %1$@ ב‑%2$@. זה בעוד %3$@.
+brief.child.nextNow | %1$@ קורה עכשיו! זה התחיל ב‑%2$@.
+brief.child.important | זה חשוב!
+brief.child.noEvents | אין עוד תוכניות היום. יש!
+brief.child.more | עוד דברים היום: %d.
+brief.child.item | %1$@ ב‑%2$@.
+brief.child.reminders | דברים לזכור: %d.
+brief.child.reminderItem | לזכור: %@.
+brief.child.overdue | אופס, זה כבר היה צריך לקרות: %@.
+brief.child.closing.onDemand | זה הכול. את/ה יכול/ה!
+brief.child.closing.alarm | להעיר אותך שוב בעוד %d דקות?
+brief.unhinged.greeting.morning | אה, אתה חי. בוקר טוב, כנראה.
+brief.unhinged.greeting.afternoon | כבר צהריים. כל הכבוד על הקיום.
+brief.unhinged.greeting.evening | ערב. שוב.
+brief.unhinged.greeting.night | למה אנחנו ערים עכשיו?
+brief.unhinged.time | השעה %@. כן, באמת.
+brief.unhinged.next | הבא: %1$@, ב‑%2$@. זה בעוד %3$@, אז זוז.
+brief.unhinged.nextNow | %1$@ כבר התחיל ב‑%2$@. נהדר. רוץ.
+brief.unhinged.important | זה באמת חשוב. אל תפשל.
+brief.unhinged.noEvents | היומן שלך ריק. חשוד, אבל בסדר.
+brief.unhinged.more | עוד מגיעים אחרי זה: %d. קח את זה בקלות.
+brief.unhinged.item | %1$@ ב‑%2$@.
+brief.unhinged.reminders | תזכורות שאתה מתעלם מהן: %d.
+brief.unhinged.reminderItem | תזכורת: %@. תעשה את זה.
+brief.unhinged.overdue | ‏%@ באיחור. מזעזע. באמת.
+brief.unhinged.closing.onDemand | זהו. לך.
+brief.unhinged.closing.alarm | טוב. עוד %d דקות. אבל אני שופט אותך.
+brief.unhinged.swear.1 | קום כבר מהמיטה, לעזאזל.
+brief.unhinged.swear.2 | לעזאזל, הגיע הזמן.
+brief.private | אירוע פרטי
+brief.summary.at | ב‑%@
+brief.summary.for | למשך %@
+brief.summary.with | עם עוד %d אנשים
+brief.sample.dentist | רופא השיניים
+concierge.stop | עצירה
+today.title | היום
+today.ranking | הבינה המלאכותית הלא מקוונת בודקת…
+today.noAccess | אשר/י יומנים ותזכורות (הכרטיס למטה) כדי שהקונסיירז׳ יספר לך על היום.
+today.empty | אין עוד כלום היום.
+today.source.ai | החשיבות נקבעה בבינה המלאכותית הלא מקוונת (Gemma), ב‑iPhone הזה.
+today.source.rules | החשיבות נקבעה בכללים מובנים. אחרי הגדרת הבינה המלאכותית הלא מקוונת, Gemma קובע.
+today.untitled | ללא כותרת
+today.important | חשוב
+today.overdue | באיחור
+today.due | עד %@
+today.dueToday | עד היום
+today.allDay | כל היום
+butler.previewVoice | השמעת הקול
+butler.previewBriefing | השמעת התדריך שלי
+voices.title | השמעת כל הקולות
+voices.current | קול
+voices.none | עדיין אין קול לשפה הזו ב‑iPhone הזה. הורד/י אחד (ראו קבלת קולות טובים יותר).
+voices.canImprove | אפשר להוריד בחינם גרסה איכותית יותר של הקול הזה.
+voices.quality.premium | פרימיום
+voices.quality.enhanced | משופר
+voices.quality.standard | רגיל
+voices.guide.title | קבלת קולות טובים יותר
+voices.guide.intro | הקולות המשופרים והפרימיום של Apple נשמעים טבעיים הרבה יותר. הם חינמיים, מורדים פעם אחת בהגדרות ה‑iPhone, ואז פועלים בלי רשת ב‑Concierge Clock.
+voices.guide.step1 | פתח/י את יישום ״הגדרות״ ב‑iPhone.
+voices.guide.step2 | הקש/י על ״נגישות״, ואז ״תוכן מוקרא״ (בגרסאות iOS חדשות נקרא ״הקראה ודיבור״).
+voices.guide.step3 | הקש/י על ״קולות״, אחר כך על השפה (למשל אנגלית), ואז על האזור.
+voices.guide.step4 | בחר/י קול והקש/י ״הורדה״ ליד הגרסה המשופרת או הפרימיום שלו.
+voices.guide.step5 | חזור/חזרי ל‑Concierge Clock: הקול הטוב ביותר שמותקן ישמש אוטומטית.
+voices.guide.suggestions | הצעות למבטאים
+voices.guide.british | בריטי: אנגלית (בריטניה), למשל Daniel או Arthur (גבר), Kate או Serena (אישה).
+voices.guide.indian | הודי: אנגלית (הודו), למשל Rishi (גבר), Isha או Veena (אישה).
+voices.guide.american | דרום ארה״ב וקנדה: אנגלית (ארה״ב), למשל Evan או Nathan (גבר), Ava או Zoe (אישה).
+voices.guide.footer | ההורדה דורשת Wi‑Fi פעם אחת; Concierge Clock עצמו אף פעם לא מתחבר לרשת בשביל קולות.

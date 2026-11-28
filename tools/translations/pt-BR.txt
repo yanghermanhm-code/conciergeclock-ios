@@ -187,7 +187,6 @@ concierge.greeting.night | Boa noite.
 concierge.introduction | Eu sou %@, seu concierge.
 concierge.customize | Personalizar seu concierge
 concierge.briefMe | Me atualize agora
-concierge.briefMe.soon | Os resumos falados chegam na fase 2.
 concierge.nextAlarm | Próximo alarme
 concierge.noAlarm | Nenhum alarme definido
 concierge.ai.ready | Pronta: %@
@@ -195,7 +194,6 @@ concierge.ai.setup | Ainda não configurada: Ajustes › IA offline.
 concierge.ai.unsupported | Indisponível neste iPhone. São usadas as regras integradas.
 concierge.soon.title | O que seu concierge vai fazer
 concierge.soon.message | Cada atualização traz mais. Tudo roda no seu iPhone.
-concierge.soon.brief | Ler seu dia em voz alta: a hora, os eventos, os lembretes pendentes e o que importa
 concierge.soon.talk | Entender “soneca de 10 minutos”, “já acordei” ou “marque como feito”
 concierge.soon.nightstand | Modo Mesa de cabeceira: som ambiente à noite e conversa completa no alarme
 concierge.soon.ask | Responder “O que tenho hoje?”
@@ -231,7 +229,7 @@ butler.voiceHeader | Voz
 butler.voice | Sotaque
 butler.voiceApproximated | Nenhuma voz do iPhone tem exatamente esse sotaque ainda, então é usada a mais próxima, com expressões regionais.
 butler.voiceEnglishOnly | Os sotaques valem para o inglês. Os outros idiomas usam a própria voz.
-butler.voiceFooter | A prévia da voz chega com os resumos falados na fase 2.
+butler.voiceFooter | As vozes são do próprio iPhone e funcionam offline. Um mecanismo integrado com vozes mais naturais chega na fase 7.
 butler.tone | Tom
 butler.mildSwearing | Permitir palavrões leves
 butler.briefing | Resumo
@@ -334,7 +332,7 @@ editor.skipDaysOff | Pular folgas
 editor.skipDaysOffNeedsCalendar | Permita o acesso à agenda em Ajustes › Agendas e lembretes para encontrar as folgas.
 editor.snoozeFooter | A soneca na tela bloqueada toca de novo após estes minutos. Folgas são feriados e eventos de dia inteiro com suas palavras de folga.
 editor.butler | Seu concierge para este alarme
-editor.butlerFooter | Padrão segue Ajustes › Seu concierge. Os resumos falados chegam na fase 2.
+editor.butlerFooter | Padrão segue Ajustes › Seu concierge.
 editor.delete | Apagar alarme
 editor.deleteConfirm | Apagar este alarme? As manhãs dele continuam no seu registro de despertares.
 calendars.title | Agendas e lembretes
@@ -378,3 +376,108 @@ widget.tomorrow | Amanhã
 infoplist.alarmKit | O Concierge Clock agenda seus alarmes para que toquem mesmo com o app fechado, no modo silencioso ou durante um Foco.
 infoplist.calendars | O Concierge Clock lê suas agendas neste iPhone para falar do seu dia e pular alarmes nas folgas. Nada é enviado nem alterado.
 infoplist.reminders | O Concierge Clock lê seus lembretes neste iPhone para dizer o que vence, e só marca um como feito quando você pede. Nada é enviado.
+brief.moderate.greeting.morning | Bom dia.
+brief.moderate.greeting.afternoon | Boa tarde.
+brief.moderate.greeting.evening | Boa noite.
+brief.moderate.greeting.night | Olá. Já é tarde.
+brief.moderate.time | Agora são %@.
+brief.moderate.next | A seguir: %1$@ às %2$@, daqui a %3$@.
+brief.moderate.nextNow | %1$@ está acontecendo agora; começou às %2$@.
+brief.moderate.important | Este parece importante.
+brief.moderate.noEvents | Nada mais na sua agenda hoje.
+brief.moderate.more | Eventos depois disso: %d.
+brief.moderate.item | %1$@ às %2$@.
+brief.moderate.reminders | Lembretes pendentes: %d.
+brief.moderate.reminderItem | Lembrete: %@.
+brief.moderate.overdue | Atrasado: %@.
+brief.moderate.closing.onDemand | Por enquanto é isso.
+brief.moderate.closing.alarm | Quer que eu lembre de novo em %d minutos?
+brief.professional.greeting.morning | Bom dia.
+brief.professional.greeting.afternoon | Boa tarde.
+brief.professional.greeting.evening | Boa noite.
+brief.professional.greeting.night | Boa noite. Já é bastante tarde.
+brief.professional.time | Agora são %@.
+brief.professional.next | Seu próximo compromisso é %1$@, às %2$@, daqui a %3$@.
+brief.professional.nextNow | %1$@ já começou, às %2$@. Eu me apressaria.
+brief.professional.important | Eu trataria este como importante.
+brief.professional.noEvents | Sua agenda está livre pelo resto do dia. Que repouso.
+brief.professional.more | Outros compromissos hoje: %d.
+brief.professional.item | %1$@, às %2$@.
+brief.professional.reminders | Assuntos aguardando sua atenção: %d.
+brief.professional.reminderItem | O senhor pediu para ser lembrado: %@.
+brief.professional.overdue | %@ está, lamento dizer, atrasado.
+brief.professional.closing.onDemand | Por ora, é tudo.
+brief.professional.closing.alarm | Volto em %d minutos, ou o senhor vai se levantar?
+brief.child.greeting.morning | Bom dia, solzinho!
+brief.child.greeting.afternoon | Boa tarde, campeão!
+brief.child.greeting.evening | Boa noite!
+brief.child.greeting.night | Oi! Já está muito tarde.
+brief.child.time | Agora são %@.
+brief.child.next | Depois, %1$@ às %2$@. Isso é daqui a %3$@.
+brief.child.nextNow | %1$@ é agora mesmo! Começou às %2$@.
+brief.child.important | Este é importante!
+brief.child.noEvents | Não tem mais nada hoje. Oba!
+brief.child.more | Outras coisas hoje: %d.
+brief.child.item | %1$@ às %2$@.
+brief.child.reminders | Coisas para lembrar: %d.
+brief.child.reminderItem | Lembra: %@.
+brief.child.overdue | Opa, isto já era para antes: %@.
+brief.child.closing.onDemand | É isso. Você consegue!
+brief.child.closing.alarm | Te acordo de novo em %d minutos?
+brief.unhinged.greeting.morning | Ah, você está vivo. Bom dia, eu acho.
+brief.unhinged.greeting.afternoon | É de tarde. Parabéns por existir.
+brief.unhinged.greeting.evening | Noite. De novo.
+brief.unhinged.greeting.night | Por que estamos acordados agora?
+brief.unhinged.time | Agora são %@. Sim, sério.
+brief.unhinged.next | A seguir: %1$@, às %2$@. Daqui a %3$@, então mexa-se.
+brief.unhinged.nextNow | %1$@ já começou às %2$@. Maravilha. Corra.
+brief.unhinged.important | Este importa de verdade. Não estrague.
+brief.unhinged.noEvents | Sua agenda está vazia. Suspeito, mas tudo bem.
+brief.unhinged.more | Ainda vêm depois: %d. Vá com calma.
+brief.unhinged.item | %1$@ às %2$@.
+brief.unhinged.reminders | Lembretes que você anda ignorando: %d.
+brief.unhinged.reminderItem | Lembrete: %@. Faça.
+brief.unhinged.overdue | %@ está atrasado. Chocante. Sério.
+brief.unhinged.closing.onDemand | É isso. Vai.
+brief.unhinged.closing.alarm | Tá bom. Mais %d minutos. Mas estou te julgando.
+brief.unhinged.swear.1 | Tira essa bunda da cama.
+brief.unhinged.swear.2 | Que droga, já está na hora.
+brief.private | um evento particular
+brief.summary.at | em %@
+brief.summary.for | por %@
+brief.summary.with | com mais %d pessoas
+brief.sample.dentist | o dentista
+concierge.stop | Parar
+today.title | Hoje
+today.ranking | A IA offline está verificando…
+today.noAccess | Permita agendas e lembretes (cartão abaixo) para que seu concierge fale do seu dia.
+today.empty | Nada mais hoje.
+today.source.ai | Importância avaliada pela IA offline (Gemma), neste iPhone.
+today.source.rules | Importância avaliada por regras integradas. Com a IA offline configurada, o Gemma avalia.
+today.untitled | Sem título
+today.important | Importante
+today.overdue | Atrasado
+today.due | Vence às %@
+today.dueToday | Vence hoje
+today.allDay | Dia inteiro
+butler.previewVoice | Ouvir a voz
+butler.previewBriefing | Ouvir meu resumo
+voices.title | Ouvir todas as vozes
+voices.current | Voz
+voices.none | Ainda não há voz para este idioma neste iPhone. Baixe uma (veja Obter vozes melhores).
+voices.canImprove | Uma versão de melhor qualidade desta voz pode ser baixada de graça.
+voices.quality.premium | Premium
+voices.quality.enhanced | Aprimorada
+voices.quality.standard | Padrão
+voices.guide.title | Obter vozes melhores
+voices.guide.intro | As vozes Aprimoradas e Premium da Apple soam muito mais naturais. São gratuitas, baixadas uma vez nos Ajustes do iPhone, e depois funcionam offline no Concierge Clock.
+voices.guide.step1 | Abra o app Ajustes do iPhone.
+voices.guide.step2 | Toque em Acessibilidade e depois em Conteúdo Falado (chamado Ler e Falar em versões recentes do iOS).
+voices.guide.step3 | Toque em Vozes, depois no idioma (por exemplo, Inglês) e depois na região.
+voices.guide.step4 | Escolha uma voz e toque em Baixar ao lado da versão Aprimorada ou Premium.
+voices.guide.step5 | Volte ao Concierge Clock: a melhor voz instalada é usada automaticamente.
+voices.guide.suggestions | Sugestões para os sotaques
+voices.guide.british | Britânico: Inglês (Reino Unido), por exemplo Daniel ou Arthur (masculino), Kate ou Serena (feminino).
+voices.guide.indian | Indiano: Inglês (Índia), por exemplo Rishi (masculino), Isha ou Veena (feminino).
+voices.guide.american | Sul dos EUA e Canadá: Inglês (EUA), por exemplo Evan ou Nathan (masculino), Ava ou Zoe (feminino).
+voices.guide.footer | O download precisa de Wi-Fi uma vez; o Concierge Clock nunca se conecta à internet para as vozes.

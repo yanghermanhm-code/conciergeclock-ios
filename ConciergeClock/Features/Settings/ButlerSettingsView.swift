@@ -35,6 +35,23 @@ struct ButlerSettingsView: View {
                         Text(l10n.accentName(accent)).tag(accent)
                     }
                 }
+                VoiceStatusRow(persona: settings.persona())
+                Button {
+                    model.previewVoice(settings.persona())
+                } label: {
+                    Label(l10n["butler.previewVoice"], systemImage: "play.circle")
+                }
+                .accessibilityIdentifier("butler.previewVoice")
+                NavigationLink {
+                    AllVoicesView()
+                } label: {
+                    Label(l10n["voices.title"], systemImage: "person.wave.2")
+                }
+                NavigationLink {
+                    VoiceDownloadGuide()
+                } label: {
+                    Label(l10n["voices.guide.title"], systemImage: "arrow.down.circle")
+                }
             } header: {
                 Text(l10n["butler.voiceHeader"])
             } footer: {
@@ -83,6 +100,13 @@ struct ButlerSettingsView: View {
                     }
                 }
                 Toggle(l10n["butler.speakTitles"], isOn: $store.settings.speakEventTitles)
+                Button {
+                    model.briefMeNow()
+                } label: {
+                    Label(model.speech.state == .speaking ? l10n["concierge.stop"] : l10n["butler.previewBriefing"],
+                          systemImage: model.speech.state == .speaking ? "stop.fill" : "text.bubble")
+                }
+                .accessibilityIdentifier("butler.previewBriefing")
             } header: {
                 Text(l10n["butler.briefing"])
             } footer: {
@@ -93,6 +117,7 @@ struct ButlerSettingsView: View {
             }
         }
         .navigationTitle(l10n["butler.title"])
+        .onDisappear { model.speech.stop() }
         .navigationBarTitleDisplayMode(.inline)
         .alert(l10n["unhinged.title"], isPresented: $pendingUnhinged) {
             Button(l10n["common.cancel"], role: .cancel) {}
@@ -127,5 +152,151 @@ struct ButlerSettingsView: View {
                 model.settings.settings.butlerName[keyPath: keyPath] = String(value.prefix(ButlerName.maxLength))
             }
         )
+    }
+}
+
+/// The iPhone voice that will speak, its quality, and whether a better one can be downloaded.
+private struct VoiceStatusRow: View {
+    let persona: Persona
+    @Environment(\.l10n) private var l10n
+
+    var body: some View {
+        let summary = VoiceCatalog.summary(for: persona)
+        VStack(alignment: .leading, spacing: 4) {
+            if let name = summary.name {
+                LabeledContent(l10n["voices.current"], value: "\(name) · \(qualityName(summary.quality))")
+            } else {
+                Label(l10n["voices.none"], systemImage: "exclamationmark.triangle")
+                    .foregroundStyle(.orange)
+            }
+            if summary.name != nil, summary.canImprove {
+                Text(l10n["voices.canImprove"])
+                    .font(.caption)
+                    .foregroundStyle(Theme.textSecondary)
+            }
+        }
+    }
+
+    private func qualityName(_ quality: VoiceCatalog.Quality?) -> String {
+        switch quality {
+        case .premium: l10n["voices.quality.premium"]
+        case .enhanced: l10n["voices.quality.enhanced"]
+        default: l10n["voices.quality.standard"]
+        }
+    }
+}
+
+/// Every accent and tone, each with a Preview button, in the briefing language.
+struct AllVoicesView: View {
+    @Environment(AppModel.self) private var model
+    @Environment(\.l10n) private var l10n
+
+    var body: some View {
+        let base = model.settings.settings.persona()
+        List {
+            if base.usesAccent {
+                Section(l10n["butler.voice"]) {
+                    ForEach(VoiceAccent.allCases) { accent in
+                        previewRow(
+                            title: l10n.accentName(accent),
+                            detail: VoiceCatalog.summary(for: base.with(accent: accent)).name ?? l10n["voices.none"],
+                            persona: base.with(accent: accent)
+                        )
+                    }
+                }
+            } else {
+                Section {
+                    Text(l10n["butler.voiceEnglishOnly"])
+                        .font(.footnote)
+                        .foregroundStyle(Theme.textSecondary)
+                }
+            }
+            Section(l10n["butler.tone"]) {
+                ForEach(PersonaTone.allCases) { tone in
+                    previewRow(title: l10n.toneName(tone), detail: l10n.toneHint(tone), persona: base.with(tone: tone))
+                }
+            }
+        }
+        .navigationTitle(l10n["voices.title"])
+        .navigationBarTitleDisplayMode(.inline)
+        .onDisappear { model.speech.stop() }
+    }
+
+    private func previewRow(title: String, detail: String, persona: Persona) -> some View {
+        Button {
+            model.previewVoice(persona)
+        } label: {
+            HStack {
+                VStack(alignment: .leading, spacing: 2) {
+                    Text(title).foregroundStyle(Theme.textPrimary)
+                    Text(detail).font(.caption).foregroundStyle(Theme.textSecondary)
+                }
+                Spacer()
+                Image(systemName: "play.circle.fill")
+                    .font(.title2)
+                    .foregroundStyle(ConciergeStyle.tint)
+            }
+        }
+        .accessibilityHint(l10n["butler.previewVoice"])
+    }
+}
+
+/// How to download better (Enhanced / Premium) voices in iOS Settings. They are free, made by
+/// Apple, and once downloaded work offline in every app.
+struct VoiceDownloadGuide: View {
+    @Environment(\.l10n) private var l10n
+
+    var body: some View {
+        List {
+            Section {
+                Text(l10n["voices.guide.intro"])
+                    .font(.subheadline)
+                    .foregroundStyle(Theme.textSecondary)
+            }
+            Section(l10n["calendars.guide.stepsTitle"]) {
+                ForEach(1...5, id: \.self) { number in
+                    HStack(alignment: .firstTextBaseline, spacing: 12) {
+                        Text(l10n.number(number))
+                            .font(.headline.monospacedDigit())
+                            .frame(width: 26, height: 26)
+                            .background(ConciergeStyle.tint.opacity(0.15), in: Circle())
+                            .foregroundStyle(ConciergeStyle.tint)
+                        Text(l10n["voices.guide.step\(number)"])
+                            .fixedSize(horizontal: false, vertical: true)
+                    }
+                    .accessibilityElement(children: .combine)
+                }
+            }
+            Section(l10n["voices.guide.suggestions"]) {
+                Text(l10n["voices.guide.british"])
+                Text(l10n["voices.guide.indian"])
+                Text(l10n["voices.guide.american"])
+            }
+            Section {
+                Button(l10n["alarms.permission.openSettings"]) {
+                    if let url = URL(string: UIApplication.openSettingsURLString) {
+                        UIApplication.shared.open(url)
+                    }
+                }
+            } footer: {
+                Text(l10n["voices.guide.footer"])
+            }
+        }
+        .navigationTitle(l10n["voices.guide.title"])
+        .navigationBarTitleDisplayMode(.inline)
+    }
+}
+
+private extension Persona {
+    func with(accent: VoiceAccent) -> Persona {
+        var copy = self
+        copy.accent = accent
+        return copy
+    }
+
+    func with(tone: PersonaTone) -> Persona {
+        var copy = self
+        copy.tone = tone
+        return copy
     }
 }

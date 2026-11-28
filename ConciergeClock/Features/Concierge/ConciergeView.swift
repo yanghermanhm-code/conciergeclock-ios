@@ -16,6 +16,7 @@ struct ConciergeView: View {
         ScrollView {
             VStack(spacing: 16) {
                 greeting(persona)
+                TodayCard()
                 nextAlarmCard
                 calendarsCard
                 offlineAICard
@@ -24,7 +25,6 @@ struct ConciergeView: View {
                     title: l10n["concierge.soon.title"],
                     message: l10n["concierge.soon.message"],
                     items: [
-                        l10n["concierge.soon.brief"],
                         l10n["concierge.soon.talk"],
                         l10n["concierge.soon.nightstand"],
                         l10n["concierge.soon.ask"],
@@ -36,6 +36,8 @@ struct ConciergeView: View {
             .padding(.vertical, 12)
         }
         .background(Theme.background)
+        .task { await model.briefings.refresh() }
+        .refreshable { await model.briefings.refresh() }
         .sheet(isPresented: $showingButlerSettings) {
             NavigationStack {
                 ButlerSettingsView()
@@ -76,16 +78,21 @@ struct ConciergeView: View {
             .buttonStyle(.bordered)
             .accessibilityIdentifier("concierge.customize")
 
-            Button {} label: {
-                Label(l10n["concierge.briefMe"], systemImage: "speaker.wave.2")
-                    .frame(maxWidth: .infinity)
+            Button {
+                model.briefMeNow()
+            } label: {
+                Label(
+                    model.speech.state == .speaking ? l10n["concierge.stop"] : l10n["concierge.briefMe"],
+                    systemImage: model.speech.state == .speaking ? "stop.fill" : "speaker.wave.2"
+                )
+                .frame(maxWidth: .infinity)
             }
             .buttonStyle(.borderedProminent)
             .controlSize(.large)
-            .disabled(true)
-            Text(l10n["concierge.briefMe.soon"])
-                .font(.caption)
-                .foregroundStyle(Theme.textSecondary)
+            .accessibilityIdentifier("concierge.briefMe")
+            if let briefing = model.speech.current {
+                TranscriptView(briefing: briefing, currentLineID: model.speech.currentLineID)
+            }
         }
         .frame(maxWidth: .infinity)
         .cardStyle()
@@ -272,5 +279,113 @@ struct FlowLayout: Layout {
         }
         if !current.indices.isEmpty { rows.append(current) }
         return rows
+    }
+}
+
+/// The briefing as text while it is spoken, with the current sentence highlighted.
+private struct TranscriptView: View {
+    let briefing: Briefing
+    let currentLineID: Int?
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 6) {
+            ForEach(briefing.lines) { line in
+                Text(line.text)
+                    .font(.callout)
+                    .foregroundStyle(line.id == currentLineID ? Theme.textPrimary : Theme.textSecondary)
+                    .fontWeight(line.id == currentLineID ? .semibold : .regular)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+            }
+        }
+        .padding(12)
+        .background(Theme.surfaceMuted, in: RoundedRectangle(cornerRadius: 14, style: .continuous))
+        .environment(\.layoutDirection, AppLanguage(rawValue: briefing.languageCode)?.isRightToLeft == true ? .rightToLeft : .leftToRight)
+        .accessibilityElement(children: .combine)
+    }
+}
+
+/// Today's events and due reminders with their importance, as the butler will read them.
+private struct TodayCard: View {
+    @Environment(AppModel.self) private var model
+    @Environment(\.l10n) private var l10n
+
+    var body: some View {
+        let briefings = model.briefings
+        let items = briefings.items.filter { !($0.item.kind == .event && $0.item.isAllDay && $0.importance == .low) }
+        VStack(alignment: .leading, spacing: 10) {
+            HStack {
+                Text(l10n["today.title"])
+                    .font(.headline)
+                    .foregroundStyle(Theme.textPrimary)
+                Spacer()
+                if briefings.isRanking {
+                    ProgressView()
+                        .controlSize(.small)
+                    Text(l10n["today.ranking"])
+                        .font(.caption)
+                        .foregroundStyle(Theme.textSecondary)
+                }
+            }
+            if model.calendars.eventAccess != .granted && model.calendars.reminderAccess != .granted {
+                Text(l10n["today.noAccess"])
+                    .font(.subheadline)
+                    .foregroundStyle(Theme.textSecondary)
+            } else if items.isEmpty {
+                Text(l10n["today.empty"])
+                    .font(.subheadline)
+                    .foregroundStyle(Theme.textSecondary)
+            } else {
+                ForEach(items) { ranked in
+                    TodayRow(ranked: ranked)
+                }
+                Text(briefings.usesOfflineAI ? l10n["today.source.ai"] : l10n["today.source.rules"])
+                    .font(.caption)
+                    .foregroundStyle(Theme.textSecondary)
+            }
+        }
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .cardStyle()
+    }
+}
+
+private struct TodayRow: View {
+    let ranked: RankedItem
+    @Environment(\.l10n) private var l10n
+
+    var body: some View {
+        let item = ranked.item
+        HStack(alignment: .firstTextBaseline, spacing: 10) {
+            Image(systemName: item.kind == .event ? "calendar" : "checklist")
+                .foregroundStyle(ConciergeStyle.brass)
+                .frame(width: 22)
+                .accessibilityHidden(true)
+            VStack(alignment: .leading, spacing: 2) {
+                Text(item.title.nonBlank ?? l10n["today.untitled"])
+                    .font(.subheadline.weight(.semibold))
+                    .foregroundStyle(Theme.textPrimary)
+                Text(detail(item))
+                    .font(.caption)
+                    .foregroundStyle(item.isOverdue ? Color.orange : Theme.textSecondary)
+            }
+            Spacer(minLength: 0)
+            if ranked.importance == .high {
+                Text(l10n["today.important"])
+                    .font(.caption2.weight(.bold))
+                    .padding(.horizontal, 7)
+                    .padding(.vertical, 3)
+                    .background(ConciergeStyle.brass.opacity(0.18), in: Capsule())
+                    .foregroundStyle(ConciergeStyle.brass)
+            }
+        }
+        .accessibilityElement(children: .combine)
+    }
+
+    private func detail(_ item: BriefingItem) -> String {
+        if item.kind == .reminder {
+            if item.isOverdue { return l10n["today.overdue"] }
+            return item.date.map { l10n("today.due", l10n.time($0)) } ?? l10n["today.dueToday"]
+        }
+        if item.isAllDay { return l10n["today.allDay"] }
+        return [item.date.map { l10n.time($0) }, item.location].compactMap { $0 }.joined(separator: " · ")
     }
 }
