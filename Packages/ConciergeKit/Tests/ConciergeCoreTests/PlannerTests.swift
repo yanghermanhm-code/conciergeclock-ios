@@ -90,4 +90,17 @@ final class PlannerTests: XCTestCase {
         XCTAssertNil(alarm.date)
         XCTAssertFalse(alarm.isDated)
     }
+
+    func testExactDateAlarmForTheCurrentMinuteRingsAtOnce() {
+        let today = DayKey(now, calendar: calendar)
+        // 08:00:40 with an alarm for today 08:00.
+        let at = now.addingTimeInterval(40)
+        let alarm = Alarm(id: "N", hour: 8, minute: 0, repeatDays: [], date: today)
+        XCTAssertEqual(alarm.nextFireDate(after: at, calendar: calendar), now)
+        let rings = AlarmPlanner.plan(alarms: [alarm], after: at, calendar: calendar)
+        XCTAssertEqual(rings.first?.fireDate, at.addingTimeInterval(3))
+        XCTAssertEqual(rings.first?.id, AlarmPlanner.occurrenceID(alarmID: "N", fireDate: now))
+        // A minute later it has passed.
+        XCTAssertNil(alarm.nextFireDate(after: now.addingTimeInterval(61), calendar: calendar))
+    }
 }

@@ -40,7 +40,10 @@ public enum AlarmPlanner {
             // date even if it looks like a day off (the person chose it).
             if alarm.isDated {
                 if let fire = alarm.nextFireDate(after: now, calendar: calendar) {
-                    rings.append(PlannedRing(id: occurrenceID(alarmID: alarm.id, fireDate: fire), alarmID: alarm.id, fireDate: fire))
+                    // Set for the current minute: ring a few seconds from now. The id stays tied to
+                    // the alarm's own minute, so re-planning does not schedule it twice.
+                    let ring = max(fire, now.addingTimeInterval(3))
+                    rings.append(PlannedRing(id: occurrenceID(alarmID: alarm.id, fireDate: fire), alarmID: alarm.id, fireDate: ring))
                 }
                 continue
             }

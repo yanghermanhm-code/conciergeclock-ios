@@ -23,10 +23,13 @@ struct AlarmEditorView: View {
         NavigationStack {
             Form {
                 Section {
-                    DatePicker(l10n["editor.time"], selection: timeBinding, displayedComponents: .hourAndMinute)
-                        .datePickerStyle(.wheel)
-                        .labelsHidden()
-                        .frame(maxWidth: .infinity)
+                    // Repeating alarms: just the time. Dated alarms set date and time together below.
+                    if scheduleKind == .repeating {
+                        DatePicker(l10n["editor.time"], selection: timeBinding, displayedComponents: .hourAndMinute)
+                            .datePickerStyle(.wheel)
+                            .labelsHidden()
+                            .frame(maxWidth: .infinity)
+                    }
                     TextField(l10n["editor.label"], text: $alarm.label)
                         .accessibilityIdentifier("editor.label")
                 }
@@ -41,9 +44,10 @@ struct AlarmEditorView: View {
                     case .repeating:
                         WeekdayPicker(days: repeatBinding)
                     case .date:
+                        // Today and the current minute are allowed: an alarm set for "now" rings at once.
                         DatePicker(
-                            l10n["editor.date"], selection: dateBinding,
-                            in: Calendar.current.startOfDay(for: Date())..., displayedComponents: .date
+                            l10n["editor.date"], selection: dateTimeBinding,
+                            in: Self.startOfCurrentMinute()..., displayedComponents: [.date, .hourAndMinute]
                         )
                         .datePickerStyle(.graphical)
                     }
@@ -157,7 +161,11 @@ struct AlarmEditorView: View {
                 switch kind {
                 case .date:
                     alarm.repeatDays = []
-                    let next = Alarm(hour: alarm.hour, minute: alarm.minute, repeatDays: []).nextFireDate(after: Date()) ?? Date()
+                    // The next time the chosen time comes round (today if it is still ahead,
+                    // including the current minute).
+                    let now = Date()
+                    let today = Calendar.current.date(bySettingHour: alarm.hour, minute: alarm.minute, second: 0, of: now) ?? now
+                    let next = today >= Self.startOfCurrentMinute(now) ? today : (Calendar.current.date(byAdding: .day, value: 1, to: today) ?? today)
                     alarm.date = DayKey(next)
                 case .repeating:
                     alarm.date = nil
@@ -177,11 +185,25 @@ struct AlarmEditorView: View {
         )
     }
 
-    private var dateBinding: Binding<Date> {
+    /// The dated alarm's day and time as one value.
+    private var dateTimeBinding: Binding<Date> {
         Binding(
-            get: { alarm.date?.date() ?? Date() },
-            set: { alarm.date = DayKey($0) }
+            get: {
+                let day = alarm.date?.date() ?? Date()
+                return Calendar.current.date(bySettingHour: alarm.hour, minute: alarm.minute, second: 0, of: day) ?? day
+            },
+            set: { value in
+                let parts = Calendar.current.dateComponents([.hour, .minute], from: value)
+                alarm.date = DayKey(value)
+                alarm.hour = parts.hour ?? alarm.hour
+                alarm.minute = parts.minute ?? alarm.minute
+                alarm.skipDay = nil
+            }
         )
+    }
+
+    static func startOfCurrentMinute(_ now: Date = Date()) -> Date {
+        Calendar.current.dateInterval(of: .minute, for: now)?.start ?? now
     }
 
     /// "Mon Wed Fri", "Rings once…", or "Friday 12 December 2026 at 7:00 — in 14 days".

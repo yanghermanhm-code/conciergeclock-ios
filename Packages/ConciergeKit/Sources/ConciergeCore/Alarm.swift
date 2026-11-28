@@ -105,9 +105,10 @@ public struct Alarm: Codable, Sendable, Hashable, Identifiable {
         guard isEnabled else { return nil }
         if !repeats, let date {
             // Exactly that day at the alarm's time; nothing once it has passed.
+            // Still due during its own minute: an alarm set for "now" rings at once.
             guard let day = date.date(calendar: calendar),
                   let fire = calendar.date(bySettingHour: hour, minute: minute, second: 0, of: day),
-                  fire > now else { return nil }
+                  fire.addingTimeInterval(60) > now else { return nil }
             if let skipDay, DayKey(fire, calendar: calendar) == skipDay { return nil }
             return fire
         }
