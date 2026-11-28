@@ -1,20 +1,20 @@
-// New in GGSBrand (Concierge Clock): the butler node mesh. Same drawing style as
+// New in GGSBrand (ConciergeClock): the butler node mesh. Same drawing style as
 // ShieldNetworkMark and GradCapNetworkMark — if another app adopts it, keep every copy identical.
-// Geometry: tools/butler_geometry.py in the Concierge Clock repository
+// Geometry: tools/butler_geometry.py in the ConciergeClock repository
 // (`python3 tools/generate_icons.py --swift` prints the tables below).
 
 import SwiftUI
 
 public extension Brand {
-    /// Concierge Clock's brass/gold (decoration only: marks, rings, the clock).
+    /// ConciergeClock's brass/gold (decoration only: marks, rings, the clock).
     static let brass = Color(hex: 0xC9A44C)
     static let brassOnDark = Color(hex: 0xD9B65E)
-    /// Concierge Clock's teal (decoration only).
+    /// ConciergeClock's teal (decoration only).
     static let teal = Color(hex: 0x1FA3A0)
     static let tealOnDark = Color(hex: 0x36C2BC)
 }
 
-/// Concierge Clock's signature mark: the Greater Good node-and-edge mesh shaped into a butler
+/// ConciergeClock's signature mark: the Greater Good node-and-edge mesh shaped into a butler
 /// carrying a tray with an alarm clock on it. Drawn natively so it is sharp at any size and needs no
 /// image assets. Geometry matches Design/conciergeclock-mark.svg.
 public struct ButlerNetworkMark: View {
@@ -27,7 +27,7 @@ public struct ButlerNetworkMark: View {
     public var body: some View {
         ButlerCanvas(progress: 1, style: style)
             .accessibilityElement()
-            .accessibilityLabel(Text(verbatim: "Concierge Clock"))
+            .accessibilityLabel(Text(verbatim: "ConciergeClock"))
             .accessibilityAddTraits(.isImage)
     }
 }

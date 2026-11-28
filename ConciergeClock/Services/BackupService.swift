@@ -13,7 +13,7 @@ extension UTType {
 
 /// Backups, restores, spreadsheets and the automatic backup to a folder the user chooses.
 /// Every file is created on the iPhone and handed to the share sheet or written to the chosen
-/// folder (Files, iCloud Drive…); Concierge Clock itself never uploads anything.
+/// folder (Files, iCloud Drive…); ConciergeClock itself never uploads anything.
 @MainActor
 @Observable
 final class BackupService {
@@ -206,12 +206,12 @@ final class BackupService {
         return try? URL(resolvingBookmarkData: bookmark, options: [], relativeTo: nil, bookmarkDataIsStale: &stale)
     }
 
-    /// Deletes all but the newest `keep` Concierge Clock backups in `folder` (only files this
+    /// Deletes all but the newest `keep` ConciergeClock backups in `folder` (only files this
     /// app named; nothing else in the folder is touched).
     nonisolated private static func pruneAutoBackups(in folder: URL, keep: Int) {
         let names = (try? FileManager.default.contentsOfDirectory(atPath: folder.path)) ?? []
         let backups = names
-            .filter { $0.hasPrefix("Concierge Clock Backup ") && $0.hasSuffix("." + BackupPayload.fileExtension) }
+            .filter { $0.hasPrefix("ConciergeClock Backup ") && $0.hasSuffix("." + BackupPayload.fileExtension) }
             .sorted(by: >) // The date stamp sorts chronologically.
         for name in backups.dropFirst(keep) {
             try? FileManager.default.removeItem(at: folder.appendingPathComponent(name))

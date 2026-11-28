@@ -18,7 +18,7 @@ settings.haptics | ہیپٹکس
 settings.appIcon | ایپ آئیکن
 icon.dark | گہرا
 icon.light | ہلکا
-settings.aboutApp | Concierge Clock کے بارے میں
+settings.aboutApp | ConciergeClock کے بارے میں
 ai.ready | تیار
 ai.notReady | دستیاب نہیں
 about.title | تعارف
@@ -51,7 +51,7 @@ company.fotophilter | فلمی انداز، ریٹچ اور حرکت کے سات
 company.footer | سب کی بھلائی کے لیے، محبت سے بنایا گیا۔
 a11y.companyLogo | Greater Good Software کے بارے میں
 error.title | کچھ غلط ہو گیا
-error.launchTitle | Concierge Clock اپنا ڈیٹا نہیں کھول سکا
+error.launchTitle | ConciergeClock اپنا ڈیٹا نہیں کھول سکا
 launch.skipHint | اینیمیشن چھوڑنے کے لیے دو بار تھپتھپائیں۔
 minutes.count | %d منٹ
 backup.title | بیک اپ اور برآمد
@@ -63,8 +63,8 @@ backup.never | ابھی کوئی بیک اپ نہیں۔
 backup.confirmTitle | سب کچھ اس بیک اپ سے بدلیں؟
 backup.confirmRestore | بیک اپ بحال کریں
 backup.openFailed | بیک اپ نہیں کھل سکا
-backup.error.notABackup | یہ Concierge Clock بیک اپ نہیں، یا فائل خراب ہے۔
-backup.error.newer | یہ بیک اپ Concierge Clock کے نئے ورژن سے بنا ہے۔ ایپ اپ ڈیٹ کریں، پھر کوشش کریں۔
+backup.error.notABackup | یہ ConciergeClock بیک اپ نہیں، یا فائل خراب ہے۔
+backup.error.newer | یہ بیک اپ ConciergeClock کے نئے ورژن سے بنا ہے۔ ایپ اپ ڈیٹ کریں، پھر کوشش کریں۔
 backup.error.damaged | یہ بیک اپ خراب ہے اور بحال نہیں ہو سکتا۔ کچھ نہیں بدلا گیا۔
 backup.error.write | فائل لکھی نہیں جا سکی۔ دیکھیں کہ کافی خالی جگہ موجود ہے۔
 export.footer | رپورٹس اور اسپریڈ شیٹس اسی iPhone پر بنتی ہیں۔ انہیں کہاں بھیجنا ہے، آپ طے کرتے ہیں۔
@@ -148,14 +148,14 @@ settings.aiFooter | آف لائن AI (Gemma) طے کرتا ہے کہ کون سے
 settings.startHere.body | اس iPhone کے لیے %1$@ (%2$@) ڈاؤن لوڈ کریں۔ پھر آپ کا کنسیئرج طے کرے گا کہ کون سے ایونٹ اہم ہیں، زیادہ فطری انداز میں بولے گا اور غیر رسمی درخواستیں بھی سمجھے گا — سب آپ کے iPhone پر۔ Wi-Fi پر چند منٹ لگتے ہیں۔
 ai.use | آف لائن AI استعمال کریں
 ai.useFooter | بند ہونے یا ڈاؤن لوڈ نہ ہونے پر آپ کا کنسیئرج بلٹ اِن اصول استعمال کرتا ہے: ہر فیچر کام کرتا رہتا ہے۔
-ai.unsupported | اس iPhone میں آف لائن AI کے لیے کافی میموری نہیں ہے۔ Concierge Clock اپنے بلٹ اِن اصول استعمال کرتا ہے۔
+ai.unsupported | اس iPhone میں آف لائن AI کے لیے کافی میموری نہیں ہے۔ ConciergeClock اپنے بلٹ اِن اصول استعمال کرتا ہے۔
 ai.modelsFooter | Google کا Gemma 4 (Apache 2.0)، Hugging Face سے ایک بار ڈاؤن لوڈ اور استعمال سے پہلے جانچا جاتا ہے۔ یہ مکمل طور پر اسی iPhone پر چلتا ہے اور PrepPilot، FocusFound اور FotoPhilter کے ساتھ شیئر ہوتا ہے، اس لیے صرف ایک بار ڈاؤن لوڈ ہوتا ہے۔
 ai.deleteMessage | PrepPilot، FocusFound اور FotoPhilter بھی یہی کاپی استعمال کرتے ہیں، اس لیے وہ بھی اسے کھو دیں گے۔ اسے دوبارہ ڈاؤن لوڈ کیا جا سکتا ہے۔
 ai.test.json | اہمیت کی جانچ (JSON)
-guide.intro.shared | ایک ہی ڈاؤن لوڈ اس iPhone پر Greater Good Software کی تمام ایپس (Concierge Clock، PrepPilot، FocusFound، FotoPhilter) کے کام آتا ہے۔
+guide.intro.shared | ایک ہی ڈاؤن لوڈ اس iPhone پر Greater Good Software کی تمام ایپس (ConciergeClock، PrepPilot، FocusFound، FotoPhilter) کے کام آتا ہے۔
 guide.app.openSettings | کسی بھی ٹیب کے اوپر گیئر بٹن پر ٹیپ کریں۔
 guide.app.check | کنسیئرج ٹیب میں آف لائن AI کارڈ پر “تیار: %@” نظر آئے گا۔
-about.offline.detail | کوئی اکاؤنٹ نہیں، کوئی کلاؤڈ نہیں، کوئی سرور نہیں۔ Concierge Clock ایئرپلین موڈ میں کام کرتا ہے۔
+about.offline.detail | کوئی اکاؤنٹ نہیں، کوئی کلاؤڈ نہیں، کوئی سرور نہیں۔ ConciergeClock ایئرپلین موڈ میں کام کرتا ہے۔
 about.tracking.detail | کوئی اینالیٹکس نہیں، کوئی اشتہار نہیں، اور آپ کے کیلنڈر یا آپ کی کہی باتوں کا کوئی ریکارڈ نہیں۔
 about.onDevice.title | AI جو آپ کے iPhone پر ہی رہتا ہے
 about.onDevice.detail | اختیاری آف لائن AI آپ کے iPhone پر چلتا ہے۔ آپ کا کیلنڈر اور یاد دہانیاں کبھی اپ لوڈ نہیں ہوتیں۔
@@ -163,9 +163,9 @@ about.voice.title | سنتا ہے، ریکارڈ نہیں کرتا
 about.voice.detail | آپ کی آواز iPhone پر ہی سمجھی جاتی ہے اور کبھی محفوظ نہیں ہوتی۔ صرف جاگنے کے اوقات اور گنتی رکھی جاتی ہے۔
 company.conciergeclock | آف لائن بولنے والی الارم گھڑی، آپ کے اپنے کیلنڈر سے صبح کی بریفنگ کے ساتھ۔
 error.launchMessage | آپ کے الارم اور جاگنے کا ریکارڈ حذف نہیں ہوئے۔ براہ کرم ایپ دوبارہ شروع کریں۔ اگر ایسا ہوتا رہے تو یہ پیغام لے کر سپورٹ سے رابطہ کریں:\n\n%@
-terms.body | Concierge Clock ایک بار کی خریداری کے طور پر فروخت ہوتا ہے اور Apple کے معیاری اینڈ یوزر لائسنس ایگریمنٹ کے تحت آپ کو لائسنس دیا جاتا ہے۔\n\nآپ کے الارم، سیٹنگز اور جاگنے کا ریکارڈ آپ کے iPhone پر ہی رہتے ہیں۔ Greater Good Software انہیں کبھی وصول، محفوظ یا شیئر نہیں کرتا۔\n\nConcierge Clock آپ کو جاگنے اور دن کی منصوبہ بندی میں مدد دیتا ہے۔ جو چیز کسی صورت نہیں چھوٹنی چاہیے، اس کے لیے دوسرا الارم بھی لگائیں۔ بریفنگ خودکار طور پر بنتی ہے اور اس میں غلطیاں ہو سکتی ہیں، اس لیے اہم باتوں کے لیے اپنا کیلنڈر دیکھیں۔\n\nConcierge Clock “جیسا ہے” کی بنیاد پر فراہم کیا جاتا ہے، کسی قسم کی ضمانت کے بغیر۔
-backup.footer | بیک اپ آپ کی سیٹنگز، الارم اور جاگنے کا ریکارڈ ایک .conciergeclock فائل میں رکھتا ہے۔ اسے Files، iCloud Drive یا کمپیوٹر میں محفوظ کریں — Concierge Clock اسے کبھی اپ لوڈ نہیں کرتا۔
-backup.confirmMessage | %1$@ کا بیک اپ: %2$d الارم اور جاگنے کے ریکارڈ میں %3$d صبحیں۔ اس iPhone پر Concierge Clock میں اس وقت موجود سب کچھ بدل دیا جائے گا۔
+terms.body | ConciergeClock ایک بار کی خریداری کے طور پر فروخت ہوتا ہے اور Apple کے معیاری اینڈ یوزر لائسنس ایگریمنٹ کے تحت آپ کو لائسنس دیا جاتا ہے۔\n\nآپ کے الارم، سیٹنگز اور جاگنے کا ریکارڈ آپ کے iPhone پر ہی رہتے ہیں۔ Greater Good Software انہیں کبھی وصول، محفوظ یا شیئر نہیں کرتا۔\n\nConciergeClock آپ کو جاگنے اور دن کی منصوبہ بندی میں مدد دیتا ہے۔ جو چیز کسی صورت نہیں چھوٹنی چاہیے، اس کے لیے دوسرا الارم بھی لگائیں۔ بریفنگ خودکار طور پر بنتی ہے اور اس میں غلطیاں ہو سکتی ہیں، اس لیے اہم باتوں کے لیے اپنا کیلنڈر دیکھیں۔\n\nConciergeClock “جیسا ہے” کی بنیاد پر فراہم کیا جاتا ہے، کسی قسم کی ضمانت کے بغیر۔
+backup.footer | بیک اپ آپ کی سیٹنگز، الارم اور جاگنے کا ریکارڈ ایک .conciergeclock فائل میں رکھتا ہے۔ اسے Files، iCloud Drive یا کمپیوٹر میں محفوظ کریں — ConciergeClock اسے کبھی اپ لوڈ نہیں کرتا۔
+backup.confirmMessage | %1$@ کا بیک اپ: %2$d الارم اور جاگنے کے ریکارڈ میں %3$d صبحیں۔ اس iPhone پر ConciergeClock میں اس وقت موجود سب کچھ بدل دیا جائے گا۔
 backup.auto.header | خودکار بیک اپ
 backup.auto.choose | فولڈر منتخب کریں…
 backup.auto.folder | فولڈر
@@ -312,14 +312,14 @@ alarm.stop | بند کریں
 alarm.snooze | اسنوز
 alarm.snoozing | %@ — اسنوز پر
 alarms.add | الارم شامل کریں
-alarms.footer | یہ الارم خود iOS بجاتا ہے، اس لیے Concierge Clock بند ہونے، سائلنٹ موڈ اور فوکس میں بھی کام کرتے ہیں۔ اگلی گھنٹی چھوڑنے کے لیے الارم کو سوائپ کریں۔
+alarms.footer | یہ الارم خود iOS بجاتا ہے، اس لیے ConciergeClock بند ہونے، سائلنٹ موڈ اور فوکس میں بھی کام کرتے ہیں۔ اگلی گھنٹی چھوڑنے کے لیے الارم کو سوائپ کریں۔
 alarms.nextRing | اگلا: %@
 alarms.skipped | اگلی گھنٹی چھوڑ دی گئی
 alarms.skipNext | اگلا چھوڑیں
 alarms.unskip | نہ چھوڑیں
 alarms.permission.allow | الارم کی اجازت دیں
-alarms.permission.footer | iOS صرف ایک بار پوچھتا ہے کہ کیا Concierge Clock الارم بجا سکتا ہے۔
-alarms.permission.denied | Concierge Clock کے لیے الارم بند ہیں، اس لیے کچھ نہیں بجے گا۔ انہیں سیٹنگز ایپ میں آن کریں۔
+alarms.permission.footer | iOS صرف ایک بار پوچھتا ہے کہ کیا ConciergeClock الارم بجا سکتا ہے۔
+alarms.permission.denied | ConciergeClock کے لیے الارم بند ہیں، اس لیے کچھ نہیں بجے گا۔ انہیں سیٹنگز ایپ میں آن کریں۔
 alarms.permission.openSettings | سیٹنگز کھولیں
 editor.newTitle | نیا الارم
 editor.editTitle | الارم میں ترمیم
@@ -341,7 +341,7 @@ calendars.allow | اجازت دیں
 calendars.allowed | اجازت ہے
 calendars.openSettings | سیٹنگز
 calendars.todayCount | آج باقی ایونٹس
-calendars.privacy | iPhone کی سیٹنگز کے ہر اکاؤنٹ سے اسی iPhone پر پڑھے جاتے ہیں — iCloud، Google، Outlook، Exchange / Microsoft 365، Yahoo اور دیگر۔ Concierge Clock ان میں کبھی سائن ان نہیں کرتا، کچھ اپ لوڈ نہیں کرتا اور آپ کے ایونٹس کبھی نہیں بدلتا۔
+calendars.privacy | iPhone کی سیٹنگز کے ہر اکاؤنٹ سے اسی iPhone پر پڑھے جاتے ہیں — iCloud، Google، Outlook، Exchange / Microsoft 365، Yahoo اور دیگر۔ ConciergeClock ان میں کبھی سائن ان نہیں کرتا، کچھ اپ لوڈ نہیں کرتا اور آپ کے ایونٹس کبھی نہیں بدلتا۔
 calendars.addAccount | Google، Outlook یا کوئی اور اکاؤنٹ شامل کریں
 calendars.addAccountFooter | اکاؤنٹس iPhone کی اپنی سیٹنگز میں شامل ہوتے ہیں اور پھر یہاں خود نظر آتے ہیں۔ جو کیلنڈر بریفنگ اور چھٹی کی جانچ میں نہیں چاہیے، اسے بند کریں۔
 calendars.accountCount | اکاؤنٹس: %d
@@ -352,7 +352,7 @@ calendars.kind.other | دوسرا اکاؤنٹ
 calendars.kind.iphone | میرے iPhone پر
 calendars.kind.subscribed | سبسکرائب شدہ
 calendars.kind.birthdays | سالگرہیں
-calendars.guide.intro | Concierge Clock وہی کیلنڈر اور یاد دہانیاں پڑھتا ہے جو آپ کا iPhone پہلے سے سنک کرتا ہے۔ Google یا Outlook کے لیے اکاؤنٹ ایک بار iPhone میں شامل کریں؛ پھر Concierge Clock اسے آف لائن پڑھتا ہے۔
+calendars.guide.intro | ConciergeClock وہی کیلنڈر اور یاد دہانیاں پڑھتا ہے جو آپ کا iPhone پہلے سے سنک کرتا ہے۔ Google یا Outlook کے لیے اکاؤنٹ ایک بار iPhone میں شامل کریں؛ پھر ConciergeClock اسے آف لائن پڑھتا ہے۔
 calendars.guide.stepsTitle | مراحل
 calendars.guide.step1 | iPhone کی سیٹنگز ایپ کھولیں۔
 calendars.guide.step2 | ایپس، پھر کیلنڈر، پھر کیلنڈر اکاؤنٹس پر ٹیپ کریں۔
@@ -367,14 +367,14 @@ calendars.guide.icloud | اگر آپ iCloud استعمال کرتے ہیں تو 
 calendars.guide.outlookApp | جو کیلنڈر صرف Outlook ایپ کے اندر رکھے ہیں وہ دوسری ایپس کے ساتھ شیئر نہیں ہوتے۔ اوپر بتائے طریقے سے اکاؤنٹ iPhone کی سیٹنگز میں شامل کریں۔
 calendars.guide.googleTasks | Google Tasks iPhone کی یاد دہانیوں میں سنک نہیں ہوتے، اس لیے بریفنگ میں نہیں آ سکتے۔ Exchange کے کام آ سکتے ہیں۔
 widget.name | اگلا الارم
-widget.description | آپ کا اگلا Concierge Clock الارم۔
+widget.description | آپ کا اگلا ConciergeClock الارم۔
 widget.next | اگلا الارم
 widget.none | کوئی الارم نہیں
 widget.today | آج
 widget.tomorrow | کل
-infoplist.alarmKit | Concierge Clock آپ کے الارم شیڈول کرتا ہے تاکہ وہ ایپ بند ہونے، سائلنٹ موڈ یا فوکس میں بھی بجیں۔
-infoplist.calendars | Concierge Clock آپ کا دن بتانے اور چھٹی کے دنوں میں الارم چھوڑنے کے لیے اسی iPhone پر آپ کے کیلنڈر پڑھتا ہے۔ کچھ اپ لوڈ یا تبدیل نہیں ہوتا۔
-infoplist.reminders | Concierge Clock یہ بتانے کے لیے کہ کیا واجب ہے، اسی iPhone پر آپ کی یاد دہانیاں پڑھتا ہے، اور کسی کو مکمل صرف تب نشان زد کرتا ہے جب آپ کہیں۔ کچھ اپ لوڈ نہیں ہوتا۔
+infoplist.alarmKit | ConciergeClock آپ کے الارم شیڈول کرتا ہے تاکہ وہ ایپ بند ہونے، سائلنٹ موڈ یا فوکس میں بھی بجیں۔
+infoplist.calendars | ConciergeClock آپ کا دن بتانے اور چھٹی کے دنوں میں الارم چھوڑنے کے لیے اسی iPhone پر آپ کے کیلنڈر پڑھتا ہے۔ کچھ اپ لوڈ یا تبدیل نہیں ہوتا۔
+infoplist.reminders | ConciergeClock یہ بتانے کے لیے کہ کیا واجب ہے، اسی iPhone پر آپ کی یاد دہانیاں پڑھتا ہے، اور کسی کو مکمل صرف تب نشان زد کرتا ہے جب آپ کہیں۔ کچھ اپ لوڈ نہیں ہوتا۔
 brief.moderate.greeting.morning | صبح بخیر۔
 brief.moderate.greeting.afternoon | سہ پہر بخیر۔
 brief.moderate.greeting.evening | شام بخیر۔
@@ -469,17 +469,17 @@ voices.quality.premium | پریمیم
 voices.quality.enhanced | بہتر
 voices.quality.standard | معیاری
 voices.guide.title | بہتر آوازیں حاصل کریں
-voices.guide.intro | Apple کی بہتر اور پریمیم آوازیں کہیں زیادہ فطری لگتی ہیں۔ یہ مفت ہیں، iPhone کی سیٹنگز میں ایک بار ڈاؤن لوڈ ہوتی ہیں اور پھر Concierge Clock میں آف لائن چلتی ہیں۔
+voices.guide.intro | Apple کی بہتر اور پریمیم آوازیں کہیں زیادہ فطری لگتی ہیں۔ یہ مفت ہیں، iPhone کی سیٹنگز میں ایک بار ڈاؤن لوڈ ہوتی ہیں اور پھر ConciergeClock میں آف لائن چلتی ہیں۔
 voices.guide.step1 | iPhone کی سیٹنگز ایپ کھولیں۔
 voices.guide.step2 | رسائی، پھر بولا گیا مواد پر ٹیپ کریں (نئے iOS میں اس کا نام پڑھیں اور بولیں ہے)۔
 voices.guide.step3 | آوازیں، پھر زبان (مثلاً انگریزی)، پھر علاقہ پر ٹیپ کریں۔
 voices.guide.step4 | کوئی آواز منتخب کریں اور اس کے بہتر یا پریمیم ورژن کے ساتھ ڈاؤن لوڈ پر ٹیپ کریں۔
-voices.guide.step5 | Concierge Clock میں واپس آئیں: بہترین انسٹال شدہ آواز خود بخود استعمال ہوتی ہے۔
+voices.guide.step5 | ConciergeClock میں واپس آئیں: بہترین انسٹال شدہ آواز خود بخود استعمال ہوتی ہے۔
 voices.guide.suggestions | لہجوں کے لیے تجاویز
 voices.guide.british | برطانوی: انگریزی (برطانیہ)، مثلاً Daniel یا Arthur (مرد)، Kate یا Serena (خاتون)۔
 voices.guide.indian | ہندوستانی: انگریزی (بھارت)، مثلاً Rishi (مرد)، Isha یا Veena (خاتون)۔
 voices.guide.american | جنوبی امریکی اور کینیڈین: انگریزی (امریکہ)، مثلاً Evan یا Nathan (مرد)، Ava یا Zoe (خاتون)۔
-voices.guide.footer | ڈاؤن لوڈ کے لیے ایک بار Wi-Fi چاہیے؛ Concierge Clock خود آوازوں کے لیے کبھی آن لائن نہیں جاتا۔
+voices.guide.footer | ڈاؤن لوڈ کے لیے ایک بار Wi-Fi چاہیے؛ ConciergeClock خود آوازوں کے لیے کبھی آن لائن نہیں جاتا۔
 editor.date | تاریخ
 editor.datePast | وہ تاریخ گزر چکی ہے۔ نئی تاریخ منتخب کریں۔
 alarms.past | مکمل: تاریخ گزر گئی
@@ -553,5 +553,5 @@ conversation.done.remind | %@ پر یاد دلاؤں گا
 conversation.noPermission | آواز سے جواب دینے کے لیے سیٹنگز میں مائیکروفون اور اسپیچ ریکگنیشن کی اجازت دیں۔ تب تک بٹن استعمال کریں۔
 conversation.noRecognizer | آپ کا iPhone اس زبان کو ڈیوائس پر نہیں پہچان سکتا۔ بٹن استعمال کریں۔
 conversation.tapToAnswer | جواب دینے کے لیے کوئی بٹن دبائیں۔
-infoplist.microphone | الارم بجنے پر Concierge Clock آپ کا جواب سنتا ہے ("بند کرو"، "10 منٹ بعد یاد دلانا")۔ آپ کی آواز اسی iPhone پر رہتی ہے اور کبھی ریکارڈ نہیں ہوتی۔
+infoplist.microphone | الارم بجنے پر ConciergeClock آپ کا جواب سنتا ہے ("بند کرو"، "10 منٹ بعد یاد دلانا")۔ آپ کی آواز اسی iPhone پر رہتی ہے اور کبھی ریکارڈ نہیں ہوتی۔
 infoplist.speech | الارم کو دیا آپ کا جواب سمجھنے کے لیے اسی iPhone پر متن میں بدلا جاتا ہے۔ کچھ بھیجا یا محفوظ نہیں کیا جاتا۔

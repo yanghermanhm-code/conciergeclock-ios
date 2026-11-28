@@ -4,7 +4,7 @@ import Foundation
 /// behind this protocol, so ConciergeCore and its tests never depend on the model runtime —
 /// the same split as PrepPilot's PrepEngine.
 ///
-/// Concierge Clock uses it (Phase 6) to rank how important each event is, to vary the
+/// ConciergeClock uses it (Phase 6) to rank how important each event is, to vary the
 /// butler's lines in every tone, to understand looser spoken commands, to answer "ask me about
 /// my day" and to write the weekly wake summary. Facts (times, titles, counts) always come from
 /// the calendar and the wake log, never from the model.

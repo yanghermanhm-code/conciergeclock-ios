@@ -248,7 +248,7 @@ extension OfflineAIView {
     }
 }
 
-/// The shared step-by-step setup guide, with Concierge Clock's details.
+/// The shared step-by-step setup guide, with ConciergeClock's details.
 struct ConciergeClockSetupGuide: View {
     @Environment(AppModel.self) private var model
     @Environment(\.l10n) private var l10n
@@ -256,7 +256,7 @@ struct ConciergeClockSetupGuide: View {
     var body: some View {
         OfflineAISetupGuide(
             app: .init(
-                appName: "Concierge Clock",
+                appName: "ConciergeClock",
                 openSettings: l10n["guide.app.openSettings"],
                 checkItWorks: l10n("guide.app.check", model.models.capability.recommendedModel?.displayName ?? "Gemma")
             ),

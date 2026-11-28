@@ -34,6 +34,6 @@
 "guide.mock.useAI" = "Usar IA sin conexión";
 "guide.mock.wifi" = "Descargar solo con Wi-Fi";
 "guide.app.open" = "Muéstrame cómo, paso a paso";
-"guide.intro.shared" = "Una sola descarga sirve para todas las apps de Greater Good Software (Concierge Clock, PrepPilot, FocusFound, FotoPhilter) en este iPhone.";
+"guide.intro.shared" = "Una sola descarga sirve para todas las apps de Greater Good Software (ConciergeClock, PrepPilot, FocusFound, FotoPhilter) en este iPhone.";
 "guide.app.openSettings" = "Toca el botón del engranaje en la parte superior de cualquier pestaña.";
 "guide.app.check" = "En la pestaña Conserje, la tarjeta IA sin conexión dice «Lista: %@».";

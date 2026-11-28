@@ -4,7 +4,7 @@ import SwiftUI
 
 /// Settings › Calendars & Reminders: permission, every account on the iPhone (iCloud, Google,
 /// Outlook / Exchange / Microsoft 365, Yahoo, on this iPhone, subscribed) with its calendars and
-/// reminder lists, which of them Concierge Clock reads, and how to add Google or Outlook.
+/// reminder lists, which of them ConciergeClock reads, and how to add Google or Outlook.
 struct CalendarAccountsView: View {
     @Environment(AppModel.self) private var model
     @Environment(\.l10n) private var l10n
@@ -124,7 +124,7 @@ struct CalendarAccountsView: View {
         }
     }
 
-    /// On = read by Concierge Clock (stored as the list of calendars left out).
+    /// On = read by ConciergeClock (stored as the list of calendars left out).
     private func includeBinding(_ id: String, keyPath: WritableKeyPath<AppSettings, [String]>) -> Binding<Bool> {
         Binding(
             get: { !model.settings.settings[keyPath: keyPath].contains(id) },
@@ -147,8 +147,8 @@ private extension Array where Element == String {
 }
 
 /// How to add a Google, Outlook.com, Exchange / Microsoft 365 or Yahoo account to the iPhone,
-/// so its calendars and reminders appear in Concierge Clock. Nothing is signed into inside the
-/// app: the iPhone keeps the account and syncs it; Concierge Clock reads it offline.
+/// so its calendars and reminders appear in ConciergeClock. Nothing is signed into inside the
+/// app: the iPhone keeps the account and syncs it; ConciergeClock reads it offline.
 struct AddCalendarAccountGuide: View {
     @Environment(\.l10n) private var l10n
 

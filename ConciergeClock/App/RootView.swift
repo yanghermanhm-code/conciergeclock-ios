@@ -102,7 +102,7 @@ struct RootView: View {
 }
 
 /// The top bar shown on every main screen:
-///   [butler logo]     Concierge Clock     [⚙︎]
+///   [butler logo]     ConciergeClock     [⚙︎]
 /// Tapping the logo opens "About Greater Good Software". In right-to-left languages the logo
 /// and gear swap sides automatically.
 private struct BrandedNavigationBar: ViewModifier {
@@ -128,7 +128,7 @@ private struct BrandedNavigationBar: ViewModifier {
                 }
                 ToolbarItem(placement: .principal) {
                     // Product name — never translated.
-                    Text(verbatim: "Concierge Clock")
+                    Text(verbatim: "ConciergeClock")
                         .font(.system(.title3, design: .rounded, weight: .bold))
                         .foregroundStyle(Theme.focus)
                         .accessibilityAddTraits(.isHeader)
@@ -155,7 +155,7 @@ extension View {
     }
 }
 
-/// Concierge Clock's own colours on top of the shared Greater Good theme (GGSBrand.Theme).
+/// ConciergeClock's own colours on top of the shared Greater Good theme (GGSBrand.Theme).
 /// Teal for interactive elements (accessible contrast in light and dark), brass for
 /// decoration. See docs/DECISIONS.md.
 enum ConciergeStyle {

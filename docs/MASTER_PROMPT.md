@@ -1,8 +1,8 @@
-# Master prompt — Concierge Clock
+# Master prompt — ConciergeClock
 
 This file keeps the product owner's original specification (as received, November 2026) and the
 answers agreed during planning. Where they differ, **docs/DECISIONS.md wins** (for example: the
-product is called Concierge Clock, not JeevesWake; the tabs are Alarms · Concierge · Sounds ·
+product is called ConciergeClock, not JeevesWake; the tabs are Alarms · Concierge · Sounds ·
 Trends; offline AI uses Gemma like the sibling apps).
 
 ## Product owner's principles (from the request)

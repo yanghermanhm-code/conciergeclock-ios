@@ -18,7 +18,7 @@ settings.haptics | الاهتزاز اللمسي
 settings.appIcon | أيقونة التطبيق
 icon.dark | داكنة
 icon.light | فاتحة
-settings.aboutApp | حول Concierge Clock
+settings.aboutApp | حول ConciergeClock
 ai.ready | جاهزة
 ai.notReady | غير متاحة
 about.title | حول
@@ -51,7 +51,7 @@ company.fotophilter | محرر صور يعمل دون اتصال بمظاهر ا
 company.footer | صُنع بعناية من أجل الخير العام.
 a11y.companyLogo | حول Greater Good Software
 error.title | حدث خطأ ما
-error.launchTitle | تعذّر على Concierge Clock فتح بياناته
+error.launchTitle | تعذّر على ConciergeClock فتح بياناته
 launch.skipHint | اضغط مرتين لتخطي الرسوم المتحركة.
 minutes.count | %d د
 backup.title | النسخ الاحتياطي والتصدير
@@ -63,8 +63,8 @@ backup.never | لا توجد نسخة احتياطية بعد.
 backup.confirmTitle | استبدال كل شيء بهذه النسخة؟
 backup.confirmRestore | استعادة النسخة
 backup.openFailed | تعذّر فتح النسخة الاحتياطية
-backup.error.notABackup | هذه ليست نسخة احتياطية من Concierge Clock، أو أن الملف تالف.
-backup.error.newer | أُنشئت هذه النسخة بإصدار أحدث من Concierge Clock. حدّث التطبيق ثم حاول مجددًا.
+backup.error.notABackup | هذه ليست نسخة احتياطية من ConciergeClock، أو أن الملف تالف.
+backup.error.newer | أُنشئت هذه النسخة بإصدار أحدث من ConciergeClock. حدّث التطبيق ثم حاول مجددًا.
 backup.error.damaged | هذه النسخة تالفة ولا يمكن استعادتها. لم يتغير شيء.
 backup.error.write | تعذّرت كتابة الملف. تأكد من وجود مساحة فارغة كافية.
 export.footer | تُنشأ التقارير والجداول على هذا الـ iPhone. أنت من يختار مكان إرسالها.
@@ -148,14 +148,14 @@ settings.aiFooter | يحدد الذكاء الاصطناعي دون اتصال (
 settings.startHere.body | نزّل %1$@ (%2$@) لهذا الـ iPhone. بعدها يحدد الكونسيرج أي الأحداث مهمة، ويتحدث بطبيعية أكبر، ويفهم الطلبات الأقل رسمية، وكل ذلك على iPhone. يستغرق دقائق عبر Wi-Fi.
 ai.use | استخدام الذكاء الاصطناعي دون اتصال
 ai.useFooter | عند إيقافه أو عدم تنزيله يستخدم الكونسيرج القواعد المدمجة: تبقى كل الميزات متاحة.
-ai.unsupported | ذاكرة هذا الـ iPhone لا تكفي للذكاء الاصطناعي دون اتصال. يستخدم Concierge Clock قواعده المدمجة.
+ai.unsupported | ذاكرة هذا الـ iPhone لا تكفي للذكاء الاصطناعي دون اتصال. يستخدم ConciergeClock قواعده المدمجة.
 ai.modelsFooter | Gemma 4 من Google (Apache 2.0)، يُنزَّل مرة واحدة من Hugging Face ويُتحقق منه قبل الاستخدام. يعمل بالكامل على هذا الـ iPhone ويُشارك مع PrepPilot وFocusFound وFotoPhilter، فيُنزَّل مرة واحدة فقط.
 ai.deleteMessage | يستخدم PrepPilot وFocusFound وFotoPhilter النسخة نفسها، لذا ستُحذف لديها أيضًا. يمكن تنزيلها مرة أخرى.
 ai.test.json | فحص الأهمية (JSON)
-guide.intro.shared | تنزيل واحد يخدم كل تطبيقات Greater Good Software (Concierge Clock وPrepPilot وFocusFound وFotoPhilter) على هذا الـ iPhone.
+guide.intro.shared | تنزيل واحد يخدم كل تطبيقات Greater Good Software (ConciergeClock وPrepPilot وFocusFound وFotoPhilter) على هذا الـ iPhone.
 guide.app.openSettings | اضغط زر الترس أعلى أي علامة تبويب.
 guide.app.check | في علامة تبويب الكونسيرج، تظهر على بطاقة الذكاء الاصطناعي دون اتصال عبارة «جاهز: %@».
-about.offline.detail | لا حسابات ولا سحابة ولا خوادم. يعمل Concierge Clock في وضع الطيران.
+about.offline.detail | لا حسابات ولا سحابة ولا خوادم. يعمل ConciergeClock في وضع الطيران.
 about.tracking.detail | لا تحليلات ولا إعلانات ولا سجل لتقويمك أو لما تقوله.
 about.onDevice.title | ذكاء اصطناعي يبقى على iPhone
 about.onDevice.detail | يعمل الذكاء الاصطناعي الاختياري دون اتصال على iPhone. لا يُرفع تقويمك ولا تذكيراتك أبدًا.
@@ -163,9 +163,9 @@ about.voice.title | يستمع ولا يسجّل
 about.voice.detail | يُفهم صوتك على iPhone ولا يُحفظ أبدًا. لا يُحتفظ إلا بأوقات الاستيقاظ والأعداد.
 company.conciergeclock | منبّه ناطق دون اتصال، مع موجز صباحي من تقويمك أنت.
 error.launchMessage | لم تُحذف منبّهاتك ولا سجل استيقاظك. أعد تشغيل التطبيق. إذا تكرر ذلك، فتواصل مع الدعم مع هذه الرسالة:\n\n%@
-terms.body | يُباع Concierge Clock بشراء لمرة واحدة ويُرخَّص لك بموجب اتفاقية ترخيص المستخدم النهائي القياسية من Apple.\n\nتبقى منبّهاتك وإعداداتك وسجل استيقاظك على iPhone. لا تستلمها Greater Good Software ولا تخزنها ولا تشاركها أبدًا.\n\nيساعدك Concierge Clock على الاستيقاظ وتنظيم يومك. لكل ما لا يجوز أن يفوتك، اضبط منبّهًا ثانيًا. تُنشأ الموجزات تلقائيًا وقد تحتوي على أخطاء، فراجع تقويمك في كل ما هو مهم.\n\nيُقدَّم Concierge Clock «كما هو» دون أي ضمانات من أي نوع.
-backup.footer | تحفظ النسخة الاحتياطية إعداداتك ومنبّهاتك وسجل استيقاظك في ملف ‎.conciergeclock واحد. احفظها في «الملفات» أو iCloud Drive أو على حاسوب — لا يرفعها Concierge Clock أبدًا.
-backup.confirmMessage | نسخة احتياطية من %1$@: ‏%2$d منبّهات و%3$d صباحات في سجل الاستيقاظ. سيُستبدل كل ما هو موجود حاليًا في Concierge Clock على هذا الـ iPhone.
+terms.body | يُباع ConciergeClock بشراء لمرة واحدة ويُرخَّص لك بموجب اتفاقية ترخيص المستخدم النهائي القياسية من Apple.\n\nتبقى منبّهاتك وإعداداتك وسجل استيقاظك على iPhone. لا تستلمها Greater Good Software ولا تخزنها ولا تشاركها أبدًا.\n\nيساعدك ConciergeClock على الاستيقاظ وتنظيم يومك. لكل ما لا يجوز أن يفوتك، اضبط منبّهًا ثانيًا. تُنشأ الموجزات تلقائيًا وقد تحتوي على أخطاء، فراجع تقويمك في كل ما هو مهم.\n\nيُقدَّم ConciergeClock «كما هو» دون أي ضمانات من أي نوع.
+backup.footer | تحفظ النسخة الاحتياطية إعداداتك ومنبّهاتك وسجل استيقاظك في ملف ‎.conciergeclock واحد. احفظها في «الملفات» أو iCloud Drive أو على حاسوب — لا يرفعها ConciergeClock أبدًا.
+backup.confirmMessage | نسخة احتياطية من %1$@: ‏%2$d منبّهات و%3$d صباحات في سجل الاستيقاظ. سيُستبدل كل ما هو موجود حاليًا في ConciergeClock على هذا الـ iPhone.
 backup.auto.header | نسخ احتياطي تلقائي
 backup.auto.choose | اختيار مجلد…
 backup.auto.folder | المجلد
@@ -312,14 +312,14 @@ alarm.stop | إيقاف
 alarm.snooze | غفوة
 alarm.snoozing | %@ — في غفوة
 alarms.add | إضافة منبّه
-alarms.footer | يُرنّ iOS نفسه هذه المنبّهات، لذا تعمل وConcierge Clock مغلق، وفي الوضع الصامت، وأثناء التركيز. اسحب منبّهًا لتخطي رنّته التالية.
+alarms.footer | يُرنّ iOS نفسه هذه المنبّهات، لذا تعمل وConciergeClock مغلق، وفي الوضع الصامت، وأثناء التركيز. اسحب منبّهًا لتخطي رنّته التالية.
 alarms.nextRing | التالي: %@
 alarms.skipped | تم تخطي الرنّة التالية
 alarms.skipNext | تخطي التالي
 alarms.unskip | عدم التخطي
 alarms.permission.allow | السماح بالمنبّهات
-alarms.permission.footer | يسأل iOS مرة واحدة إن كان مسموحًا لـ Concierge Clock بتشغيل المنبّهات.
-alarms.permission.denied | المنبّهات متوقفة لـ Concierge Clock، فلن يرنّ شيء. شغّلها من تطبيق الإعدادات.
+alarms.permission.footer | يسأل iOS مرة واحدة إن كان مسموحًا لـ ConciergeClock بتشغيل المنبّهات.
+alarms.permission.denied | المنبّهات متوقفة لـ ConciergeClock، فلن يرنّ شيء. شغّلها من تطبيق الإعدادات.
 alarms.permission.openSettings | فتح الإعدادات
 editor.newTitle | منبّه جديد
 editor.editTitle | تعديل المنبّه
@@ -341,7 +341,7 @@ calendars.allow | السماح
 calendars.allowed | مسموح
 calendars.openSettings | الإعدادات
 calendars.todayCount | الأحداث المتبقية اليوم
-calendars.privacy | تُقرأ على هذا الـ iPhone من كل حساب في إعدادات iPhone — iCloud وGoogle وOutlook وExchange / Microsoft 365 وYahoo وغيرها. لا يسجّل Concierge Clock الدخول إليها أبدًا، ولا يرفع شيئًا، ولا يغيّر أحداثك.
+calendars.privacy | تُقرأ على هذا الـ iPhone من كل حساب في إعدادات iPhone — iCloud وGoogle وOutlook وExchange / Microsoft 365 وYahoo وغيرها. لا يسجّل ConciergeClock الدخول إليها أبدًا، ولا يرفع شيئًا، ولا يغيّر أحداثك.
 calendars.addAccount | إضافة Google أو Outlook أو حساب آخر
 calendars.addAccountFooter | تُضاف الحسابات في إعدادات iPhone نفسها ثم تظهر هنا تلقائيًا. أوقف أي تقويم لا تريده في الموجزات وفحص أيام العطلة.
 calendars.accountCount | الحسابات: %d
@@ -352,7 +352,7 @@ calendars.kind.other | حساب آخر
 calendars.kind.iphone | على الـ iPhone
 calendars.kind.subscribed | اشتراكات
 calendars.kind.birthdays | أعياد الميلاد
-calendars.guide.intro | يقرأ Concierge Clock التقويمات والتذكيرات التي يزامنها iPhone بالفعل. لإضافة Google أو Outlook، أضف الحساب إلى iPhone مرة واحدة؛ بعدها يقرأه Concierge Clock دون اتصال.
+calendars.guide.intro | يقرأ ConciergeClock التقويمات والتذكيرات التي يزامنها iPhone بالفعل. لإضافة Google أو Outlook، أضف الحساب إلى iPhone مرة واحدة؛ بعدها يقرأه ConciergeClock دون اتصال.
 calendars.guide.stepsTitle | الخطوات
 calendars.guide.step1 | افتح تطبيق الإعدادات في iPhone.
 calendars.guide.step2 | اضغط على التطبيقات، ثم التقويم، ثم حسابات التقويم.
@@ -367,14 +367,14 @@ calendars.guide.icloud | موجود بالفعل على iPhone إن كنت تس�
 calendars.guide.outlookApp | التقويمات المحفوظة داخل تطبيق Outlook فقط لا تُشارك مع التطبيقات الأخرى. أضف الحساب في إعدادات iPhone كما في الأعلى.
 calendars.guide.googleTasks | لا تتزامن Google Tasks مع تذكيرات iPhone، لذا لا يمكن أن تظهر في الموجزات. مهام Exchange تظهر.
 widget.name | المنبّه التالي
-widget.description | منبّه Concierge Clock التالي.
+widget.description | منبّه ConciergeClock التالي.
 widget.next | المنبّه التالي
 widget.none | لا يوجد منبّه
 widget.today | اليوم
 widget.tomorrow | غدًا
-infoplist.alarmKit | يجدول Concierge Clock منبّهاتك لترنّ حتى والتطبيق مغلق، أو في الوضع الصامت، أو أثناء التركيز.
-infoplist.calendars | يقرأ Concierge Clock تقويماتك على هذا الـ iPhone ليخبرك بيومك ويتخطى المنبّهات في أيام العطلة. لا يُرفع شيء ولا يُغيَّر.
-infoplist.reminders | يقرأ Concierge Clock تذكيراتك على هذا الـ iPhone ليخبرك بما هو مستحق، ولا يعلّم أحدها كمنجز إلا إذا طلبت. لا يُرفع شيء.
+infoplist.alarmKit | يجدول ConciergeClock منبّهاتك لترنّ حتى والتطبيق مغلق، أو في الوضع الصامت، أو أثناء التركيز.
+infoplist.calendars | يقرأ ConciergeClock تقويماتك على هذا الـ iPhone ليخبرك بيومك ويتخطى المنبّهات في أيام العطلة. لا يُرفع شيء ولا يُغيَّر.
+infoplist.reminders | يقرأ ConciergeClock تذكيراتك على هذا الـ iPhone ليخبرك بما هو مستحق، ولا يعلّم أحدها كمنجز إلا إذا طلبت. لا يُرفع شيء.
 brief.moderate.greeting.morning | صباح الخير.
 brief.moderate.greeting.afternoon | طاب يومك.
 brief.moderate.greeting.evening | مساء الخير.
@@ -469,17 +469,17 @@ voices.quality.premium | ممتاز
 voices.quality.enhanced | محسّن
 voices.quality.standard | قياسي
 voices.guide.title | الحصول على أصوات أفضل
-voices.guide.intro | أصوات Apple المحسّنة والممتازة أكثر طبيعية بكثير. إنها مجانية، تُنزَّل مرة واحدة من إعدادات iPhone، ثم تعمل دون اتصال في Concierge Clock.
+voices.guide.intro | أصوات Apple المحسّنة والممتازة أكثر طبيعية بكثير. إنها مجانية، تُنزَّل مرة واحدة من إعدادات iPhone، ثم تعمل دون اتصال في ConciergeClock.
 voices.guide.step1 | افتح تطبيق الإعدادات في iPhone.
 voices.guide.step2 | اضغط على تسهيلات الاستخدام، ثم المحتوى المنطوق (اسمه القراءة والنطق في إصدارات iOS الأحدث).
 voices.guide.step3 | اضغط على الأصوات، ثم اللغة (مثل الإنجليزية)، ثم المنطقة.
 voices.guide.step4 | اختر صوتًا واضغط تنزيل بجانب نسخته المحسّنة أو الممتازة.
-voices.guide.step5 | عد إلى Concierge Clock: يُستخدم أفضل صوت مثبّت تلقائيًا.
+voices.guide.step5 | عد إلى ConciergeClock: يُستخدم أفضل صوت مثبّت تلقائيًا.
 voices.guide.suggestions | اقتراحات للّكنات
 voices.guide.british | البريطانية: الإنجليزية (المملكة المتحدة)، مثل Daniel أو Arthur (رجل)، وKate أو Serena (امرأة).
 voices.guide.indian | الهندية: الإنجليزية (الهند)، مثل Rishi (رجل)، وIsha أو Veena (امرأة).
 voices.guide.american | جنوب الولايات المتحدة وكندا: الإنجليزية (الولايات المتحدة)، مثل Evan أو Nathan (رجل)، وAva أو Zoe (امرأة).
-voices.guide.footer | يحتاج التنزيل إلى Wi-Fi مرة واحدة؛ لا يتصل Concierge Clock نفسه بالإنترنت للأصوات أبدًا.
+voices.guide.footer | يحتاج التنزيل إلى Wi-Fi مرة واحدة؛ لا يتصل ConciergeClock نفسه بالإنترنت للأصوات أبدًا.
 editor.date | التاريخ
 editor.datePast | مضى ذلك التاريخ. اختر تاريخًا جديدًا.
 alarms.past | انتهى: مضى التاريخ
@@ -553,5 +553,5 @@ conversation.done.remind | سأذكّرك في %@
 conversation.noPermission | اسمح بالميكروفون والتعرف على الكلام في الإعدادات لتجيب بصوتك. حتى ذلك الحين استخدم الأزرار.
 conversation.noRecognizer | لا يستطيع iPhone التعرف على هذه اللغة على الجهاز. استخدم الأزرار.
 conversation.tapToAnswer | اضغط زرًا للإجابة.
-infoplist.microphone | يستمع Concierge Clock إلى جوابك عندما يرنّ المنبّه («أوقفه»، «ذكّرني بعد 10 دقائق»). يبقى صوتك على هذا الـ iPhone ولا يُسجَّل أبدًا.
+infoplist.microphone | يستمع ConciergeClock إلى جوابك عندما يرنّ المنبّه («أوقفه»، «ذكّرني بعد 10 دقائق»). يبقى صوتك على هذا الـ iPhone ولا يُسجَّل أبدًا.
 infoplist.speech | يُحوَّل جوابك للمنبّه إلى نص على هذا الـ iPhone لفهمه. لا يُرسَل أو يُحفَظ شيء.

@@ -1,4 +1,4 @@
-# Concierge Clock
+# ConciergeClock
 
 **A Greater Good Software product.** A 100% offline, talking alarm clock for iPhone: your
 concierge — Charles, a slightly snobbish British butler, unless you rename him — wakes you, tells
@@ -82,7 +82,7 @@ subscriptions, no tracking.
 - The launch animation (the butler's mesh connecting) and the new icon (Home Screen; Settings ›
   Appearance › App icon switches to the light variant).
 - The four tabs and the top bar: butler logo (opens About Greater Good Software, now listing all
-  four apps), "Concierge Clock" centred, Settings gear.
+  four apps), "ConciergeClock" centred, Settings gear.
 - **Concierge** tab → *Customize Your Concierge*: rename Charles/Charlie, pick one of 8 accents,
   4 tones (Unhinged shows its notice first), Quick/Standard/Full, spoken language.
 - **Settings**: the orange *Set up offline AI* card (same as the siblings), Snooze (5 min

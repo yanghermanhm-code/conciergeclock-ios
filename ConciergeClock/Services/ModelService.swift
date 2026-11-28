@@ -5,7 +5,7 @@ import GGSModelKit
 import Observation
 import UIKit
 
-/// The offline AI model (Gemma) for Concierge Clock: which model to use on this iPhone, its
+/// The offline AI model (Gemma) for ConciergeClock: which model to use on this iPhone, its
 /// download, and the engine that runs it. The model file is shared with Greater Good
 /// Software's other apps through the App Group in GGSModelCore, so a model PrepPilot,
 /// FocusFound or FotoPhilter already downloaded is ready here too. Same service as PrepPilot's.

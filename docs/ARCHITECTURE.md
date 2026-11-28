@@ -1,6 +1,6 @@
 # Architecture
 
-Concierge Clock follows the same structure as its siblings (PrepPilot, FocusFound, FotoPhilter):
+ConciergeClock follows the same structure as its siblings (PrepPilot, FocusFound, FotoPhilter):
 a thin SwiftUI app shell over local Swift packages, with all persistence in one SQLite database.
 
 ```

@@ -20,7 +20,7 @@ struct ConciergeClockApp: App {
                     .localized(Localizer(language: .systemDefault))
             }
         }
-        // An offline AI model download that finished while Concierge Clock was closed.
+        // An offline AI model download that finished while ConciergeClock was closed.
         .backgroundTask(.urlSession(ModelService.sessionIdentifier)) {
             await ModelService.handleBackgroundEvents()
         }

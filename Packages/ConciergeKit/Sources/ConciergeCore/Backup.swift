@@ -2,7 +2,7 @@ import Foundation
 
 /// A full backup: one readable JSON file (`.conciergeclock`) holding the settings, alarms, the
 /// wake log and the Advisor's history. Written to a place the user chooses (Files, iCloud
-/// Drive, AirDrop…); Concierge Clock never uploads it. Format: docs/DATA_SCHEMA.md.
+/// Drive, AirDrop…); ConciergeClock never uploads it. Format: docs/DATA_SCHEMA.md.
 public struct BackupPayload: Codable, Sendable, Equatable {
     public static let formatName = "conciergeclock-backup"
     public static let fileExtension = "conciergeclock"
@@ -63,19 +63,19 @@ public struct BackupPayload: Codable, Sendable, Equatable {
         try BackupMigrator.decode(data)
     }
 
-    /// "Concierge Clock Backup 2026-11-27 0712.conciergeclock"
+    /// "ConciergeClock Backup 2026-11-27 0712.conciergeclock"
     public static func fileName(at date: Date, calendar: Calendar = .current) -> String {
         let parts = calendar.dateComponents([.year, .month, .day, .hour, .minute], from: date)
         let stamp = String(format: "%04d-%02d-%02d %02d%02d", parts.year ?? 0, parts.month ?? 0, parts.day ?? 0, parts.hour ?? 0, parts.minute ?? 0)
-        return "Concierge Clock Backup \(stamp).\(fileExtension)"
+        return "ConciergeClock Backup \(stamp).\(fileExtension)"
     }
 }
 
 /// Why a backup could not be read or restored.
 public enum BackupError: Error, Sendable, Equatable {
-    /// Not a Concierge Clock backup (or damaged).
+    /// Not a ConciergeClock backup (or damaged).
     case notABackup
-    /// Made by a newer version of Concierge Clock.
+    /// Made by a newer version of ConciergeClock.
     case newerVersion
     /// The data's links don't add up (damaged or edited file).
     case inconsistent

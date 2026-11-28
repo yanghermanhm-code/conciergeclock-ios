@@ -23,7 +23,7 @@ struct LaunchView: View {
             VStack(spacing: 20) {
                 AnimatedButlerMark(progress: progress, style: colorScheme == .dark ? .onDark : .standard)
                     .frame(width: 200, height: 184)
-                Text(verbatim: "Concierge Clock")
+                Text(verbatim: "ConciergeClock")
                     .font(.system(.largeTitle, design: .rounded, weight: .bold))
                     .foregroundStyle(Theme.focus)
                     .opacity(nameOpacity)
@@ -37,7 +37,7 @@ struct LaunchView: View {
         .contentShape(Rectangle())
         .onTapGesture(perform: finish)
         .accessibilityElement(children: .ignore)
-        .accessibilityLabel(Text(verbatim: "Concierge Clock"))
+        .accessibilityLabel(Text(verbatim: "ConciergeClock"))
         .accessibilityHint(l10n["launch.skipHint"])
         .accessibilityAddTraits(.isButton)
         .accessibilityAction { finish() }

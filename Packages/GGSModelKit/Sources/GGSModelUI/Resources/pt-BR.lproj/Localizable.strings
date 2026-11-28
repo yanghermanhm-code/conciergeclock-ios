@@ -34,6 +34,6 @@
 "guide.mock.useAI" = "Usar IA offline";
 "guide.mock.wifi" = "Baixar só no Wi-Fi";
 "guide.app.open" = "Mostre como, passo a passo";
-"guide.intro.shared" = "Um único download serve todos os apps da Greater Good Software (Concierge Clock, PrepPilot, FocusFound, FotoPhilter) neste iPhone.";
+"guide.intro.shared" = "Um único download serve todos os apps da Greater Good Software (ConciergeClock, PrepPilot, FocusFound, FotoPhilter) neste iPhone.";
 "guide.app.openSettings" = "Toque no botão de engrenagem no topo de qualquer aba.";
 "guide.app.check" = "Na aba Concierge, o cartão IA offline mostra “Pronta: %@”.";

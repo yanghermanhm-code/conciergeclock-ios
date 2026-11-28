@@ -346,7 +346,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Config/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "Concierge Clock";
+				INFOPLIST_KEY_CFBundleDisplayName = "ConciergeClock";
 				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "© Greater Good Software";
@@ -386,7 +386,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Config/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "Concierge Clock";
+				INFOPLIST_KEY_CFBundleDisplayName = "ConciergeClock";
 				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "© Greater Good Software";
@@ -421,7 +421,7 @@
 				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Config/ConciergeClockWidgets-Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "Concierge Clock";
+				INFOPLIST_KEY_CFBundleDisplayName = "ConciergeClock";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "© Greater Good Software";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -451,7 +451,7 @@
 				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Config/ConciergeClockWidgets-Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "Concierge Clock";
+				INFOPLIST_KEY_CFBundleDisplayName = "ConciergeClock";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "© Greater Good Software";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

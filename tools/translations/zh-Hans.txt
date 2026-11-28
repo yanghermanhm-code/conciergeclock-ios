@@ -18,7 +18,7 @@ settings.haptics | 触感反馈
 settings.appIcon | App 图标
 icon.dark | 深色
 icon.light | 浅色
-settings.aboutApp | 关于 Concierge Clock
+settings.aboutApp | 关于 ConciergeClock
 ai.ready | 已就绪
 ai.notReady | 不可用
 about.title | 关于
@@ -51,7 +51,7 @@ company.fotophilter | 离线照片编辑器，提供胶片风格、修饰和动�
 company.footer | 用心打造，为了更大的善。
 a11y.companyLogo | 关于 Greater Good Software
 error.title | 出现问题
-error.launchTitle | Concierge Clock 无法打开其数据
+error.launchTitle | ConciergeClock 无法打开其数据
 launch.skipHint | 轻点两下跳过动画。
 minutes.count | %d 分钟
 backup.title | 备份与导出
@@ -63,8 +63,8 @@ backup.never | 还没有备份。
 backup.confirmTitle | 用此备份替换所有内容？
 backup.confirmRestore | 恢复备份
 backup.openFailed | 无法打开备份
-backup.error.notABackup | 这不是 Concierge Clock 备份，或者文件已损坏。
-backup.error.newer | 此备份由更新版本的 Concierge Clock 创建。请更新 App 后再试。
+backup.error.notABackup | 这不是 ConciergeClock 备份，或者文件已损坏。
+backup.error.newer | 此备份由更新版本的 ConciergeClock 创建。请更新 App 后再试。
 backup.error.damaged | 此备份已损坏，无法恢复。没有更改任何内容。
 backup.error.write | 无法写入文件。请检查是否有足够的可用空间。
 export.footer | 报告和表格在这台 iPhone 上生成，由你决定发送到哪里。
@@ -148,14 +148,14 @@ settings.aiFooter | 离线 AI（Gemma）判断哪些日程重要、让管家的�
 settings.startHere.body | 为这台 iPhone 下载 %1$@（%2$@）。之后你的管家会判断哪些日程重要、说话更自然、听懂更随意的请求，全部在 iPhone 上完成。使用无线局域网需几分钟。
 ai.use | 使用离线 AI
 ai.useFooter | 关闭或未下载时，管家使用内置规则：所有功能照常可用。
-ai.unsupported | 这台 iPhone 的内存不足以运行离线 AI。Concierge Clock 将使用内置规则。
+ai.unsupported | 这台 iPhone 的内存不足以运行离线 AI。ConciergeClock 将使用内置规则。
 ai.modelsFooter | Google 的 Gemma 4（Apache 2.0），从 Hugging Face 下载一次并在使用前校验。它完全在这台 iPhone 上运行，并与 PrepPilot、FocusFound 和 FotoPhilter 共用，只需下载一次。
 ai.deleteMessage | PrepPilot、FocusFound 和 FotoPhilter 使用同一份副本，它们也会失去它。之后可以重新下载。
 ai.test.json | 重要性判断（JSON）
-guide.intro.shared | 一次下载即可供这台 iPhone 上所有 Greater Good Software 应用（Concierge Clock、PrepPilot、FocusFound、FotoPhilter）使用。
+guide.intro.shared | 一次下载即可供这台 iPhone 上所有 Greater Good Software 应用（ConciergeClock、PrepPilot、FocusFound、FotoPhilter）使用。
 guide.app.openSettings | 轻点任意标签页顶部的齿轮按钮。
 guide.app.check | 在“管家”标签页中，离线 AI 卡片显示“已就绪：%@”。
-about.offline.detail | 无需账户，没有云端，没有服务器。Concierge Clock 可在飞行模式下使用。
+about.offline.detail | 无需账户，没有云端，没有服务器。ConciergeClock 可在飞行模式下使用。
 about.tracking.detail | 没有分析，没有广告，不记录你的日历或你说的话。
 about.onDevice.title | 留在 iPhone 上的 AI
 about.onDevice.detail | 可选的离线 AI 在你的 iPhone 上运行。你的日历和提醒事项从不上传。
@@ -163,9 +163,9 @@ about.voice.title | 只听，不录
 about.voice.detail | 你的语音在 iPhone 上识别，从不保存。只保留起床时间和次数。
 company.conciergeclock | 离线会说话的闹钟，用你自己的日历做晨间简报。
 error.launchMessage | 你的闹钟和起床记录没有被删除。请重新启动应用。如果问题持续，请将以下信息发送给支持团队：\n\n%@
-terms.body | Concierge Clock 以一次性购买方式出售，并依据 Apple 标准最终用户许可协议授权给你使用。\n\n你的闹钟、设置和起床记录保存在你的 iPhone 上。Greater Good Software 从不接收、存储或分享它们。\n\nConcierge Clock 帮助你起床和安排一天。对于绝不能错过的事，请再设一个闹钟。简报为自动生成，可能有误，重要事项请以日历为准。\n\nConcierge Clock 按“原样”提供，不作任何形式的保证。
-backup.footer | 备份会把你的设置、闹钟和起床记录保存在一个 .conciergeclock 文件中。可存到“文件”、iCloud 云盘或电脑——Concierge Clock 从不上传。
-backup.confirmMessage | 来自 %1$@ 的备份：%2$d 个闹钟，起床记录中 %3$d 个早晨。这台 iPhone 上 Concierge Clock 现有的全部内容都将被替换。
+terms.body | ConciergeClock 以一次性购买方式出售，并依据 Apple 标准最终用户许可协议授权给你使用。\n\n你的闹钟、设置和起床记录保存在你的 iPhone 上。Greater Good Software 从不接收、存储或分享它们。\n\nConciergeClock 帮助你起床和安排一天。对于绝不能错过的事，请再设一个闹钟。简报为自动生成，可能有误，重要事项请以日历为准。\n\nConciergeClock 按“原样”提供，不作任何形式的保证。
+backup.footer | 备份会把你的设置、闹钟和起床记录保存在一个 .conciergeclock 文件中。可存到“文件”、iCloud 云盘或电脑——ConciergeClock 从不上传。
+backup.confirmMessage | 来自 %1$@ 的备份：%2$d 个闹钟，起床记录中 %3$d 个早晨。这台 iPhone 上 ConciergeClock 现有的全部内容都将被替换。
 backup.auto.header | 自动备份
 backup.auto.choose | 选择文件夹…
 backup.auto.folder | 文件夹
@@ -312,14 +312,14 @@ alarm.stop | 停止
 alarm.snooze | 稍后提醒
 alarm.snoozing | %@ — 稍后提醒中
 alarms.add | 添加闹钟
-alarms.footer | 这些闹钟由 iOS 本身负责响铃，因此即使 Concierge Clock 已关闭、处于静音模式或专注模式也能工作。在闹钟上轻扫可跳过下一次响铃。
+alarms.footer | 这些闹钟由 iOS 本身负责响铃，因此即使 ConciergeClock 已关闭、处于静音模式或专注模式也能工作。在闹钟上轻扫可跳过下一次响铃。
 alarms.nextRing | 下次：%@
 alarms.skipped | 已跳过下一次响铃
 alarms.skipNext | 跳过下一次
 alarms.unskip | 不跳过
 alarms.permission.allow | 允许闹钟
-alarms.permission.footer | iOS 只会询问一次是否允许 Concierge Clock 响铃。
-alarms.permission.denied | Concierge Clock 的闹钟已被关闭，所以不会响铃。请在“设置”应用中打开。
+alarms.permission.footer | iOS 只会询问一次是否允许 ConciergeClock 响铃。
+alarms.permission.denied | ConciergeClock 的闹钟已被关闭，所以不会响铃。请在“设置”应用中打开。
 alarms.permission.openSettings | 打开“设置”
 editor.newTitle | 新闹钟
 editor.editTitle | 编辑闹钟
@@ -341,7 +341,7 @@ calendars.allow | 允许
 calendars.allowed | 已允许
 calendars.openSettings | 设置
 calendars.todayCount | 今天剩余日程
-calendars.privacy | 在这台 iPhone 上读取 iPhone 设置中的每个账户——iCloud、Google、Outlook、Exchange / Microsoft 365、Yahoo 等。Concierge Clock 从不登录这些账户，从不上传任何内容，也从不修改你的日程。
+calendars.privacy | 在这台 iPhone 上读取 iPhone 设置中的每个账户——iCloud、Google、Outlook、Exchange / Microsoft 365、Yahoo 等。ConciergeClock 从不登录这些账户，从不上传任何内容，也从不修改你的日程。
 calendars.addAccount | 添加 Google、Outlook 或其他账户
 calendars.addAccountFooter | 账户在 iPhone 自己的设置中添加，之后会自动出现在这里。可关闭不想用于简报和休息日判断的日历。
 calendars.accountCount | 账户：%d 个
@@ -352,7 +352,7 @@ calendars.kind.other | 其他账户
 calendars.kind.iphone | 我的 iPhone 上
 calendars.kind.subscribed | 已订阅
 calendars.kind.birthdays | 生日
-calendars.guide.intro | Concierge Clock 读取你的 iPhone 已同步的日历和提醒事项。要添加 Google 或 Outlook，只需在 iPhone 上添加一次账户，之后 Concierge Clock 就能离线读取。
+calendars.guide.intro | ConciergeClock 读取你的 iPhone 已同步的日历和提醒事项。要添加 Google 或 Outlook，只需在 iPhone 上添加一次账户，之后 ConciergeClock 就能离线读取。
 calendars.guide.stepsTitle | 步骤
 calendars.guide.step1 | 打开 iPhone 的“设置”应用。
 calendars.guide.step2 | 轻点“App”，然后“日历”，再轻点“日历账户”。
@@ -367,14 +367,14 @@ calendars.guide.icloud | 如果你使用 iCloud，它已在 iPhone 上。
 calendars.guide.outlookApp | 只保存在 Outlook 应用内的日历不会共享给其他应用。请按上面的步骤在 iPhone 设置中添加该账户。
 calendars.guide.googleTasks | Google Tasks 不会同步到 iPhone 的“提醒事项”，因此无法出现在简报中。Exchange 任务可以。
 widget.name | 下一个闹钟
-widget.description | 你的下一个 Concierge Clock 闹钟。
+widget.description | 你的下一个 ConciergeClock 闹钟。
 widget.next | 下一个闹钟
 widget.none | 未设闹钟
 widget.today | 今天
 widget.tomorrow | 明天
-infoplist.alarmKit | Concierge Clock 会安排你的闹钟，即使应用已关闭、处于静音模式或专注模式也会响铃。
-infoplist.calendars | Concierge Clock 在这台 iPhone 上读取你的日历，为你介绍一天的安排，并在休息日跳过闹钟。不会上传或修改任何内容。
-infoplist.reminders | Concierge Clock 在这台 iPhone 上读取你的提醒事项，告诉你哪些到期，并且只在你要求时将其标记为完成。不会上传任何内容。
+infoplist.alarmKit | ConciergeClock 会安排你的闹钟，即使应用已关闭、处于静音模式或专注模式也会响铃。
+infoplist.calendars | ConciergeClock 在这台 iPhone 上读取你的日历，为你介绍一天的安排，并在休息日跳过闹钟。不会上传或修改任何内容。
+infoplist.reminders | ConciergeClock 在这台 iPhone 上读取你的提醒事项，告诉你哪些到期，并且只在你要求时将其标记为完成。不会上传任何内容。
 brief.moderate.greeting.morning | 早上好。
 brief.moderate.greeting.afternoon | 下午好。
 brief.moderate.greeting.evening | 晚上好。
@@ -469,17 +469,17 @@ voices.quality.premium | 高级
 voices.quality.enhanced | 增强
 voices.quality.standard | 标准
 voices.guide.title | 获取更好的声音
-voices.guide.intro | Apple 的增强和高级声音听起来自然得多。它们是免费的，在 iPhone 的“设置”中下载一次，之后即可在 Concierge Clock 中离线使用。
+voices.guide.intro | Apple 的增强和高级声音听起来自然得多。它们是免费的，在 iPhone 的“设置”中下载一次，之后即可在 ConciergeClock 中离线使用。
 voices.guide.step1 | 打开 iPhone 的“设置”应用。
 voices.guide.step2 | 轻点“辅助功能”，然后轻点“朗读内容”（较新的 iOS 中名为“朗读与语音”）。
 voices.guide.step3 | 轻点“声音”，然后选择语言（例如英语），再选择地区。
 voices.guide.step4 | 选择一个声音，轻点其增强或高级版本旁的“下载”。
-voices.guide.step5 | 回到 Concierge Clock：会自动使用已安装的最佳声音。
+voices.guide.step5 | 回到 ConciergeClock：会自动使用已安装的最佳声音。
 voices.guide.suggestions | 各口音的建议
 voices.guide.british | 英式：英语（英国），例如 Daniel 或 Arthur（男声），Kate 或 Serena（女声）。
 voices.guide.indian | 印度：英语（印度），例如 Rishi（男声），Isha 或 Veena（女声）。
 voices.guide.american | 美国南方和加拿大：英语（美国），例如 Evan 或 Nathan（男声），Ava 或 Zoe（女声）。
-voices.guide.footer | 下载只需一次 Wi-Fi；Concierge Clock 本身从不为声音联网。
+voices.guide.footer | 下载只需一次 Wi-Fi；ConciergeClock 本身从不为声音联网。
 editor.date | 日期
 editor.datePast | 该日期已过。请选择新日期。
 alarms.past | 已结束：日期已过
@@ -553,5 +553,5 @@ conversation.done.remind | 将在%@提醒你
 conversation.noPermission | 请在“设置”中允许麦克风和语音识别，以便用语音回答。在此之前请使用按钮。
 conversation.noRecognizer | 你的 iPhone 无法在本机识别这种语言。请使用按钮。
 conversation.tapToAnswer | 轻点按钮来回答。
-infoplist.microphone | 闹钟响起时，Concierge Clock 会听你的回答（“关掉”“10 分钟后提醒我”）。你的声音留在这台 iPhone 上，从不录音。
+infoplist.microphone | 闹钟响起时，ConciergeClock 会听你的回答（“关掉”“10 分钟后提醒我”）。你的声音留在这台 iPhone 上，从不录音。
 infoplist.speech | 你对闹钟的回答会在这台 iPhone 上转成文字以便理解。不会发送或保存任何内容。

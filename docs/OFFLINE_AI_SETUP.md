@@ -1,6 +1,6 @@
 # Offline AI (Gemma) — setup guide
 
-Shared by all Greater Good Software apps (Concierge Clock, PrepPilot, FocusFound, FotoPhilter). In the apps
+Shared by all Greater Good Software apps (ConciergeClock, PrepPilot, FocusFound, FotoPhilter). In the apps
 this guide is **Settings › Offline AI › Show me how, step by step** (`OfflineAISetupGuide`
 in `Packages/GGSModelKit/Sources/GGSModelUI`), drawn screen by screen, adapted to the iPhone
 and translated into all 11 languages.
@@ -20,7 +20,7 @@ processor and is much slower. The app picks the right model automatically ("Auto
 
 1. **Your iPhone.** The guide shows this iPhone's memory, the recommended model and its size.
    One download serves every Greater Good Software app on the iPhone.
-2. **Open the app's settings.** Concierge Clock: tap the **gear** at the top right of any tab.
+2. **Open the app's settings.** ConciergeClock: tap the **gear** at the top right of any tab.
    (Each app shows its own instruction here.)
 3. **Tap Offline AI** in Settings.
 4. **Find the recommended model:** the one with the green **Recommended** label.
@@ -33,7 +33,7 @@ processor and is much slower. The app picks the right model automatically ("Auto
 7. **Wait for Ready.** After downloading, the app checks the file (a minute or two); the
    model then shows a green **Ready**.
 8. **Turn on Use offline AI** at the top of the Offline AI screen (it is on by default).
-9. **Check it works.** Concierge Clock: on the Concierge tab, the Offline AI card says
+9. **Check it works.** ConciergeClock: on the Concierge tab, the Offline AI card says
    "Ready: Gemma 4 E2B" (or E4B). Settings › Offline AI › Test offline AI times a few replies.
 
 ## Troubleshooting

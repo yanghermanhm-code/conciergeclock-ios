@@ -18,7 +18,7 @@ settings.haptics | Vibrations
 settings.appIcon | Icône de l'app
 icon.dark | Sombre
 icon.light | Claire
-settings.aboutApp | À propos de Concierge Clock
+settings.aboutApp | À propos de ConciergeClock
 ai.ready | Prête
 ai.notReady | Indisponible
 about.title | À propos
@@ -51,7 +51,7 @@ company.fotophilter | Éditeur photo hors ligne : rendus argentiques, retouche e
 company.footer | Conçu avec soin, pour le bien commun.
 a11y.companyLogo | À propos de Greater Good Software
 error.title | Un problème est survenu
-error.launchTitle | Concierge Clock n’a pas pu ouvrir ses données
+error.launchTitle | ConciergeClock n’a pas pu ouvrir ses données
 launch.skipHint | Touchez deux fois pour passer l'animation.
 minutes.count | %d min
 backup.title | Sauvegarde et export
@@ -63,8 +63,8 @@ backup.never | Aucune sauvegarde pour l’instant.
 backup.confirmTitle | Tout remplacer par cette sauvegarde ?
 backup.confirmRestore | Restaurer la sauvegarde
 backup.openFailed | Impossible d’ouvrir la sauvegarde
-backup.error.notABackup | Ce n’est pas une sauvegarde Concierge Clock, ou le fichier est endommagé.
-backup.error.newer | Cette sauvegarde a été créée par une version plus récente de Concierge Clock. Mettez l’app à jour, puis réessayez.
+backup.error.notABackup | Ce n’est pas une sauvegarde ConciergeClock, ou le fichier est endommagé.
+backup.error.newer | Cette sauvegarde a été créée par une version plus récente de ConciergeClock. Mettez l’app à jour, puis réessayez.
 backup.error.damaged | Cette sauvegarde est endommagée et ne peut pas être restaurée. Rien n’a été modifié.
 backup.error.write | Le fichier n’a pas pu être écrit. Vérifiez qu’il reste assez d’espace libre.
 export.footer | Les rapports et feuilles de calcul sont créés sur cet iPhone. Vous choisissez où les envoyer.
@@ -148,14 +148,14 @@ settings.aiFooter | L’IA hors ligne (Gemma) juge quels événements comptent, 
 settings.startHere.body | Téléchargez %1$@ (%2$@) pour cet iPhone. Votre concierge jugera alors quels événements comptent, parlera plus naturellement et comprendra des demandes plus libres, le tout sur votre iPhone. Quelques minutes en Wi-Fi.
 ai.use | Utiliser l’IA hors ligne
 ai.useFooter | Désactivée ou non téléchargée, votre concierge utilise des règles intégrées : toutes les fonctions restent disponibles.
-ai.unsupported | Cet iPhone n’a pas assez de mémoire pour l’IA hors ligne. Concierge Clock utilise ses règles intégrées.
+ai.unsupported | Cet iPhone n’a pas assez de mémoire pour l’IA hors ligne. ConciergeClock utilise ses règles intégrées.
 ai.modelsFooter | Gemma 4 de Google (Apache 2.0), téléchargé une fois depuis Hugging Face et vérifié avant usage. Il fonctionne entièrement sur cet iPhone et est partagé avec PrepPilot, FocusFound et FotoPhilter : un seul téléchargement.
 ai.deleteMessage | PrepPilot, FocusFound et FotoPhilter utilisent la même copie : ils la perdent aussi. Elle peut être téléchargée à nouveau.
 ai.test.json | Vérification d’importance (JSON)
-guide.intro.shared | Un seul téléchargement sert toutes les apps Greater Good Software (Concierge Clock, PrepPilot, FocusFound, FotoPhilter) sur cet iPhone.
+guide.intro.shared | Un seul téléchargement sert toutes les apps Greater Good Software (ConciergeClock, PrepPilot, FocusFound, FotoPhilter) sur cet iPhone.
 guide.app.openSettings | Touchez le bouton en forme d’engrenage en haut de n’importe quel onglet.
 guide.app.check | Dans l’onglet Concierge, la carte IA hors ligne indique « Prête : %@ ».
-about.offline.detail | Aucun compte, aucun cloud, aucun serveur. Concierge Clock fonctionne en mode Avion.
+about.offline.detail | Aucun compte, aucun cloud, aucun serveur. ConciergeClock fonctionne en mode Avion.
 about.tracking.detail | Aucune analyse, aucune publicité, et aucune trace de votre calendrier ni de ce que vous dites.
 about.onDevice.title | Une IA qui reste sur votre iPhone
 about.onDevice.detail | L’IA hors ligne facultative fonctionne sur votre iPhone. Votre calendrier et vos rappels ne sont jamais envoyés.
@@ -163,9 +163,9 @@ about.voice.title | Écouter, jamais enregistrer
 about.voice.detail | Votre voix est comprise sur l’iPhone et jamais enregistrée. Seuls les heures de réveil et les comptes sont conservés.
 company.conciergeclock | Réveil parlant hors ligne, avec un point du matin tiré de votre propre calendrier.
 error.launchMessage | Vos alarmes et votre journal de réveil n’ont pas été supprimés. Redémarrez l’app. Si cela se reproduit, contactez l’assistance avec ce message :\n\n%@
-terms.body | Concierge Clock est vendu en achat unique et vous est concédé sous licence selon le contrat de licence utilisateur final standard d’Apple.\n\nVos alarmes, réglages et journal de réveil restent sur votre iPhone. Greater Good Software ne les reçoit, ne les stocke et ne les partage jamais.\n\nConcierge Clock vous aide à vous réveiller et à organiser votre journée. Pour tout ce que vous ne pouvez pas manquer, réglez une deuxième alarme. Les points du matin sont générés automatiquement et peuvent contenir des erreurs : vérifiez votre calendrier pour tout ce qui est important.\n\nConcierge Clock est fourni « en l’état », sans garantie d’aucune sorte.
-backup.footer | Une sauvegarde contient vos réglages, alarmes et journal de réveil dans un fichier .conciergeclock. Enregistrez-la dans Fichiers, iCloud Drive ou sur un ordinateur — Concierge Clock ne l’envoie jamais.
-backup.confirmMessage | Sauvegarde du %1$@ : %2$d alarmes et %3$d matins dans le journal de réveil. Tout ce qui se trouve actuellement dans Concierge Clock sur cet iPhone sera remplacé.
+terms.body | ConciergeClock est vendu en achat unique et vous est concédé sous licence selon le contrat de licence utilisateur final standard d’Apple.\n\nVos alarmes, réglages et journal de réveil restent sur votre iPhone. Greater Good Software ne les reçoit, ne les stocke et ne les partage jamais.\n\nConciergeClock vous aide à vous réveiller et à organiser votre journée. Pour tout ce que vous ne pouvez pas manquer, réglez une deuxième alarme. Les points du matin sont générés automatiquement et peuvent contenir des erreurs : vérifiez votre calendrier pour tout ce qui est important.\n\nConciergeClock est fourni « en l’état », sans garantie d’aucune sorte.
+backup.footer | Une sauvegarde contient vos réglages, alarmes et journal de réveil dans un fichier .conciergeclock. Enregistrez-la dans Fichiers, iCloud Drive ou sur un ordinateur — ConciergeClock ne l’envoie jamais.
+backup.confirmMessage | Sauvegarde du %1$@ : %2$d alarmes et %3$d matins dans le journal de réveil. Tout ce qui se trouve actuellement dans ConciergeClock sur cet iPhone sera remplacé.
 backup.auto.header | Sauvegarde automatique
 backup.auto.choose | Choisir un dossier…
 backup.auto.folder | Dossier
@@ -312,14 +312,14 @@ alarm.stop | Arrêter
 alarm.snooze | Répéter
 alarm.snoozing | %@ — en répétition
 alarms.add | Ajouter une alarme
-alarms.footer | C’est iOS qui fait sonner ces alarmes : elles fonctionnent même Concierge Clock fermé, en mode silencieux et pendant un Focus. Balayez une alarme pour sauter sa prochaine sonnerie.
+alarms.footer | C’est iOS qui fait sonner ces alarmes : elles fonctionnent même ConciergeClock fermé, en mode silencieux et pendant un Focus. Balayez une alarme pour sauter sa prochaine sonnerie.
 alarms.nextRing | Prochaine : %@
 alarms.skipped | Prochaine sonnerie sautée
 alarms.skipNext | Sauter la prochaine
 alarms.unskip | Ne pas sauter
 alarms.permission.allow | Autoriser les alarmes
-alarms.permission.footer | iOS demande une seule fois si Concierge Clock peut faire sonner des alarmes.
-alarms.permission.denied | Les alarmes sont désactivées pour Concierge Clock : rien ne sonnera. Activez-les dans l’app Réglages.
+alarms.permission.footer | iOS demande une seule fois si ConciergeClock peut faire sonner des alarmes.
+alarms.permission.denied | Les alarmes sont désactivées pour ConciergeClock : rien ne sonnera. Activez-les dans l’app Réglages.
 alarms.permission.openSettings | Ouvrir Réglages
 editor.newTitle | Nouvelle alarme
 editor.editTitle | Modifier l’alarme
@@ -341,7 +341,7 @@ calendars.allow | Autoriser
 calendars.allowed | Autorisé
 calendars.openSettings | Réglages
 calendars.todayCount | Événements restants aujourd’hui
-calendars.privacy | Lus sur cet iPhone depuis chaque compte des réglages de l’iPhone — iCloud, Google, Outlook, Exchange / Microsoft 365, Yahoo, etc. Concierge Clock ne s’y connecte jamais, n’envoie rien et ne modifie jamais vos événements.
+calendars.privacy | Lus sur cet iPhone depuis chaque compte des réglages de l’iPhone — iCloud, Google, Outlook, Exchange / Microsoft 365, Yahoo, etc. ConciergeClock ne s’y connecte jamais, n’envoie rien et ne modifie jamais vos événements.
 calendars.addAccount | Ajouter Google, Outlook ou un autre compte
 calendars.addAccountFooter | Les comptes s’ajoutent dans les réglages de l’iPhone, puis apparaissent ici d’eux-mêmes. Désactivez les calendriers à exclure des points du matin et des jours de congé.
 calendars.accountCount | Comptes : %d
@@ -352,7 +352,7 @@ calendars.kind.other | Autre compte
 calendars.kind.iphone | Sur mon iPhone
 calendars.kind.subscribed | Abonnements
 calendars.kind.birthdays | Anniversaires
-calendars.guide.intro | Concierge Clock lit les calendriers et rappels que votre iPhone synchronise déjà. Pour Google ou Outlook, ajoutez le compte à l’iPhone une fois ; Concierge Clock le lit ensuite, hors ligne.
+calendars.guide.intro | ConciergeClock lit les calendriers et rappels que votre iPhone synchronise déjà. Pour Google ou Outlook, ajoutez le compte à l’iPhone une fois ; ConciergeClock le lit ensuite, hors ligne.
 calendars.guide.stepsTitle | Étapes
 calendars.guide.step1 | Ouvrez l’app Réglages de l’iPhone.
 calendars.guide.step2 | Touchez Apps, puis Calendrier, puis Comptes de calendrier.
@@ -367,14 +367,14 @@ calendars.guide.icloud | Déjà sur votre iPhone si vous utilisez iCloud.
 calendars.guide.outlookApp | Les calendriers gardés uniquement dans l’app Outlook ne sont pas partagés avec les autres apps. Ajoutez le compte dans les réglages de l’iPhone comme ci-dessus.
 calendars.guide.googleTasks | Google Tasks ne se synchronise pas avec les Rappels de l’iPhone et ne peut donc pas apparaître dans les points du matin. Les tâches Exchange, si.
 widget.name | Prochaine alarme
-widget.description | Votre prochaine alarme Concierge Clock.
+widget.description | Votre prochaine alarme ConciergeClock.
 widget.next | Prochaine alarme
 widget.none | Aucune alarme
 widget.today | Aujourd’hui
 widget.tomorrow | Demain
-infoplist.alarmKit | Concierge Clock programme vos alarmes pour qu’elles sonnent même app fermée, en mode silencieux ou pendant un Focus.
-infoplist.calendars | Concierge Clock lit vos calendriers sur cet iPhone pour vous parler de votre journée et sauter les alarmes les jours de congé. Rien n’est envoyé ni modifié.
-infoplist.reminders | Concierge Clock lit vos rappels sur cet iPhone pour vous dire ce qui est dû, et n’en marque un comme terminé que si vous le demandez. Rien n’est envoyé.
+infoplist.alarmKit | ConciergeClock programme vos alarmes pour qu’elles sonnent même app fermée, en mode silencieux ou pendant un Focus.
+infoplist.calendars | ConciergeClock lit vos calendriers sur cet iPhone pour vous parler de votre journée et sauter les alarmes les jours de congé. Rien n’est envoyé ni modifié.
+infoplist.reminders | ConciergeClock lit vos rappels sur cet iPhone pour vous dire ce qui est dû, et n’en marque un comme terminé que si vous le demandez. Rien n’est envoyé.
 brief.moderate.greeting.morning | Bonjour.
 brief.moderate.greeting.afternoon | Bon après-midi.
 brief.moderate.greeting.evening | Bonsoir.
@@ -469,17 +469,17 @@ voices.quality.premium | Premium
 voices.quality.enhanced | Améliorée
 voices.quality.standard | Standard
 voices.guide.title | Obtenir de meilleures voix
-voices.guide.intro | Les voix Améliorées et Premium d’Apple sont bien plus naturelles. Elles sont gratuites, se téléchargent une fois dans les Réglages de l’iPhone, puis fonctionnent hors ligne dans Concierge Clock.
+voices.guide.intro | Les voix Améliorées et Premium d’Apple sont bien plus naturelles. Elles sont gratuites, se téléchargent une fois dans les Réglages de l’iPhone, puis fonctionnent hors ligne dans ConciergeClock.
 voices.guide.step1 | Ouvrez l’app Réglages de l’iPhone.
 voices.guide.step2 | Touchez Accessibilité, puis Contenu énoncé (appelé Lecture et parole dans les versions récentes d’iOS).
 voices.guide.step3 | Touchez Voix, puis la langue (par exemple Anglais), puis la région.
 voices.guide.step4 | Choisissez une voix et touchez Télécharger à côté de sa version Améliorée ou Premium.
-voices.guide.step5 | Revenez dans Concierge Clock : la meilleure voix installée est utilisée automatiquement.
+voices.guide.step5 | Revenez dans ConciergeClock : la meilleure voix installée est utilisée automatiquement.
 voices.guide.suggestions | Suggestions pour les accents
 voices.guide.british | Britannique : Anglais (Royaume-Uni), par exemple Daniel ou Arthur (homme), Kate ou Serena (femme).
 voices.guide.indian | Indien : Anglais (Inde), par exemple Rishi (homme), Isha ou Veena (femme).
 voices.guide.american | Sud des États-Unis et Canada : Anglais (États-Unis), par exemple Evan ou Nathan (homme), Ava ou Zoe (femme).
-voices.guide.footer | Le téléchargement demande le Wi-Fi une fois ; Concierge Clock lui-même ne va jamais en ligne pour les voix.
+voices.guide.footer | Le téléchargement demande le Wi-Fi une fois ; ConciergeClock lui-même ne va jamais en ligne pour les voix.
 editor.date | Date
 editor.datePast | Cette date est passée. Choisissez une nouvelle date.
 alarms.past | Terminé : la date est passée
@@ -553,5 +553,5 @@ conversation.done.remind | Je vous le rappelle à %@
 conversation.noPermission | Autorisez le micro et la reconnaissance vocale dans Réglages pour répondre à la voix. En attendant, utilisez les boutons.
 conversation.noRecognizer | Votre iPhone ne peut pas reconnaître cette langue sur l’appareil. Utilisez les boutons.
 conversation.tapToAnswer | Touchez un bouton pour répondre.
-infoplist.microphone | Concierge Clock écoute votre réponse quand une alarme sonne (« arrête », « rappelle-moi dans 10 minutes »). Votre voix reste sur cet iPhone et n’est jamais enregistrée.
+infoplist.microphone | ConciergeClock écoute votre réponse quand une alarme sonne (« arrête », « rappelle-moi dans 10 minutes »). Votre voix reste sur cet iPhone et n’est jamais enregistrée.
 infoplist.speech | Votre réponse à une alarme est convertie en texte sur cet iPhone pour la comprendre. Rien n’est envoyé ni conservé.

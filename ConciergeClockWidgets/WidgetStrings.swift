@@ -1,7 +1,7 @@
 import Foundation
 import ConciergeCore
 
-/// Translations for the widget, following Concierge Clock's language setting when the app has set
+/// Translations for the widget, following ConciergeClock's language setting when the app has set
 /// one (otherwise the iPhone's language).
 struct WidgetStrings {
     let bundle: Bundle

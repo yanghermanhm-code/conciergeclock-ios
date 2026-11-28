@@ -60,7 +60,7 @@ struct SnoozeAlarmIntent: LiveActivityIntent {
     }
 }
 
-/// The alarm's "Respond" button: opens Concierge Clock, which silences the ring, speaks the
+/// The alarm's "Respond" button: opens ConciergeClock, which silences the ring, speaks the
 /// announcement (dismiss or remind again?) on the loudspeaker and listens for the answer.
 struct RespondToAlarmIntent: LiveActivityIntent {
     static let title: LocalizedStringResource = "Respond"

@@ -4,7 +4,7 @@ import GGSBrand
 import SwiftUI
 import WidgetKit
 
-/// The Lock Screen and Dynamic Island view of a Concierge Clock alarm while it rings or snoozes.
+/// The Lock Screen and Dynamic Island view of a ConciergeClock alarm while it rings or snoozes.
 /// iOS (AlarmKit) runs the alarm and its Stop / Snooze buttons; this only draws it.
 struct AlarmLiveActivity: Widget {
     var body: some WidgetConfiguration {
@@ -25,7 +25,7 @@ struct AlarmLiveActivity: Widget {
                         .foregroundStyle(Brand.tealOnDark)
                 }
                 DynamicIslandExpandedRegion(.bottom) {
-                    Text(context.attributes.metadata?.label.isEmpty == false ? context.attributes.metadata?.label ?? "" : "Concierge Clock")
+                    Text(context.attributes.metadata?.label.isEmpty == false ? context.attributes.metadata?.label ?? "" : "ConciergeClock")
                         .font(.headline)
                         .lineLimit(1)
                 }
@@ -55,7 +55,7 @@ private struct AlarmLockScreenView: View {
             ButlerNetworkMark(style: .onDark)
                 .frame(width: 46, height: 42)
             VStack(alignment: .leading, spacing: 2) {
-                Text(verbatim: "Concierge Clock")
+                Text(verbatim: "ConciergeClock")
                     .font(.caption.weight(.semibold))
                     .foregroundStyle(Color.white.opacity(0.7))
                 Text(attributes.metadata?.label.isEmpty == false ? attributes.metadata?.label ?? "" : "⏰")

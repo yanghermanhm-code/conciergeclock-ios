@@ -3,7 +3,7 @@ import ConciergeCore
 import Foundation
 
 /// Records the butler's alarm announcement into each ring's own alarm sound, so that even with
-/// Concierge Clock closed the alarm says which alarm it is, what comes next, and asks: dismiss,
+/// ConciergeClock closed the alarm says which alarm it is, what comes next, and asks: dismiss,
 /// or remind again? (Then "Respond" opens the app to listen for the answer.)
 ///
 /// Files are `Library/Sounds/ccring-<ring id>.wav`; files of rings that no longer exist are

@@ -1,6 +1,6 @@
 # Model licences
 
-Concierge Clock bundles no model weights. The offline AI model is downloaded once, on request,
+ConciergeClock bundles no model weights. The offline AI model is downloaded once, on request,
 into the App Group `group.com.greatergoodsoftware.models` (shared with PrepPilot, FocusFound and
 FotoPhilter) and is used only after its SHA-256 matches the values below. The source of
 truth in code is `Packages/GGSModelKit/Sources/GGSModelCore/ModelCatalog.swift`.

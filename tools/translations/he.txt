@@ -18,7 +18,7 @@ settings.haptics | משוב הפטי
 settings.appIcon | צלמית היישום
 icon.dark | כהה
 icon.light | בהירה
-settings.aboutApp | אודות Concierge Clock
+settings.aboutApp | אודות ConciergeClock
 ai.ready | מוכן
 ai.notReady | לא זמין
 about.title | אודות
@@ -51,7 +51,7 @@ company.fotophilter | עורך תמונות לא מקוון עם מראה פיל
 company.footer | נבנה באכפתיות, לטובת הכלל.
 a11y.companyLogo | אודות Greater Good Software
 error.title | משהו השתבש
-error.launchTitle | ‏Concierge Clock לא הצליח לפתוח את הנתונים שלו
+error.launchTitle | ‏ConciergeClock לא הצליח לפתוח את הנתונים שלו
 launch.skipHint | הקשה כפולה לדילוג על ההנפשה.
 minutes.count | %d דק׳
 backup.title | גיבוי וייצוא
@@ -63,8 +63,8 @@ backup.never | עדיין אין גיבוי.
 backup.confirmTitle | להחליף הכול בגיבוי הזה?
 backup.confirmRestore | שחזור הגיבוי
 backup.openFailed | לא ניתן לפתוח את הגיבוי
-backup.error.notABackup | זה לא גיבוי של Concierge Clock, או שהקובץ פגום.
-backup.error.newer | הגיבוי נוצר בגרסה חדשה יותר של Concierge Clock. עדכנו את האפליקציה ונסו שוב.
+backup.error.notABackup | זה לא גיבוי של ConciergeClock, או שהקובץ פגום.
+backup.error.newer | הגיבוי נוצר בגרסה חדשה יותר של ConciergeClock. עדכנו את האפליקציה ונסו שוב.
 backup.error.damaged | הגיבוי פגום ולא ניתן לשחזר אותו. שום דבר לא שונה.
 backup.error.write | לא ניתן לכתוב את הקובץ. בדקו שיש מספיק מקום פנוי.
 export.footer | הדוחות והגיליונות נוצרים ב־iPhone הזה. אתם בוחרים לאן לשלוח אותם.
@@ -148,14 +148,14 @@ settings.aiFooter | הבינה המלאכותית הלא מקוונת (Gemma) ק
 settings.startHere.body | הורד/י את %1$@ (%2$@) ל‑iPhone הזה. אז הקונסיירז׳ יקבע אילו אירועים חשובים, ידבר באופן טבעי יותר ויבין בקשות חופשיות יותר — הכול ב‑iPhone. לוקח כמה דקות ב‑Wi‑Fi.
 ai.use | להשתמש בבינה מלאכותית לא מקוונת
 ai.useFooter | כשהיא כבויה או לא הורדה, הקונסיירז׳ משתמש בכללים מובנים: כל התכונות ממשיכות לעבוד.
-ai.unsupported | ב‑iPhone הזה אין מספיק זיכרון לבינה המלאכותית הלא מקוונת. Concierge Clock משתמש בכללים המובנים שלו.
+ai.unsupported | ב‑iPhone הזה אין מספיק זיכרון לבינה המלאכותית הלא מקוונת. ConciergeClock משתמש בכללים המובנים שלו.
 ai.modelsFooter | Gemma 4 של Google (Apache 2.0), מורד פעם אחת מ‑Hugging Face ונבדק לפני השימוש. הוא פועל כולו ב‑iPhone הזה ומשותף עם PrepPilot,‏ FocusFound ו‑FotoPhilter, כך שהוא מורד פעם אחת בלבד.
 ai.deleteMessage | PrepPilot,‏ FocusFound ו‑FotoPhilter משתמשים באותו עותק, ולכן גם הם יאבדו אותו. אפשר להוריד אותו שוב.
 ai.test.json | בדיקת חשיבות (JSON)
-guide.intro.shared | הורדה אחת משרתת את כל היישומים של Greater Good Software ‏(Concierge Clock,‏ PrepPilot,‏ FocusFound,‏ FotoPhilter) ב‑iPhone הזה.
+guide.intro.shared | הורדה אחת משרתת את כל היישומים של Greater Good Software ‏(ConciergeClock,‏ PrepPilot,‏ FocusFound,‏ FotoPhilter) ב‑iPhone הזה.
 guide.app.openSettings | הקש/י על כפתור גלגל השיניים בראש כל לשונית.
 guide.app.check | בלשונית קונסיירז׳, בכרטיס הבינה המלאכותית הלא מקוונת יופיע ״מוכן: %@״.
-about.offline.detail | בלי חשבונות, בלי ענן, בלי שרתים. Concierge Clock עובד במצב טיסה.
+about.offline.detail | בלי חשבונות, בלי ענן, בלי שרתים. ConciergeClock עובד במצב טיסה.
 about.tracking.detail | בלי ניתוח נתונים, בלי פרסומות, ובלי תיעוד של היומן שלך או של מה שאת/ה אומר/ת.
 about.onDevice.title | בינה מלאכותית שנשארת ב‑iPhone
 about.onDevice.detail | הבינה המלאכותית הלא מקוונת האופציונלית פועלת ב‑iPhone. היומן והתזכורות שלך לעולם לא מועלים.
@@ -163,9 +163,9 @@ about.voice.title | מקשיב, אף פעם לא מקליט
 about.voice.detail | הקול שלך מובן ב‑iPhone ולעולם לא נשמר. נשמרים רק זמני השכמה וספירות.
 company.conciergeclock | שעון מעורר מדבר ולא מקוון, עם תדריך בוקר מהיומן שלך.
 error.launchMessage | השעונים המעוררים ויומן ההשכמה שלך לא נמחקו. הפעל/י מחדש את היישום. אם זה חוזר, פנה/י לתמיכה עם ההודעה הזו:\n\n%@
-terms.body | Concierge Clock נמכר ברכישה חד‑פעמית ומורשה לך לפי הסכם הרישיון הסטנדרטי למשתמש קצה של Apple.\n\nהשעונים המעוררים, ההגדרות ויומן ההשכמה שלך נשארים ב‑iPhone. Greater Good Software לעולם לא מקבלת, שומרת או משתפת אותם.\n\nConcierge Clock עוזר לך להתעורר ולתכנן את היום. לכל דבר שאסור לפספס, כדאי לכוון שעון מעורר נוסף. התדריכים נוצרים אוטומטית ועלולים להכיל טעויות, לכן בדוק/י ביומן כל דבר חשוב.\n\nConcierge Clock מסופק ״כמות שהוא״, ללא אחריות מכל סוג.
-backup.footer | גיבוי שומר את ההגדרות, השעונים המעוררים ויומן ההשכמה בקובץ ‎.conciergeclock אחד. שמור/י אותו ב״קבצים״, ב‑iCloud Drive או במחשב — Concierge Clock לעולם לא מעלה אותו.
-backup.confirmMessage | גיבוי מ‑%1$@: ‏%2$d שעונים מעוררים ו‑%3$d בקרים ביומן ההשכמה. כל מה שנמצא כעת ב‑Concierge Clock ב‑iPhone הזה יוחלף.
+terms.body | ConciergeClock נמכר ברכישה חד‑פעמית ומורשה לך לפי הסכם הרישיון הסטנדרטי למשתמש קצה של Apple.\n\nהשעונים המעוררים, ההגדרות ויומן ההשכמה שלך נשארים ב‑iPhone. Greater Good Software לעולם לא מקבלת, שומרת או משתפת אותם.\n\nConciergeClock עוזר לך להתעורר ולתכנן את היום. לכל דבר שאסור לפספס, כדאי לכוון שעון מעורר נוסף. התדריכים נוצרים אוטומטית ועלולים להכיל טעויות, לכן בדוק/י ביומן כל דבר חשוב.\n\nConciergeClock מסופק ״כמות שהוא״, ללא אחריות מכל סוג.
+backup.footer | גיבוי שומר את ההגדרות, השעונים המעוררים ויומן ההשכמה בקובץ ‎.conciergeclock אחד. שמור/י אותו ב״קבצים״, ב‑iCloud Drive או במחשב — ConciergeClock לעולם לא מעלה אותו.
+backup.confirmMessage | גיבוי מ‑%1$@: ‏%2$d שעונים מעוררים ו‑%3$d בקרים ביומן ההשכמה. כל מה שנמצא כעת ב‑ConciergeClock ב‑iPhone הזה יוחלף.
 backup.auto.header | גיבוי אוטומטי
 backup.auto.choose | בחירת תיקייה…
 backup.auto.folder | תיקייה
@@ -312,14 +312,14 @@ alarm.stop | עצירה
 alarm.snooze | נודניק
 alarm.snoozing | %@ — בנודניק
 alarms.add | הוספת שעון מעורר
-alarms.footer | iOS עצמו מצלצל בשעונים האלה, ולכן הם פועלים גם כש‑Concierge Clock סגור, במצב שקט ובזמן ריכוז. החלק/י שעון כדי לדלג על הצלצול הבא.
+alarms.footer | iOS עצמו מצלצל בשעונים האלה, ולכן הם פועלים גם כש‑ConciergeClock סגור, במצב שקט ובזמן ריכוז. החלק/י שעון כדי לדלג על הצלצול הבא.
 alarms.nextRing | הבא: %@
 alarms.skipped | הצלצול הבא ידולג
 alarms.skipNext | דילוג על הבא
 alarms.unskip | לא לדלג
 alarms.permission.allow | אישור שעונים מעוררים
-alarms.permission.footer | iOS שואל פעם אחת אם Concierge Clock רשאי לצלצל.
-alarms.permission.denied | השעונים המעוררים כבויים עבור Concierge Clock, כך ששום דבר לא יצלצל. הפעל/י אותם ביישום ״הגדרות״.
+alarms.permission.footer | iOS שואל פעם אחת אם ConciergeClock רשאי לצלצל.
+alarms.permission.denied | השעונים המעוררים כבויים עבור ConciergeClock, כך ששום דבר לא יצלצל. הפעל/י אותם ביישום ״הגדרות״.
 alarms.permission.openSettings | פתיחת ״הגדרות״
 editor.newTitle | שעון מעורר חדש
 editor.editTitle | עריכת שעון מעורר
@@ -341,7 +341,7 @@ calendars.allow | אישור
 calendars.allowed | מאושר
 calendars.openSettings | הגדרות
 calendars.todayCount | אירועים שנותרו היום
-calendars.privacy | נקראים ב‑iPhone הזה מכל חשבון בהגדרות ה‑iPhone — iCloud,‏ Google,‏ Outlook,‏ Exchange / Microsoft 365,‏ Yahoo ועוד. Concierge Clock לעולם לא מתחבר אליהם, לא מעלה דבר ולא משנה את האירועים שלך.
+calendars.privacy | נקראים ב‑iPhone הזה מכל חשבון בהגדרות ה‑iPhone — iCloud,‏ Google,‏ Outlook,‏ Exchange / Microsoft 365,‏ Yahoo ועוד. ConciergeClock לעולם לא מתחבר אליהם, לא מעלה דבר ולא משנה את האירועים שלך.
 calendars.addAccount | הוספת Google,‏ Outlook או חשבון אחר
 calendars.addAccountFooter | חשבונות מוסיפים בהגדרות של ה‑iPhone, ואז הם מופיעים כאן מעצמם. כבה/י כל יומן שלא תרצה/י בתדריכים ובבדיקת ימי החופש.
 calendars.accountCount | חשבונות: %d
@@ -352,7 +352,7 @@ calendars.kind.other | חשבון אחר
 calendars.kind.iphone | ב‑iPhone שלי
 calendars.kind.subscribed | מנויים
 calendars.kind.birthdays | ימי הולדת
-calendars.guide.intro | Concierge Clock קורא את היומנים והתזכורות שה‑iPhone שלך כבר מסנכרן. כדי להוסיף Google או Outlook, הוסף/י את החשבון ל‑iPhone פעם אחת; אחר כך Concierge Clock קורא אותו, בלי חיבור לרשת.
+calendars.guide.intro | ConciergeClock קורא את היומנים והתזכורות שה‑iPhone שלך כבר מסנכרן. כדי להוסיף Google או Outlook, הוסף/י את החשבון ל‑iPhone פעם אחת; אחר כך ConciergeClock קורא אותו, בלי חיבור לרשת.
 calendars.guide.stepsTitle | שלבים
 calendars.guide.step1 | פתח/י את יישום ״הגדרות״ ב‑iPhone.
 calendars.guide.step2 | הקש/י על ״יישומים״, אחר כך ״לוח שנה״, ואז ״חשבונות לוח שנה״.
@@ -367,14 +367,14 @@ calendars.guide.icloud | כבר נמצא ב‑iPhone אם את/ה משתמש/ת 
 calendars.guide.outlookApp | יומנים שנשמרים רק בתוך יישום Outlook אינם משותפים עם יישומים אחרים. הוסף/י את החשבון בהגדרות ה‑iPhone כמתואר למעלה.
 calendars.guide.googleTasks | ‏Google Tasks לא מסתנכרן עם תזכורות ה‑iPhone, ולכן אינו יכול להופיע בתדריכים. משימות Exchange כן.
 widget.name | השעון המעורר הבא
-widget.description | השעון המעורר הבא שלך ב‑Concierge Clock.
+widget.description | השעון המעורר הבא שלך ב‑ConciergeClock.
 widget.next | השעון המעורר הבא
 widget.none | אין שעון מעורר
 widget.today | היום
 widget.tomorrow | מחר
-infoplist.alarmKit | ‏Concierge Clock מתזמן את השעונים המעוררים כדי שיצלצלו גם כשהיישום סגור, במצב שקט או בזמן ריכוז.
-infoplist.calendars | ‏Concierge Clock קורא את היומנים שלך ב‑iPhone הזה כדי לספר לך על היום ולדלג על שעונים בימי חופש. שום דבר לא מועלה או משתנה.
-infoplist.reminders | ‏Concierge Clock קורא את התזכורות שלך ב‑iPhone הזה כדי לומר מה הגיע מועדו, ומסמן תזכורת כבוצעה רק כשתבקש/י. שום דבר לא מועלה.
+infoplist.alarmKit | ‏ConciergeClock מתזמן את השעונים המעוררים כדי שיצלצלו גם כשהיישום סגור, במצב שקט או בזמן ריכוז.
+infoplist.calendars | ‏ConciergeClock קורא את היומנים שלך ב‑iPhone הזה כדי לספר לך על היום ולדלג על שעונים בימי חופש. שום דבר לא מועלה או משתנה.
+infoplist.reminders | ‏ConciergeClock קורא את התזכורות שלך ב‑iPhone הזה כדי לומר מה הגיע מועדו, ומסמן תזכורת כבוצעה רק כשתבקש/י. שום דבר לא מועלה.
 brief.moderate.greeting.morning | בוקר טוב.
 brief.moderate.greeting.afternoon | צהריים טובים.
 brief.moderate.greeting.evening | ערב טוב.
@@ -469,17 +469,17 @@ voices.quality.premium | פרימיום
 voices.quality.enhanced | משופר
 voices.quality.standard | רגיל
 voices.guide.title | קבלת קולות טובים יותר
-voices.guide.intro | הקולות המשופרים והפרימיום של Apple נשמעים טבעיים הרבה יותר. הם חינמיים, מורדים פעם אחת בהגדרות ה‑iPhone, ואז פועלים בלי רשת ב‑Concierge Clock.
+voices.guide.intro | הקולות המשופרים והפרימיום של Apple נשמעים טבעיים הרבה יותר. הם חינמיים, מורדים פעם אחת בהגדרות ה‑iPhone, ואז פועלים בלי רשת ב‑ConciergeClock.
 voices.guide.step1 | פתח/י את יישום ״הגדרות״ ב‑iPhone.
 voices.guide.step2 | הקש/י על ״נגישות״, ואז ״תוכן מוקרא״ (בגרסאות iOS חדשות נקרא ״הקראה ודיבור״).
 voices.guide.step3 | הקש/י על ״קולות״, אחר כך על השפה (למשל אנגלית), ואז על האזור.
 voices.guide.step4 | בחר/י קול והקש/י ״הורדה״ ליד הגרסה המשופרת או הפרימיום שלו.
-voices.guide.step5 | חזור/חזרי ל‑Concierge Clock: הקול הטוב ביותר שמותקן ישמש אוטומטית.
+voices.guide.step5 | חזור/חזרי ל‑ConciergeClock: הקול הטוב ביותר שמותקן ישמש אוטומטית.
 voices.guide.suggestions | הצעות למבטאים
 voices.guide.british | בריטי: אנגלית (בריטניה), למשל Daniel או Arthur (גבר), Kate או Serena (אישה).
 voices.guide.indian | הודי: אנגלית (הודו), למשל Rishi (גבר), Isha או Veena (אישה).
 voices.guide.american | דרום ארה״ב וקנדה: אנגלית (ארה״ב), למשל Evan או Nathan (גבר), Ava או Zoe (אישה).
-voices.guide.footer | ההורדה דורשת Wi‑Fi פעם אחת; Concierge Clock עצמו אף פעם לא מתחבר לרשת בשביל קולות.
+voices.guide.footer | ההורדה דורשת Wi‑Fi פעם אחת; ConciergeClock עצמו אף פעם לא מתחבר לרשת בשביל קולות.
 editor.date | תאריך
 editor.datePast | התאריך הזה עבר. בחר/י תאריך חדש.
 alarms.past | הסתיים: התאריך עבר
@@ -553,5 +553,5 @@ conversation.done.remind | אזכיר לך ב‑%@
 conversation.noPermission | אשר/י מיקרופון וזיהוי דיבור בהגדרות כדי לענות בקול. בינתיים השתמש/י בכפתורים.
 conversation.noRecognizer | ה‑iPhone לא מזהה את השפה הזו במכשיר. השתמש/י בכפתורים.
 conversation.tapToAnswer | הקש/י על כפתור כדי לענות.
-infoplist.microphone | כשהשעון המעורר מצלצל, Concierge Clock מקשיב לתשובה שלך (״כבה״, ״תזכיר לי בעוד 10 דקות״). הקול שלך נשאר ב‑iPhone הזה ולעולם לא מוקלט.
+infoplist.microphone | כשהשעון המעורר מצלצל, ConciergeClock מקשיב לתשובה שלך (״כבה״, ״תזכיר לי בעוד 10 דקות״). הקול שלך נשאר ב‑iPhone הזה ולעולם לא מוקלט.
 infoplist.speech | התשובה שלך לשעון המעורר הופכת לטקסט ב‑iPhone הזה כדי להבין אותה. שום דבר לא נשלח או נשמר.

@@ -8,7 +8,7 @@ import Observation
 import SwiftUI
 import WidgetKit
 
-/// Hands Concierge Clock's alarms to AlarmKit, iOS's own alarm system, so they ring through
+/// Hands ConciergeClock's alarms to AlarmKit, iOS's own alarm system, so they ring through
 /// silent mode and Focus, on the Lock Screen and in the Dynamic Island, even when the app is
 /// closed. It keeps the next two rings of every alarm scheduled (`AlarmPlanner`), writes the wake
 /// log when a ring is stopped, and updates the widgets.
@@ -200,7 +200,7 @@ final class AlarmScheduler {
     }
 
     nonisolated private static func scheduleRing(_ request: RingRequest) async throws {
-        // "Respond" opens Concierge Clock, which silences the ring, speaks and listens.
+        // "Respond" opens ConciergeClock, which silences the ring, speaks and listens.
         let respondButton = AlarmButton(text: LocalizedStringResource(stringLiteral: request.respondText), textColor: .white, systemImageName: "mic.fill")
         let alert: AlarmPresentation.Alert
         if #available(iOS 26.1, *) {

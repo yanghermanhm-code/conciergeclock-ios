@@ -1,7 +1,7 @@
 import GGSBrand
 import SwiftUI
 
-/// Settings → About Concierge Clock: version, privacy promises, open-source licences, terms.
+/// Settings → About ConciergeClock: version, privacy promises, open-source licences, terms.
 struct AboutConciergeClockView: View {
     @Environment(\.l10n) private var l10n
     @Environment(\.colorScheme) private var colorScheme
@@ -12,7 +12,7 @@ struct AboutConciergeClockView: View {
                 ButlerNetworkMark(style: colorScheme == .dark ? .onDark : .standard)
                     .frame(height: 96)
                     .padding(.top, 20)
-                Text(verbatim: "Concierge Clock")
+                Text(verbatim: "ConciergeClock")
                     .font(.system(.largeTitle, design: .rounded, weight: .bold))
                     .foregroundStyle(Theme.focus)
                 Text(l10n("about.version", version, build))
@@ -163,7 +163,7 @@ enum Acknowledgements {
 }
 
 /// "About Greater Good Software", opened by tapping the logo in the top bar. Same text as
-/// PrepPilot, FocusFound and FotoPhilter, with Concierge Clock added to "Our apps".
+/// PrepPilot, FocusFound and FotoPhilter, with ConciergeClock added to "Our apps".
 struct AboutCompanyView: View {
     @Environment(\.l10n) private var l10n
     @Environment(\.dismiss) private var dismiss
@@ -207,7 +207,7 @@ struct AboutCompanyView: View {
                             .font(.caption.weight(.bold))
                             .tracking(1)
                             .foregroundStyle(Theme.textSecondary)
-                        product(name: "ConciergeClock", displayName: "Concierge Clock", detailKey: "company.conciergeclock")
+                        product(name: "ConciergeClock", displayName: "ConciergeClock", detailKey: "company.conciergeclock")
                         product(name: "PrepPilot", detailKey: "company.preppilot")
                         product(name: "FocusFound", detailKey: "company.focusfound")
                         product(name: "FotoPhilter", detailKey: "company.fotophilter")

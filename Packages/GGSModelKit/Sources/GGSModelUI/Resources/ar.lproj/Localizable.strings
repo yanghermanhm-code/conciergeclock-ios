@@ -34,6 +34,6 @@
 "guide.mock.useAI" = "استخدام الذكاء الاصطناعي دون اتصال";
 "guide.mock.wifi" = "التنزيل عبر Wi-Fi فقط";
 "guide.app.open" = "أرني كيف، خطوة بخطوة";
-"guide.intro.shared" = "تنزيل واحد يخدم كل تطبيقات Greater Good Software (Concierge Clock وPrepPilot وFocusFound وFotoPhilter) على هذا الـ iPhone.";
+"guide.intro.shared" = "تنزيل واحد يخدم كل تطبيقات Greater Good Software (ConciergeClock وPrepPilot وFocusFound وFotoPhilter) على هذا الـ iPhone.";
 "guide.app.openSettings" = "اضغط زر الترس أعلى أي علامة تبويب.";
 "guide.app.check" = "في علامة تبويب الكونسيرج، تظهر على بطاقة الذكاء الاصطناعي دون اتصال عبارة «جاهز: %@».";

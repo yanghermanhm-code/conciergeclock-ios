@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Generate Concierge Clock's brand artwork (Design/*.svg) and app icon PNGs.
+"""Generate ConciergeClock's brand artwork (Design/*.svg) and app icon PNGs.
 
 The butler mesh geometry lives in tools/butler_geometry.py and is mirrored by ButlerGeometry
 in Packages/GGSBrand/Sources/GGSBrand/ButlerMark.swift — change both together:

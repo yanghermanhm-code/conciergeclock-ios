@@ -1,7 +1,7 @@
 import Foundation
 import SwiftUI
 
-/// Languages Concierge Clock ships with (the same 11 as PrepPilot, FocusFound and FotoPhilter). Raw values are the
+/// Languages ConciergeClock ships with (the same 11 as PrepPilot, FocusFound and FotoPhilter). Raw values are the
 /// `.lproj` folder names.
 enum AppLanguage: String, CaseIterable, Identifiable, Sendable {
     case english = "en"

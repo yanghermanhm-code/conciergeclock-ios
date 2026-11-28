@@ -55,7 +55,7 @@ final class BackupTests: XCTestCase {
     func testFileName() {
         var calendar = Calendar(identifier: .gregorian)
         calendar.timeZone = TimeZone(identifier: "UTC")!
-        XCTAssertEqual(BackupPayload.fileName(at: t0, calendar: calendar), "Concierge Clock Backup 2026-09-21 1413.conciergeclock")
+        XCTAssertEqual(BackupPayload.fileName(at: t0, calendar: calendar), "ConciergeClock Backup 2026-09-21 1413.conciergeclock")
     }
 
     func testCSVQuotingAndFormulaGuard() {

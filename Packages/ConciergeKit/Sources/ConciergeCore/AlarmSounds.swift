@@ -306,7 +306,7 @@ struct ToneRandom {
 
 
 /// Writes mono 16-bit PCM WAV data. Used to store the rendered alarm sounds in `Library/Sounds/`,
-/// where iOS (AlarmKit) plays them even when Concierge Clock is closed. Same encoder as FocusFound.
+/// where iOS (AlarmKit) plays them even when ConciergeClock is closed. Same encoder as FocusFound.
 public enum WAVEncoder {
     public static func encode(_ samples: [Float], sampleRate: Int) -> Data {
         let bytesPerSample = 2

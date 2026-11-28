@@ -6,7 +6,7 @@ import SwiftUI
 
 /// The iPhone's calendars and reminders, read on the iPhone with EventKit.
 ///
-/// Concierge Clock never signs in to Google or Microsoft and never goes online for this: it reads
+/// ConciergeClock never signs in to Google or Microsoft and never goes online for this: it reads
 /// every account added in iOS Settings — iCloud, Google, Outlook.com, Exchange / Microsoft 365,
 /// Yahoo, other CalDAV accounts, subscribed calendars and calendars on the iPhone. Adding an
 /// account there makes it appear here automatically (Settings › Calendars & Reminders).
@@ -37,7 +37,7 @@ final class CalendarService {
 
     // MARK: Access
 
-    /// Asks for full access to calendars (read; Concierge Clock never changes events).
+    /// Asks for full access to calendars (read; ConciergeClock never changes events).
     @discardableResult
     func requestCalendarAccess() async -> Bool {
         let granted = (try? await store.requestFullAccessToEvents()) ?? false
@@ -91,7 +91,7 @@ final class CalendarService {
 
     // MARK: Reading
 
-    /// The calendars Concierge Clock reads (all, minus the ones switched off).
+    /// The calendars ConciergeClock reads (all, minus the ones switched off).
     func includedCalendars(excluding excluded: Set<String>) -> [EKCalendar] {
         guard eventAccess == .granted else { return [] }
         return store.calendars(for: .event).filter { !excluded.contains($0.calendarIdentifier) }

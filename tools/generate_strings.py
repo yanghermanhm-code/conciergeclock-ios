@@ -8,7 +8,7 @@ placeholders (%@, %d, %1$d ...). The script also checks that every key used in t
 code exists in English.
 
 Same tool as PrepPilot, FocusFound and FotoPhilter (tools/generate_strings.py), adapted for
-Concierge Clock. The shared texts (Settings basics, Offline AI and its setup guide, About Greater
+ConciergeClock. The shared texts (Settings basics, Offline AI and its setup guide, About Greater
 Good Software) were copied from PrepPilot's translations; keep them in step when they change.
 
 Run from the repository root:  python3 tools/generate_strings.py
